@@ -1,8 +1,6 @@
 name: Publicar na Vercel
 on:
-  schedule:
-    - cron: '*/30 * * * *' # publica o conteúdo acumulado a cada 30 min
-  workflow_dispatch:
+  workflow_dispatch: # reativar cron quando VERCEL_TOKEN de acesso estiver setado
 
 concurrency:
   group: deploy
