@@ -59,4 +59,41 @@ async function enviarPush(payloadPorLang, log = console.log) {
   return { enviados, removidos }
 }
 
-module.exports = { enviarPush }
+// Broadcast de e-mail SÓ para desastres graves, à lista dedicada `alertas_email`
+// (separada da newsletter). item = { pt:{title,body,url}, en:{...}, es:{...} }.
+async function enviarAlertaEmail(item, log = console.log) {
+  const path = require('path')
+  const { pathToFileURL } = require('url')
+  const { listar } = await firestore()
+  const email = await import(pathToFileURL(path.join(__dirname, '..', 'lib', 'email.js')).href)
+
+  if (!email.emailConfigurado()) {
+    log('alerta-email: RESEND_API_KEY ausente, pulando')
+    return { enviados: 0 }
+  }
+
+  let inscritos
+  try {
+    inscritos = await listar('alertas_email')
+  } catch (e) {
+    log('alerta-email: falha ao listar — ' + e.message)
+    return { enviados: 0 }
+  }
+  if (!inscritos.length) {
+    log('alerta-email: nenhum inscrito')
+    return { enviados: 0 }
+  }
+
+  let enviados = 0
+  for (const i of inscritos) {
+    const lang = ['pt', 'en', 'es'].includes(i.lang) ? i.lang : 'pt'
+    const dados = item[lang] || item.pt
+    const msg = email.emailAlerta({ titulo: dados.title, resumo: dados.body, url: dados.url, lang })
+    const r = await email.enviarEmail({ para: i.email, assunto: msg.assunto, html: msg.html, texto: msg.texto })
+    if (r.ok) enviados++
+  }
+  log(`alerta-email: ${enviados}/${inscritos.length} enviados`)
+  return { enviados }
+}
+
+module.exports = { enviarPush, enviarAlertaEmail }

@@ -32,6 +32,7 @@ jobs:
           VAPID_PUBLIC=${{ secrets.VAPID_PUBLIC }}
           VAPID_PRIVATE=${{ secrets.VAPID_PRIVATE }}
           FIREBASE_SA_B64=${{ secrets.FIREBASE_SA_B64 }}
+          RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
           EOF
       - name: Rodar robô de alertas
         env:

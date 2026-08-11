@@ -11,7 +11,7 @@ const path = require('path')
 const { execSync } = require('child_process')
 const { adquirir } = require('./trava')
 const { slugify, contaPalavras } = require('./regras-editoriais')
-const { enviarPush } = require('./push')
+const { enviarPush, enviarAlertaEmail } = require('./push')
 
 const ROOT = path.join(__dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
@@ -47,8 +47,9 @@ function lugarUsgs(place) {
 
 const paraNotificar = []
 
-function salvar(base, tr) {
+function salvar(base, tr, grave = false) {
   paraNotificar.push({
+    grave,
     pt: { title: tr.pt.title, body: tr.pt.excerpt, url: 'https://explosaosolar.com/noticia/' + base.slug, tag: base.slug },
     en: { title: tr.en.title, body: tr.en.excerpt, url: 'https://explosaosolar.com/en/noticia/' + base.slug, tag: base.slug },
     es: { title: tr.es.title, body: tr.es.excerpt, url: 'https://explosaosolar.com/es/noticia/' + base.slug, tag: base.slug },
@@ -104,6 +105,7 @@ function materiaTerremoto(f) {
 
   return {
     id: 'usgs:' + f.id,
+    grave: forte,
     base: {
       slug: slugify(`terremoto magnitude ${magPt} ${perto} ${pais || ''}`),
       category: 'Ciência',
@@ -170,7 +172,7 @@ async function terremotos(vistos, dry) {
     if (vistos.has(id)) continue
     vistos.add(id)
     const m = materiaTerremoto(f)
-    if (!dry) salvar(m.base, m.tr)
+    if (!dry) salvar(m.base, m.tr, m.grave)
     n++
     log(`terremoto M${f.properties.mag.toFixed(1)} ${f.properties.place} -> ${m.base.slug}`)
   }
@@ -255,7 +257,7 @@ async function climaEspacial(vistos, dry) {
         `<p><em>Con datos del Space Weather Prediction Center (NOAA).</em></p>`,
     },
   }
-  if (!dry) salvar(base, tr)
+  if (!dry) salvar(base, tr, escala >= 'G3')
   log(`clima espacial: ${escala} previsto para ${dia} (Kp ${kp}) -> ${base.slug}`)
   return 1
 }
@@ -331,7 +333,7 @@ async function gdacs(vistos, dry) {
             : `<p>El GDACS, sistema global de alerta y coordinación de desastres de la ONU y la Comisión Europea, emitió una alerta ${nivelTxt.es} para el evento "${nome}" (${tipoTxt.toLowerCase()}) que afecta a ${paisRaw}.</p><p>Según el boletín oficial: ${desc}</p><h2>Qué significa el nivel de alerta</h2><p>El GDACS clasifica los eventos en verde, naranja y rojo según el impacto humanitario estimado.</p><p><em>Con datos del GDACS (Global Disaster Alert and Coordination System).</em></p>`),
     })
 
-    if (!dry) salvar(base, { pt: mk('pt', GDACS_TIPO[tipo].pt), en: mk('en', GDACS_TIPO[tipo].en), es: mk('es', GDACS_TIPO[tipo].es) })
+    if (!dry) salvar(base, { pt: mk('pt', GDACS_TIPO[tipo].pt), en: mk('en', GDACS_TIPO[tipo].en), es: mk('es', GDACS_TIPO[tipo].es) }, severo)
     n++
     log(`gdacs ${nivel} ${tipo} ${pais} -> ${base.slug}`)
     if (n >= 4) break // no máximo 4 por rodada pra não inundar o portal
@@ -361,8 +363,12 @@ async function main() {
 
   if (!dry) saveState([...vistos])
   if (!dry && paraNotificar.length) {
+    // push vai para todos os alertas; e-mail só para os GRAVES (evita inundar a caixa)
     for (const p of paraNotificar.slice(0, 3)) {
       try { await enviarPush(p, log) } catch (e) { log('push falhou: ' + e.message) }
+    }
+    for (const p of paraNotificar.filter((x) => x.grave).slice(0, 2)) {
+      try { await enviarAlertaEmail(p, log) } catch (e) { log('alerta-email falhou: ' + e.message) }
     }
   }
   log(`fim: ${total} alerta(s) publicado(s)${dry ? ' [DRY]' : ''}`)
