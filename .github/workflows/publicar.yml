@@ -1,8 +1,6 @@
 name: Publicar na Vercel
 on:
-  schedule:
-    - cron: '*/30 * * * *'
-  workflow_dispatch:
+  workflow_dispatch: # espera token com usuario OU conexao Git no painel
 
 concurrency:
   group: deploy
