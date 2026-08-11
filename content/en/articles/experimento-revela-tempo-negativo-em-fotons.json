@@ -1,0 +1,24 @@
+{
+  "slug": "experimento-revela-tempo-negativo-em-fotons",
+  "title": "Experiment reveals negative time in photons",
+  "seoTitle": "Experiment reveals negative time in photons",
+  "subtitle": "Weak measurement confirms that the photon exits before entering, according to a study published on August 4, 2026.",
+  "category": "Ciência",
+  "categorySlug": "ciencia",
+  "excerpt": "An experiment with photons and a cloud of rubidium atoms demonstrated that the dwell time can be negative, and weak measurements confirm this result.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-08-05T02:38:41.307Z",
+  "eventDate": "2026-08-04T11:44:58.000Z",
+  "readingMinutes": 2,
+  "tags": [
+    "quantum physics",
+    "photons",
+    "negative time",
+    "weak measurement",
+    "experiment"
+  ],
+  "sourceName": "ScienceDaily",
+  "sourceUrl": "https://www.sciencedaily.com/releases/2026/08/260803080904.htm",
+  "contentHtml": "<p>On August 4, 2026, researchers published a study that shows photons can exhibit a negative dwell time when traversing a cloud of rubidium atoms. The work combines observation of the photon’s arrival time with weak measurements of the atoms’ excitation time.</p>\n<h2>How photons traverse a rubidium cloud</h2>\n<p>Rubidium atoms have a “resonance” with photons, allowing the photon’s energy to be temporarily transferred to the atom, generating an atomic excitation. For this resonance to occur, the photon must have a well-defined energy, matching the energy required to excite the atom.</p>\n<h2>What negative arrival time means</h2>\n<p>According to Heisenberg’s uncertainty principle, a photon with a well-defined energy has a long pulse duration, which prevents the exact determination of the instant it enters the cloud. When a photon manages to traverse the cloud without being scattered, the average time calculated from the expected entry indicates that it reaches the other side earlier than anticipated, appearing to have spent a negative amount of time inside the cloud.</p>\n<h2>Measuring dwell time with weak measurement</h2>\n<p>To investigate how long the photon actually spends exciting the atoms, the experimenters performed continuous, yet imprecise, measurements on the atoms while the photon traversed the cloud. This approach avoids the quantum Zeno effect, which would prevent interaction when making precise measurements.</p>\n<h2>Result: coincidence between negative times</h2>\n<p>Using a weak laser beam and analyzing small phase variations, the researchers obtained, after millions of repetitions, an average dwell time that matched exactly the negative time inferred from the photon’s early arrival. This equality could not be explained solely by the fact that only the pulse front passes through the cloud.</p>\n<h2>Implications for quantum research</h2>\n<p>The finding demonstrates that the negative dwell time is not an artifact, but a measurable effect that directly impacts the atomic cloud traversed by the photon. The experiment reinforces the idea that there are still unexpected phenomena to be explored in quantum physics.<p><em>With information from ScienceDaily.</em></p>",
+  "lang": "en"
+}

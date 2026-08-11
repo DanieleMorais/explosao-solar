@@ -1,0 +1,24 @@
+{
+  "slug": "por-que-cobrar-pelo-uso-de-ia-ainda-e-um-desafio",
+  "title": "Por qué cobrar por el uso de IA sigue siendo un desafío",
+  "seoTitle": "Por qué cobrar por el uso de IA sigue siendo un desafío",
+  "subtitle": "Empresas invierten miles de millones en grandes modelos de lenguaje, pero aún luchan por convertir ese costo en ingresos estables.",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "El 3 de agosto de 2026, analistas señalan que el consumo de tokens por IA crecerá 24 veces hasta 2030, generando desafíos de control de costos para empresas y.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-08-05T02:29:07.900Z",
+  "eventDate": "2026-08-03T23:21:10.000Z",
+  "readingMinutes": 2,
+  "tags": [
+    "inteligência artificial",
+    "tokenomics",
+    "custo de IA",
+    "modelos de linguagem",
+    "economia digital"
+  ],
+  "sourceName": "BBC News",
+  "sourceUrl": "https://www.bbc.co.uk/news/articles/c872r52x7jgo?at_medium=RSS&at_campaign=rss",
+  "contentHtml": "<p>El 3 de agosto de 2026, especialistas destacan que el uso gratuito de asistentes como ChatGPT aún representa un gran beneficio, mientras los costos detrás de la tecnología se disparan.</p><h2>Inversión masiva en grandes modelos de lenguaje</h2><p>Empresas como Microsoft, Google y Anthropic han invertido cientos de miles de millones de dólares en el desarrollo de grandes modelos de lenguaje (LLMs), la tecnología que sustenta servicios de IA gratuitos y de pago.</p><h2>Cómo los tokens alimentan la IA</h2><p>Cuando un usuario solicita al LLM, como ChatGPT o Claude, una respuesta, la pregunta se divide en bloques matemáticos llamados tokens. La respuesta del modelo también llega en forma de tokens, que se convierten nuevamente en texto, código o comandos.</p><h2>Explosión en el consumo de tokens</h2><p>Según un análisis de Goldman Sachs, aunque el precio individual de los tokens ha caído en los últimos años, el volumen consumido por empresas y consumidores se ha disparado. El banco proyecta que el consumo externo de tokens aumentará 24 veces entre 2026 y 2030, alcanzando 120 cuatrillones de tokens al mes, a medida que las organizaciones adoptan agentes de IA.</p><h2>Desafíos de gestión de gastos</h2><p>Empresas e individuos suelen perder la noción de cuántos tokens están usando hasta que reciben la factura o se quedan sin créditos. \"Trying to tie someone into a cost model for the next 12 months, two years, three years, it doesn&#x27;t make any sense, honestly, because we don&#x27;t know,\" afirma Simon Gooch, de Saviynt. Will Venters, de la London School of Economics, alerta que los equipos pueden quemar tokens al experimentar IA internamente: \"People are finding it really hard to manage that cost… it&#x27;s a non-deterministic output, so it&#x27;s a non-deterministic value.\" Rob Steele, CFO de iplicit, compara la necesidad de instrucciones detalladas al envío de alguien al mercado sin lista de compras.</p><h2>Modelos de precios y presiones de los accionistas</h2><p>Oliver King-Smith, fundador de smartR AI, observa que organizaciones más pequeñas pueden usar cuentas personales de tarifa fija, algo que los grandes proveedores no aprecian, y prevé que \"This has to end at some point in time, because the big guys are taking a bath on those accounts.\" Cuando los accionistas exijan ganancias, las grandes plataformas probablemente pondrán el freno. Bill Peterson, de Sumo Logic, comenta que la elección de la estructura de precios puede cambiar si los proveedores de LLMs alteran sus propias tarifas: \"You get into variable pricing, and it&#x27;s changing every couple of months. Customers don&#x27;t like that. That&#x27; s not how anybody builds a budget.\"</p><p><em>Con información de BBC News.</em></p>",
+  "lang": "es"
+}

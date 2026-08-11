@@ -1,0 +1,40 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.explosaosolar.com" }],
+      "destination": "https://explosaosolar.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.explosaosolar.com" }],
+      "destination": "https://explosaosolar.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "explosaosolar.com.br" }],
+      "destination": "https://explosaosolar.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "explosaosolar.com.br" }],
+      "destination": "https://explosaosolar.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.explosaosolar.com.br" }],
+      "destination": "https://explosaosolar.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.explosaosolar.com.br" }],
+      "destination": "https://explosaosolar.com/:path*",
+      "permanent": true
+    }
+  ]
+}

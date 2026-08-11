@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.vercel
+.env*.local
+.DS_Store
+npm-debug.log*
+
+.vercel
+.env.robo
+scripts/*.log
+content/.ultimo-deploy
+scripts/*.lock
