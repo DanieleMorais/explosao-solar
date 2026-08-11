@@ -1,0 +1,48 @@
+name: Colômbia e América Latina
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robos
+  cancel-in-progress: false
+
+jobs:
+  rodar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --omit=dev || npm install --omit=dev
+      - name: Credenciais
+        run: |
+          cat > .env.robo <<'EOF'
+          G_CLIENT_ID=${{ secrets.G_CLIENT_ID }}
+          G_CLIENT_SECRET=${{ secrets.G_CLIENT_SECRET }}
+          G_REFRESH_TOTAL=${{ secrets.G_REFRESH_TOTAL }}
+          CEREBRAS_API_KEY=${{ secrets.CEREBRAS_API_KEY }}
+          HF_API_TOKEN=${{ secrets.HF_API_TOKEN }}
+          GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
+          VAPID_PUBLIC=${{ secrets.VAPID_PUBLIC }}
+          VAPID_PRIVATE=${{ secrets.VAPID_PRIVATE }}
+          FIREBASE_SA_B64=${{ secrets.FIREBASE_SA_B64 }}
+          EOF
+      - name: Rodar
+        env:
+          SKIP_DEPLOY: '1'
+        run: node scripts/backfill-noticias.js --tema colombia --meta 50 || true
+      - name: Publicar conteúdo
+        run: |
+          git config user.name "Explosao Solar Bot"
+          git config user.email "bot@explosaosolar.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Colômbia e América Latina: conteúdo automático [skip ci]"
+            git push
+          fi
