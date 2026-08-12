@@ -1,6 +1,6 @@
+import Link from 'next/link'
 import { previsaoCidades, climaEspacial, wmo } from '@/lib/clima'
 import { t } from '@/lib/tokens'
-import { SITE } from '@/lib/content'
 import { withLang } from '@/lib/site'
 
 export const revalidate = 1800
@@ -76,6 +76,13 @@ export default async function ClimaView({ lang = 'pt' }) {
           </p>
           <h1 style={{ fontSize: 'clamp(28px, 4.6vw, 40px)', fontWeight: 900, letterSpacing: -0.7 }}>{L.titulo}</h1>
           <p style={{ fontSize: 15.5, color: 'rgba(255,255,255,0.75)', maxWidth: 640, lineHeight: 1.6, marginTop: 12 }}>{L.intro}</p>
+          <Link
+            href={withLang(lang, '/clima/brasil')}
+            className="btn"
+            style={{ display: 'inline-block', marginTop: 18, background: t.sunGrad, color: '#131417', fontWeight: 800, fontSize: 14, padding: '11px 22px', borderRadius: 999 }}
+          >
+            {{ pt: '🇧🇷 Clima por estado e cidade do Brasil →', en: '🇧🇷 Weather by Brazilian state and city →', es: '🇧🇷 Clima por estado y ciudad de Brasil →' }[lang]}
+          </Link>
         </div>
       </section>
 
