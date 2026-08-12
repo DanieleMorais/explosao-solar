@@ -13,14 +13,18 @@ export async function GET() {
       <link>${SITE.url}/noticia/${a.slug}</link>
       <guid isPermaLink="true">${SITE.url}/noticia/${a.slug}</guid>
       <description>${esc(a.excerpt)}</description>
-      <category>${esc(a.category)}</category>
+      <category>${esc(a.category)}</category>${
+        a.imagem
+          ? `\n      <enclosure url="${esc(a.imagem)}" type="image/jpeg"/>\n      <media:content url="${esc(a.imagem)}" medium="image"/>\n      <media:thumbnail url="${esc(a.imagem)}"/>`
+          : ''
+      }
       <pubDate>${new Date(a.publishedAt).toUTCString()}</pubDate>
     </item>`
     )
     .join('\n')
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>${esc(SITE.name)} — ${esc(SITE.tagline)}</title>
     <link>${SITE.url}</link>

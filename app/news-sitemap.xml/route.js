@@ -24,13 +24,13 @@ export async function GET() {
       </news:publication>
       <news:publication_date>${new Date(a.publishedAt).toISOString()}</news:publication_date>
       <news:title>${esc(a.title)}</news:title>
-    </news:news>
+    </news:news>${a.imagem ? `\n    <image:image><image:loc>${esc(a.imagem)}</image:loc></image:image>` : ''}
   </url>`)
     }
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.join('\n')}
 </urlset>`
 
