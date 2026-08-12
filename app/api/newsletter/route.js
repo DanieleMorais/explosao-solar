@@ -27,7 +27,7 @@ export async function POST(request) {
   // envio de boas-vindas não bloqueia a resposta; se o e-mail não estiver
   // configurado ainda, o inscrito fica salvo do mesmo jeito.
   if (emailConfigurado()) {
-    const bv = emailBoasVindas()
+    const bv = emailBoasVindas(email)
     enviarEmail({ para: email, assunto: bv.assunto, html: bv.html, texto: bv.texto }).catch(() => {})
   }
 

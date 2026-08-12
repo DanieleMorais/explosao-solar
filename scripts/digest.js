@@ -108,4 +108,9 @@ if (require.main === module) {
   })
 }
 
-module.exports = { gerarDigest, coletar }
+function dataHoje() {
+  const h = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'America/Sao_Paulo' })
+  return h.charAt(0).toUpperCase() + h.slice(1)
+}
+
+module.exports = { gerarDigest, coletar, ultimasNoticias, dataHoje }
