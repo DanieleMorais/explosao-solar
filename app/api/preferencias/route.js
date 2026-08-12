@@ -22,7 +22,11 @@ export async function GET(request) {
   try {
     cidades = doc?.cidades ? JSON.parse(doc.cidades) : []
   } catch {}
-  return NextResponse.json({ email, cidades })
+  let editorias = []
+  try {
+    editorias = doc?.editorias ? JSON.parse(doc.editorias) : []
+  } catch {}
+  return NextResponse.json({ email, cidades, editorias, frequencia: doc?.frequencia || 'diario' })
 }
 
 export async function POST(request) {
@@ -42,9 +46,19 @@ export async function POST(request) {
         .map((c) => ({ rotulo: String(c.rotulo).slice(0, 80), lat: c.lat, lon: c.lon }))
     : []
 
+  const CATS = ['mundo', 'brasil', 'politica', 'economia', 'tecnologia', 'ciencia', 'esportes', 'cultura']
+  const editorias = Array.isArray(body?.editorias) ? body.editorias.filter((c) => CATS.includes(c)) : []
+  const frequencia = body?.frequencia === 'semanal' ? 'semanal' : 'diario'
+
   try {
-    await gravar('newsletter', idDe(email), { email, cidades: JSON.stringify(cidades), atualizadoEm: new Date().toISOString() })
-    return NextResponse.json({ ok: true, cidades })
+    await gravar('newsletter', idDe(email), {
+      email,
+      cidades: JSON.stringify(cidades),
+      editorias: JSON.stringify(editorias),
+      frequencia,
+      atualizadoEm: new Date().toISOString(),
+    })
+    return NextResponse.json({ ok: true, cidades, editorias, frequencia })
   } catch (e) {
     console.error('[preferencias] falhou:', e.message)
     return NextResponse.json({ error: 'erro interno' }, { status: 500 })

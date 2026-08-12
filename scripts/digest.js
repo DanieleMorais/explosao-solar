@@ -77,6 +77,47 @@ function ultimasNoticias(n = 5) {
   return escolhidas.slice(0, n)
 }
 
+function todasOrdenadas() {
+  return fs
+    .readdirSync(PT_DIR)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => {
+      try {
+        return JSON.parse(fs.readFileSync(path.join(PT_DIR, f), 'utf8'))
+      } catch {
+        return null
+      }
+    })
+    .filter((a) => a && a.title && a.slug)
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+}
+
+// Notícias para um inscrito: se ele marcou editorias, prioriza-as (diversificando
+// dentro delas); senão devolve o resumo geral diversificado.
+function noticiasPara(editorias, n = 5) {
+  if (!Array.isArray(editorias) || !editorias.length) return ultimasNoticias(n)
+  const todas = todasOrdenadas()
+  const doTema = todas.filter((a) => editorias.includes(a.categorySlug))
+  const escolhidas = []
+  const usadasCat = new Set()
+  for (const a of doTema) {
+    if (escolhidas.length >= n) break
+    if (usadasCat.has(a.categorySlug)) continue
+    usadasCat.add(a.categorySlug)
+    escolhidas.push(a)
+  }
+  for (const a of doTema) {
+    if (escolhidas.length >= n) break
+    if (!escolhidas.includes(a)) escolhidas.push(a)
+  }
+  // completa com gerais se o tema tiver pouca coisa
+  for (const a of todas) {
+    if (escolhidas.length >= n) break
+    if (!escolhidas.includes(a)) escolhidas.push(a)
+  }
+  return escolhidas.slice(0, n)
+}
+
 async function gerarDigest() {
   const hoje = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'America/Sao_Paulo' })
   const cap = hoje.charAt(0).toUpperCase() + hoje.slice(1)
@@ -127,4 +168,4 @@ function dataHoje() {
   return h.charAt(0).toUpperCase() + h.slice(1)
 }
 
-module.exports = { gerarDigest, coletar, ultimasNoticias, dataHoje }
+module.exports = { gerarDigest, coletar, ultimasNoticias, noticiasPara, dataHoje }

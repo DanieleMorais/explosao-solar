@@ -5,7 +5,7 @@
 const fs = require('fs')
 const path = require('path')
 const { pathToFileURL } = require('url')
-const { ultimasNoticias, dataHoje } = require('./digest')
+const { noticiasPara, dataHoje } = require('./digest')
 
 function carregarEnv() {
   const f = path.join(__dirname, '..', '.env.robo')
@@ -24,6 +24,15 @@ function parseCidades(doc) {
   }
 }
 
+function parseEditorias(doc) {
+  try {
+    const arr = doc?.editorias ? JSON.parse(doc.editorias) : []
+    return Array.isArray(arr) ? arr : []
+  } catch {
+    return []
+  }
+}
+
 async function main() {
   carregarEnv()
   const dry = process.argv.includes('--dry')
@@ -35,8 +44,8 @@ async function main() {
   if (!email.emailConfigurado()) return log('RESEND_API_KEY ausente — abortando')
 
   const dataFmt = dataHoje()
-  const noticias = ultimasNoticias(5).map((a) => ({ title: a.title, slug: a.slug, category: a.category, imagem: a.imagem, excerpt: a.excerpt }))
-  log(`resumo do dia: ${noticias.length} notícias`)
+  const diaBRT = new Date(Date.now() - 3 * 3600e3).getUTCDay() // 1 = segunda
+  const ehSegunda = diaBRT === 1
 
   let inscritos = []
   try {
@@ -44,13 +53,33 @@ async function main() {
   } catch (e) {
     return log('falha ao listar inscritos: ' + e.message)
   }
-  log(`${inscritos.length} inscrito(s)`)
+  log(`${inscritos.length} inscrito(s) · ${ehSegunda ? 'segunda (envia semanais)' : 'dia comum (só diários)'}`)
+
+  const noticiasCache = new Map()
+  const noticiasDe = (editorias) => {
+    const chave = [...editorias].sort().join(',')
+    if (!noticiasCache.has(chave)) {
+      noticiasCache.set(
+        chave,
+        noticiasPara(editorias, 5).map((a) => ({ title: a.title, slug: a.slug, category: a.category, imagem: a.imagem, excerpt: a.excerpt }))
+      )
+    }
+    return noticiasCache.get(chave)
+  }
 
   let ok = 0
   let falhou = 0
+  let pulados = 0
   for (const i of inscritos) {
     if (!i.email) continue
 
+    // frequência: semanais só recebem na segunda
+    if ((i.frequencia === 'semanal') && !ehSegunda) {
+      pulados++
+      continue
+    }
+
+    const noticias = noticiasDe(parseEditorias(i))
     const pontos = parseCidades(i)
     let cidades = []
     if (pontos.length) {
@@ -65,7 +94,7 @@ async function main() {
         .filter(Boolean)
     }
 
-    const msg = email.emailDigest({ dataFmt, cidades, noticias, email: i.email })
+    const msg = email.emailDigest({ dataFmt, cidades, noticias, email: i.email, semanal: i.frequencia === 'semanal' })
     if (dry) {
       log(`DRY ${i.email}: ${cidades.length} cidades | ${msg.assunto}`)
       continue
@@ -74,7 +103,7 @@ async function main() {
     r.ok ? ok++ : falhou++
     await new Promise((s) => setTimeout(s, 600))
   }
-  log(`fim: ${ok} enviados, ${falhou} falhas`)
+  log(`fim: ${ok} enviados, ${falhou} falhas, ${pulados} pulados (semanais fora de segunda)`)
 }
 
 main().catch((e) => {
