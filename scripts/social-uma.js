@@ -22,7 +22,7 @@ const HASHTAGS = {
 function legenda(a) {
   const tags = HASHTAGS[a.categorySlug] || '#noticias'
   const resumo = a.excerpt ? `\n\n${String(a.excerpt).slice(0, 220)}` : ''
-  return `${a.title}${resumo}\n\n🔗 Leia no Explosão Solar (link na bio · explosaosolar.com)\n\n${tags} #explosaosolar`
+  return `${a.title}${resumo}\n\n📲 Notícia completa no link da bio\n\n${tags} #explosaosolar`
 }
 
 async function main() {
