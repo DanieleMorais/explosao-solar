@@ -35,7 +35,7 @@ async function main() {
   if (!email.emailConfigurado()) return log('RESEND_API_KEY ausente — abortando')
 
   const dataFmt = dataHoje()
-  const noticias = ultimasNoticias(5).map((a) => ({ title: a.title, slug: a.slug, category: a.category }))
+  const noticias = ultimasNoticias(5).map((a) => ({ title: a.title, slug: a.slug, category: a.category, imagem: a.imagem, excerpt: a.excerpt }))
   log(`resumo do dia: ${noticias.length} notícias`)
 
   let inscritos = []

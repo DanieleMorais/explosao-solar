@@ -1,0 +1,26 @@
+name: Monitor de saúde
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: monitor
+  cancel-in-progress: true
+
+jobs:
+  checar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Credenciais
+        run: |
+          cat > .env.robo <<'EOF'
+          RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
+          FIREBASE_SA_B64=${{ secrets.FIREBASE_SA_B64 }}
+          EOF
+      - name: Checar
+        run: node scripts/monitor.js

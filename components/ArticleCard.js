@@ -24,6 +24,9 @@ function Meta({ article, lang, light = false }) {
 
 export function HeroCard({ article, lang = 'pt' }) {
   const color = catColor(article.categorySlug)
+  const bg = article.imagem
+    ? `linear-gradient(180deg, ${color}22 0%, rgba(16,19,34,0.55) 42%, rgba(16,19,34,0.94) 100%), url('${article.imagem}')`
+    : `radial-gradient(120% 140% at 85% -10%, ${color}55, transparent 55%), linear-gradient(140deg, ${color} 0%, #101322 78%)`
   return (
     <Link
       href={articleHref(lang, article.slug)}
@@ -35,7 +38,9 @@ export function HeroCard({ article, lang = 'pt' }) {
         minHeight: 380,
         borderRadius: t.radius,
         padding: 'clamp(22px, 4vw, 36px)',
-        background: `radial-gradient(120% 140% at 85% -10%, ${color}55, transparent 55%), linear-gradient(140deg, ${color} 0%, #101322 78%)`,
+        background: bg,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         color: '#fff',
         boxShadow: t.shadow,
         overflow: 'hidden',
@@ -81,12 +86,18 @@ export function Card({ article, lang = 'pt', compact = false }) {
         background: t.card,
         borderRadius: t.radius,
         border: `1px solid ${t.line}`,
-        borderTop: `4px solid ${color}`,
-        padding: compact ? '18px 20px' : '22px 24px',
+        borderTop: article.imagem && !compact ? 'none' : `4px solid ${color}`,
+        overflow: 'hidden',
         boxShadow: t.shadow,
         height: '100%',
       }}
     >
+      {article.imagem && !compact && (
+        <div style={{ margin: '-1px -1px 0', aspectRatio: '16 / 9', overflow: 'hidden', background: '#E7E4DB', borderTop: `4px solid ${color}` }}>
+          <img src={article.imagem} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        </div>
+      )}
+      <div style={{ display: 'flex', flexDirection: 'column', flex: 1, padding: compact ? '18px 20px' : '20px 24px 22px' }}>
       <span style={{ color, fontWeight: 800, fontSize: 11.5, letterSpacing: 1.6, textTransform: 'uppercase', marginBottom: 10 }}>
         {catLabel(lang, article.categorySlug)}
       </span>
@@ -111,6 +122,7 @@ export function Card({ article, lang = 'pt', compact = false }) {
       )}
       <div style={{ marginTop: 'auto' }}>
         <Meta article={article} lang={lang} />
+      </div>
       </div>
     </Link>
   )

@@ -40,7 +40,7 @@ export default function ArticleView({ lang = 'pt', slug }) {
     articleSection: catLabel(lang, article.categorySlug),
     keywords: (article.tags || []).join(', '),
     mainEntityOfPage: url,
-    image: [`${url}/opengraph-image`],
+    image: [article.imagem, `${url}/opengraph-image`].filter(Boolean),
     wordCount: article.contentHtml.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length,
     timeRequired: `PT${article.readingMinutes}M`,
     isAccessibleForFree: true,
@@ -96,6 +96,29 @@ export default function ArticleView({ lang = 'pt', slug }) {
           </div>
           <ShareButtons url={url} title={article.title} lang={lang} />
         </div>
+
+        {article.imagem && (
+          <figure style={{ margin: '0 0 30px' }}>
+            <img
+              src={article.imagem}
+              alt={article.title}
+              loading="eager"
+              style={{ width: '100%', height: 'auto', borderRadius: 10, display: 'block', background: '#F1EFE8' }}
+            />
+            {article.imagemCredito && (
+              <figcaption style={{ fontSize: 12, color: t.muted, marginTop: 8, lineHeight: 1.45 }}>
+                {lang === 'en' ? 'Photo' : lang === 'es' ? 'Foto' : 'Imagem'}:{' '}
+                {article.imagemCreditoUrl ? (
+                  <a href={article.imagemCreditoUrl} target="_blank" rel="noopener noreferrer nofollow" className="hoverlink" style={{ color: t.muted }}>
+                    {article.imagemCredito}
+                  </a>
+                ) : (
+                  article.imagemCredito
+                )}
+              </figcaption>
+            )}
+          </figure>
+        )}
 
         <div className="prose" style={{ fontFamily: 'var(--font-serif), Georgia, serif' }} dangerouslySetInnerHTML={{ __html: article.contentHtml }} />
 
