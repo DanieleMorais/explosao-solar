@@ -1,5 +1,7 @@
 import { getAllArticles, CATEGORIES, SITE } from '@/lib/content'
 import { withLang } from '@/lib/site'
+import { ESTADOS } from '@/lib/brasil'
+import { TOP_CIDADES } from '@/lib/cidades-br'
 
 const LANGS = ['pt', 'en', 'es']
 const HREF = { pt: 'pt-BR', en: 'en', es: 'es' }
@@ -23,9 +25,16 @@ export default function sitemap() {
   for (const lang of LANGS) {
     out.push(entry('', lang, { lastModified: now, changeFrequency: 'hourly', priority: 1 }))
     out.push(entry('/clima', lang, { lastModified: now, changeFrequency: 'hourly', priority: 0.6 }))
+    out.push(entry('/clima/brasil', lang, { lastModified: now, changeFrequency: 'daily', priority: 0.7 }))
     out.push(entry('/busca', lang, { lastModified: now, changeFrequency: 'monthly', priority: 0.4 }))
     for (const c of CATEGORIES) {
       out.push(entry(`/${c.slug}`, lang, { lastModified: now, changeFrequency: 'daily', priority: 0.8 }))
+    }
+    for (const e of ESTADOS) {
+      out.push(entry(`/clima/brasil/${e.uf.toLowerCase()}`, lang, { lastModified: now, changeFrequency: 'daily', priority: 0.6 }))
+    }
+    for (const c of TOP_CIDADES) {
+      out.push(entry(`/clima/brasil/${c.uf.toLowerCase()}/${c.slug}`, lang, { lastModified: now, changeFrequency: 'daily', priority: 0.6 }))
     }
     for (const a of getAllArticles(lang)) {
       out.push(

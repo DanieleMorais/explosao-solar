@@ -14,8 +14,8 @@ export async function generateMetadata({ params }) {
   if (!e) return {}
   const nome = titulo(cidade)
   return {
-    title: `Clima em ${nome} (${e.uf}) — previsão do tempo`,
-    description: `Previsão do tempo em ${nome}, ${e.nome}: temperatura agora, 5 dias e clima por bairro. Atualizado em tempo real.`,
+    title: `Previsão do tempo em ${nome}, ${e.uf} — hoje, amanhã e 5 dias`,
+    description: `Previsão do tempo em ${nome} hoje e para os próximos dias: temperatura, chuva, clima por bairro e como é o tempo em ${nome} ao longo do ano. Atualizado em tempo real.`,
     alternates: alternates('pt', `/clima/brasil/${e.uf.toLowerCase()}/${cidade}`),
   }
 }
