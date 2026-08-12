@@ -35,8 +35,15 @@ const legenda = (a) => {
   return `${a.title}${resumo}\n\n📲 Notícia completa no link da bio\n\n${tags} #explosaosolar`
 }
 
+const RAW = 'https://raw.githubusercontent.com/DanieleMorais/explosao-solar/main/public/cards'
 const token = () => fs.readFileSync(TOKEN_FILE, 'utf8').split(/\r?\n/)[0].trim()
 const espera = (ms) => new Promise((s) => setTimeout(s, ms))
+
+// usa o card ilustrado (se existir em public/cards) via URL pública do GitHub; senão a foto
+function imagemDoPost(slug, a) {
+  const local = path.join(__dirname, '..', 'public', 'cards', slug + '.png')
+  return fs.existsSync(local) ? `${RAW}/${slug}.png` : a.imagem
+}
 
 async function form(url, campos) {
   const r = await fetch(url, {
@@ -50,7 +57,7 @@ async function form(url, campos) {
 async function postar(slug) {
   const t = token()
   const a = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content', 'articles', slug + '.json'), 'utf8'))
-  const c = await form(`${GRAPH}/${IG_ID}/media`, { image_url: a.imagem, caption: legenda(a), access_token: t })
+  const c = await form(`${GRAPH}/${IG_ID}/media`, { image_url: imagemDoPost(slug, a), caption: legenda(a), access_token: t })
   if (!c.id) return { erro: c.error?.error_user_msg || c.error?.message || JSON.stringify(c) }
   const pub = await form(`${GRAPH}/${IG_ID}/media_publish`, { creation_id: c.id, access_token: t })
   if (!pub.id) return { erro: pub.error?.error_user_msg || pub.error?.message || JSON.stringify(pub) }

@@ -109,9 +109,15 @@ async function postarFacebook(a, token, pageId) {
   return j.id
 }
 
+const RAW_CARDS = 'https://raw.githubusercontent.com/DanieleMorais/explosao-solar/main/public/cards'
+function imagemDoPost(a) {
+  const local = path.join(ROOT, 'public', 'cards', a.slug + '.png')
+  return fs.existsSync(local) ? `${RAW_CARDS}/${a.slug}.png` : a.imagem
+}
+
 async function postarInstagram(a, token, igId) {
-  // 1) cria o container com a imagem + legenda
-  const c = await form(`${GRAPH}/${igId}/media`, { image_url: a.imagem, caption: legenda(a), access_token: token })
+  // 1) cria o container com a imagem (card ilustrado, se existir) + legenda
+  const c = await form(`${GRAPH}/${igId}/media`, { image_url: imagemDoPost(a), caption: legenda(a), access_token: token })
   if (!c.ok || !c.j.id) throw new Error(`IG media: ${c.j?.error?.error_user_msg || c.j?.error?.message || ''}`)
   // 2) publica o container
   const p = await form(`${GRAPH}/${igId}/media_publish`, { creation_id: c.j.id, access_token: token })

@@ -39,6 +39,8 @@ jobs:
         run: node scripts/robo-noticias.js --max 6 || true
       - name: Imagens
         run: node scripts/imagens.js --limite 30 || true
+      - name: Cards ilustrados (IA)
+        run: node scripts/fazer-cards.js 12 || true
       - name: Publicar conteúdo
         run: |
           git config user.name "Explosao Solar Bot"

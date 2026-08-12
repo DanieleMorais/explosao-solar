@@ -28,11 +28,14 @@ async function main() {
   const n = parseInt(args.find((a) => /^\d+$/.test(a)) || '10', 10)
   const slugs = explicitos.length ? explicitos : ultimas(n)
 
+  const forcar = args.includes('--forcar')
   fs.mkdirSync(CARDS, { recursive: true })
   fs.mkdirSync(TMP, { recursive: true })
   const feitos = []
   for (const slug of slugs) {
+    if (slug.startsWith('--')) continue
     const saidaCard = path.join(CARDS, slug + '.png')
+    if (fs.existsSync(saidaCard) && !forcar) continue
     try {
       let bg = null
       try {
