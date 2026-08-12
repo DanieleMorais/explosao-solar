@@ -17,18 +17,15 @@ const IG_ID = '17841440791860842'
 const GRAPH = 'https://graph.facebook.com/v20.0'
 const TOKEN_FILE = 'C:/Users/Administrator/OneDrive/Documentos/documentos/token explosao.txt'
 
-function ler(f) {
-  return fs.readFileSync(f, 'utf8').replace(/[\s\r\n]+/g, '')
-}
-
-function acharAppSecret() {
-  if (process.argv[2]) return process.argv[2].trim()
-  if (process.env.META_APP_SECRET) return process.env.META_APP_SECRET.trim()
-  const dir = 'C:/Users/Administrator/OneDrive/Documentos/documentos'
-  for (const nome of fs.readdirSync(dir)) {
-    if (/app.?secret|secret.?app|chave.?secreta/i.test(nome)) return ler(path.join(dir, nome))
-  }
-  throw new Error('app secret não encontrado — passe como argumento ou salve em "app secret.txt"')
+// O arquivo tem 3 linhas: token de usuário (EAA...), App ID (dígitos) e App Secret (32 hex).
+function lerCredenciais() {
+  const linhas = fs.readFileSync(TOKEN_FILE, 'utf8').split(/\r?\n/).map((s) => s.trim()).filter(Boolean)
+  const token = linhas.find((l) => /^EAA/.test(l))
+  const appSecret = linhas.find((l) => /^[a-f0-9]{32}$/i.test(l))
+  const appId = linhas.find((l) => /^\d{15,17}$/.test(l)) || APP_ID
+  if (!token) throw new Error('token (EAA...) não encontrado no arquivo')
+  if (!appSecret) throw new Error('app secret (32 hex) não encontrado no arquivo')
+  return { token, appSecret, appId }
 }
 
 function tokenGithub() {
@@ -50,12 +47,11 @@ async function gh(tok, url, opts = {}) {
 
 async function main() {
   await sodium.ready
-  const curto = ler(TOKEN_FILE)
-  const appSecret = acharAppSecret()
+  const { token: curto, appSecret, appId } = lerCredenciais()
 
   console.log('trocando token curto por um de 60 dias...')
   const ex = await fetch(
-    `${GRAPH}/oauth/access_token?grant_type=fb_exchange_token&client_id=${APP_ID}&client_secret=${appSecret}&fb_exchange_token=${curto}`
+    `${GRAPH}/oauth/access_token?grant_type=fb_exchange_token&client_id=${appId}&client_secret=${appSecret}&fb_exchange_token=${curto}`
   ).then((r) => r.json())
   if (!ex.access_token) throw new Error('troca falhou: ' + JSON.stringify(ex.error || ex))
   const longo = ex.access_token
@@ -64,10 +60,10 @@ async function main() {
   const exp = dbg.data?.expires_at ? new Date(dbg.data.expires_at * 1000).toLocaleString('pt-BR') : 'longa duração'
   console.log(`novo token ok — expira: ${exp}`)
 
-  // guarda o token longo de volta no arquivo (pra próxima renovação partir dele)
-  fs.writeFileSync(TOKEN_FILE, longo)
+  // guarda o token longo de volta no arquivo (mantendo App ID e Secret pra próxima renovação)
+  fs.writeFileSync(TOKEN_FILE, `${longo}\n${appId}\n${appSecret}\n`)
 
-  const secrets = { META_TOKEN: longo, META_IG_ID: IG_ID, META_APP_ID: APP_ID, META_APP_SECRET: appSecret }
+  const secrets = { META_TOKEN: longo, META_IG_ID: IG_ID, META_APP_ID: appId, META_APP_SECRET: appSecret }
 
   const tok = tokenGithub()
   const chave = await gh(tok, `/repos/${REPO}/actions/secrets/public-key`)

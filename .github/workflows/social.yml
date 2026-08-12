@@ -29,7 +29,7 @@ jobs:
           META_APP_SECRET=${{ secrets.META_APP_SECRET }}
           EOF
       - name: Postar
-        run: node scripts/social.js --max 3 || true
+        run: node scripts/social.js --max 1 || true
       - name: Salvar estado
         run: |
           git config user.name "Explosao Solar Bot"

@@ -88,46 +88,42 @@ async function renovarToken(token) {
   }
 }
 
-async function postarFacebook(a, token, pageId) {
-  const r = await fetch(`${GRAPH}/${pageId}/feed`, {
+// form-encoded (x-www-form-urlencoded) — mais confiável que JSON com a Graph API
+async function form(url, campos) {
+  const r = await fetch(url, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      message: `${a.title}\n\n${a.excerpt ? String(a.excerpt).slice(0, 240) : ''}`,
-      link: `${SITE}/noticia/${a.slug}`,
-      access_token: token,
-    }),
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(campos).toString(),
   })
   const j = await r.json().catch(() => ({}))
-  if (!r.ok) throw new Error(`FB ${r.status}: ${j?.error?.message || ''}`)
+  return { ok: r.ok, j }
+}
+
+async function postarFacebook(a, token, pageId) {
+  const { ok, j } = await form(`${GRAPH}/${pageId}/feed`, {
+    message: `${a.title}\n\n${a.excerpt ? String(a.excerpt).slice(0, 240) : ''}`,
+    link: `${SITE}/noticia/${a.slug}`,
+    access_token: token,
+  })
+  if (!ok) throw new Error(`FB: ${j?.error?.error_user_msg || j?.error?.message || ''}`)
   return j.id
 }
 
 async function postarInstagram(a, token, igId) {
   // 1) cria o container com a imagem + legenda
-  const c = await fetch(`${GRAPH}/${igId}/media`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ image_url: a.imagem, caption: legenda(a), access_token: token }),
-  })
-  const cj = await c.json().catch(() => ({}))
-  if (!c.ok) throw new Error(`IG media ${c.status}: ${cj?.error?.message || ''}`)
+  const c = await form(`${GRAPH}/${igId}/media`, { image_url: a.imagem, caption: legenda(a), access_token: token })
+  if (!c.ok || !c.j.id) throw new Error(`IG media: ${c.j?.error?.error_user_msg || c.j?.error?.message || ''}`)
   // 2) publica o container
-  const p = await fetch(`${GRAPH}/${igId}/media_publish`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ creation_id: cj.id, access_token: token }),
-  })
-  const pj = await p.json().catch(() => ({}))
-  if (!p.ok) throw new Error(`IG publish ${p.status}: ${pj?.error?.message || ''}`)
-  return pj.id
+  const p = await form(`${GRAPH}/${igId}/media_publish`, { creation_id: c.j.id, access_token: token })
+  if (!p.ok || !p.j.id) throw new Error(`IG publish: ${p.j?.error?.error_user_msg || p.j?.error?.message || ''}`)
+  return p.j.id
 }
 
 async function main() {
   carregarEnv()
   const dry = process.argv.includes('--dry')
   const seed = process.argv.includes('--seed')
-  const max = process.argv.includes('--max') ? parseInt(process.argv[process.argv.indexOf('--max') + 1], 10) : 2
+  const max = process.argv.includes('--max') ? parseInt(process.argv[process.argv.indexOf('--max') + 1], 10) : 1
 
   let token = process.env.META_TOKEN
   const pageId = process.env.META_PAGE_ID
