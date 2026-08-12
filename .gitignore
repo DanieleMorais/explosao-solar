@@ -11,3 +11,5 @@ npm-debug.log*
 scripts/*.log
 content/.ultimo-deploy
 scripts/*.lock
+scripts/whatsapp/node_modules/
+scripts/whatsapp/.wa-auth/

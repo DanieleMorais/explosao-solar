@@ -1,0 +1,22 @@
+name: Resumo diário por e-mail
+on:
+  schedule:
+    - cron: '0 10 * * *' # 10:00 UTC = 07:00 no horário de Brasília
+  workflow_dispatch:
+
+jobs:
+  enviar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Credenciais
+        run: |
+          cat > .env.robo <<'EOF'
+          RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
+          FIREBASE_SA_B64=${{ secrets.FIREBASE_SA_B64 }}
+          EOF
+      - name: Enviar resumo diário
+        run: node scripts/enviar-digest.js
