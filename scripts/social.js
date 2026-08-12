@@ -71,6 +71,23 @@ function legenda(a) {
   return `${a.title}${resumo}\n\n🔗 Leia no Explosão Solar (link na bio / explosaosolar.com)\n\n${tags} #explosaosolar`
 }
 
+// Renova a janela de acesso do token de longa duração (usa app id + secret).
+// Mantém o token vivo indefinidamente enquanto o robô rodar. Falha = usa o atual.
+async function renovarToken(token) {
+  const id = process.env.META_APP_ID
+  const secret = process.env.META_APP_SECRET
+  if (!id || !secret) return token
+  try {
+    const j = await fetch(
+      `${GRAPH}/oauth/access_token?grant_type=fb_exchange_token&client_id=${id}&client_secret=${secret}&fb_exchange_token=${token}`,
+      { signal: AbortSignal.timeout(15000) }
+    ).then((r) => r.json())
+    return j.access_token || token
+  } catch {
+    return token
+  }
+}
+
 async function postarFacebook(a, token, pageId) {
   const r = await fetch(`${GRAPH}/${pageId}/feed`, {
     method: 'POST',
@@ -112,10 +129,11 @@ async function main() {
   const seed = process.argv.includes('--seed')
   const max = process.argv.includes('--max') ? parseInt(process.argv[process.argv.indexOf('--max') + 1], 10) : 2
 
-  const token = process.env.META_TOKEN
+  let token = process.env.META_TOKEN
   const pageId = process.env.META_PAGE_ID
   const igId = process.env.META_IG_ID
   const ligado = token && (pageId || igId) && !dry
+  if (ligado) token = await renovarToken(token)
 
   const estado = carregarEstado()
 

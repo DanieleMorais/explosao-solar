@@ -25,6 +25,8 @@ jobs:
           META_TOKEN=${{ secrets.META_TOKEN }}
           META_PAGE_ID=${{ secrets.META_PAGE_ID }}
           META_IG_ID=${{ secrets.META_IG_ID }}
+          META_APP_ID=${{ secrets.META_APP_ID }}
+          META_APP_SECRET=${{ secrets.META_APP_SECRET }}
           EOF
       - name: Postar
         run: node scripts/social.js --max 3 || true
