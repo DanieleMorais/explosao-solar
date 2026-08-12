@@ -47,7 +47,7 @@ async function clima() {
 }
 
 function ultimasNoticias(n = 5) {
-  const arts = fs
+  const todas = fs
     .readdirSync(PT_DIR)
     .filter((f) => f.endsWith('.json'))
     .map((f) => {
@@ -59,8 +59,22 @@ function ultimasNoticias(n = 5) {
     })
     .filter((a) => a && a.title && a.slug)
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
-    .slice(0, n)
-  return arts
+
+  // Diversifica: no máximo 1 por editoria numa 1ª passada (evita 5 do mesmo assunto),
+  // depois completa com as mais recentes que sobraram.
+  const escolhidas = []
+  const usadasCat = new Set()
+  for (const a of todas) {
+    if (escolhidas.length >= n) break
+    if (usadasCat.has(a.categorySlug)) continue
+    usadasCat.add(a.categorySlug)
+    escolhidas.push(a)
+  }
+  for (const a of todas) {
+    if (escolhidas.length >= n) break
+    if (!escolhidas.includes(a)) escolhidas.push(a)
+  }
+  return escolhidas.slice(0, n)
 }
 
 async function gerarDigest() {
