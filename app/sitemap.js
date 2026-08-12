@@ -22,6 +22,7 @@ export default function sitemap() {
 
   for (const lang of LANGS) {
     out.push(entry('', lang, { lastModified: now, changeFrequency: 'hourly', priority: 1 }))
+    out.push(entry('/clima', lang, { lastModified: now, changeFrequency: 'hourly', priority: 0.6 }))
     out.push(entry('/busca', lang, { lastModified: now, changeFrequency: 'monthly', priority: 0.4 }))
     for (const c of CATEGORIES) {
       out.push(entry(`/${c.slug}`, lang, { lastModified: now, changeFrequency: 'daily', priority: 0.8 }))
