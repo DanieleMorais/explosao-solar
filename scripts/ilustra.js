@@ -4,20 +4,22 @@
 const fs = require('fs')
 const path = require('path')
 
-const CAT = {
-  mundo: 'world geopolitics, globe, international',
-  brasil: 'Brazil, brazilian identity',
-  politica: 'politics, government institutions, democracy',
-  economia: 'economy and finance, markets, money abstract',
-  tecnologia: 'technology and artificial intelligence, circuits, digital',
-  ciencia: 'science, discovery, laboratory, cosmos',
-  esportes: 'sports, movement, energy, stadium abstract',
-  cultura: 'culture, art, music, cinema',
+// Sujeito + Contexto simbólico por editoria (fórmula de 5 componentes do Google)
+const SUBJECT = {
+  mundo: 'A lone silhouetted figure standing before a vast luminous world horizon at dusk, distant continents suggested in light',
+  brasil: 'A sweeping Brazilian city skyline silhouette under a golden tropical dusk, mountains and sea in the distance',
+  politica: 'Grand neoclassical government architecture with tall columns and a wide empty hall in dramatic chiaroscuro light',
+  economia: 'An abstract luminous financial skyline of glass towers with flowing streaks of golden light trails',
+  tecnologia: 'Abstract glowing digital forms, flowing circuits and particles of light suspended in dark space',
+  ciencia: 'A cosmic laboratory scene with glowing particles, orbiting light and distant starfields',
+  esportes: 'A dynamic athletic silhouette caught mid-motion under dramatic stadium floodlights, energy trails',
+  cultura: 'An elegant empty stage and artistic set bathed in warm dramatic spotlight, curtains and haze',
 }
 
 function prompt(a) {
-  const tema = CAT[a.categorySlug] || 'news'
-  return `Cinematic atmospheric editorial photograph evoking ${tema}, mood inspired by "${a.title}". Dark navy tones (#0C0E1A) with warm orange and golden light, elegant, moody, depth of field, magazine-quality, photorealistic scene or abstract texture. CRITICAL: absolutely NO text, NO letters, NO words, NO numbers, NO typography, NO logos, NO emblems, NO badges, NO signage, NO watermark, NO posters, NO screens with writing. Just a clean atmospheric scene. Do not depict identifiable real people or a specific real event.`
+  const s = SUBJECT[a.categorySlug] || 'An atmospheric symbolic editorial scene'
+  // Sujeito/Contexto → Ação/Mood → Composição → Estilo(câmera/luz/cor) → restrições
+  return `${s}. Mood evoked by the news theme "${a.title}" — symbolic and general, never a literal depiction of a real event or any identifiable real person. Wide cinematic composition, centered, strong sense of depth. Editorial magazine photograph, shot on Canon EOS R5, 35mm f/2 lens, dramatic directional lighting, dark navy color palette (#0C0E1A) with warm orange and golden highlights, cinematic color grade, richly detailed, elegant. CRITICAL: absolutely NO text, NO letters, NO words, NO numbers, NO typography, NO logos, NO emblems, NO badges, NO signage, NO watermark, NO posters or screens with writing.`
 }
 
 async function gerar(slug, saida) {

@@ -24,7 +24,7 @@ function ultimas(n) {
 
 async function main() {
   const args = process.argv.slice(2)
-  const explicitos = args.filter((a) => !/^\d+$/.test(a))
+  const explicitos = args.filter((a) => !/^\d+$/.test(a) && !a.startsWith('--'))
   const n = parseInt(args.find((a) => /^\d+$/.test(a)) || '10', 10)
   const slugs = explicitos.length ? explicitos : ultimas(n)
 
