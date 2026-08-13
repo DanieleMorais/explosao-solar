@@ -50,3 +50,5 @@ jobs:
             git commit -m "Notícias do mundo: conteúdo automático [skip ci]"
             git push
           fi
+      - name: Avisar o Google (Indexing API)
+        run: node scripts/indexar-google.js 8 || true
