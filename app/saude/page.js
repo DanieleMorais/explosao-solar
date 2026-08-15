@@ -1,14 +1,18 @@
-import crypto from 'crypto'
 import { listar } from '@/lib/firestore-rest'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 export const metadata = { title: 'Painel de Saúde', robots: { index: false, follow: false } }
 
-function tokenValido(t) {
-  const secret = process.env.FIREBASE_SA_B64 || ''
-  const esperado = crypto.createHash('sha256').update(secret + 'painel-saude-v1').digest('hex').slice(0, 20)
-  return t && t === esperado
+async function tokenValido(t) {
+  if (!t) return false
+  try {
+    const docs = await listar('sistema')
+    const p = docs.find((d) => d.id === 'painel')
+    return !!(p && p.token && t === p.token)
+  } catch {
+    return false
+  }
 }
 
 function quando(iso) {
@@ -23,7 +27,7 @@ const C = { bg: '#0C0E1A', card: '#161A2C', line: 'rgba(255,255,255,0.10)', ink:
 
 export default async function Painel({ searchParams }) {
   const sp = await searchParams
-  if (!tokenValido(sp?.t)) {
+  if (!(await tokenValido(sp?.t))) {
     return (
       <div style={{ minHeight: '100vh', background: C.bg, color: C.ink, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'system-ui,sans-serif' }}>
         <div style={{ textAlign: 'center' }}>
