@@ -60,7 +60,7 @@ async function main() {
 
   let anteriores = {}
   try {
-    if (listar) for (const d of await listar('monitor_sites')) anteriores[d.id] = d
+    if (listar) for (const d of await listar('monitor_sites')) anteriores[d._id] = d
   } catch {}
 
   const logs = []

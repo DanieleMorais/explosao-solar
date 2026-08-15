@@ -91,7 +91,7 @@ async function main() {
 
   let anterior = null
   try {
-    if (listar) anterior = (await listar('sistema')).find((d) => d.id === 'monitor') || null
+    if (listar) anterior = (await listar('sistema')).find((d) => d._id === 'monitor') || null
   } catch {}
 
   const mudou = !anterior || anterior.status !== status

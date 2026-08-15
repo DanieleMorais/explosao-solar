@@ -8,7 +8,7 @@ async function tokenValido(t) {
   if (!t) return false
   try {
     const docs = await listar('sistema')
-    const p = docs.find((d) => d.id === 'painel')
+    const p = docs.find((d) => d._id === 'painel')
     return !!(p && p.token && t === p.token)
   } catch {
     return false
@@ -75,7 +75,7 @@ export default async function Painel({ searchParams }) {
           {sites.map((s) => {
             const bad = s.status === 'PROBLEMA'
             return (
-              <a key={s.id} href={s.url} target="_blank" rel="noreferrer" style={{ ...box, textDecoration: 'none', color: C.ink, borderLeft: `4px solid ${bad ? C.bad : C.ok}`, display: 'block' }}>
+              <a key={s._id} href={s.url} target="_blank" rel="noreferrer" style={{ ...box, textDecoration: 'none', color: C.ink, borderLeft: `4px solid ${bad ? C.bad : C.ok}`, display: 'block' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <span style={{ width: 10, height: 10, borderRadius: 999, background: bad ? C.bad : C.ok, boxShadow: `0 0 8px ${bad ? C.bad : C.ok}` }} />
                   <span style={{ fontWeight: 800, fontSize: 15 }}>{s.nome}</span>
