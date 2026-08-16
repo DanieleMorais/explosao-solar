@@ -14,3 +14,5 @@ scripts/*.lock
 scripts/whatsapp/node_modules/
 scripts/whatsapp/.wa-auth/
 scripts/*.run.log
+scripts/shot*.js
+scripts/*.log
