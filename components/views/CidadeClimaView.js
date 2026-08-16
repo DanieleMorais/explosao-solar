@@ -2,11 +2,13 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { estado, geocodificar } from '@/lib/brasil'
 import { cidadeBR } from '@/lib/cidades-br'
-import { previsaoPonto, climaAnual } from '@/lib/clima'
+import { previsaoPonto, climaAnual, wmo } from '@/lib/clima'
 import { t } from '@/lib/tokens'
 import { withLang } from '@/lib/site'
 import { CardClima } from '@/components/clima/ClimaBits'
 import BuscaClima from '@/components/clima/BuscaClima'
+import Cenario from '@/components/clima/Cenario'
+import FaixaHoras from '@/components/clima/FaixaHoras'
 
 export const revalidate = 1800
 
@@ -66,22 +68,45 @@ export default async function CidadeClimaView({ lang = 'pt', uf, cidade }) {
   ])
 
   const estacoes = anual ? [anual.verao, anual.outono, anual.inverno, anual.primavera] : []
+  const voltarHref = withLang(lang, `/clima/brasil/${e.uf.toLowerCase()}`)
+  const cond = clima ? wmo(clima.agora.code, lang) : null
 
   return (
     <div>
-      <section style={{ background: `radial-gradient(110% 160% at 85% -20%, ${t.sun}55, transparent 55%), linear-gradient(135deg, ${t.sun} 0%, #101322 80%)`, color: '#fff', padding: '40px 0 36px' }}>
-        <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: t.pad }}>
-          <Link href={withLang(lang, `/clima/brasil/${e.uf.toLowerCase()}`)} className="hoverlink" style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)' }}>{L.voltar(e.nome)}</Link>
-          <h1 style={{ fontSize: 'clamp(28px, 5vw, 42px)', fontWeight: 900, letterSpacing: -0.8, marginTop: 10 }}>
-            {lang === 'en' ? `Weather in ${nomeCidade}` : lang === 'es' ? `Clima en ${nomeCidade}` : `Previsão do tempo em ${nomeCidade}`}
-          </h1>
-          <p style={{ fontSize: 14.5, color: 'rgba(255,255,255,0.8)', marginTop: 6 }}>{e.nome} · {e.uf}</p>
-        </div>
-      </section>
+      {clima ? (
+        <Cenario
+          code={clima.agora.code}
+          isDia={clima.agora.isDia}
+          temp={clima.agora.temp}
+          sensacao={clima.agora.sensacao}
+          emoji={cond.emoji}
+          texto={cond.texto}
+          nome={nomeCidade}
+          sub={`${e.nome} · ${e.uf}`}
+          voltarHref={voltarHref}
+          voltarLabel={L.voltar(e.nome)}
+          lang={lang}
+        />
+      ) : (
+        <section style={{ background: `radial-gradient(110% 160% at 85% -20%, ${t.sun}55, transparent 55%), linear-gradient(135deg, ${t.sun} 0%, #101322 80%)`, color: '#fff', padding: '40px 0 36px' }}>
+          <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: t.pad }}>
+            <Link href={voltarHref} className="hoverlink" style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)' }}>{L.voltar(e.nome)}</Link>
+            <h1 style={{ fontSize: 'clamp(28px, 5vw, 42px)', fontWeight: 900, letterSpacing: -0.8, marginTop: 10 }}>
+              {lang === 'en' ? `Weather in ${nomeCidade}` : lang === 'es' ? `Clima en ${nomeCidade}` : `Previsão do tempo em ${nomeCidade}`}
+            </h1>
+            <p style={{ fontSize: 14.5, color: 'rgba(255,255,255,0.8)', marginTop: 6 }}>{e.nome} · {e.uf}</p>
+          </div>
+        </section>
+      )}
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 3vw, 56px)' }}>
         {clima ? (
-          <CardClima titulo={nomeCidade} subtitulo={coords.rotulo} clima={clima} lang={lang} destaque />
+          <>
+            <FaixaHoras horas={clima.horas} lang={lang} />
+            <div style={{ marginTop: 22 }}>
+              <CardClima titulo={nomeCidade} subtitulo={coords.rotulo} clima={clima} lang={lang} destaque />
+            </div>
+          </>
         ) : (
           <p style={{ fontSize: 15, color: t.muted }}>{L.semDados}</p>
         )}
