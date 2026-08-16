@@ -63,7 +63,7 @@ async function main() {
   const home = await checarUrl(SITE, 'Explosão Solar')
   if (home) problemas.push(`🏠 Home fora do ar: ${home}`)
 
-  const sitemap = await checarUrl(`${SITE}/sitemap.xml`, '<urlset')
+  const sitemap = await checarUrl(`${SITE}/sitemap.xml`, 'sitemaps.org')
   if (sitemap) problemas.push(`🗺️ Sitemap com erro: ${sitemap}`)
 
   const clima = await checarUrl(`${SITE}/clima/brasil/sp/sao-paulo`)
