@@ -6,7 +6,10 @@ on:
 
 concurrency:
   group: monitor-sites
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   checar:
@@ -19,8 +22,18 @@ jobs:
       - name: Credenciais
         run: |
           cat > .env.robo <<'EOF'
-          FIREBASE_SA_B64=${{ secrets.FIREBASE_SA_B64 }}
           RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
+          MONITOR_EMAIL_PARA=${{ secrets.MONITOR_EMAIL_PARA }}
           EOF
       - name: Checar todos os sites
         run: node scripts/monitor-sites.js
+      - name: Guardar o estado
+        if: always()
+        run: |
+          git config user.name  "Vigia Fada Madrinha"
+          git config user.email "vigia@users.noreply.github.com"
+          git add config/monitor-estado.json
+          git diff --staged --quiet && echo "nada mudou" && exit 0
+          git commit -m "vigia: estado dos sites $(date -u +'%d/%m %H:%M UTC')"
+          git pull --rebase --autostash origin main
+          git push
