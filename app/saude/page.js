@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import { listar } from '@/lib/firestore-rest'
 
 export const dynamic = 'force-dynamic'
@@ -27,7 +28,11 @@ const C = { bg: '#0C0E1A', card: '#161A2C', line: 'rgba(255,255,255,0.10)', ink:
 
 export default async function Painel({ searchParams }) {
   const sp = await searchParams
-  if (!(await tokenValido(sp?.t))) {
+  // No subdomínio próprio (saude.*) o endereço já é privado — abre sem token.
+  // No caminho público explosaosolar.com/saude, exige o token.
+  const host = (await headers()).get('host') || ''
+  const noSubdominio = host.startsWith('saude.')
+  if (!noSubdominio && !(await tokenValido(sp?.t))) {
     return (
       <div style={{ minHeight: '100vh', background: C.bg, color: C.ink, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'system-ui,sans-serif' }}>
         <div style={{ textAlign: 'center' }}>
