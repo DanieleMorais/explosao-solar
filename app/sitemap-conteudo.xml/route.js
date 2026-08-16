@@ -29,6 +29,11 @@ export function GET() {
   itens.push(urlSimples(`${SITE.url}/cotacoes`, { lastModified: now, changeFrequency: 'hourly', priority: 0.8 }))
   itens.push(urlSimples(`${SITE.url}/loterias`, { lastModified: now, changeFrequency: 'hourly', priority: 0.8 }))
   itens.push(urlSimples(`${SITE.url}/feriados`, { lastModified: now, changeFrequency: 'daily', priority: 0.6 }))
+  {
+    const y = now.getFullYear()
+    itens.push(urlSimples(`${SITE.url}/feriados/${y + 1}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
+    itens.push(urlSimples(`${SITE.url}/feriados/${y + 2}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
+  }
 
   for (const p of ['/sobre', '/faq', '/contato', '/politica-de-privacidade', '/politica-de-cookies', '/termos-de-uso']) {
     itens.push(urlSimples(`${SITE.url}${p}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
