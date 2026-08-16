@@ -1,0 +1,296 @@
+{
+  "checadoEm": "2026-08-16T23:50:10.441Z",
+  "total": 31,
+  "comProblema": 1,
+  "sites": [
+    {
+      "id": "explosao-solar",
+      "nome": "Explosão Solar",
+      "url": "https://explosaosolar.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 174,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "universidade-fada-madrinha",
+      "nome": "Universidade Fada Madrinha",
+      "url": "https://universidadefadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 969,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "agencia-fada-madrinha",
+      "nome": "Agência Fada Madrinha",
+      "url": "https://agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 305,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "comunidade-fada-madrinha",
+      "nome": "Comunidade Fada Madrinha",
+      "url": "https://comunidadefadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 323,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "dinheiro-no-dia-a-dia",
+      "nome": "Dinheiro no Dia a Dia",
+      "url": "https://dinheironodiaadia.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 256,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "o-mundo-da-ia",
+      "nome": "O Mundo da IA",
+      "url": "https://omundodaia.blogspot.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 71,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "universo-animes",
+      "nome": "Universo Animes",
+      "url": "https://ouniversoanimes.blogspot.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 76,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "we-love-animes",
+      "nome": "We Love Animes",
+      "url": "https://weloveanimes1.blogspot.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 90,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "pisco-cocina-y-bar",
+      "nome": "Pisco Cocina y Bar",
+      "url": "https://piscococinaybar.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 863,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "help-empresarial",
+      "nome": "Help Empresarial",
+      "url": "https://help.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 201,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "to-com-fome-express",
+      "nome": "Tô Com Fome Express",
+      "url": "https://tocomfome-express.vercel.app",
+      "status": "OK",
+      "problemas": [],
+      "ms": 46,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "gazofilacio-ipb",
+      "nome": "Gazofilácio IPB",
+      "url": "https://gazofilacio-ipb.vercel.app",
+      "status": "OK",
+      "problemas": [],
+      "ms": 219,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "restaurante-ia",
+      "nome": "Restaurante IA",
+      "url": "https://restauranteia.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 174,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "arcane",
+      "nome": "Arcane",
+      "url": "https://arcane.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 134,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "arcane-api",
+      "nome": "Arcane API",
+      "url": "https://arcane-api.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 150,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "cristal-leads",
+      "nome": "Cristal Leads",
+      "url": "https://cristalleads.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 181,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "cristal-hunter",
+      "nome": "Cristal Hunter",
+      "url": "https://cristalhunter.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 1010,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "cristal-trends",
+      "nome": "Cristal Trends",
+      "url": "https://cristal-trends.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 179,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "imagia",
+      "nome": "Imagia",
+      "url": "https://imagia.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 859,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "i-love-music",
+      "nome": "I Love Music",
+      "url": "https://ilovemusic.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 266,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "encena",
+      "nome": "Encena",
+      "url": "https://encena.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 227,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "apice",
+      "nome": "Ápice",
+      "url": "https://apice.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 262,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "visionscore-ai",
+      "nome": "VisionScore AI",
+      "url": "https://visionscoreai.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 837,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "fada-captura",
+      "nome": "Fada Captura",
+      "url": "https://baixarvideo.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 1580,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "painel-seo",
+      "nome": "Painel SEO",
+      "url": "https://seo.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 948,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "fada-reputacao",
+      "nome": "Fada Reputação",
+      "url": "https://reputacao.universidadefadamadrinha.com",
+      "status": "PROBLEMA",
+      "problemas": [
+        "site inacessível (fetch failed)"
+      ],
+      "ms": 32,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "isernhagen-sistemas",
+      "nome": "Isernhagen Sistemas",
+      "url": "https://www.isernhagensistemas.com.br",
+      "status": "OK",
+      "problemas": [],
+      "ms": 347,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "login-tec",
+      "nome": "Login Tec",
+      "url": "https://login-tec.vercel.app",
+      "status": "OK",
+      "problemas": [],
+      "ms": 276,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "doce-acai",
+      "nome": "Doce Açaí",
+      "url": "https://doce-acai.vercel.app",
+      "status": "OK",
+      "problemas": [],
+      "ms": 230,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "fada-rotas-yeimi",
+      "nome": "Fada Rotas (Yeimi)",
+      "url": "https://fada-rotas.vercel.app",
+      "status": "OK",
+      "problemas": [],
+      "ms": 397,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    },
+    {
+      "id": "macuco-proposta",
+      "nome": "Macuco (proposta)",
+      "url": "https://macuco.agenciafadamadrinha.com",
+      "status": "OK",
+      "problemas": [],
+      "ms": 236,
+      "checadoEm": "2026-08-16T23:50:10.441Z"
+    }
+  ],
+  "historico": [
+    {
+      "site": "Fada Reputação",
+      "tipo": "erro",
+      "descricao": "site inacessível (fetch failed)",
+      "quando": "2026-08-16T23:42:13.775Z"
+    }
+  ]
+}
