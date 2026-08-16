@@ -206,6 +206,32 @@ export default function Header() {
               </Link>
             )
           })()}
+          {lang === 'pt' && (() => {
+            const href = '/loterias'
+            const active = pathname === href
+            return (
+              <Link
+                key="loterias"
+                href={href}
+                className="chipnav"
+                style={{
+                  padding: '7px 15px',
+                  borderRadius: 999,
+                  fontSize: 13.5,
+                  fontWeight: 700,
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
+                  background: active ? t.sunGrad : 'transparent',
+                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
+                }}
+              >
+                🍀 Loterias
+              </Link>
+            )
+          })()}
         </div>
       </nav>
     </header>
