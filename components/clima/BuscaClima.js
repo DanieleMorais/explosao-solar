@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { wmo } from '@/lib/clima'
+import { wmo, iconeClima } from '@/lib/clima'
 import { t } from '@/lib/tokens'
+import FaixaHoras from '@/components/clima/FaixaHoras'
 
 const TXT = {
   pt: { ph: 'Digite sua cidade ou bairro…', btn: 'Ver clima', buscando: 'Buscando…', nada: 'Não encontramos esse lugar. Tente incluir a cidade.', erro: 'Não deu certo — tente de novo.', umid: 'Umidade', vento: 'Vento', hoje: 'Hoje', amanha: 'Amanhã' },
@@ -59,16 +60,19 @@ export default function BuscaClima({ lang = 'pt', uf = '', placeholder }) {
               <p style={{ fontSize: 13.5, color: t.inkSoft, marginTop: 4 }}>{wmo(res.clima.agora.code, lang).texto}</p>
             </div>
             <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: 40, lineHeight: 1 }}>{wmo(res.clima.agora.code, lang).emoji}</div>
+              <div style={{ fontSize: 40, lineHeight: 1 }}>{iconeClima(res.clima.agora.code, res.clima.agora.isDia)}</div>
               <div style={{ fontSize: 38, fontWeight: 900, color: t.ink }}>{res.clima.agora.temp}°</div>
             </div>
           </div>
-          <div style={{ display: 'flex', gap: 14, fontSize: 12.5, color: t.muted, marginBottom: 14, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 14, fontSize: 12.5, color: t.muted, marginBottom: 4, flexWrap: 'wrap' }}>
             {res.clima.agora.sensacao != null && <span>🌡️ {res.clima.agora.sensacao}°</span>}
             <span>💧 {L.umid} {res.clima.agora.umidade}%</span>
             <span>💨 {L.vento} {res.clima.agora.vento} km/h</span>
           </div>
-          <div style={{ display: 'flex', gap: 8, borderTop: `1px solid ${t.line}`, paddingTop: 12 }}>
+
+          {res.clima.horas?.length > 0 && <FaixaHoras horas={res.clima.horas} lang={lang} />}
+
+          <div style={{ display: 'flex', gap: 8, borderTop: `1px solid ${t.line}`, paddingTop: 12, marginTop: 16 }}>
             {res.clima.dias.slice(0, 5).map((d, i) => (
               <div key={d.data} style={{ flex: 1, textAlign: 'center' }}>
                 <div style={{ fontSize: 11, color: t.muted, textTransform: 'capitalize', marginBottom: 3 }}>{diaLabel(d.data, i)}</div>
