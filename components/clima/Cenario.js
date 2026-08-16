@@ -1,11 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { temaClima } from '@/lib/clima'
+import { temaClima, iconeClima } from '@/lib/clima'
 
 // Cenário animado que muda conforme a condição do tempo + dia/noite.
-export default function Cenario({ code, isDia = true, temp, sensacao, emoji, texto, nome, sub, voltarHref, voltarLabel, lang = 'pt' }) {
+export default function Cenario({ code, isDia = true, temp, sensacao, texto, nome, sub, voltarHref, voltarLabel, lang = 'pt' }) {
   const tema = temaClima(code, isDia)
+  const emoji = iconeClima(code, isDia)
   const p = tema.particula
   const ink = tema.escuro ? '#10233a' : '#fff'
   const soft = tema.escuro ? 'rgba(16,35,58,0.72)' : 'rgba(255,255,255,0.82)'

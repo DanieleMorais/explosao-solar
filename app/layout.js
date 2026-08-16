@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import { Archivo, Source_Serif_4 } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -104,14 +103,6 @@ export default function RootLayout({ children }) {
         <CookieBanner />
         <Analytics />
         <LangSync />
-        <Script
-          src="https://pl30671784.effectivecpmnetwork.com/43/03/4c/43034c8cd727687a07f0b7c302db2c8f.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="https://pl30671785.effectivecpmnetwork.com/16/9f/a5/169fa54e49316c546e1d757c665a6f2f.js"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   )

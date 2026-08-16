@@ -1,18 +1,21 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { estado, municipios } from '@/lib/brasil'
-import { previsaoPonto } from '@/lib/clima'
+import { estado } from '@/lib/brasil'
+import { TOP_CIDADES } from '@/lib/cidades-br'
+import { previsaoPonto, previsaoPontos, wmo, iconeClima } from '@/lib/clima'
 import { t } from '@/lib/tokens'
 import { withLang } from '@/lib/site'
 import { CardClima } from '@/components/clima/ClimaBits'
 import BuscaClima from '@/components/clima/BuscaClima'
+import Cenario from '@/components/clima/Cenario'
+import FaixaHoras from '@/components/clima/FaixaHoras'
 
 export const revalidate = 1800
 
 const TXT = {
-  pt: { voltar: '← Clima nos estados', capital: 'Capital', cidades: 'Todas as cidades', buscaTitulo: 'Buscar cidade ou bairro de', total: (n) => `${n} municípios`, atualizado: 'Clima atualizado a cada 30 min · Fonte: Open-Meteo' },
-  en: { voltar: '← Weather by state', capital: 'Capital', cidades: 'All cities', buscaTitulo: 'Search a city or neighborhood in', total: (n) => `${n} municipalities`, atualizado: 'Weather updated every 30 min · Source: Open-Meteo' },
-  es: { voltar: '← Clima por estado', capital: 'Capital', cidades: 'Todas las ciudades', buscaTitulo: 'Buscar ciudad o barrio de', total: (n) => `${n} municipios`, atualizado: 'Clima actualizado cada 30 min · Fuente: Open-Meteo' },
+  pt: { voltar: '← Clima nos estados', capital: 'Capital', principais: 'Principais cidades de', busca: 'Buscar cidade ou bairro de', atualizado: 'Clima atualizado a cada 30 min · Fonte: Open-Meteo' },
+  en: { voltar: '← Weather by state', capital: 'Capital', principais: 'Main cities in', busca: 'Search a city or neighborhood in', atualizado: 'Weather updated every 30 min · Source: Open-Meteo' },
+  es: { voltar: '← Clima por estado', capital: 'Capital', principais: 'Principales ciudades de', busca: 'Buscar ciudad o barrio de', atualizado: 'Clima actualizado cada 30 min · Fuente: Open-Meteo' },
 }
 
 export default async function EstadoClimaView({ lang = 'pt', uf }) {
@@ -20,43 +23,96 @@ export default async function EstadoClimaView({ lang = 'pt', uf }) {
   if (!e) notFound()
   const L = TXT[lang] || TXT.pt
 
-  const [clima, cidades] = await Promise.all([previsaoPonto(e.lat, e.lon), municipios(e.uf)])
+  const principais = TOP_CIDADES.filter((c) => c.uf === e.uf).slice(0, 15)
+
+  const [clima, prevPrincipais] = await Promise.all([
+    previsaoPonto(e.lat, e.lon),
+    principais.length ? previsaoPontos(principais.map((c) => ({ lat: c.lat, lon: c.lon }))) : Promise.resolve([]),
+  ])
+
+  const cond = clima ? wmo(clima.agora.code, lang) : null
+  const voltarHref = withLang(lang, '/clima/brasil')
 
   return (
     <div>
-      <section style={{ background: `radial-gradient(110% 160% at 85% -20%, ${t.sun}55, transparent 55%), linear-gradient(135deg, ${t.sun} 0%, #101322 80%)`, color: '#fff', padding: '40px 0 36px' }}>
-        <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: t.pad }}>
-          <Link href={withLang(lang, '/clima/brasil')} className="hoverlink" style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)' }}>{L.voltar}</Link>
-          <h1 style={{ fontSize: 'clamp(28px, 5vw, 42px)', fontWeight: 900, letterSpacing: -0.8, marginTop: 10 }}>{e.nome}</h1>
-          <p style={{ fontSize: 14.5, color: 'rgba(255,255,255,0.8)', marginTop: 6 }}>{e.regiao} · {L.total(cidades.length)}</p>
-        </div>
-      </section>
-
-      <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: 'clamp(20px, 3vw, 56px)' }}>
-        <div className="grid-1-mobile" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 22, marginBottom: 34, alignItems: 'start' }}>
-          <div>
-            <h2 style={{ fontSize: 13, fontWeight: 900, letterSpacing: 1, textTransform: 'uppercase', color: t.muted, marginBottom: 12 }}>{L.capital} · {e.capital}</h2>
-            <CardClima titulo={e.capital} subtitulo={e.nome} clima={clima} lang={lang} destaque />
+      {clima ? (
+        <Cenario
+          code={clima.agora.code}
+          isDia={clima.agora.isDia}
+          temp={clima.agora.temp}
+          sensacao={clima.agora.sensacao}
+          texto={cond.texto}
+          nome={e.capital}
+          sub={`${e.nome} · ${e.regiao}`}
+          voltarHref={voltarHref}
+          voltarLabel={L.voltar}
+          lang={lang}
+        />
+      ) : (
+        <section style={{ background: `linear-gradient(135deg, ${t.sun} 0%, #101322 80%)`, color: '#fff', padding: '40px 0 36px' }}>
+          <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: t.pad }}>
+            <Link href={voltarHref} className="hoverlink" style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)' }}>{L.voltar}</Link>
+            <h1 style={{ fontSize: 'clamp(28px,5vw,42px)', fontWeight: 900, marginTop: 10 }}>{e.nome}</h1>
           </div>
-          <div style={{ background: t.card, border: `1px solid ${t.line}`, borderRadius: t.radius, padding: 'clamp(18px,3vw,24px)', boxShadow: t.shadow }}>
-            <h2 style={{ fontSize: 15, fontWeight: 800, marginBottom: 12, color: t.ink }}>🔎 {L.buscaTitulo} {e.nome}</h2>
-            <BuscaClima lang={lang} uf={e.uf} />
+        </section>
+      )}
+
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 3vw, 56px)' }}>
+        {clima && <FaixaHoras horas={clima.horas} lang={lang} />}
+
+        {clima && (
+          <div style={{ marginTop: 22 }}>
+            <CardClima titulo={e.capital} subtitulo={`${L.capital} · ${e.nome}`} clima={clima} lang={lang} destaque />
           </div>
+        )}
+
+        <div style={{ background: t.card, border: `1px solid ${t.line}`, borderRadius: t.radius, padding: 'clamp(18px,3vw,24px)', boxShadow: t.shadow, marginTop: 22 }}>
+          <h2 style={{ fontSize: 15, fontWeight: 800, marginBottom: 12, color: t.ink }}>🔎 {L.busca} {e.nome}</h2>
+          <BuscaClima lang={lang} uf={e.uf} />
         </div>
 
-        <h2 style={{ fontSize: 14, fontWeight: 900, letterSpacing: 1, textTransform: 'uppercase', color: t.muted, borderBottom: `2px solid ${t.line}`, paddingBottom: 8, marginBottom: 16 }}>{L.cidades}</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 4 }}>
-          {cidades.map((c) => (
-            <Link
-              key={c.slug}
-              href={withLang(lang, `/clima/brasil/${e.uf.toLowerCase()}/${c.slug}`)}
-              className="hoverlink"
-              style={{ fontSize: 13.5, color: t.inkSoft, padding: '7px 10px', borderRadius: 7, display: 'block' }}
-            >
-              {c.nome}
-            </Link>
-          ))}
-        </div>
+        {principais.length > 0 && (
+          <div style={{ marginTop: 30 }}>
+            <h2 style={{ fontSize: 'clamp(17px,3vw,22px)', fontWeight: 900, letterSpacing: -0.3, marginBottom: 14 }}>
+              {L.principais} {e.nome}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 12 }}>
+              {principais.map((c, i) => {
+                const p = prevPrincipais[i]
+                const temp = p && !p.erro && p.agora ? p.agora.temp : null
+                const ic = p && !p.erro && p.agora ? iconeClima(p.agora.code, true) : '🌡️'
+                return (
+                  <Link
+                    key={c.slug}
+                    href={withLang(lang, `/clima/brasil/${e.uf.toLowerCase()}/${c.slug}`)}
+                    className="card"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: 10,
+                      background: t.card,
+                      border: `1px solid ${t.line}`,
+                      borderRadius: t.radiusSm,
+                      padding: '14px 16px',
+                      boxShadow: t.shadow,
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <div style={{ minWidth: 0 }}>
+                      <div style={{ fontSize: 14.5, fontWeight: 700, color: t.ink, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.nome}</div>
+                      <div style={{ fontSize: 11.5, color: t.muted }}>{e.uf}</div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+                      <span style={{ fontSize: 20 }}>{ic}</span>
+                      {temp !== null && <span style={{ fontSize: 18, fontWeight: 900, color: t.ink }}>{temp}°</span>}
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        )}
 
         <p style={{ fontSize: 12.5, color: t.muted, textAlign: 'center', marginTop: 28 }}>{L.atualizado}</p>
       </div>
