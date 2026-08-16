@@ -25,6 +25,9 @@ export function GET() {
     }
   }
 
+  // utilidades (alto volume de busca)
+  itens.push(urlSimples(`${SITE.url}/cotacoes`, { lastModified: now, changeFrequency: 'hourly', priority: 0.8 }))
+
   for (const p of ['/sobre', '/faq', '/contato', '/politica-de-privacidade', '/politica-de-cookies', '/termos-de-uso']) {
     itens.push(urlSimples(`${SITE.url}${p}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
   }
