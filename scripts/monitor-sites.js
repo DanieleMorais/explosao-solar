@@ -41,30 +41,51 @@ function diasDeSSL(hostname) {
   })
 }
 
+const pausa = (ms) => new Promise((r) => setTimeout(r, ms))
+
+// 429 NÃO é site fora do ar: o servidor respondeu, só está limitando nosso robô.
+// O Blogger/Google faz isso com IP de datacenter (o do GitHub Actions). Chamar
+// isso de queda gera alarme falso — e alarme falso faz a Dani parar de ler o e-mail.
+const ehLimite = (s) => s === 429 || s === 999
+
 async function checarUrl(url, rotulo) {
-  // devolve { problemas[], html, ms } — rotulo entra na mensagem ("sitemap", "robots.txt")
+  // devolve { problemas[], notas[], html, ms, status } — rotulo entra na mensagem
   const problemas = []
+  const notas = []
   const t0 = Date.now()
-  try {
-    const r = await fetch(url, { headers: UA, redirect: 'follow', signal: AbortSignal.timeout(25000) })
-    const ms = Date.now() - t0
-    const html = await r.text()
-    if (!r.ok) {
-      problemas.push(`${rotulo} fora do ar (HTTP ${r.status})`)
-      return { problemas, html, ms, status: r.status, final: r.url }
+  let ultimo = { status: 0, motivo: '' }
+
+  // até 3 tentativas: erro de rede, 5xx e 429 costumam ser passageiros.
+  // Só reclama depois de insistir — assim o e-mail só sai de problema de verdade.
+  for (let tentativa = 1; tentativa <= 3; tentativa++) {
+    if (tentativa > 1) await pausa(tentativa * 4000)
+    try {
+      const r = await fetch(url, { headers: UA, redirect: 'follow', signal: AbortSignal.timeout(25000) })
+      const html = await r.text()
+      if (r.ok) return { problemas, notas, html, ms: Date.now() - t0, status: r.status, final: r.url }
+      ultimo = { status: r.status, motivo: `HTTP ${r.status}` }
+      if (!ehLimite(r.status) && r.status < 500) break // 404, 403… não melhora tentando de novo
+    } catch (e) {
+      ultimo = { status: 0, motivo: e.name === 'TimeoutError' ? 'demorou demais (mais de 25s)' : e.message }
     }
-    return { problemas, html, ms, status: r.status, final: r.url }
-  } catch (e) {
-    const motivo = e.name === 'TimeoutError' ? 'demorou demais (mais de 25s)' : e.message
-    problemas.push(`${rotulo} inacessível (${motivo})`)
-    return { problemas, html: '', ms: Date.now() - t0, status: 0, final: url }
   }
+
+  if (ehLimite(ultimo.status)) {
+    notas.push(`${rotulo} respondeu ${ultimo.status} (o Google está limitando nosso robô) — o site está no ar para quem visita`)
+  } else if (ultimo.status) {
+    problemas.push(`${rotulo} fora do ar (${ultimo.motivo})`)
+  } else {
+    problemas.push(`${rotulo} inacessível (${ultimo.motivo})`)
+  }
+  return { problemas, notas, html: '', ms: Date.now() - t0, status: ultimo.status, final: url }
 }
 
 async function checar(site) {
   const problemas = []
+  const notas = []
   const r = await checarUrl(site.url, 'site')
   problemas.push(...r.problemas)
+  notas.push(...r.notas)
 
   if (r.status && r.status < 400) {
     if (r.html.length < 400) problemas.push(`página praticamente vazia (${r.html.length} bytes)`)
@@ -97,21 +118,112 @@ async function checar(site) {
 
   // sitemap (só quando o site declara ter um)
   if (site.sitemap) {
+    await pausa(800) // não atropelar o mesmo servidor — é o que dispara o 429
     const s = await checarUrl(site.sitemap, 'sitemap')
     problemas.push(...s.problemas)
+    notas.push(...s.notas)
     if (s.status && s.status < 400 && !/<(urlset|sitemapindex)/i.test(s.html)) {
       problemas.push('sitemap inválido (sem <urlset>)')
     }
   }
 
-  // robots.txt — erro de servidor conta; 404 é só ausência, não quebra
+  // robots.txt — erro de servidor conta; 404 é só ausência e 429 é limite, não quebra
   try {
+    await pausa(800)
     const u = new URL('/robots.txt', site.url).href
     const rb = await fetch(u, { headers: UA, signal: AbortSignal.timeout(15000) })
     if (rb.status >= 500) problemas.push(`robots.txt com erro (HTTP ${rb.status})`)
   } catch {}
 
-  return { problemas, ms: r.ms }
+  return { problemas, notas, ms: r.ms }
+}
+
+// ── robôs de conteúdo ────────────────────────────────────────────────────────
+// Robô que para de publicar não derruba site nenhum — some em silêncio. Por isso
+// medimos o RESULTADO (data do último artigo), não só se a engrenagem rodou.
+
+const ROBOS = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(RAIZ, 'config', 'robos.json'), 'utf8')) } catch { return [] }
+})()
+
+async function ultimoPostPorFeed(feed) {
+  const r = await fetch(`${feed}?alt=json&max-results=1&orderby=published`, { headers: UA, signal: AbortSignal.timeout(25000) })
+  if (!r.ok) throw new Error(`feed HTTP ${r.status}`)
+  const j = await r.json()
+  const e = (j.feed.entry || [])[0]
+  if (!e) throw new Error('feed sem artigo')
+  return { data: e.published.$t, titulo: e.title?.$t || '', total: Number(j.feed.openSearch$totalResults?.$t) || null }
+}
+
+async function ultimoPostPorSitemap(sitemap) {
+  const pegar = async (u) => {
+    const r = await fetch(u, { headers: UA, signal: AbortSignal.timeout(25000) })
+    if (!r.ok) throw new Error(`sitemap HTTP ${r.status}`)
+    return r.text()
+  }
+  let xml = await pegar(sitemap)
+  if (/<sitemapindex/i.test(xml)) {
+    const filho = (xml.match(/<loc>([^<]+)<\/loc>/i) || [])[1]
+    if (filho) xml = await pegar(filho)
+  }
+  const datas = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/gi)].map((m) => new Date(m[1])).filter((d) => !isNaN(d))
+  if (!datas.length) throw new Error('sitemap sem lastmod')
+  const max = new Date(Math.max(...datas))
+  return { data: max.toISOString(), titulo: '', total: (xml.match(/<loc>/g) || []).length }
+}
+
+// repo público: leitura sem token. Se o GitHub limitar, devolve null e NÃO vira alarme.
+async function ultimaExecucao(repo, workflow) {
+  try {
+    const r = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/${workflow}/runs?per_page=1`, {
+      headers: { 'User-Agent': 'FadaMonitor/1.0', Accept: 'application/vnd.github+json' },
+      signal: AbortSignal.timeout(20000),
+    })
+    if (!r.ok) return null
+    const j = await r.json()
+    const run = (j.workflow_runs || [])[0]
+    if (!run) return null
+    return { conclusao: run.conclusion, quando: run.created_at, url: run.html_url }
+  } catch { return null }
+}
+
+async function checarRobos() {
+  const out = []
+  for (const robo of ROBOS) {
+    const problemas = []
+    const notas = []
+    let ultimo = null
+    try {
+      ultimo = robo.feed ? await ultimoPostPorFeed(robo.feed) : await ultimoPostPorSitemap(robo.sitemap)
+    } catch (e) {
+      problemas.push(`não consegui ver os artigos (${e.message})`)
+    }
+
+    let dias = null
+    if (ultimo) {
+      dias = Math.floor((Date.now() - new Date(ultimo.data)) / 86400000)
+      if (dias > robo.maxDias) {
+        problemas.push(`parou de publicar: último artigo há ${dias} dias (o esperado é no máximo ${robo.maxDias})`)
+      }
+    }
+
+    const exec = await ultimaExecucao(robo.repo, robo.workflow)
+    if (exec && exec.conclusao && exec.conclusao !== 'success') {
+      // a última execução falhar não quer dizer que parou — mas é o aviso antes do prejuízo
+      notas.push(`a última execução do robô terminou em "${exec.conclusao}"`)
+    }
+
+    const status = problemas.length ? 'PROBLEMA' : 'OK'
+    log(`${status.padEnd(8)} [robô] ${robo.nome}${ultimo ? ` — último artigo há ${dias} dia(s)` : ''}${problemas.length ? ' — ' + problemas.join('; ') : ''}`)
+    out.push({
+      id: idDe(robo.nome), nome: robo.nome, url: robo.blog, tipo: 'robo', status, problemas, notas,
+      ultimoArtigo: ultimo?.data || null, diasSemPublicar: dias, tituloUltimo: ultimo?.titulo || '',
+      totalArtigos: ultimo?.total ?? null,
+      ultimaExecucao: exec || null, checadoEm: new Date().toISOString(),
+    })
+    await pausa(600)
+  }
+  return out
 }
 
 // ── e-mail ───────────────────────────────────────────────────────────────────
@@ -188,14 +300,14 @@ async function main() {
   const eventos = []
 
   for (const site of SITES) {
-    const { problemas, ms } = await checar(site)
+    const { problemas, notas, ms } = await checar(site)
     const id = idDe(site.nome)
     const status = problemas.length ? 'PROBLEMA' : 'OK'
     const antesDele = anteriores[id]
     const problemasAntes = antesDele ? antesDele.problemas || [] : null
 
-    log(`${status.padEnd(8)} ${site.nome}${problemas.length ? ' — ' + problemas.join('; ') : ''}`)
-    sites.push({ id, nome: site.nome, url: site.url, status, problemas, ms, checadoEm: agora })
+    log(`${status.padEnd(8)} ${site.nome}${problemas.length ? ' — ' + problemas.join('; ') : ''}${notas.length ? ' (aviso: ' + notas.join('; ') + ')' : ''}`)
+    sites.push({ id, nome: site.nome, url: site.url, status, problemas, notas, ms, checadoEm: agora })
 
     // primeira vez que vejo o site: só avisa se já nasce quebrado
     const novos = problemasAntes === null ? problemas : problemas.filter((p) => !problemasAntes.includes(p))
@@ -213,12 +325,35 @@ async function main() {
     }
   }
 
+  // robôs de conteúdo — mesma régua de aviso dos sites
+  const robos = await checarRobos()
+  const robosAntes = Object.fromEntries((antes.robos || []).map((r) => [r.id, r]))
+  for (const r of robos) {
+    const antesDele = robosAntes[r.id]
+    const problemasAntes = antesDele ? antesDele.problemas || [] : null
+    const novos = problemasAntes === null ? r.problemas : r.problemas.filter((p) => !problemasAntes.includes(p))
+    const resolvidos = problemasAntes === null ? [] : problemasAntes.filter((p) => !r.problemas.includes(p))
+    if (novos.length) {
+      const desc = novos.join(' · ')
+      quebrou.push({ nome: r.nome, url: r.url, descricao: desc, tipo: 'erro' })
+      eventos.push({ site: r.nome, tipo: 'erro', descricao: desc, quando: agora })
+    }
+    if (resolvidos.length) {
+      const desc = r.problemas.length ? `resolvido: ${resolvidos.join(' · ')}` : 'voltou a publicar'
+      voltou.push({ nome: r.nome, url: r.url, descricao: desc, tipo: 'conserto' })
+      eventos.push({ site: r.nome, tipo: 'conserto', descricao: desc, quando: agora })
+    }
+  }
+
   const comProblema = sites.filter((s) => s.status === 'PROBLEMA').length
+  const robosComProblema = robos.filter((r) => r.status === 'PROBLEMA').length
   const estado = {
     checadoEm: agora,
     total: sites.length,
     comProblema,
     sites,
+    robos,
+    robosComProblema,
     historico: [...eventos, ...(antes.historico || [])].slice(0, HISTORICO_MAX),
   }
 
@@ -232,7 +367,7 @@ async function main() {
     else log(`e-mail enviado para ${PARA} (${env.id})`)
   }
 
-  log(`fim: ${sites.length} sites, ${comProblema} com problema, ${quebrou.length} novo(s) erro(s), ${voltou.length} conserto(s)`)
+  log(`fim: ${sites.length} sites (${comProblema} com problema), ${robos.length} robôs (${robosComProblema} com problema), ${quebrou.length} novo(s) erro(s), ${voltou.length} conserto(s)`)
 }
 
 main().catch((e) => { log('ERRO FATAL: ' + (e.stack || e.message)); process.exit(1) })
