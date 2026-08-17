@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getArticle, getRelated, articleLangs, formatDate, SITE } from '@/lib/content'
 import { Card } from '@/components/ArticleCard'
 import ShareButtons from '@/components/ShareButtons'
+import OuvirMateria from '@/components/OuvirMateria'
 import { t, catColor } from '@/lib/tokens'
 import { withLang } from '@/lib/site'
 import { ui, catLabel, LANGS } from '@/lib/i18n'
@@ -94,7 +95,10 @@ export default function ArticleView({ lang = 'pt', slug }) {
             <br />
             {formatDate(article.publishedAt, LOCALE[lang])} · {article.readingMinutes} {txt.minRead}
           </div>
-          <ShareButtons url={url} title={article.title} lang={lang} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+            <OuvirMateria titulo={article.title} texto={article.contentHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 6000)} lang={lang} />
+            <ShareButtons url={url} title={article.title} lang={lang} />
+          </div>
         </div>
 
         {article.imagem && (
