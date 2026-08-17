@@ -1,0 +1,39 @@
+name: Canal do Telegram
+on:
+  schedule:
+    - cron: '10 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robos
+  cancel-in-progress: false
+
+jobs:
+  postar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Credenciais
+        run: |
+          cat > .env.robo <<'EOF'
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL=${{ secrets.TELEGRAM_CHANNEL }}
+          EOF
+      - name: Postar no Telegram
+        run: node scripts/telegram.js --max 4 || true
+      - name: Salvar estado
+        run: |
+          git config user.name "Explosao Solar Bot"
+          git config user.email "bot@explosaosolar.com"
+          git add scripts/telegram-state.json
+          if ! git diff --cached --quiet; then
+            git pull --no-rebase -q origin main || true
+            git commit -m "Telegram: estado [skip ci]"
+            git push
+          fi
