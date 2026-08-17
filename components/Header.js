@@ -180,6 +180,33 @@ export default function Header() {
             )
           })()}
           {lang === 'pt' && (() => {
+            const href = '/terremotos'
+            const active = pathname === href
+            return (
+              <Link
+                key="terremotos"
+                href={href}
+                className="chipnav"
+                style={{
+                  padding: '7px 15px',
+                  borderRadius: 999,
+                  fontSize: 13.5,
+                  fontWeight: 700,
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
+                  background: active ? t.sunGrad : 'transparent',
+                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
+                }}
+              >
+                <span style={{ width: 7, height: 7, borderRadius: 999, background: '#DC2626', display: 'inline-block' }} />
+                Terremotos
+              </Link>
+            )
+          })()}
+          {lang === 'pt' && (() => {
             const href = '/cotacoes'
             const active = pathname === href
             const label = 'Cotações'

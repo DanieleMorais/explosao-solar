@@ -26,6 +26,7 @@ export function GET() {
   }
 
   // utilidades (alto volume de busca)
+  itens.push(urlSimples(`${SITE.url}/terremotos`, { lastModified: now, changeFrequency: 'hourly', priority: 0.8 }))
   itens.push(urlSimples(`${SITE.url}/cotacoes`, { lastModified: now, changeFrequency: 'hourly', priority: 0.8 }))
   itens.push(urlSimples(`${SITE.url}/loterias`, { lastModified: now, changeFrequency: 'hourly', priority: 0.8 }))
   itens.push(urlSimples(`${SITE.url}/feriados`, { lastModified: now, changeFrequency: 'daily', priority: 0.6 }))

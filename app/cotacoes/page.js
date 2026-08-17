@@ -48,7 +48,7 @@ export default async function CotacoesPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 3vw, 48px)' }}>
+      <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: 'clamp(20px, 3vw, 48px)' }}>
         {lista.length === 0 ? (
           <p style={{ fontSize: 15, color: t.muted }}>Não conseguimos carregar as cotações agora. Tente daqui a pouco.</p>
         ) : (

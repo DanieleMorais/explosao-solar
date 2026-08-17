@@ -28,7 +28,7 @@ export default function HoroscopoPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: 1000, margin: '0 auto', padding: 'clamp(20px, 3vw, 48px)' }}>
+      <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: 'clamp(20px, 3vw, 48px)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
           {SIGNOS.map((s) => (
             <Link
@@ -45,7 +45,7 @@ export default function HoroscopoPage() {
                 </div>
               </div>
               <p style={{ fontSize: 13.5, lineHeight: 1.6, color: t.inkSoft, padding: '14px 18px', margin: 0 }}>
-                {signos[s.slug] || 'Previsão do dia chegando em instantes…'}
+                {(typeof signos[s.slug] === 'object' ? signos[s.slug].geral : signos[s.slug]) || 'Previsão do dia chegando em instantes…'}
               </p>
             </Link>
           ))}

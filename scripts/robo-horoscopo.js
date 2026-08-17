@@ -20,15 +20,20 @@ async function main() {
   const dataFmt = hoje.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Sao_Paulo' })
   const dataISO = new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10) // BRT
 
-  const prompt = `Você é astróloga brasileira. Escreva o horóscopo de HOJE (${dataFmt}) para os 12 signos.
-Para cada signo, 2 a 3 frases acolhedoras e específicas do dia, cobrindo amor, trabalho/dinheiro e energia — sem clichês vazios, sem prometer o impossível, tom positivo e humano.
-Responda SOMENTE um objeto JSON com as 12 chaves exatas: ${SIGNOS.join(', ')}. Cada valor é o texto do signo. Português brasileiro. Sem markdown, sem comentários.`
+  const prompt = `Você é astróloga brasileira. Para HOJE (${dataFmt}), escreva o horóscopo dos 12 signos.
+Para CADA signo, devolva um objeto com 3 campos: "geral" (2 frases sobre a energia do dia), "amor" (1-2 frases), "trabalho" (1-2 frases sobre trabalho/dinheiro).
+Tom acolhedor, específico, humano, sem clichês vazios e sem prometer o impossível.
+Responda SOMENTE um JSON no formato {"aries":{"geral":"...","amor":"...","trabalho":"..."}, ...} com as 12 chaves exatas: ${SIGNOS.join(', ')}. Português brasileiro. Sem markdown.`
 
-  const r = await askJson(prompt, { maxTokens: 2200, onLog: log })
+  const r = await askJson(prompt, { maxTokens: 3200, onLog: log })
   const signos = {}
   for (const s of SIGNOS) {
     const v = r?.[s] || r?.[NOMES[s]] || r?.[NOMES[s].toLowerCase()]
-    if (v && String(v).trim().length > 20) signos[s] = String(v).trim()
+    if (v && typeof v === 'object' && String(v.geral || '').trim().length > 15) {
+      signos[s] = { geral: String(v.geral).trim(), amor: String(v.amor || '').trim(), trabalho: String(v.trabalho || '').trim() }
+    } else if (v && typeof v === 'string' && v.trim().length > 20) {
+      signos[s] = { geral: v.trim() }
+    }
   }
   if (Object.keys(signos).length < 10) throw new Error(`poucos signos válidos (${Object.keys(signos).length})`)
 

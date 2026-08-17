@@ -1,0 +1,43 @@
+name: Terremotos (USGS)
+on:
+  schedule:
+    - cron: '30 */6 * * *' # a cada 6 horas
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robos
+  cancel-in-progress: false
+
+jobs:
+  rodar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --omit=dev || npm install --omit=dev
+      - name: Credenciais
+        run: |
+          cat > .env.robo <<'EOF'
+          CEREBRAS_API_KEY=${{ secrets.CEREBRAS_API_KEY }}
+          HF_API_TOKEN=${{ secrets.HF_API_TOKEN }}
+          GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
+          EOF
+      - name: Rodar
+        env:
+          SKIP_DEPLOY: '1'
+        run: node scripts/robo-terremotos.js --max 3 || true
+      - name: Publicar conteúdo
+        run: |
+          git config user.name "Explosao Solar Bot"
+          git config user.email "bot@explosaosolar.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Terremotos USGS: conteúdo automático [skip ci]"
+            git pull --no-rebase -q origin main || true
+            git push
+          fi

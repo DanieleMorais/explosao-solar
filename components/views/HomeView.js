@@ -146,6 +146,7 @@ export default async function HomeView({ lang = 'pt' }) {
                     <Link href="/cotacoes" className="hoverlink" style={{ fontSize: 12.5, color: t.sun, fontWeight: 700, display: 'inline-block', marginTop: 6 }}>Ver todas →</Link>
                   </div>
                 )}
+                <WidgetLink href="/terremotos" emoji="🌎" titulo="Terremotos ao vivo" sub="Abalos sísmicos no mundo agora" />
                 <WidgetLink href="/loterias" emoji="🍀" titulo="Loterias" sub="Resultado da Mega-Sena e mais" />
                 <WidgetLink href="/clima" emoji="🌤️" titulo="Clima" sub="Previsão da sua cidade" />
                 <WidgetLink href="/horoscopo" emoji="🔮" titulo="Horóscopo do dia" sub="Os 12 signos de hoje" />
