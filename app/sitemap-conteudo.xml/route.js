@@ -34,6 +34,10 @@ export function GET() {
     itens.push(urlSimples(`${SITE.url}/feriados/${y + 1}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
     itens.push(urlSimples(`${SITE.url}/feriados/${y + 2}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
   }
+  itens.push(urlSimples(`${SITE.url}/horoscopo`, { lastModified: now, changeFrequency: 'daily', priority: 0.7 }))
+  for (const s of ['aries', 'touro', 'gemeos', 'cancer', 'leao', 'virgem', 'libra', 'escorpiao', 'sagitario', 'capricornio', 'aquario', 'peixes']) {
+    itens.push(urlSimples(`${SITE.url}/horoscopo/${s}`, { lastModified: now, changeFrequency: 'daily', priority: 0.6 }))
+  }
 
   for (const p of ['/sobre', '/faq', '/contato', '/politica-de-privacidade', '/politica-de-cookies', '/termos-de-uso']) {
     itens.push(urlSimples(`${SITE.url}${p}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))

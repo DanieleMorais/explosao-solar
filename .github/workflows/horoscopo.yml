@@ -1,0 +1,40 @@
+name: Horóscopo do dia
+on:
+  schedule:
+    - cron: '20 8 * * *' # 08:20 UTC = 05:20 BRT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robos
+  cancel-in-progress: false
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Credenciais
+        run: |
+          cat > .env.robo <<'EOF'
+          CEREBRAS_API_KEY=${{ secrets.CEREBRAS_API_KEY }}
+          HF_API_TOKEN=${{ secrets.HF_API_TOKEN }}
+          GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
+          EOF
+      - name: Gerar horóscopo
+        run: node scripts/robo-horoscopo.js || true
+      - name: Publicar
+        run: |
+          git config user.name "Explosao Solar Bot"
+          git config user.email "bot@explosaosolar.com"
+          git add content/horoscopo.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Horóscopo do dia [skip ci]"
+            git pull --no-rebase -q origin main || true
+            git push
+          fi
