@@ -89,6 +89,12 @@ export default async function Painel({ searchParams }) {
                   </div>
                 )}
 
+                {s.notas?.length > 0 && (
+                  <div style={{ fontSize: 11.5, color: C.sun, marginTop: 8, lineHeight: 1.5 }}>
+                    {s.notas.map((n, i) => <div key={i}>{n}</div>)}
+                  </div>
+                )}
+
                 <div style={{ fontSize: 11, color: C.mut, marginTop: 10, opacity: 0.7 }}>{String(s.url).replace(/^https?:\/\//, '')}</div>
               </a>
             )

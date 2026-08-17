@@ -41,30 +41,51 @@ function diasDeSSL(hostname) {
   })
 }
 
+const pausa = (ms) => new Promise((r) => setTimeout(r, ms))
+
+// 429 NÃO é site fora do ar: o servidor respondeu, só está limitando nosso robô.
+// O Blogger/Google faz isso com IP de datacenter (o do GitHub Actions). Chamar
+// isso de queda gera alarme falso — e alarme falso faz a Dani parar de ler o e-mail.
+const ehLimite = (s) => s === 429 || s === 999
+
 async function checarUrl(url, rotulo) {
-  // devolve { problemas[], html, ms } — rotulo entra na mensagem ("sitemap", "robots.txt")
+  // devolve { problemas[], notas[], html, ms, status } — rotulo entra na mensagem
   const problemas = []
+  const notas = []
   const t0 = Date.now()
-  try {
-    const r = await fetch(url, { headers: UA, redirect: 'follow', signal: AbortSignal.timeout(25000) })
-    const ms = Date.now() - t0
-    const html = await r.text()
-    if (!r.ok) {
-      problemas.push(`${rotulo} fora do ar (HTTP ${r.status})`)
-      return { problemas, html, ms, status: r.status, final: r.url }
+  let ultimo = { status: 0, motivo: '' }
+
+  // até 3 tentativas: erro de rede, 5xx e 429 costumam ser passageiros.
+  // Só reclama depois de insistir — assim o e-mail só sai de problema de verdade.
+  for (let tentativa = 1; tentativa <= 3; tentativa++) {
+    if (tentativa > 1) await pausa(tentativa * 4000)
+    try {
+      const r = await fetch(url, { headers: UA, redirect: 'follow', signal: AbortSignal.timeout(25000) })
+      const html = await r.text()
+      if (r.ok) return { problemas, notas, html, ms: Date.now() - t0, status: r.status, final: r.url }
+      ultimo = { status: r.status, motivo: `HTTP ${r.status}` }
+      if (!ehLimite(r.status) && r.status < 500) break // 404, 403… não melhora tentando de novo
+    } catch (e) {
+      ultimo = { status: 0, motivo: e.name === 'TimeoutError' ? 'demorou demais (mais de 25s)' : e.message }
     }
-    return { problemas, html, ms, status: r.status, final: r.url }
-  } catch (e) {
-    const motivo = e.name === 'TimeoutError' ? 'demorou demais (mais de 25s)' : e.message
-    problemas.push(`${rotulo} inacessível (${motivo})`)
-    return { problemas, html: '', ms: Date.now() - t0, status: 0, final: url }
   }
+
+  if (ehLimite(ultimo.status)) {
+    notas.push(`${rotulo} respondeu ${ultimo.status} (o Google está limitando nosso robô) — o site está no ar para quem visita`)
+  } else if (ultimo.status) {
+    problemas.push(`${rotulo} fora do ar (${ultimo.motivo})`)
+  } else {
+    problemas.push(`${rotulo} inacessível (${ultimo.motivo})`)
+  }
+  return { problemas, notas, html: '', ms: Date.now() - t0, status: ultimo.status, final: url }
 }
 
 async function checar(site) {
   const problemas = []
+  const notas = []
   const r = await checarUrl(site.url, 'site')
   problemas.push(...r.problemas)
+  notas.push(...r.notas)
 
   if (r.status && r.status < 400) {
     if (r.html.length < 400) problemas.push(`página praticamente vazia (${r.html.length} bytes)`)
@@ -97,21 +118,24 @@ async function checar(site) {
 
   // sitemap (só quando o site declara ter um)
   if (site.sitemap) {
+    await pausa(800) // não atropelar o mesmo servidor — é o que dispara o 429
     const s = await checarUrl(site.sitemap, 'sitemap')
     problemas.push(...s.problemas)
+    notas.push(...s.notas)
     if (s.status && s.status < 400 && !/<(urlset|sitemapindex)/i.test(s.html)) {
       problemas.push('sitemap inválido (sem <urlset>)')
     }
   }
 
-  // robots.txt — erro de servidor conta; 404 é só ausência, não quebra
+  // robots.txt — erro de servidor conta; 404 é só ausência e 429 é limite, não quebra
   try {
+    await pausa(800)
     const u = new URL('/robots.txt', site.url).href
     const rb = await fetch(u, { headers: UA, signal: AbortSignal.timeout(15000) })
     if (rb.status >= 500) problemas.push(`robots.txt com erro (HTTP ${rb.status})`)
   } catch {}
 
-  return { problemas, ms: r.ms }
+  return { problemas, notas, ms: r.ms }
 }
 
 // ── e-mail ───────────────────────────────────────────────────────────────────
@@ -188,14 +212,14 @@ async function main() {
   const eventos = []
 
   for (const site of SITES) {
-    const { problemas, ms } = await checar(site)
+    const { problemas, notas, ms } = await checar(site)
     const id = idDe(site.nome)
     const status = problemas.length ? 'PROBLEMA' : 'OK'
     const antesDele = anteriores[id]
     const problemasAntes = antesDele ? antesDele.problemas || [] : null
 
-    log(`${status.padEnd(8)} ${site.nome}${problemas.length ? ' — ' + problemas.join('; ') : ''}`)
-    sites.push({ id, nome: site.nome, url: site.url, status, problemas, ms, checadoEm: agora })
+    log(`${status.padEnd(8)} ${site.nome}${problemas.length ? ' — ' + problemas.join('; ') : ''}${notas.length ? ' (aviso: ' + notas.join('; ') + ')' : ''}`)
+    sites.push({ id, nome: site.nome, url: site.url, status, problemas, notas, ms, checadoEm: agora })
 
     // primeira vez que vejo o site: só avisa se já nasce quebrado
     const novos = problemasAntes === null ? problemas : problemas.filter((p) => !problemasAntes.includes(p))
