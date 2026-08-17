@@ -1,7 +1,7 @@
 {
-  "checadoEm": "2026-08-17T05:52:21.454Z",
+  "checadoEm": "2026-08-17T07:18:17.048Z",
   "total": 31,
-  "comProblema": 5,
+  "comProblema": 1,
   "sites": [
     {
       "id": "explosao-solar",
@@ -9,8 +9,8 @@
       "url": "https://explosaosolar.com",
       "status": "OK",
       "problemas": [],
-      "ms": 1267,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 1016,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "universidade-fada-madrinha",
@@ -18,8 +18,8 @@
       "url": "https://universidadefadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 836,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 244,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "agencia-fada-madrinha",
@@ -27,8 +27,8 @@
       "url": "https://agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 964,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 871,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "comunidade-fada-madrinha",
@@ -36,52 +36,44 @@
       "url": "https://comunidadefadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 615,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 793,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "dinheiro-no-dia-a-dia",
       "nome": "Dinheiro no Dia a Dia",
       "url": "https://dinheironodiaadia.com",
-      "status": "PROBLEMA",
-      "problemas": [
-        "site fora do ar (HTTP 429)"
-      ],
-      "ms": 483,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "status": "OK",
+      "problemas": [],
+      "ms": 384,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "o-mundo-da-ia",
       "nome": "O Mundo da IA",
       "url": "https://omundodaia.blogspot.com",
-      "status": "PROBLEMA",
-      "problemas": [
-        "site fora do ar (HTTP 429)"
-      ],
-      "ms": 443,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "status": "OK",
+      "problemas": [],
+      "ms": 275,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "universo-animes",
       "nome": "Universo Animes",
       "url": "https://ouniversoanimes.blogspot.com",
-      "status": "PROBLEMA",
-      "problemas": [
-        "site fora do ar (HTTP 429)"
-      ],
-      "ms": 405,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "status": "OK",
+      "problemas": [],
+      "ms": 268,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "we-love-animes",
       "nome": "We Love Animes",
       "url": "https://weloveanimes1.blogspot.com",
-      "status": "PROBLEMA",
-      "problemas": [
-        "site fora do ar (HTTP 429)"
-      ],
-      "ms": 566,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "status": "OK",
+      "problemas": [],
+      "ms": 274,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "pisco-cocina-y-bar",
@@ -89,8 +81,8 @@
       "url": "https://piscococinaybar.com",
       "status": "OK",
       "problemas": [],
-      "ms": 1107,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 977,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "help-empresarial",
@@ -98,8 +90,8 @@
       "url": "https://help.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 272,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 113,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "to-com-fome-express",
@@ -107,8 +99,8 @@
       "url": "https://tocomfome-express.vercel.app",
       "status": "OK",
       "problemas": [],
-      "ms": 401,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 113,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "gazofilacio-ipb",
@@ -116,8 +108,8 @@
       "url": "https://gazofilacio-ipb.vercel.app",
       "status": "OK",
       "problemas": [],
-      "ms": 1285,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 934,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "restaurante-ia",
@@ -125,8 +117,8 @@
       "url": "https://restauranteia.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 182,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 139,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "arcane",
@@ -134,8 +126,8 @@
       "url": "https://arcane.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 133,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 148,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "arcane-api",
@@ -143,8 +135,8 @@
       "url": "https://arcane-api.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 404,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 185,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "cristal-leads",
@@ -152,8 +144,8 @@
       "url": "https://cristalleads.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 418,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 140,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "cristal-hunter",
@@ -161,8 +153,8 @@
       "url": "https://cristalhunter.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 944,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 1090,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "cristal-trends",
@@ -170,8 +162,8 @@
       "url": "https://cristal-trends.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 256,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 134,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "imagia",
@@ -179,8 +171,8 @@
       "url": "https://imagia.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 894,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 887,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "i-love-music",
@@ -188,8 +180,8 @@
       "url": "https://ilovemusic.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 240,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 202,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "encena",
@@ -197,8 +189,8 @@
       "url": "https://encena.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 120,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 115,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "apice",
@@ -206,8 +198,8 @@
       "url": "https://apice.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 228,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 119,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "visionscore-ai",
@@ -215,8 +207,8 @@
       "url": "https://visionscoreai.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 826,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 894,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "fada-captura",
@@ -224,8 +216,8 @@
       "url": "https://baixarvideo.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 1484,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 1628,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "painel-seo",
@@ -233,8 +225,8 @@
       "url": "https://seo.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 1075,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 864,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "fada-reputacao",
@@ -244,8 +236,8 @@
       "problemas": [
         "site fora do ar (HTTP 404)"
       ],
-      "ms": 162,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 198,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "isernhagen-sistemas",
@@ -253,8 +245,8 @@
       "url": "https://www.isernhagensistemas.com.br",
       "status": "OK",
       "problemas": [],
-      "ms": 581,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 247,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "login-tec",
@@ -262,8 +254,8 @@
       "url": "https://login-tec.vercel.app",
       "status": "OK",
       "problemas": [],
-      "ms": 110,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 103,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "doce-acai",
@@ -271,8 +263,8 @@
       "url": "https://doce-acai.vercel.app",
       "status": "OK",
       "problemas": [],
-      "ms": 191,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 63,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "fada-rotas-yeimi",
@@ -280,8 +272,8 @@
       "url": "https://fada-rotas.vercel.app",
       "status": "OK",
       "problemas": [],
-      "ms": 452,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 112,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     },
     {
       "id": "macuco-proposta",
@@ -289,11 +281,35 @@
       "url": "https://macuco.agenciafadamadrinha.com",
       "status": "OK",
       "problemas": [],
-      "ms": 135,
-      "checadoEm": "2026-08-17T05:52:21.454Z"
+      "ms": 51,
+      "checadoEm": "2026-08-17T07:18:17.048Z"
     }
   ],
   "historico": [
+    {
+      "site": "Dinheiro no Dia a Dia",
+      "tipo": "conserto",
+      "descricao": "voltou ao normal",
+      "quando": "2026-08-17T07:18:17.048Z"
+    },
+    {
+      "site": "O Mundo da IA",
+      "tipo": "conserto",
+      "descricao": "voltou ao normal",
+      "quando": "2026-08-17T07:18:17.048Z"
+    },
+    {
+      "site": "Universo Animes",
+      "tipo": "conserto",
+      "descricao": "voltou ao normal",
+      "quando": "2026-08-17T07:18:17.048Z"
+    },
+    {
+      "site": "We Love Animes",
+      "tipo": "conserto",
+      "descricao": "voltou ao normal",
+      "quando": "2026-08-17T07:18:17.048Z"
+    },
     {
       "site": "Dinheiro no Dia a Dia",
       "tipo": "erro",
