@@ -15,17 +15,33 @@ export default function OuvirMateria({ titulo, texto, lang = 'pt' }) {
   const [suportado, setSuportado] = useState(true)
   const fila = useRef([])
   const idx = useRef(0)
+  const vozes = useRef([])
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) setSuportado(false)
+    if (typeof window === 'undefined' || !window.speechSynthesis) { setSuportado(false); return }
+    const carregar = () => { vozes.current = window.speechSynthesis.getVoices() || [] }
+    carregar()
+    window.speechSynthesis.onvoiceschanged = carregar
     return () => { try { window.speechSynthesis?.cancel() } catch {} }
   }, [])
+
+  function vozDoIdioma() {
+    const base = txt.codigo.slice(0, 2) // pt | en | es
+    const vs = vozes.current
+    return (
+      vs.find((v) => v.lang === txt.codigo) ||
+      vs.find((v) => v.lang.replace('_', '-').toLowerCase().startsWith(base)) ||
+      null
+    )
+  }
 
   function falarProximo() {
     const synth = window.speechSynthesis
     if (idx.current >= fila.current.length) { setEstado('parado'); return }
     const u = new SpeechSynthesisUtterance(fila.current[idx.current])
     u.lang = txt.codigo
+    const v = vozDoIdioma()
+    if (v) u.voice = v
     u.rate = 1
     u.onend = () => { idx.current++; falarProximo() }
     u.onerror = () => setEstado('parado')
