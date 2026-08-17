@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "Robô do Dinheiro no Dia a Dia",
+    "blog": "https://dinheironodiaadia.com",
+    "feed": "https://dinheironodiaadia.com/feeds/posts/default",
+    "repo": "DanieleMorais/dinheiro-no-dia-a-dia-auto",
+    "workflow": "post-diario.yml",
+    "maxDias": 2
+  },
+  {
+    "nome": "Robô do O Mundo da IA",
+    "blog": "https://omundodaia.blogspot.com",
+    "feed": "https://omundodaia.blogspot.com/feeds/posts/default",
+    "repo": "DanieleMorais/o-mundo-da-ia-auto",
+    "workflow": "post-diario.yml",
+    "maxDias": 2
+  },
+  {
+    "nome": "Robô do Universo Animes",
+    "blog": "https://ouniversoanimes.blogspot.com",
+    "feed": "https://ouniversoanimes.blogspot.com/feeds/posts/default",
+    "repo": "DanieleMorais/o-universo-dos-animes-auto",
+    "workflow": "noticias.yml",
+    "maxDias": 2
+  },
+  {
+    "nome": "Robô do We Love Animes",
+    "blog": "https://weloveanimes1.blogspot.com",
+    "feed": "https://weloveanimes1.blogspot.com/feeds/posts/default",
+    "repo": "DanieleMorais/we-love-anime-auto",
+    "workflow": "noticias.yml",
+    "maxDias": 2
+  },
+  {
+    "nome": "Robô do Explosão Solar",
+    "blog": "https://explosaosolar.com",
+    "sitemap": "https://explosaosolar.com/sitemap.xml",
+    "repo": "DanieleMorais/explosao-solar",
+    "workflow": "noticias.yml",
+    "maxDias": 2
+  }
+]
