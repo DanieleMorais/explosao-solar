@@ -1,47 +1,58 @@
 {
-  "checadoEm": "2026-08-17T20:10:15.925Z",
+  "checadoEm": "2026-08-17T20:46:37.954Z",
   "total": 31,
-  "comProblema": 1,
+  "comProblema": 27,
   "sites": [
     {
       "id": "explosao-solar",
       "nome": "Explosão Solar",
       "url": "https://explosaosolar.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)",
+        "sitemap fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 1101,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 304,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "universidade-fada-madrinha",
       "nome": "Universidade Fada Madrinha",
       "url": "https://universidadefadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)",
+        "sitemap fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 991,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 306,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "agencia-fada-madrinha",
       "nome": "Agência Fada Madrinha",
       "url": "https://agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)",
+        "sitemap fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 1043,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 247,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "comunidade-fada-madrinha",
       "nome": "Comunidade Fada Madrinha",
       "url": "https://comunidadefadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 668,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 290,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "dinheiro-no-dia-a-dia",
@@ -50,8 +61,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 404,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 572,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "o-mundo-da-ia",
@@ -60,8 +71,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 242,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 387,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "universo-animes",
@@ -70,8 +81,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 97,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 397,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "we-love-animes",
@@ -80,178 +91,213 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 129,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 346,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "pisco-cocina-y-bar",
       "nome": "Pisco Cocina y Bar",
       "url": "https://piscococinaybar.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)",
+        "sitemap fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 1302,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 188,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "help-empresarial",
       "nome": "Help Empresarial",
       "url": "https://help.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 64,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 185,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "to-com-fome-express",
       "nome": "Tô Com Fome Express",
       "url": "https://tocomfome-express.vercel.app",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 133,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 190,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "gazofilacio-ipb",
       "nome": "Gazofilácio IPB",
       "url": "https://gazofilacio-ipb.vercel.app",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 1111,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 159,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "restaurante-ia",
       "nome": "Restaurante IA",
       "url": "https://restauranteia.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 166,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 238,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "arcane",
       "nome": "Arcane",
       "url": "https://arcane.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 168,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 175,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "arcane-api",
       "nome": "Arcane API",
       "url": "https://arcane-api.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 58,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 269,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "cristal-leads",
       "nome": "Cristal Leads",
       "url": "https://cristalleads.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 120,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 157,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "cristal-hunter",
       "nome": "Cristal Hunter",
       "url": "https://cristalhunter.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 1303,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 160,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "cristal-trends",
       "nome": "Cristal Trends",
       "url": "https://cristal-trends.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 199,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 278,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "imagia",
       "nome": "Imagia",
       "url": "https://imagia.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 793,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 242,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "i-love-music",
       "nome": "I Love Music",
       "url": "https://ilovemusic.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 59,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 138,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "encena",
       "nome": "Encena",
       "url": "https://encena.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 73,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 201,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "apice",
       "nome": "Ápice",
       "url": "https://apice.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 240,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 334,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "visionscore-ai",
       "nome": "VisionScore AI",
       "url": "https://visionscoreai.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 116,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 150,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "fada-captura",
       "nome": "Fada Captura",
       "url": "https://baixarvideo.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 1667,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 120,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "painel-seo",
       "nome": "Painel SEO",
       "url": "https://seo.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 1168,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 163,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "fada-reputacao",
@@ -259,61 +305,71 @@
       "url": "https://reputacao.universidadefadamadrinha.com",
       "status": "PROBLEMA",
       "problemas": [
-        "site fora do ar (HTTP 404)"
+        "site fora do ar (HTTP 402)"
       ],
       "notas": [],
-      "ms": 414,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 447,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "isernhagen-sistemas",
       "nome": "Isernhagen Sistemas",
       "url": "https://www.isernhagensistemas.com.br",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 205,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 325,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "login-tec",
       "nome": "Login Tec",
       "url": "https://login-tec.vercel.app",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 114,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 134,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "doce-acai",
       "nome": "Doce Açaí",
       "url": "https://doce-acai.vercel.app",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 125,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 150,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "fada-rotas-yeimi",
       "nome": "Fada Rotas (Yeimi)",
       "url": "https://fada-rotas.vercel.app",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 259,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 130,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     },
     {
       "id": "macuco-proposta",
       "nome": "Macuco (proposta)",
       "url": "https://macuco.agenciafadamadrinha.com",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "site fora do ar (HTTP 402)"
+      ],
       "notas": [],
-      "ms": 316,
-      "checadoEm": "2026-08-17T20:10:15.925Z"
+      "ms": 147,
+      "checadoEm": "2026-08-17T20:46:37.954Z"
     }
   ],
   "robos": [
@@ -334,7 +390,7 @@
         "quando": "2026-08-17T12:46:00Z",
         "url": "https://github.com/DanieleMorais/dinheiro-no-dia-a-dia-auto/actions/runs/32031496979"
       },
-      "checadoEm": "2026-08-17T20:11:18.632Z"
+      "checadoEm": "2026-08-17T20:47:23.002Z"
     },
     {
       "id": "robo-do-o-mundo-da-ia",
@@ -353,7 +409,7 @@
         "quando": "2026-08-17T13:41:05Z",
         "url": "https://github.com/DanieleMorais/o-mundo-da-ia-auto/actions/runs/32036262783"
       },
-      "checadoEm": "2026-08-17T20:11:19.603Z"
+      "checadoEm": "2026-08-17T20:47:23.926Z"
     },
     {
       "id": "robo-do-universo-animes",
@@ -374,7 +430,7 @@
         "quando": "2026-08-17T18:28:11Z",
         "url": "https://github.com/DanieleMorais/o-universo-dos-animes-auto/actions/runs/32055049071"
       },
-      "checadoEm": "2026-08-17T20:11:20.435Z"
+      "checadoEm": "2026-08-17T20:47:25.024Z"
     },
     {
       "id": "robo-do-we-love-animes",
@@ -393,32 +449,208 @@
         "quando": "2026-08-17T17:55:20Z",
         "url": "https://github.com/DanieleMorais/we-love-anime-auto/actions/runs/32052476975"
       },
-      "checadoEm": "2026-08-17T20:11:21.489Z"
+      "checadoEm": "2026-08-17T20:47:26.024Z"
     },
     {
       "id": "robo-do-explosao-solar",
       "nome": "Robô do Explosão Solar",
       "url": "https://explosaosolar.com",
       "tipo": "robo",
-      "status": "OK",
-      "problemas": [],
+      "status": "PROBLEMA",
+      "problemas": [
+        "não consegui ver os artigos (sitemap HTTP 402)"
+      ],
       "notas": [
         "a última execução do robô terminou em \"cancelled\""
       ],
-      "ultimoArtigo": "2026-08-17T19:49:47.438Z",
-      "diasSemPublicar": 0,
+      "ultimoArtigo": null,
+      "diasSemPublicar": null,
       "tituloUltimo": "",
-      "totalArtigos": 1234,
+      "totalArtigos": null,
       "ultimaExecucao": {
         "conclusao": "cancelled",
         "quando": "2026-08-17T16:20:55Z",
         "url": "https://github.com/DanieleMorais/explosao-solar/actions/runs/32045197484"
       },
-      "checadoEm": "2026-08-17T20:11:22.572Z"
+      "checadoEm": "2026-08-17T20:47:27.015Z"
     }
   ],
-  "robosComProblema": 0,
+  "robosComProblema": 1,
   "historico": [
+    {
+      "site": "Explosão Solar",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402) · sitemap fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Universidade Fada Madrinha",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402) · sitemap fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Agência Fada Madrinha",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402) · sitemap fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Comunidade Fada Madrinha",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Pisco Cocina y Bar",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402) · sitemap fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Help Empresarial",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Tô Com Fome Express",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Gazofilácio IPB",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Restaurante IA",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Arcane",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Arcane API",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Cristal Leads",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Cristal Hunter",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Cristal Trends",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Imagia",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "I Love Music",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Encena",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Ápice",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "VisionScore AI",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Fada Captura",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Painel SEO",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Fada Reputação",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Fada Reputação",
+      "tipo": "conserto",
+      "descricao": "resolvido: site fora do ar (HTTP 404)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Isernhagen Sistemas",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Login Tec",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Doce Açaí",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Fada Rotas (Yeimi)",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Macuco (proposta)",
+      "tipo": "erro",
+      "descricao": "site fora do ar (HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
+    {
+      "site": "Robô do Explosão Solar",
+      "tipo": "erro",
+      "descricao": "não consegui ver os artigos (sitemap HTTP 402)",
+      "quando": "2026-08-17T20:46:37.954Z"
+    },
     {
       "site": "We Love Animes",
       "tipo": "conserto",
