@@ -66,6 +66,23 @@ function chaveBusca(place) {
   return s.trim()
 }
 
+const idDeUrl = (u) => (String(u || '').match(/eventpage\/([a-z0-9]+)/i) || [])[1] || null
+
+// mapeia eventos do USGS já cobertos (pelo robô de alertas ou por este) -> slug,
+// pra ENRIQUECER a matéria existente em vez de criar duplicata.
+function mapaCobertos() {
+  const m = new Map()
+  for (const f of fs.readdirSync(PT_DIR)) {
+    if (!f.endsWith('.json')) continue
+    try {
+      const a = JSON.parse(fs.readFileSync(path.join(PT_DIR, f), 'utf8'))
+      const id = idDeUrl(a.sourceUrl)
+      if (id) m.set(id, a.slug)
+    } catch {}
+  }
+  return m
+}
+
 async function feedUSGS(nome) {
   const r = await fetch(`${USGS}/${nome}.geojson`, { headers: { 'User-Agent': 'ExplosaoSolarBot/1.0' }, signal: AbortSignal.timeout(20000) })
   if (!r.ok) throw new Error('USGS HTTP ' + r.status)
@@ -214,6 +231,7 @@ async function main() {
   const state = loadState()
   const vistos = new Set(state.vistos)
   const novos = rel.filter((f) => !vistos.has(f.id))
+  const cobertos = mapaCobertos()
   log(`${rel.length} abalos relevantes, ${novos.length} novos${dry ? ' [DRY]' : ''}`)
 
   let pub = 0
@@ -225,16 +243,29 @@ async function main() {
       const fontes = await noticiasReais(d.chave)
       log(`[M${d.mag} ${d.chave}] ${fontes.length} fontes de imprensa`)
       const a = await escrever(d, fontes)
-      let slug = slugify(a.title); let n = 2
-      while (fs.existsSync(path.join(PT_DIR, slug + '.json'))) slug = `${slugify(a.title)}-${n++}`
+
+      // se o abalo já tem matéria (stub do robô de alertas), enriquece o mesmo slug
+      let slug = cobertos.get(q.id)
+      let antigo = null
+      if (slug) {
+        try { antigo = JSON.parse(fs.readFileSync(path.join(PT_DIR, slug + '.json'), 'utf8')) } catch {}
+        log(`enriquecendo matéria existente: ${slug}`)
+      } else {
+        slug = slugify(a.title); let n = 2
+        while (fs.existsSync(path.join(PT_DIR, slug + '.json'))) slug = `${slugify(a.title)}-${n++}`
+      }
 
       const nomesFontes = fontes.map((f) => f.fonte).filter((v, i, arr) => arr.indexOf(v) === i)
       const credito = nomesFontes.length ? `USGS, ${nomesFontes.join(', ')}` : 'USGS (United States Geological Survey)'
+      const imagens = antigo && antigo.imagem ? { imagem: antigo.imagem, imagemCredito: antigo.imagemCredito, imagemCreditoUrl: antigo.imagemCreditoUrl } : {}
       const base = {
         slug, title: a.title, seoTitle: cortar(a.seoTitle || a.title, 58), subtitle: a.subtitle,
         category: 'Ciência', categorySlug: 'ciencia', excerpt: a.excerpt, author: 'Daniele Morais',
-        publishedAt: new Date().toISOString(), readingMinutes: Math.max(2, Math.round(contaPalavras(a.contentHtml) / 200)),
-        tags: (a.tags || []).slice(0, 6), sourceName: credito, sourceUrl: fontes[0]?.url || d.url,
+        publishedAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
+        eventDate: antigo?.eventDate || new Date(q.properties.time).toISOString(),
+        readingMinutes: Math.max(2, Math.round(contaPalavras(a.contentHtml) / 200)),
+        tags: (a.tags || []).slice(0, 6), sourceName: credito, sourceUrl: q.properties.url || antigo?.sourceUrl,
+        ...imagens,
         contentHtml: a.contentHtml + `<p><em>Dados sísmicos: USGS. ${nomesFontes.length ? 'Com informações de ' + nomesFontes.join(', ') + '.' : ''}</em></p>`,
       }
 
