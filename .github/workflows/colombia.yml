@@ -36,7 +36,9 @@ jobs:
       - name: Rodar
         env:
           SKIP_DEPLOY: '1'
-        run: node scripts/backfill-noticias.js --tema colombia --meta 50 || true
+        run: |
+          node scripts/backfill-noticias.js --tema colombia --meta 50 || true
+          node scripts/backfill-noticias.js --tema terremoto --meta 40 || true
       - name: Publicar conteúdo
         run: |
           git config user.name "Explosao Solar Bot"

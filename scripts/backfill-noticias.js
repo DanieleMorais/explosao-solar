@@ -116,6 +116,24 @@ const TEMAS = {
       { n: 'The Guardian', u: 'https://www.theguardian.com/world/rss' },
     ],
   },
+  terremoto: {
+    nome: 'Terremotos e desastres',
+    categoria: 'ciencia',
+    // busca/resgate/solidariedade em torno de tremores no mundo todo
+    filtro: /terremoto|sismo\b|s[íi]smic|tremor|earthquake|seismic|magnitud|tsunami|r[ée]plica|aftershock|abalo s[íi]smico|escombros|damnificad/i,
+    feeds: [
+      { n: 'BBC News', u: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
+      { n: 'Al Jazeera', u: 'https://www.aljazeera.com/xml/rss/all.xml' },
+      { n: 'The Guardian', u: 'https://www.theguardian.com/world/rss' },
+      { n: 'DW', u: 'https://rss.dw.com/rdf/rss-en-world' },
+      { n: 'France 24', u: 'https://www.france24.com/en/rss' },
+      { n: 'BBC Mundo', u: 'https://feeds.bbci.co.uk/mundo/rss.xml' },
+      { n: 'DW', u: 'https://rss.dw.com/rdf/rss-sp-all' },
+      { n: 'El Tiempo', u: 'https://www.eltiempo.com/rss/colombia.xml' },
+      { n: 'El Colombiano', u: 'https://www.elcolombiano.com/rss/portada.xml' },
+      { n: 'Antara', u: 'https://en.antaranews.com/rss/news.xml' },
+    ],
+  },
 }
 
 const LANGS = { en: 'inglês', es: 'espanhol' }
