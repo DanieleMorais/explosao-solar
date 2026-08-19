@@ -1,5 +1,5 @@
 {
-  "checadoEm": "2026-08-19T08:57:02.854Z",
+  "checadoEm": "2026-08-19T09:51:16.559Z",
   "total": 31,
   "comProblema": 16,
   "sites": [
@@ -10,8 +10,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 610,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 593,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "universidade-fada-madrinha",
@@ -20,8 +20,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 858,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 1044,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "agencia-fada-madrinha",
@@ -33,8 +33,8 @@
         "sitemap inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20129,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20131,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "comunidade-fada-madrinha",
@@ -43,8 +43,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 1233,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 935,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "dinheiro-no-dia-a-dia",
@@ -53,8 +53,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 537,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 356,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "o-mundo-da-ia",
@@ -63,8 +63,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 282,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 408,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "universo-animes",
@@ -73,8 +73,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 94,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 326,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "we-love-animes",
@@ -83,8 +83,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 292,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 155,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "pisco-cocina-y-bar",
@@ -93,8 +93,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 967,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 813,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "help-empresarial",
@@ -103,8 +103,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 99,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 61,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "to-com-fome-express",
@@ -113,8 +113,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 123,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 185,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "gazofilacio-ipb",
@@ -123,8 +123,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 1361,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 1021,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "restaurante-ia",
@@ -135,8 +135,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20127,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20091,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "arcane",
@@ -147,8 +147,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20055,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20106,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "arcane-api",
@@ -159,8 +159,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20122,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20177,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "cristal-leads",
@@ -171,8 +171,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20097,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20108,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "cristal-hunter",
@@ -183,8 +183,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20078,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20102,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "cristal-trends",
@@ -195,8 +195,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20075,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20108,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "imagia",
@@ -207,8 +207,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20072,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20050,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "i-love-music",
@@ -219,8 +219,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20189,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20080,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "encena",
@@ -231,8 +231,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20166,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20053,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "apice",
@@ -243,8 +243,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20150,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20057,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "visionscore-ai",
@@ -255,8 +255,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20110,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20088,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "fada-captura",
@@ -267,8 +267,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20159,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20073,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "painel-seo",
@@ -279,8 +279,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20085,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20074,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "fada-reputacao",
@@ -291,8 +291,8 @@
         "site fora do ar (HTTP 404)"
       ],
       "notas": [],
-      "ms": 232,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 402,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "isernhagen-sistemas",
@@ -301,8 +301,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 303,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 324,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "login-tec",
@@ -311,8 +311,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 201,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 34,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "doce-acai",
@@ -321,8 +321,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 86,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 48,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "fada-rotas-yeimi",
@@ -331,8 +331,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 248,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 342,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     },
     {
       "id": "macuco-proposta",
@@ -343,8 +343,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20065,
-      "checadoEm": "2026-08-19T08:57:02.854Z"
+      "ms": 20068,
+      "checadoEm": "2026-08-19T09:51:16.559Z"
     }
   ],
   "robos": [
@@ -367,7 +367,7 @@
         "quando": "2026-08-18T23:14:34Z",
         "url": "https://github.com/DanieleMorais/dinheiro-no-dia-a-dia-auto/actions/runs/32196326484"
       },
-      "checadoEm": "2026-08-19T09:03:07.242Z"
+      "checadoEm": "2026-08-19T09:57:19.932Z"
     },
     {
       "id": "robo-do-o-mundo-da-ia",
@@ -386,7 +386,7 @@
         "quando": "2026-08-19T00:55:36Z",
         "url": "https://github.com/DanieleMorais/o-mundo-da-ia-auto/actions/runs/32203067653"
       },
-      "checadoEm": "2026-08-19T09:03:08.426Z"
+      "checadoEm": "2026-08-19T09:57:21.100Z"
     },
     {
       "id": "robo-do-universo-animes",
@@ -407,7 +407,7 @@
         "quando": "2026-08-19T06:32:22Z",
         "url": "https://github.com/DanieleMorais/o-universo-dos-animes-auto/actions/runs/32223836176"
       },
-      "checadoEm": "2026-08-19T09:03:09.462Z"
+      "checadoEm": "2026-08-19T09:57:22.248Z"
     },
     {
       "id": "robo-do-we-love-animes",
@@ -426,7 +426,7 @@
         "quando": "2026-08-19T05:55:33Z",
         "url": "https://github.com/DanieleMorais/we-love-anime-auto/actions/runs/32221283447"
       },
-      "checadoEm": "2026-08-19T09:03:10.613Z"
+      "checadoEm": "2026-08-19T09:57:23.182Z"
     },
     {
       "id": "robo-do-explosao-solar",
@@ -438,7 +438,7 @@
       "notas": [
         "a última execução do robô terminou em \"cancelled\""
       ],
-      "ultimoArtigo": "2026-08-19T08:52:06.251Z",
+      "ultimoArtigo": "2026-08-19T09:46:13.077Z",
       "diasSemPublicar": 0,
       "tituloUltimo": "",
       "totalArtigos": 1249,
@@ -447,7 +447,7 @@
         "quando": "2026-08-19T08:30:50Z",
         "url": "https://github.com/DanieleMorais/explosao-solar/actions/runs/32232973515"
       },
-      "checadoEm": "2026-08-19T09:03:12.060Z"
+      "checadoEm": "2026-08-19T09:57:24.303Z"
     }
   ],
   "robosComProblema": 0,
