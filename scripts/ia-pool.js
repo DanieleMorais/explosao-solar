@@ -35,6 +35,39 @@ async function chatCompletions({ url, key, model, prompt, maxTokens, extraHeader
   return text
 }
 
+// Gemini: tenta modelos em cascata por chave. Cada chave (projeto) tem acesso a um
+// conjunto diferente (o 2.5-flash está sendo descontinuado p/ projetos novos), e um
+// modelo pode estar sobrecarregado (503) — então cai pro próximo antes de desistir.
+const GEMINI_MODELS = ['gemini-flash-latest', 'gemini-2.5-flash', 'gemini-3.5-flash', 'gemini-flash-lite-latest']
+async function geminiRun(key, prompt, maxTokens) {
+  let lastErr
+  for (const model of GEMINI_MODELS) {
+    try {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.7, maxOutputTokens: maxTokens } }),
+        signal: AbortSignal.timeout(240000),
+      })
+      if (!r.ok) {
+        const body = (await r.text()).slice(0, 140)
+        const err = new Error(`HTTP ${r.status} ${body}`)
+        err.status = r.status
+        lastErr = err
+        if ([404, 400, 503, 429, 500].includes(r.status)) continue // tenta outro modelo
+        throw err
+      }
+      const j = await r.json()
+      const text = (j.candidates?.[0]?.content?.parts || []).map((p) => p.text).filter(Boolean).join('')
+      if (text) return text
+      lastErr = new Error('resposta vazia')
+    } catch (e) {
+      lastErr = e
+    }
+  }
+  throw lastErr || new Error('gemini: todos os modelos falharam')
+}
+
 const ENGINES = [
   {
     name: 'cerebras',
@@ -50,28 +83,8 @@ const ENGINES = [
     run: (key, prompt, maxTokens) =>
       chatCompletions({ url: 'https://router.huggingface.co/v1/chat/completions', key, model: 'meta-llama/Llama-3.3-70B-Instruct:novita', prompt, maxTokens }),
   },
-  {
-    name: 'gemini',
-    envKey: 'GEMINI_API_KEY',
-    minIntervalMs: 4000,
-    run: async (key, prompt, maxTokens) => {
-      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.7, maxOutputTokens: maxTokens, thinkingConfig: { thinkingBudget: 0 } } }),
-        signal: AbortSignal.timeout(240000),
-      })
-      if (!r.ok) {
-        const err = new Error(`HTTP ${r.status} ${(await r.text()).slice(0, 140)}`)
-        err.status = r.status
-        throw err
-      }
-      const j = await r.json()
-      const text = j.candidates?.[0]?.content?.parts?.[0]?.text
-      if (!text) throw new Error('resposta vazia')
-      return text
-    },
-  },
+  { name: 'gemini', envKey: 'GEMINI_API_KEY', minIntervalMs: 4000, run: geminiRun },
+  { name: 'gemini2', envKey: 'GEMINI_API_KEY_2', minIntervalMs: 4000, run: geminiRun },
 ]
 
 const st = {}
