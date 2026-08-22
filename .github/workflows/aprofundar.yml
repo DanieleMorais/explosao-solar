@@ -46,5 +46,11 @@ jobs:
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Aprofundar acervo: conteúdo automático [skip ci]"
-            git push
+            ok=""
+            for i in 1 2 3 4 5; do
+              if git pull --rebase -q origin main && git push; then ok=1; break; fi
+              git rebase --abort 2>/dev/null || true
+              sleep 10
+            done
+            [ -n "$ok" ]
           fi
