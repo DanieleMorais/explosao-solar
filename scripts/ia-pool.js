@@ -17,11 +17,11 @@ function loadEnv() {
 const ENV = loadEnv()
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-async function chatCompletions({ url, key, model, prompt, maxTokens, extraHeaders = {} }) {
+async function chatCompletions({ url, key, model, prompt, maxTokens, extraHeaders = {}, extraBody = {} }) {
   const r = await fetch(url, {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...extraHeaders },
-    body: JSON.stringify({ model, messages: [{ role: 'user', content: prompt }], max_tokens: maxTokens, temperature: 0.7 }),
+    body: JSON.stringify({ model, messages: [{ role: 'user', content: prompt }], max_tokens: maxTokens, temperature: 0.7, ...extraBody }),
     signal: AbortSignal.timeout(300000),
   })
   if (!r.ok) {
@@ -68,6 +68,26 @@ async function geminiRun(key, prompt, maxTokens) {
   throw lastErr || new Error('gemini: todos os modelos falharam')
 }
 
+// Groq: mesmo esquema de cascata do Gemini — a Groq aposenta modelos sem aviso
+// (o llama-3.3-70b-versatile sumiu em ago/2026) e cada modelo tem cota própria,
+// então 404/429 num modelo cai pro próximo antes de descansar o motor.
+const GROQ_MODELS = ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.6-27b']
+async function groqRun(key, prompt, maxTokens) {
+  let lastErr
+  for (const model of GROQ_MODELS) {
+    try {
+      // Modelos de raciocínio consomem max_tokens pensando — reduzir ao mínimo deixa o
+      // orçamento pro texto final. gpt-oss aceita low/medium/high; qwen só none/default.
+      const reasoning_effort = model.startsWith('qwen') ? 'none' : 'low'
+      return await chatCompletions({ url: 'https://api.groq.com/openai/v1/chat/completions', key, model, prompt, maxTokens, extraBody: { reasoning_effort } })
+    } catch (e) {
+      lastErr = e
+      if (![404, 400, 429, 500, 503].includes(e.status)) throw e
+    }
+  }
+  throw lastErr
+}
+
 const ENGINES = [
   {
     name: 'cerebras',
@@ -83,6 +103,7 @@ const ENGINES = [
     run: (key, prompt, maxTokens) =>
       chatCompletions({ url: 'https://router.huggingface.co/v1/chat/completions', key, model: 'meta-llama/Llama-3.3-70B-Instruct:novita', prompt, maxTokens }),
   },
+  { name: 'groq', envKey: 'GROQ_API_KEY', minIntervalMs: 2500, run: groqRun },
   { name: 'gemini', envKey: 'GEMINI_API_KEY', minIntervalMs: 4000, run: geminiRun },
   { name: 'gemini2', envKey: 'GEMINI_API_KEY_2', minIntervalMs: 4000, run: geminiRun },
 ]
