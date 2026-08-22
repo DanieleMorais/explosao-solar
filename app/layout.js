@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import { Archivo, Source_Serif_4 } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -63,6 +62,9 @@ export const metadata = {
   verification: process.env.GOOGLE_SITE_VERIFICATION
     ? { google: process.env.GOOGLE_SITE_VERIFICATION }
     : undefined,
+  other: process.env.NEXT_PUBLIC_ADSENSE_CLIENT
+    ? { 'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_CLIENT }
+    : undefined,
 }
 
 export const viewport = {
@@ -105,11 +107,12 @@ export default function RootLayout({ children }) {
         <Analytics />
         <LangSync />
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
-          <Script
+          // Tag crua no HTML inicial (não via next/script): o robô de verificação do
+          // AdSense procura o <script> no fonte da página, antes de qualquer hidratação.
+          <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
             crossOrigin="anonymous"
-            strategy="afterInteractive"
           />
         )}
       </body>
