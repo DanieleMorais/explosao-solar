@@ -20,6 +20,15 @@ async function main() {
   const dataFmt = hoje.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Sao_Paulo' })
   const dataISO = new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10) // BRT
 
+  // O workflow roda 3x/dia como repescagem — só a primeira execução do dia gera de fato.
+  const out = path.join(__dirname, '..', 'content', 'horoscopo.json')
+  try {
+    if (JSON.parse(fs.readFileSync(out, 'utf8')).data === dataISO) {
+      log('horóscopo de hoje já publicado — nada a fazer')
+      return
+    }
+  } catch {}
+
   const prompt = `Você é astróloga brasileira. Para HOJE (${dataFmt}), escreva o horóscopo dos 12 signos.
 Para CADA signo, devolva um objeto com 3 campos: "geral" (2 frases sobre a energia do dia), "amor" (1-2 frases), "trabalho" (1-2 frases sobre trabalho/dinheiro).
 Tom acolhedor, específico, humano, sem clichês vazios e sem prometer o impossível.
@@ -37,7 +46,6 @@ Responda SOMENTE um JSON no formato {"aries":{"geral":"...","amor":"...","trabal
   }
   if (Object.keys(signos).length < 10) throw new Error(`poucos signos válidos (${Object.keys(signos).length})`)
 
-  const out = path.join(__dirname, '..', 'content', 'horoscopo.json')
   fs.writeFileSync(out, JSON.stringify({ data: dataISO, dataFmt, signos }, null, 2))
   log(`horóscopo gravado: ${Object.keys(signos).length} signos (${dataFmt})`)
 }

@@ -1,14 +1,17 @@
 name: Horóscopo do dia
 on:
   schedule:
-    - cron: '20 8 * * *' # 08:20 UTC = 05:20 BRT
+    # 05:20 BRT + repescagens; o robô sai sem fazer nada se o horóscopo de hoje já existe
+    - cron: '20 8,12,16 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+# Grupo próprio: no grupo compartilhado "robos" este job de 1x/dia era expulso da fila
+# pelos robôs frequentes (só 1 run pode aguardar por grupo) e ficou 4 dias sem publicar.
 concurrency:
-  group: robos
+  group: horoscopo
   cancel-in-progress: false
 
 jobs:
@@ -29,7 +32,7 @@ jobs:
           GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}
           EOF
       - name: Gerar horóscopo
-        run: node scripts/robo-horoscopo.js || true
+        run: node scripts/robo-horoscopo.js
       - name: Publicar
         run: |
           git config user.name "Explosao Solar Bot"
@@ -37,6 +40,11 @@ jobs:
           git add content/horoscopo.json
           if ! git diff --cached --quiet; then
             git commit -m "Horóscopo do dia [skip ci]"
-            git pull --no-rebase -q origin main || true
-            git push
+            ok=""
+            for i in 1 2 3 4 5; do
+              if git pull --rebase -q origin main && git push; then ok=1; break; fi
+              git rebase --abort 2>/dev/null || true
+              sleep 10
+            done
+            [ -n "$ok" ]
           fi

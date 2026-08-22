@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: robos
+  group: telegram
   cancel-in-progress: false
 
 jobs:
@@ -33,7 +33,12 @@ jobs:
           git config user.email "bot@explosaosolar.com"
           git add scripts/telegram-state.json
           if ! git diff --cached --quiet; then
-            git pull --no-rebase -q origin main || true
             git commit -m "Telegram: estado [skip ci]"
-            git push
+            ok=""
+            for i in 1 2 3 4 5; do
+              if git pull --rebase -q origin main && git push; then ok=1; break; fi
+              git rebase --abort 2>/dev/null || true
+              sleep 10
+            done
+            [ -n "$ok" ]
           fi
