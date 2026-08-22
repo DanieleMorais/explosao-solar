@@ -1,33 +1,139 @@
 [
-  { "nome": "Explosão Solar", "url": "https://explosaosolar.com", "sitemap": "https://explosaosolar.com/sitemap.xml" },
-  { "nome": "Universidade Fada Madrinha", "url": "https://universidadefadamadrinha.com", "sitemap": "https://universidadefadamadrinha.com/sitemap.xml" },
-  { "nome": "Agência Fada Madrinha", "url": "https://agenciafadamadrinha.com", "sitemap": "https://agenciafadamadrinha.com/sitemap.xml" },
-  { "nome": "Comunidade Fada Madrinha", "url": "https://comunidadefadamadrinha.com" },
-  { "nome": "Dinheiro no Dia a Dia", "url": "https://dinheironodiaadia.com", "sitemap": "https://dinheironodiaadia.com/sitemap.xml" },
-  { "nome": "O Mundo da IA", "url": "https://omundodaia.blogspot.com", "sitemap": "https://omundodaia.blogspot.com/sitemap.xml" },
-  { "nome": "Universo Animes", "url": "https://ouniversoanimes.blogspot.com", "sitemap": "https://ouniversoanimes.blogspot.com/sitemap.xml" },
-  { "nome": "We Love Animes", "url": "https://weloveanimes1.blogspot.com", "sitemap": "https://weloveanimes1.blogspot.com/sitemap.xml" },
-  { "nome": "Pisco Cocina y Bar", "url": "https://piscococinaybar.com", "sitemap": "https://piscococinaybar.com/sitemap.xml" },
-  { "nome": "Help Empresarial", "url": "https://help.agenciafadamadrinha.com" },
-  { "nome": "Tô Com Fome Express", "url": "https://tocomfome-express.vercel.app" },
-  { "nome": "Gazofilácio IPB", "url": "https://gazofilacio-ipb.vercel.app" },
-  { "nome": "Restaurante IA", "url": "https://restauranteia.agenciafadamadrinha.com" },
-  { "nome": "Arcane", "url": "https://arcane.agenciafadamadrinha.com" },
-  { "nome": "Arcane API", "url": "https://arcane-api.agenciafadamadrinha.com" },
-  { "nome": "Cristal Leads", "url": "https://cristalleads.agenciafadamadrinha.com" },
-  { "nome": "Cristal Hunter", "url": "https://cristalhunter.agenciafadamadrinha.com" },
-  { "nome": "Cristal Trends", "url": "https://cristal-trends.agenciafadamadrinha.com" },
-  { "nome": "Imagia", "url": "https://imagia.agenciafadamadrinha.com" },
-  { "nome": "I Love Music", "url": "https://ilovemusic.agenciafadamadrinha.com" },
-  { "nome": "Encena", "url": "https://encena.agenciafadamadrinha.com" },
-  { "nome": "Ápice", "url": "https://apice.agenciafadamadrinha.com" },
-  { "nome": "VisionScore AI", "url": "https://visionscoreai.agenciafadamadrinha.com" },
-  { "nome": "Fada Captura", "url": "https://baixarvideo.agenciafadamadrinha.com" },
-  { "nome": "Painel SEO", "url": "https://seo.agenciafadamadrinha.com" },
-  { "nome": "Fada Reputação", "url": "https://reputacao.universidadefadamadrinha.com" },
-  { "nome": "Isernhagen Sistemas", "url": "https://www.isernhagensistemas.com.br" },
-  { "nome": "Login Tec", "url": "https://login-tec.vercel.app" },
-  { "nome": "Doce Açaí", "url": "https://doce-acai.vercel.app" },
-  { "nome": "Fada Rotas (Yeimi)", "url": "https://fada-rotas.vercel.app" },
-  { "nome": "Macuco (proposta)", "url": "https://macuco.agenciafadamadrinha.com" }
+  {
+    "nome": "Explosão Solar",
+    "url": "https://explosaosolar.com",
+    "sitemap": "https://explosaosolar.com/sitemap.xml"
+  },
+  {
+    "nome": "Universidade Fada Madrinha",
+    "url": "https://universidadefadamadrinha.com",
+    "sitemap": "https://universidadefadamadrinha.com/sitemap.xml"
+  },
+  {
+    "nome": "App da Aluna",
+    "url": "https://app.universidadefadamadrinha.com"
+  },
+  {
+    "nome": "Agência Fada Madrinha",
+    "url": "https://agenciafadamadrinha.com",
+    "sitemap": "https://agenciafadamadrinha.com/sitemap.xml"
+  },
+  {
+    "nome": "Comunidade Fada Madrinha",
+    "url": "https://comunidadefadamadrinha.com"
+  },
+  {
+    "nome": "Dinheiro no Dia a Dia",
+    "url": "https://dinheironodiaadia.com",
+    "sitemap": "https://dinheironodiaadia.com/sitemap.xml"
+  },
+  {
+    "nome": "O Mundo da IA",
+    "url": "https://omundodaia.blogspot.com",
+    "sitemap": "https://omundodaia.blogspot.com/sitemap.xml"
+  },
+  {
+    "nome": "Universo Animes",
+    "url": "https://ouniversoanimes.blogspot.com",
+    "sitemap": "https://ouniversoanimes.blogspot.com/sitemap.xml"
+  },
+  {
+    "nome": "We Love Animes",
+    "url": "https://weloveanimes1.blogspot.com",
+    "sitemap": "https://weloveanimes1.blogspot.com/sitemap.xml"
+  },
+  {
+    "nome": "Pisco Cocina y Bar",
+    "url": "https://piscococinaybar.com",
+    "sitemap": "https://piscococinaybar.com/sitemap.xml"
+  },
+  {
+    "nome": "Restaurante IA",
+    "url": "https://agentebusiness.com/restaurante"
+  },
+  {
+    "nome": "Cristal Leads",
+    "url": "https://cristalleads.com.br"
+  },
+  {
+    "nome": "Cristal Trends",
+    "url": "https://cristal-trends.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Cristal Hunter",
+    "url": "https://cristalhunter.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Arcane",
+    "url": "https://arcane.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Arcane API",
+    "url": "https://arcane-api.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Imagia",
+    "url": "https://imagia.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "I Love Music",
+    "url": "https://ilovemusic.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Encena",
+    "url": "https://encena.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Ápice",
+    "url": "https://apice.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "VisionScore AI",
+    "url": "https://visionscoreai.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Fada Captura",
+    "url": "https://baixarvideo.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Painel SEO",
+    "url": "https://seo.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Help Empresarial",
+    "url": "https://help.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Fada Reputação",
+    "url": "https://reputacao.universidadefadamadrinha.com"
+  },
+  {
+    "nome": "Isernhagen Sistemas",
+    "url": "https://www.isernhagensistemas.com.br",
+    "sitemap": "https://www.isernhagensistemas.com.br/sitemap.xml"
+  },
+  {
+    "nome": "Gazofilácio IPB",
+    "url": "https://www.isernhagensistemas.com.br/presbiterianos/gazofilacio"
+  },
+  {
+    "nome": "Login Tec",
+    "url": "https://login-tec.pages.dev"
+  },
+  {
+    "nome": "Doce Açaí",
+    "url": "https://doceacai.agenciafadamadrinha.com"
+  },
+  {
+    "nome": "Fada Rotas (Yeimi)",
+    "url": "https://fada-rotas.vercel.app"
+  },
+  {
+    "nome": "Tô Com Fome Express",
+    "url": "https://tocomfome-express.vercel.app"
+  },
+  {
+    "nome": "Imagens do blog",
+    "url": "https://img.dinheironodiaadia.com"
+  }
 ]
