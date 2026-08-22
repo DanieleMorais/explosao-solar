@@ -1,17 +1,7 @@
-import PageShell from '@/components/PageShell'
-import { getInstitutional } from '@/lib/content'
+import LegalDocView, { legalMeta } from '@/components/views/LegalDocView'
 
-export const metadata = {
-  title: 'Termos de Uso',
-  description: 'Condições de uso do portal Explosão Solar: direitos autorais, responsabilidades e regras de utilização do conteúdo.',
-  alternates: { canonical: '/termos-de-uso' },
-}
+export const metadata = legalMeta('pt', 'termos-de-uso')
 
-export default function TermsPage() {
-  const { termsHtml } = getInstitutional()
-  return (
-    <PageShell kicker="Institucional" title="Termos de Uso" intro="As regras que valem para todo mundo que navega no Explosão Solar.">
-      <div className="prose prose-legal" dangerouslySetInnerHTML={{ __html: termsHtml }} />
-    </PageShell>
-  )
+export default function Page() {
+  return <LegalDocView lang="pt" doc="termos-de-uso" />
 }

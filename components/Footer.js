@@ -70,7 +70,7 @@ export default function Footer() {
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
             {INSTITUTIONAL_LINKS[lang].map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="hoverlink" style={{ fontSize: 14 }}>
+                <Link href={withLang(lang, l.href)} className="hoverlink" style={{ fontSize: 14 }}>
                   {l.name}
                 </Link>
               </li>

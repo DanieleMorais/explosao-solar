@@ -41,7 +41,9 @@ export function GET() {
   }
 
   for (const p of ['/sobre', '/faq', '/contato', '/politica-de-privacidade', '/politica-de-cookies', '/termos-de-uso']) {
-    itens.push(urlSimples(`${SITE.url}${p}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
+    for (const prefixo of ['', '/en', '/es']) {
+      itens.push(urlSimples(`${SITE.url}${prefixo}${p}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
+    }
   }
 
   return respostaXml(urlset(itens))

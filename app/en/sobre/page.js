@@ -1,7 +1,7 @@
 import LegalDocView, { legalMeta } from '@/components/views/LegalDocView'
 
-export const metadata = legalMeta('pt', 'sobre')
+export const metadata = legalMeta('en', 'sobre')
 
 export default function Page() {
-  return <LegalDocView lang="pt" doc="sobre" />
+  return <LegalDocView lang="en" doc="sobre" />
 }

@@ -14,14 +14,24 @@ const input = {
   fontFamily: 'inherit',
 }
 
-export default function ContactForm({ email }) {
+const LABELS_PT = {
+  heading: 'Envie uma mensagem',
+  name: 'Seu nome',
+  subject: 'Assunto',
+  message: 'Escreva sua mensagem…',
+  send: 'Enviar mensagem',
+  hint: 'O envio abre o seu aplicativo de e-mail com a mensagem pronta.',
+  bodyName: 'Nome',
+}
+
+export default function ContactForm({ email, labels = LABELS_PT }) {
   const [name, setName] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
 
   function submit(e) {
     e.preventDefault()
-    const body = `Nome: ${name}\n\n${message}`
+    const body = `${labels.bodyName}: ${name}\n\n${message}`
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(`[Site] ${subject}`)}&body=${encodeURIComponent(body)}`
   }
 
@@ -39,17 +49,17 @@ export default function ContactForm({ email }) {
         gap: 14,
       }}
     >
-      <h2 style={{ fontSize: 19, fontWeight: 900, letterSpacing: -0.3 }}>Envie uma mensagem</h2>
+      <h2 style={{ fontSize: 19, fontWeight: 900, letterSpacing: -0.3 }}>{labels.heading}</h2>
       <div className="grid-1-mobile" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-        <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Seu nome" aria-label="Seu nome" style={input} />
-        <input required value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Assunto" aria-label="Assunto" style={input} />
+        <input required value={name} onChange={(e) => setName(e.target.value)} placeholder={labels.name} aria-label={labels.name} style={input} />
+        <input required value={subject} onChange={(e) => setSubject(e.target.value)} placeholder={labels.subject} aria-label={labels.subject} style={input} />
       </div>
       <textarea
         required
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Escreva sua mensagem…"
-        aria-label="Mensagem"
+        placeholder={labels.message}
+        aria-label={labels.message}
         rows={6}
         style={{ ...input, resize: 'vertical' }}
       />
@@ -66,9 +76,9 @@ export default function ContactForm({ email }) {
           borderRadius: 999,
         }}
       >
-        Enviar mensagem
+        {labels.send}
       </button>
-      <p style={{ fontSize: 12.5, color: t.muted }}>O envio abre o seu aplicativo de e-mail com a mensagem pronta.</p>
+      <p style={{ fontSize: 12.5, color: t.muted }}>{labels.hint}</p>
     </form>
   )
 }

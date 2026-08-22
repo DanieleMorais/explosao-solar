@@ -1,17 +1,7 @@
-import PageShell from '@/components/PageShell'
-import { getInstitutional } from '@/lib/content'
+import LegalDocView, { legalMeta } from '@/components/views/LegalDocView'
 
-export const metadata = {
-  title: 'Política de Privacidade',
-  description: 'Saiba como o Explosão Solar coleta, usa e protege seus dados pessoais, em conformidade com a LGPD.',
-  alternates: { canonical: '/politica-de-privacidade' },
-}
+export const metadata = legalMeta('pt', 'politica-de-privacidade')
 
-export default function PrivacyPage() {
-  const { privacyHtml } = getInstitutional()
-  return (
-    <PageShell kicker="Institucional" title="Política de Privacidade" intro="Transparência total sobre como tratamos seus dados, em conformidade com a LGPD.">
-      <div className="prose prose-legal" dangerouslySetInnerHTML={{ __html: privacyHtml }} />
-    </PageShell>
-  )
+export default function Page() {
+  return <LegalDocView lang="pt" doc="politica-de-privacidade" />
 }
