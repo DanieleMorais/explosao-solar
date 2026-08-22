@@ -25,6 +25,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           NEXT_PUBLIC_GA_ID: G-RK56TFGW01 # id de medição é público (vai no HTML)
+          NEXT_PUBLIC_ADSENSE_CLIENT: ca-pub-1623504542591354 # id de publisher é público (vai no HTML e no ads.txt)
         run: |
           npx opennextjs-cloudflare build
           npx opennextjs-cloudflare deploy
