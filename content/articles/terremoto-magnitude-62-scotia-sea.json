@@ -1,24 +1,24 @@
 {
   "slug": "terremoto-magnitude-62-scotia-sea",
+  "title": "Terremoto de magnitude 6.2 atinge o Mar da Scotia",
+  "seoTitle": "Terremoto de 6.2 no Mar da Scotia: dados do USGS",
+  "subtitle": "Abalo sísmico registrado em profundidade rasa não gerou alerta de tsunami.",
   "category": "Ciência",
   "categorySlug": "ciencia",
+  "excerpt": "Um terremoto de magnitude 6.2 foi registrado na região do Mar da Scotia nas primeiras horas da manhã de sexta-feira.",
   "author": "Daniele Morais",
-  "publishedAt": "2026-08-22T09:15:01.581Z",
+  "publishedAt": "2026-08-22T13:17:25.744Z",
+  "updatedAt": "2026-08-22T13:17:25.744Z",
   "eventDate": "2026-08-22T08:22:37.740Z",
-  "sourceName": "USGS",
-  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrw",
-  "alerta": "terremoto",
-  "title": "Terremoto de magnitude 6,2 atinge região de Scotia Sea",
-  "seoTitle": "Terremoto de magnitude 6,2 em Scotia Sea",
-  "subtitle": "Tremor foi registrado a 10 km de profundidade, segundo o serviço geológico americano (USGS).",
-  "excerpt": "Terremoto de magnitude 6,2 foi registrado perto de Scotia Sea, a 10 km de profundidade, segundo o USGS.",
-  "contentHtml": "<p>Um terremoto de magnitude 6,2 foi registrado em 22 de agosto de 2026 às 05:22 (horário de Brasília) perto de Scotia Sea, segundo o Serviço Geológico dos Estados Unidos (USGS). O tremor ocorreu a aproximadamente 10 km de profundidade.</p><h2>O que significa essa magnitude</h2><p>Terremotos entre magnitude 6 e 7 são considerados fortes e costumam ser sentidos a centenas de quilômetros do epicentro.</p><p>A magnitude mede a energia liberada na origem do tremor; a intensidade sentida em cada cidade depende da distância e do tipo de solo.</p><h2>O que esperar nos próximos dias</h2><p>Após um tremor principal, é esperado que ocorram réplicas — abalos menores na mesma região — nos dias e semanas seguintes. A frequência delas tende a diminuir com o tempo, um padrão bem estabelecido pela sismologia. Réplicas relevantes são registradas pelas redes de monitoramento e atualizadas em tempo real.</p><p><em>Com dados do USGS (Serviço Geológico dos Estados Unidos).</em></p>",
   "readingMinutes": 2,
   "tags": [
     "terremoto",
-    "sismo",
-    "Scotia Sea",
+    "Mar da Scotia",
+    "sismologia",
     "USGS",
-    "desastres naturais"
-  ]
+    "ciência"
+  ],
+  "sourceName": "USGS (United States Geological Survey)",
+  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrw",
+  "contentHtml": "<p>Um terremoto de magnitude 6.2 atingiu a região do Mar da Scotia na madrugada desta sexta-feira, 22 de agosto de 2026, às 05:22, horário de Brasília. Os dados preliminares divulgados pelo Serviço Geológico dos Estados Unidos (USGS) indicam que o abalo ocorreu em uma profundidade considerada rasa, mas com um alerta de impacto estimado como pequeno.</p><h2>Detalhes técnicos do tremor</h2><p>Conforme a ficha técnica detalhada pelo USGS, o epicentro do sismo foi localizado especificamente no Mar da Scotia. A profundidade do foco sísmico, ponto onde o tremor se origina, foi calculada em 10 quilômetros abaixo da superfície. Tremores que ocorrem a profundidades de até 70 quilômetros são geralmente classificados como rasos. Embora a profundidade rasa possa, em teoria, amplificar o impacto de um terremoto, a localização em uma área oceânica contribui para mitigar quaisquer efeitos sobre populações.</p><h2>Avaliação de risco e ausência de tsunami</h2><p>O Serviço Geológico dos Estados Unidos emitiu um alerta de impacto classificado como \"verde\" para este evento. A classificação verde indica que um impacto pequeno é esperado, o que significa que a probabilidade de danos materiais ou vítimas é muito baixa, ou nula. Este sistema de alerta do USGS ajuda a comunicar rapidamente o potencial de consequências de um terremoto. Adicionalmente, foi confirmado que não há alerta de tsunami em vigor para a região afetada pelo tremor, garantindo que não há risco de formação de ondas gigantes decorrentes do abalo.</p><h2>Falta de relatos de percepção</h2><p>Um aspecto notável dos dados divulgados é a ausência de relatos de pessoas que sentiram o tremor. O USGS monitora ativamente a percepção pública de terremotos através de sistemas de coleta de informações, mas para este evento, o número de relatos é zero. Essa ausência de percepção reforça a avaliação de baixo impacto e a localização remota do epicentro, características típicas de sismos que ocorrem em vastas extensões oceânicas, longe de qualquer área terrestre habitada.</p><h2>Monitoramento sísmico e dados do USGS</h2><p>O Mar da Scotia é uma região que faz parte da rede global de monitoramento sísmico do USGS. A coleta e análise de dados sobre terremotos nesta área são cruciais para a compreensão contínua da geodinâmica do planeta. O USGS é a principal fonte de informações sobre eventos sísmicos nos Estados Unidos e em todo o mundo, fornecendo dados precisos sobre magnitude, localização e profundidade. A divulgação rápida e detalhada desses dados permite que pesquisadores e o público compreendam a natureza de cada abalo sísmico registrado.</p><p><em>Dados sísmicos: USGS. </em></p>"
 }

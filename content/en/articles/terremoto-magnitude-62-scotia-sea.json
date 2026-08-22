@@ -1,24 +1,25 @@
 {
   "slug": "terremoto-magnitude-62-scotia-sea",
+  "title": "Magnitude 6.2 earthquake strikes the Scotia Sea",
+  "seoTitle": "Magnitude 6.2 Earthquake Strikes the Scotia Sea",
+  "subtitle": "Seismic tremor recorded at a shallow depth did not trigger a tsunami warning.",
   "category": "Ciência",
   "categorySlug": "ciencia",
+  "excerpt": "A magnitude 6.2 earthquake was recorded in the Scotia Sea region in the early hours of Friday morning.",
   "author": "Daniele Morais",
-  "publishedAt": "2026-08-22T09:15:01.581Z",
+  "publishedAt": "2026-08-22T13:17:25.744Z",
+  "updatedAt": "2026-08-22T13:17:25.744Z",
   "eventDate": "2026-08-22T08:22:37.740Z",
-  "sourceName": "USGS",
-  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrw",
-  "alerta": "terremoto",
-  "title": "Magnitude 6.2 earthquake strikes near Scotia Sea",
-  "seoTitle": "Magnitude 6.2 earthquake near Scotia Sea",
-  "subtitle": "The quake was recorded at a depth of 10 km, according to the US Geological Survey (USGS).",
-  "excerpt": "A magnitude 6.2 earthquake was recorded near Scotia Sea, at a depth of 10 km, according to the USGS.",
-  "contentHtml": "<p>A magnitude 6.2 earthquake was recorded on August 22, 2026 at 05:22 AM (Brasília time) near Scotia Sea, according to the United States Geological Survey (USGS). The quake occurred at a depth of roughly 10 km.</p><h2>What this magnitude means</h2><p>Earthquakes between magnitude 6 and 7 are considered strong and are usually felt hundreds of kilometers from the epicenter.</p><h2>What to expect in the coming days</h2><p>After a main shock, aftershocks — smaller quakes in the same region — are expected over the following days and weeks, with frequency decreasing over time, a well-established pattern in seismology.</p><p><em>With data from the USGS (United States Geological Survey).</em></p>",
   "readingMinutes": 2,
   "tags": [
     "earthquake",
     "Scotia Sea",
+    "seismology",
     "USGS",
-    "natural disasters"
+    "science"
   ],
+  "sourceName": "USGS (United States Geological Survey)",
+  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrw",
+  "contentHtml": "<p>A magnitude 6.2 earthquake struck the Scotia Sea region in the early hours of this Friday, August 22, 2026, at 05:22, Brasília time. Preliminary data released by the United States Geological Survey (USGS) indicate that the tremor occurred at a considered shallow depth, but with a minor estimated impact alert.</p><h2>Technical details of the tremor</h2><p>According to the detailed technical sheet provided by the USGS, the epicenter of the seismic event was located specifically in the Scotia Sea. The depth of the seismic focus, the point where the tremor originates, was calculated at 10 kilometers below the surface. Tremors occurring at depths of up to 70 kilometers are generally classified as shallow. Although shallow depth can, in theory, amplify the impact of an earthquake, its location in an oceanic area helps mitigate any effects on populations.</p><h2>Risk assessment and absence of a tsunami</h2><p>The United States Geological Survey issued a \"green\" impact alert for this event. The green classification indicates that a minor impact is expected, meaning that the probability of property damage or casualties is very low or zero. This USGS alert system helps quickly communicate the potential consequences of an earthquake. Additionally, it was confirmed that there is no tsunami warning in effect for the region affected by the tremor, ensuring there is no risk of giant waves resulting from the shaking.</p><h2>Lack of felt reports</h2><p>A notable aspect of the released data is the absence of reports from people who felt the tremor. The USGS actively monitors public perception of earthquakes through data collection systems, but for this event, the number of reports is zero. This lack of perception reinforces the low-impact assessment and the remote location of the epicenter, characteristics typical of earthquakes that occur in vast ocean expanses, far from any inhabited land areas.</p><p><em>Seismic data: USGS.</em></p>",
   "lang": "en"
 }
