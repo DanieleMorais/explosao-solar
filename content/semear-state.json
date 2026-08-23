@@ -8,9 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Por que a pavimentação de rodovias integra mercados regionais",
-      "Como funcionam os portos secos no escoamento de safras",
-      "A história do desenvolvimento da aviação comercial no país",
       "Como funciona a transição energética nos transportes urbanos",
       "Por que a proteção da caatinga sustenta comunidades sertanejas",
       "A história da demarcação de reservas extrativistas marinhas",
@@ -27,9 +24,6 @@
       "Guia prático para acessar serviços consulares no exterior"
     ],
     "economia": [
-      "Estratégias para avaliar balanços de companhias abertas",
-      "Como funcionam as cooperativas de crédito nacional",
-      "Impactos econômicos das tarifas portuárias nas exportações",
       "Como calcular margens de lucro bruto e líquido",
       "Estratégias para gerenciar contas a receber inadimplentes",
       "Como funciona o comércio eletrônico transfronteiriço",
@@ -45,9 +39,6 @@
       "Estratégias para internacionalizar pequenas e médias marcas"
     ],
     "tecnologia": [
-      "Como a impressão 4D altera materiais com calor",
-      "O guia para organizar arquivos digitais no computador",
-      "Como funcionam os tradutores automáticos em tempo real",
       "O impacto das redes sociais na memória humana",
       "Como a tecnologia de drones agiliza entregas urbanas",
       "O que muda com a chegada de satélites de baixa órbita",
@@ -86,7 +77,6 @@
       "Por que o teatro de bonecos encanta diferentes gerações"
     ],
     "politica": [
-      "O efeito das desonerações fiscais nas contas públicas",
       "Como os municípios dependem das transferências federais",
       "O impacto das greves de servidores nos serviços essenciais",
       "Como a legislação ambiental protege os biomas brasileiros",
@@ -949,7 +939,10 @@
       "Como funciona a proteção policial para testemunhas ameaçadas",
       "Por que o combate ao tráfico humano exige cooperação",
       "Guia para registrar reclamações em delegacias de polícia civil",
-      "Como funciona o sistema prisional e a ressocialização penal"
+      "Como funciona o sistema prisional e a ressocialização penal",
+      "Por que a pavimentação de rodovias integra mercados regionais",
+      "Como funcionam os portos secos no escoamento de safras",
+      "A história do desenvolvimento da aviação comercial no país"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1177,7 +1170,10 @@
       "Estratégias para reduzir custos operacionais em negócios",
       "Como funciona o capital de giro empresarial",
       "Impactos econômicos do envelhecimento populacional brasileiro",
-      "Como negociar prazos maiores com fornecedores"
+      "Como negociar prazos maiores com fornecedores",
+      "Estratégias para avaliar balanços de companhias abertas",
+      "Como funcionam as cooperativas de crédito nacional",
+      "Impactos econômicos das tarifas portuárias nas exportações"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1407,7 +1403,10 @@
       "Como o monitoramento de sono funciona nos relógios",
       "O que define a durabilidade de uma tela OLED",
       "Como funcionam os filtros de spam no email",
-      "O impacto dos cabos submarinos na internet global"
+      "O impacto dos cabos submarinos na internet global",
+      "Como a impressão 4D altera materiais com calor",
+      "O guia para organizar arquivos digitais no computador",
+      "Como funcionam os tradutores automáticos em tempo real"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2347,7 +2346,8 @@
       "O impacto da reeleição na gestão dos prefeitos",
       "Como o Supremo Tribunal Federal define a jurisprudência",
       "O papel das ouvidorias públicas na defesa do cidadão",
-      "Como a posse de armas gera debates no Congresso"
+      "Como a posse de armas gera debates no Congresso",
+      "O efeito das desonerações fiscais nas contas públicas"
     ]
   }
 }
