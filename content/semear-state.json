@@ -8,10 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "A história da ocupação urbana nas metrópoles litorâneas",
-      "Como funcionam as cooperativas de reciclagem de lixo urbano",
-      "Por que a economia circular reduz o descarte industrial",
-      "Como funcionam os conselhos tutelares na defesa infantil",
       "A história dos movimentos sociais pela moradia urbana popular",
       "Como funciona a proteção legal aos povos indígenas isolados",
       "Por que a alfabetização de adultos transforma comunidades inteiras",
@@ -19,15 +15,34 @@
       "Guia prático para acessar serviços consulares no exterior"
     ],
     "economia": [
-      "Como funcionam as garantias em empréstimos bancários",
-      "Impactos econômicos da expansão urbana nas metrópoles",
-      "Como calcular impostos incidentes sobre folha salarial",
-      "Estratégias para internacionalizar pequenas e médias marcas"
+      "Como funciona o crédito consignado para aposentados",
+      "Guia prático de planejamento tributário para freelancers",
+      "Estratégias para reduzir custos fixos no pequeno negócio",
+      "Como analisar a saúde financeira de uma empresa",
+      "Benefícios e riscos do investimento em criptomoedas no Brasil",
+      "Como funciona o regime de tributação do Lucro Real",
+      "O papel da educação financeira nas escolas brasileiras",
+      "Como escolher a melhor conta digital para seu perfil",
+      "Entendendo a diferença entre juros simples e compostos",
+      "Como funciona o seguro de automóvel como proteção patrimonial",
+      "Guia de investimentos sustentáveis: ESG e retorno financeiro",
+      "Como avaliar a viabilidade de abrir uma franquia",
+      "Impacto da taxa de câmbio nas compras online internacionais",
+      "Como funciona o programa de microfinanciamento para mulheres empreendedoras",
+      "Estratégias de diversificação de carteira para iniciantes",
+      "Como calcular o custo de oportunidade em decisões de consumo",
+      "Guia de aposentadoria para trabalhadores informais",
+      "Como funciona o mercado de opções no Brasil",
+      "Impacto da política fiscal nas pequenas empresas",
+      "Como usar o cartão de crédito sem gerar dívidas",
+      "Guia de negociação de salários para profissionais de tecnologia",
+      "Como funciona o leasing de equipamentos para startups",
+      "Efeitos da desvalorização cambial nos preços de produtos importados",
+      "Como planejar a sucessão patrimonial em família",
+      "Diferenças entre debêntures e títulos públicos para investidores",
+      "Como funciona o financiamento coletivo de projetos empresariais"
     ],
     "tecnologia": [
-      "Como funcionam os sensores de toque nas telas",
-      "O impacto do trabalho remoto na saúde mental",
-      "Como a internet das coisas otimiza o trânsito",
       "O guia para escolher um bom plano de internet",
       "Como funcionam as câmeras de segurança com infravermelho",
       "O impacto da inteligência artificial na criação artística",
@@ -47,12 +62,6 @@
       "A influência da microbiota intestinal na imunidade esportiva"
     ],
     "cultura": [
-      "O impacto dos cafés literários nas cidades brasileiras",
-      "Como surgem as trilhas sonoras para games nacionais",
-      "Por que a restauração de murais urbanos importa",
-      "Guia prático de leitura de graphic novels independentes",
-      "Como funciona a arrecadação de direitos de streaming musical",
-      "Por que a dança contemporânea ganha espaço nas escolas",
       "Guia de visita aos centros de memória afro‑brasileira",
       "Como funcionam os selos de certificação cultural sustentável",
       "Por que a culinária de rua influencia a identidade regional",
@@ -76,15 +85,6 @@
       "Por que a literatura de crônicas urbanas reflete transformações sociais"
     ],
     "politica": [
-      "Efeito das emendas parlamentares no orçamento federal",
-      "Como funciona o controle interno nos órgãos federais",
-      "Repercussões da Lei de Cotas na política nacional",
-      "Desafios da representação proporcional no Congresso brasileiro",
-      "Como a Lei de Diretrizes Orçamentárias orienta políticas públicas",
-      "Impacto da digitalização do voto na segurança eleitoral",
-      "Papel das Ouvidorias Públicas na defesa do consumidor",
-      "Como a Lei de Licitações afeta fornecedores do governo",
-      "Consequências do voto facultativo no processo democrático",
       "Guia para entender a aprovação de medidas provisórias",
       "Efeitos da reforma tributária sobre a arrecadação federal",
       "Como a Lei de Participação Popular incentiva a democracia direta",
@@ -961,7 +961,11 @@
       "Por que a proteção da caatinga sustenta comunidades sertanejas",
       "A história da demarcação de reservas extrativistas marinhas",
       "Como funciona o monitoramento de desastres naturais por satélite",
-      "Por que o manejo de bacias hidrográficas evita enchentes"
+      "Por que o manejo de bacias hidrográficas evita enchentes",
+      "A história da ocupação urbana nas metrópoles litorâneas",
+      "Como funcionam as cooperativas de reciclagem de lixo urbano",
+      "Por que a economia circular reduz o descarte industrial",
+      "Como funcionam os conselhos tutelares na defesa infantil"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1201,7 +1205,15 @@
       "Como funcionam os fundos de pensão corporativos",
       "Impactos econômicos das concessões de rodovias federais",
       "Como estruturar parcerias comerciais estratégicas duradouras",
-      "Estratégias para gerenciar estoques sem imobilizar capital"
+      "Estratégias para gerenciar estoques sem imobilizar capital",
+      "Como funcionam as garantias em empréstimos bancários",
+      "Impactos econômicos da expansão urbana nas metrópoles",
+      "Como calcular impostos incidentes sobre folha salarial",
+      "Estratégias para internacionalizar pequenas e médias marcas",
+      "O que é taxa Selic e como afeta seu orçamento",
+      "Como montar reserva de emergência eficiente",
+      "Diferenças entre investimento em ações e em fundos",
+      "Impacto da inflação nos contratos de aluguel"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1437,7 +1449,10 @@
       "Como funcionam os tradutores automáticos em tempo real",
       "O impacto das redes sociais na memória humana",
       "Como a tecnologia de drones agiliza entregas urbanas",
-      "O que muda com a chegada de satélites de baixa órbita"
+      "O que muda com a chegada de satélites de baixa órbita",
+      "Como funcionam os sensores de toque nas telas",
+      "O impacto do trabalho remoto na saúde mental",
+      "Como a internet das coisas otimiza o trânsito"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2070,7 +2085,13 @@
       "A importância dos festejos de largo na Bahia",
       "Por que o teatro de bonecos encanta diferentes gerações",
       "Por que a música de protesto permanece relevante",
-      "Guia para entender o mercado de arte digital"
+      "Guia para entender o mercado de arte digital",
+      "O impacto dos cafés literários nas cidades brasileiras",
+      "Como surgem as trilhas sonoras para games nacionais",
+      "Por que a restauração de murais urbanos importa",
+      "Guia prático de leitura de graphic novels independentes",
+      "Como funciona a arrecadação de direitos de streaming musical",
+      "Por que a dança contemporânea ganha espaço nas escolas"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -2405,7 +2426,16 @@
       "Guia para usar a Lei de Acesso à Informação",
       "Consequências do foro privilegiado na justiça brasileira",
       "Como a transparência fiscal beneficia o contribuinte comum",
-      "Importância da participação cidadã nas audiências públicas"
+      "Importância da participação cidadã nas audiências públicas",
+      "Efeito das emendas parlamentares no orçamento federal",
+      "Como funciona o controle interno nos órgãos federais",
+      "Repercussões da Lei de Cotas na política nacional",
+      "Desafios da representação proporcional no Congresso brasileiro",
+      "Como a Lei de Diretrizes Orçamentárias orienta políticas públicas",
+      "Impacto da digitalização do voto na segurança eleitoral",
+      "Papel das Ouvidorias Públicas na defesa do consumidor",
+      "Como a Lei de Licitações afeta fornecedores do governo",
+      "Consequências do voto facultativo no processo democrático"
     ]
   }
 }
