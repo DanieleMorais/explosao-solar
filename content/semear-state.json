@@ -8,11 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Como funciona o programa de apoio a estudantes de baixa renda",
-      "Guia para entender a política de proteção ao patrimônio cultural",
-      "Como funciona a rede de Centros de Atenção Psicossocial (CAPS)",
-      "Benefícios da digitalização de documentos em cartórios brasileiros",
-      "Como funciona o programa de incentivo à leitura nas escolas públicas",
       "Guia para acessar o serviço de transporte gratuito para idosos",
       "Como funciona a política de prevenção ao trabalho infantil nas cadeias produtivas",
       "Impacto da conservação dos manguezais na proteção costeira",
@@ -20,8 +15,6 @@
       "Como funciona a política de incentivo ao turismo sustentável no Brasil"
     ],
     "economia": [
-      "Como funciona o mercado de carbono para empresas brasileiras",
-      "O impacto econômico das tarifas portuárias nas exportações",
       "Como funcionam os fundos setoriais de infraestrutura nacional",
       "O papel econômico do turismo regional no comércio local",
       "Como funciona a proteção cambial para empresas exportadoras",
@@ -30,26 +23,29 @@
       "O papel econômico das patentes na inovação industrial"
     ],
     "tecnologia": [
-      "O que muda com a adoção de assinaturas digitais válidas",
-      "Como funcionam os tradutores de páginas web em tempo real",
-      "Por que as ventoinhas de resfriamento mantêm o computador estável",
-      "Como funcionam os gerenciadores de tarefas para organizar a rotina"
+      "Benefícios da criptografia pós‑quantum para usuários",
+      "Como funciona o gerenciamento de atualizações de firmware",
+      "Guia de uso consciente de energia em laptops",
+      "Impacto dos NFTs na propriedade intelectual digital",
+      "Como escolher um monitor com baixa emissão de luz azul",
+      "Segurança de dados em aplicativos de telemedicina",
+      "Como funciona a sincronização de arquivos entre dispositivos",
+      "Guia prático de limpeza de dados em smartphones",
+      "Tecnologia de bloqueio de anúncios e privacidade online",
+      "Como funciona a autenticação baseada em hardware (YubiKey)",
+      "Guia de uso seguro de serviços de streaming ao vivo",
+      "Como a IA auxilia na tradução de documentos legais",
+      "Estratégias para proteger contas de e‑mail corporativas",
+      "Como funciona a tecnologia de tela dobrável",
+      "Guia de otimização de desempenho em notebooks antigos",
+      "Como a computação sem servidor simplifica aplicativos web",
+      "Como funciona a tecnologia de carregamento sem fio inverso",
+      "Guia de privacidade para crianças em plataformas de jogos",
+      "Como a IA melhora a acessibilidade em sites públicos",
+      "Estratégias de cibersegurança para freelancers digitais"
     ],
     "ciencia": [],
     "esportes": [
-      "Como a análise de dados transforma táticas futebolísticas",
-      "Benefícios do treinamento de força para jogadores de futsal",
-      "Efeitos da altitude na resistência de corredores de maratona",
-      "Guia de escolha de equipamentos de proteção no rugby",
-      "Como funciona o sistema de fair play da FIFA",
-      "Influência da nutrição cetogênica no desempenho esportivo",
-      "Estratégias de recuperação ativa para atletas de natação",
-      "Papel da psicologia de equipe no sucesso de clubes",
-      "Como o blockchain está mudando contratos de atletas",
-      "Impacto econômico dos estádios multiuso nas cidades brasileiras",
-      "Guia de preparação mental para competições de tiro ao alvo",
-      "Como funciona a classificação para os Jogos Paralímpicos",
-      "Importância da biomecânica no aprimoramento de lançamentos no basquete",
       "Efeitos do sono fragmentado na performance de jogadores de elite",
       "Como a inteligência artificial auxilia na prevenção de lesões",
       "Guia de escolha de chuteiras para gramados sintéticos",
@@ -68,21 +64,29 @@
       "Benefícios do yoga para flexibilidade de atletas de artes marciais"
     ],
     "cultura": [
-      "Guia para iniciantes em fotografia analógica",
-      "Como a música de protesto molda a opinião pública",
-      "O impacto das feiras de design nas cidades brasileiras",
-      "Como surgem as coletivas de cinema independente",
-      "A influência dos ritmos nordestinos na música pop mundial",
-      "Como a literatura de viagem transforma percepções regionais",
-      "O papel das bibliotecas digitais na democratização do acesso",
-      "Como funcionam os prêmios de curadoria de arte emergente",
-      "A evolução dos formatos de storytelling em jogos digitais",
-      "Como a gastronomia de fusão cria novas identidades culturais"
+      "O que são NFTs de arte e como funcionam",
+      "Guia de técnicas de pintura em aquarela para iniciantes",
+      "Como funciona a distribuição de filmes independentes no Brasil",
+      "Por que a literatura de ficção histórica permanece relevante",
+      "Guia para entender a classificação etária de jogos",
+      "Como a dança de salão evolui nas cidades brasileiras",
+      "O que são microfestivais e como impulsionam artistas locais",
+      "Guia de leitura para obras de literatura negra brasileira",
+      "Como funciona a preservação digital de arquivos sonoros",
+      "Por que o artesanato de cerâmica ganha mercado internacional",
+      "Guia para organizar um clube de leitura virtual",
+      "Como a inteligência artificial auxilia na restauração de filmes antigos",
+      "O que é cinema de guerrilha e seus principais exemplos",
+      "Guia de instrumentos de sopro típicos da música brasileira",
+      "Como funcionam as cooperativas de produção audiovisual",
+      "Por que o street art se torna patrimônio cultural urbano",
+      "Guia de estratégias para financiamento coletivo de livros",
+      "Como a culinária de rua influencia a identidade regional",
+      "O que são podcasts de narrativa sonora e como produzi-los",
+      "Guia para visitar museus de arte contemporânea fora de capitais",
+      "Como funciona a certificação de produtos culturais artesanais"
     ],
     "politica": [
-      "Como funcionam as audiências públicas sobre obras locais",
-      "O impacto do parcelamento de solo urbano na vizinhança",
-      "Como cobrar saneamento básico negligenciado pelo poder público",
       "O direito de greve para servidores da segurança pública",
       "Como denunciar propaganda irregular em prédios públicos",
       "O papel das agências reguladoras na conta de luz",
@@ -990,7 +994,12 @@
       "O que muda com a nova Lei de Responsabilidade Fiscal estadual",
       "Guia para solicitar o benefício de auxílio à creche",
       "Como funciona a gestão de emergências em desastres fluviais",
-      "Impacto da arborização urbana na qualidade do ar nas capitais"
+      "Impacto da arborização urbana na qualidade do ar nas capitais",
+      "Como funciona o programa de apoio a estudantes de baixa renda",
+      "Guia para entender a política de proteção ao patrimônio cultural",
+      "Como funciona a rede de Centros de Atenção Psicossocial (CAPS)",
+      "Benefícios da digitalização de documentos em cartórios brasileiros",
+      "Como funciona o programa de incentivo à leitura nas escolas públicas"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1286,7 +1295,9 @@
       "Como funciona a recuperação judicial de empresas em crise",
       "O impacto econômico da automação industrial nas fábricas",
       "Como funcionam os títulos de capitalização no planejamento financeiro",
-      "O custo financeiro da alta rotatividade de funcionários"
+      "O custo financeiro da alta rotatividade de funcionários",
+      "Como funciona o mercado de carbono para empresas brasileiras",
+      "O impacto econômico das tarifas portuárias nas exportações"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1557,7 +1568,19 @@
       "O que muda no planejamento com o uso de planilhas inteligentes",
       "Como funciona a sincronização de dados entre vários aparelhos",
       "Por que os mouses ergonômicos previnem lesões por esforço",
-      "Como funcionam as ferramentas de colaboração em documentos online"
+      "Como funcionam as ferramentas de colaboração em documentos online",
+      "O que muda com a adoção de assinaturas digitais válidas",
+      "Como funcionam os tradutores de páginas web em tempo real",
+      "Por que as ventoinhas de resfriamento mantêm o computador estável",
+      "Como funcionam os gerenciadores de tarefas para organizar a rotina",
+      "Guia de autenticação biométrica para dispositivos móveis",
+      "Impacto da IA generativa na produção de conteúdo",
+      "Como funciona a rede mesh doméstica Wi‑Fi",
+      "Privacidade em aplicativos de pagamento digital",
+      "Estratégias de backup automático na nuvem pessoal",
+      "O futuro dos assistentes de voz multilíngues",
+      "Como proteger sua identidade em redes sociais",
+      "Tecnologia de detecção de intrusões em redes Wi‑Fi"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -1896,7 +1919,20 @@
       "Por que a glicogenólise sustenta picos de intensidade",
       "Como funcionam as câmaras hiperbáricas na reabilitação",
       "A influência da microbiota intestinal na imunidade esportiva",
-      "Impacto da tecnologia VAR no treinamento de árbitros"
+      "Impacto da tecnologia VAR no treinamento de árbitros",
+      "Como a análise de dados transforma táticas futebolísticas",
+      "Benefícios do treinamento de força para jogadores de futsal",
+      "Efeitos da altitude na resistência de corredores de maratona",
+      "Guia de escolha de equipamentos de proteção no rugby",
+      "Como funciona o sistema de fair play da FIFA",
+      "Influência da nutrição cetogênica no desempenho esportivo",
+      "Estratégias de recuperação ativa para atletas de natação",
+      "Papel da psicologia de equipe no sucesso de clubes",
+      "Como o blockchain está mudando contratos de atletas",
+      "Impacto econômico dos estádios multiuso nas cidades brasileiras",
+      "Guia de preparação mental para competições de tiro ao alvo",
+      "Como funciona a classificação para os Jogos Paralímpicos",
+      "Importância da biomecânica no aprimoramento de lançamentos no basquete"
     ],
     "cultura": [
       "O Impacto da Globalização na Música Brasileira",
@@ -2276,7 +2312,26 @@
       "Como a gastronomia afro-brasileira influencia chefs contemporâneos",
       "A história dos cafés culturais como polos criativos",
       "Como funciona a produção de vinhetas para podcasts",
-      "A importância dos museus de memória indígena"
+      "A importância dos museus de memória indígena",
+      "Guia para iniciantes em fotografia analógica",
+      "Como a música de protesto molda a opinião pública",
+      "O impacto das feiras de design nas cidades brasileiras",
+      "Como surgem as coletivas de cinema independente",
+      "A influência dos ritmos nordestinos na música pop mundial",
+      "Como a literatura de viagem transforma percepções regionais",
+      "O papel das bibliotecas digitais na democratização do acesso",
+      "Como funcionam os prêmios de curadoria de arte emergente",
+      "A evolução dos formatos de storytelling em jogos digitais",
+      "Como a gastronomia de fusão cria novas identidades culturais",
+      "O que é música microtonal e seu impacto",
+      "Guia para montar biblioteca de vinil em casa",
+      "Como surgem as trilhas sonoras de videogames",
+      "Por que a fotografia analógica ainda atrai colecionadores",
+      "O papel dos cafés culturais na formação de leitores",
+      "Como funciona a curadoria de arte em plataformas digitais",
+      "Guia prático para iniciar um podcast de cultura",
+      "Por que o design de capas influencia vendas de livros",
+      "Como a gastronomia sustentável transforma restaurantes brasileiros"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -2645,7 +2700,10 @@
       "Como denunciar desvios de verbas na sua cidade",
       "O papel dos conselhos tutelares na proteção infantil",
       "Como solicitar documentos públicos sem pagar taxas abusivas",
-      "O direito à aposentadoria especial para servidores públicos"
+      "O direito à aposentadoria especial para servidores públicos",
+      "Como funcionam as audiências públicas sobre obras locais",
+      "O impacto do parcelamento de solo urbano na vizinhança",
+      "Como cobrar saneamento básico negligenciado pelo poder público"
     ]
   }
 }
