@@ -8,12 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Por que a prevenção ao trabalho infantil beneficia a economia",
-      "Como o programa Bolsa Família evoluiu ao longo dos anos",
-      "Guia de direitos do consumidor nas compras online",
-      "Por que a arborização urbana melhora a saúde pública",
-      "Como funciona a assistência jurídica gratuita no país",
-      "Guia de cuidados preventivos para a saúde mental no SUS",
       "Por que a inclusão digital nas escolas reduz desigualdades",
       "Como a gestão de resíduos sólidos protege o meio ambiente",
       "Guia para acessar o auxílio emergencial em crises",
@@ -28,13 +22,6 @@
       "Guia de participação cidadã nas audiências públicas virtuais"
     ],
     "economia": [
-      "Como calcular o retorno financeiro de uma pós graduação",
-      "Estratégias para reduzir custos fixos sem demitir funcionários",
-      "Como funcionam os consórcios na aquisição de bens imobilizados",
-      "O papel das cooperativas de crédito no desenvolvimento regional",
-      "Como analisar a saúde financeira de fornecedores antes de contratar",
-      "O impacto econômico da informalidade no mercado de trabalho brasileiro",
-      "Como funcionam os fundos de índice setoriais globais",
       "Estratégias para mitigar o risco cambial em negócios locais",
       "Como o ciclo econômico influencia as decisões de consumo familiar",
       "O impacto das tarifas alfandegárias no preço dos produtos importados",
@@ -56,34 +43,37 @@
       "O impacto econômico das políticas de incentivo à inovação industrial"
     ],
     "tecnologia": [
-      "Guia prático de backup em nuvem híbrida",
-      "Desmistificando a inteligência artificial explicável",
-      "Como funcionam os contratos inteligentes em blockchain",
-      "Vantagens da computação de borda para cidades inteligentes",
-      "Segurança em dispositivos wearables: cuidados essenciais",
-      "Como a IA melhora a acessibilidade para cegos",
-      "Guia de configuração de redes domésticas mesh",
-      "Privacidade em assistentes de voz: ajustes recomendados",
-      "Impacto dos algoritmos de recomendação nas notícias",
-      "Como proteger smart TVs contra invasões",
-      "Guia de uso consciente de energia em data centers",
-      "Estrutura de segurança em pagamentos por aproximação",
-      "Como funciona a detecção automática de deepfakes",
-      "Benefícios da realidade aumentada no varejo físico",
-      "Como escolher um SSD resistente a falhas",
-      "Guia de migração de aplicativos legados para cloud",
-      "Riscos de rastreamento por beacons em lojas físicas",
-      "Como a IA otimiza a logística de entregas urbanas",
-      "Práticas de cibersegurança para micro e pequenas empresas",
-      "Guia de configuração de firewalls domésticos avançados",
-      "Impacto da tecnologia 5G na telemedicina rural"
+      "Segurança em videoconferências práticas",
+      "Privacidade em aplicativos de mensagens",
+      "Como proteger dispositivos IoT domésticos",
+      "Impacto dos wearables na saúde",
+      "Automação residencial e integração segura",
+      "Cibersegurança em pequenas empresas",
+      "Tokenização de dados sensíveis",
+      "Uso de drones para monitoramento ambiental",
+      "Tecnologia de impressão 3D na construção",
+      "Desafios éticos da IA em recrutamento",
+      "Como funciona a mineração de criptomoedas",
+      "Guia de backup de dados",
+      "Como funciona a detecção de deepfakes",
+      "Como funciona a autenticação de dois fatores",
+      "O papel da IA na automação de processos",
+      "Como funciona a computação sem servidor",
+      "O que são smart contracts",
+      "Como funciona o protocolo DNS",
+      "Como funciona o protocolo HTTPS",
+      "Como funciona a computação de borda",
+      "O futuro do trabalho remoto",
+      "Como funciona a realidade aumentada",
+      "Como funciona o armazenamento em nuvem",
+      "Como funciona a criptografia de ponta a ponta",
+      "Como funciona o reconhecimento facial",
+      "Como funciona a rede mesh",
+      "Como funciona a rede 5G",
+      "Como funciona a IA explicável"
     ],
     "ciencia": [],
     "esportes": [
-      "Como a biomecânica da corrida previne o desgaste articular",
-      "O papel fundamental do core na estabilidade de atletas",
-      "Como funcionam os mecanismos de termorregulação durante exercícios intensos",
-      "A influência da microbiota intestinal na recuperação e imunidade",
       "Como a assimetria muscular afeta o rendimento em campo",
       "O impacto da privação crônica de sono na síntese proteica",
       "Como os reflexos visuais determinam o sucesso em esportes rápidos",
@@ -110,7 +100,6 @@
       "A influência do calçado adequado na distribuição de cargas plantares"
     ],
     "cultura": [
-      "Por que a literatura de ficção histórica permanece relevante",
       "Guia para entender a classificação etária de jogos",
       "Como a dança de salão evolui nas cidades brasileiras",
       "O que são microfestivais e como impulsionam artistas locais",
@@ -129,19 +118,7 @@
       "Guia para visitar museus de arte contemporânea fora de capitais",
       "Como funciona a certificação de produtos culturais artesanais"
     ],
-    "politica": [
-      "Como o cidadão pode propor projetos de lei de iniciativa popular",
-      "O funcionamento dos tribunais administrativos no julgamento de multas ambientais",
-      "Como a estabilidade do servidor público protege a máquina estatal",
-      "O papel das comissões parlamentares de inquérito na fiscalização política",
-      "Como a legislação trabalhista protege o empregado contratado pelo Estado",
-      "O impacto da responsabilidade fiscal nas contas das prefeituras brasileiras",
-      "Como funciona a desapropriação de imóveis urbanos pelo poder público",
-      "O papel das procuradorias gerais na defesa jurídica dos estados",
-      "Como a legislação de zoneamento urbano molda o crescimento das cidades",
-      "O impacto da gratuidade do transporte público nas contas municipais",
-      "Como funcionam os conselhos de habitação popular nos municípios"
-    ]
+    "politica": []
   },
   "usadas": {
     "mundo": [
@@ -1055,7 +1032,13 @@
       "Guia de acesso ao programa Minha Casa Minha Vida",
       "Por que a conservação do Pantanal protege a biodiversidade",
       "Como a energia solar está democratizando a eletricidade",
-      "Guia para entender a tarifa de água residencial"
+      "Guia para entender a tarifa de água residencial",
+      "Por que a prevenção ao trabalho infantil beneficia a economia",
+      "Como o programa Bolsa Família evoluiu ao longo dos anos",
+      "Guia de direitos do consumidor nas compras online",
+      "Por que a arborização urbana melhora a saúde pública",
+      "Como funciona a assistência jurídica gratuita no país",
+      "Guia de cuidados preventivos para a saúde mental no SUS"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1363,7 +1346,14 @@
       "Como planejar a aposentadoria sem depender apenas do INSS",
       "Estratégias para proteger o patrimônio contra a inflação alta",
       "Como funcionam as marcas registradas na proteção empresarial",
-      "O impacto econômico do envelhecimento populacional na previdência"
+      "O impacto econômico do envelhecimento populacional na previdência",
+      "Como calcular o retorno financeiro de uma pós graduação",
+      "Estratégias para reduzir custos fixos sem demitir funcionários",
+      "Como funcionam os consórcios na aquisição de bens imobilizados",
+      "O papel das cooperativas de crédito no desenvolvimento regional",
+      "Como analisar a saúde financeira de fornecedores antes de contratar",
+      "O impacto econômico da informalidade no mercado de trabalho brasileiro",
+      "Como funcionam os fundos de índice setoriais globais"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1674,7 +1664,30 @@
       "Estratégias de privacidade em aplicativos de mensagens",
       "O papel da criptografia quântica na proteção de dados",
       "Como escolher um roteador doméstico seguro",
-      "Tendências de computação sem servidor para startups"
+      "Tendências de computação sem servidor para startups",
+      "Guia prático de backup em nuvem híbrida",
+      "Desmistificando a inteligência artificial explicável",
+      "Como funcionam os contratos inteligentes em blockchain",
+      "Vantagens da computação de borda para cidades inteligentes",
+      "Segurança em dispositivos wearables: cuidados essenciais",
+      "Como a IA melhora a acessibilidade para cegos",
+      "Guia de configuração de redes domésticas mesh",
+      "Privacidade em assistentes de voz: ajustes recomendados",
+      "Impacto dos algoritmos de recomendação nas notícias",
+      "Como proteger smart TVs contra invasões",
+      "Guia de uso consciente de energia em data centers",
+      "Estrutura de segurança em pagamentos por aproximação",
+      "Como funciona a detecção automática de deepfakes",
+      "Benefícios da realidade aumentada no varejo físico",
+      "Como escolher um SSD resistente a falhas",
+      "Guia de migração de aplicativos legados para cloud",
+      "Riscos de rastreamento por beacons em lojas físicas",
+      "Como a IA otimiza a logística de entregas urbanas",
+      "Práticas de cibersegurança para micro e pequenas empresas",
+      "Guia de configuração de firewalls domésticos avançados",
+      "Impacto da tecnologia 5G na telemedicina rural",
+      "Como funciona o reconhecimento de voz",
+      "O futuro dos dispositivos vestíveis"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2044,7 +2057,11 @@
       "Impacto das redes sociais na negociação de patrocínios esportivos",
       "Benefícios do yoga para flexibilidade de atletas de artes marciais",
       "Como o cérebro humano processa decisões sob pressão extrema",
-      "O impacto silencioso das viagens internacionais no relógio biológico"
+      "O impacto silencioso das viagens internacionais no relógio biológico",
+      "Como a biomecânica da corrida previne o desgaste articular",
+      "O papel fundamental do core na estabilidade de atletas",
+      "Como funcionam os mecanismos de termorregulação durante exercícios intensos",
+      "A influência da microbiota intestinal na recuperação e imunidade"
     ],
     "cultura": [
       "O Impacto da Globalização na Música Brasileira",
@@ -2446,7 +2463,8 @@
       "Como a gastronomia sustentável transforma restaurantes brasileiros",
       "O que são NFTs de arte e como funcionam",
       "Guia de técnicas de pintura em aquarela para iniciantes",
-      "Como funciona a distribuição de filmes independentes no Brasil"
+      "Como funciona a distribuição de filmes independentes no Brasil",
+      "Por que a literatura de ficção histórica permanece relevante"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -2851,7 +2869,18 @@
       "Como funcionam os conselhos tutelares na proteção da infância urbana",
       "O papel das guardas municipais na segurança pública das cidades",
       "Como a legislação ambiental protege os parques urbanos brasileiros",
-      "O impacto dos precatórios judiciais no orçamento das prefeituras"
+      "O impacto dos precatórios judiciais no orçamento das prefeituras",
+      "Como o cidadão pode propor projetos de lei de iniciativa popular",
+      "O funcionamento dos tribunais administrativos no julgamento de multas ambientais",
+      "Como a estabilidade do servidor público protege a máquina estatal",
+      "O papel das comissões parlamentares de inquérito na fiscalização política",
+      "Como a legislação trabalhista protege o empregado contratado pelo Estado",
+      "O impacto da responsabilidade fiscal nas contas das prefeituras brasileiras",
+      "Como funciona a desapropriação de imóveis urbanos pelo poder público",
+      "O papel das procuradorias gerais na defesa jurídica dos estados",
+      "Como a legislação de zoneamento urbano molda o crescimento das cidades",
+      "O impacto da gratuidade do transporte público nas contas municipais",
+      "Como funcionam os conselhos de habitação popular nos municípios"
     ]
   }
 }
