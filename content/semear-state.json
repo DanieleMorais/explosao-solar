@@ -8,9 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Por que a preservação da fauna marinha é urgente",
-      "O guia prático para identificar alimentos ultraprocessados",
-      "Como funciona o combate a incêndios florestais complexos",
       "Por que a requalificação de centros históricos atrai moradores",
       "O impacto dos desníveis urbanos na mobilidade pedestre"
     ],
@@ -86,7 +83,6 @@
       "A influência do calçado adequado na distribuição de cargas plantares"
     ],
     "cultura": [
-      "A evolução dos festivais de literatura infantil",
       "Como a culinária de rua reforça identidade local",
       "Guia de técnicas básicas de restauração de móveis antigos",
       "Como a música coral escolar contribui para inclusão social",
@@ -99,7 +95,6 @@
       "Guia de exploração de museus virtuais interativos"
     ],
     "politica": [
-      "Guia para entender o voto nulo",
       "Efeitos da Lei de Responsabilidade Fiscal nos municípios",
       "Papel dos Tribunais de Contas na gestão pública",
       "Como funciona o processo de aprovação de leis estaduais",
@@ -1082,7 +1077,10 @@
       "Como funciona a fiscalização sanitária em feiras livres",
       "Por que a expansão urbana desordenada sufoca rios",
       "O impacto da iluminação pública eficiente na criminalidade",
-      "Como funcionam os postos de atendimento ao trabalhador"
+      "Como funcionam os postos de atendimento ao trabalhador",
+      "Por que a preservação da fauna marinha é urgente",
+      "O guia prático para identificar alimentos ultraprocessados",
+      "Como funciona o combate a incêndios florestais complexos"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -2577,7 +2575,8 @@
       "Como surgem os memes como forma de arte",
       "Guia de visita aos ateliês de cerâmica contemporânea",
       "Impacto das trilhas sonoras indie no cinema nacional",
-      "Como funciona a economia de NFTs de arte digital"
+      "Como funciona a economia de NFTs de arte digital",
+      "A evolução dos festivais de literatura infantil"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -3024,7 +3023,8 @@
       "O impacto da suspensão de direitos políticos na cidadania",
       "Como o cidadão pode fiscalizar contratos de obras públicas",
       "Impacto da LAI na controle social",
-      "Como a imunidade parlamentar afeta a democracia"
+      "Como a imunidade parlamentar afeta a democracia",
+      "Guia para entender o voto nulo"
     ]
   }
 }
