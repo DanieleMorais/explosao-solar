@@ -1,0 +1,24 @@
+{
+  "slug": "binance-lanca-plataforma-para-agentes-de-ia-negociarem",
+  "title": "Binance launches platform for AI agents to trade cryptocurrencies",
+  "seoTitle": "Binance Launches Agent OS for AI Crypto Trading",
+  "subtitle": "New tool connects artificial intelligence to the market with dedicated sub-accounts and permission control.",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "Binance has introduced Agent OS, a platform that allows artificial intelligence to analyze markets and trade cryptocurrencies on behalf of users.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-08-23T09:24:00.910Z",
+  "readingMinutes": 2,
+  "tags": [
+    "binance",
+    "artificial intelligence",
+    "cryptocurrencies",
+    "agent os",
+    "technology"
+  ],
+  "sourceName": "Época Negócios, Pasquale Pillitteri",
+  "sourceUrl": "https://epocanegocios.globo.com/inteligencia-artificial/noticia/2026/08/binance-lanca-plataforma-que-permite-a-agentes-de-ia-negociar-criptomoedas.ghtml",
+  "trending": "binance trading",
+  "contentHtml": "<p>Cryptocurrency exchange Binance has announced the launch of Agent OS, a platform designed to allow artificial intelligence agents to analyze markets and execute trades on behalf of users. The release has sparked significant interest by integrating the exchange's existing tools and services with support for the Model Context Protocol.</p>\n\n<h2>What is Agent OS</h2>\n<p>Agent OS works as a standardized access layer that connects artificial intelligence applications to the exchange's trading infrastructure, market data, wallet, and payments. The infrastructure integrates features such as the Binance Wallet Agentic Hub, the Binance x402 transaction verification and payment facilitation API, and the Binance Skill Hub.</p>\n\n<h2>Which tools work with the new release</h2>\n<p>At launch, the platform operates with tools such as ChatGPT, Codex, Claude Code, Cursor, Claude, and the VS Code editor. This allows users to authorize agents to access market data, view account information, and execute orders without the need for custom integration codes.</p>\n\n<h2>How security and control work</h2>\n<p>According to those responsible for the project, the system was built for users to maintain granular control through dedicated sub-accounts. Customers can assign agents to these specific sub-accounts for activities such as spot or futures trading, configuring permissions and revoking access at any time.</p>\n\n<h2>What are the limits and restrictions</h2>\n<p>To protect funds, withdrawals and transfers to external addresses are blocked by default in agent sub-accounts. In addition, there are financial limits established by the company, such as a daily limit of $50,000 for conventional swaps in the Agentic Wallet and $100,000 for decentralized finance operations.</p>\n\n<h2>Risks and recommended precautions</h2>\n<p>Experts and advisory warnings highlight that delegating orders to bots requires caution due to cryptocurrency volatility and potential server failures in a young infrastructure. The recommendation is to use the tool only in sub-accounts with limited capital, treating the new feature as a prudent experiment.</p><p><em>With information from Época Negócios, Pasquale Pillitteri.</em></p>",
+  "lang": "en"
+}

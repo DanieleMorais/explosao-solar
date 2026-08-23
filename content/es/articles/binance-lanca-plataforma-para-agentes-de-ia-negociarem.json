@@ -1,0 +1,24 @@
+{
+  "slug": "binance-lanca-plataforma-para-agentes-de-ia-negociarem",
+  "title": "Binance lanza plataforma para agentes de IA para negociar criptomonedas",
+  "seoTitle": "Binance lanza plataforma para agentes de IA",
+  "subtitle": "Nueva herramienta conecta inteligencia artificial al mercado con subcuentas dedicadas y control de permisos.",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "Binance presentó Agent OS, plataforma que permite a la inteligencia artificial analizar mercados y negociar criptomonedas en nombre de los usuarios.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-08-23T09:24:00.910Z",
+  "readingMinutes": 2,
+  "tags": [
+    "binance",
+    "inteligencia artificial",
+    "criptomonedas",
+    "agent os",
+    "tecnología"
+  ],
+  "sourceName": "Época Negócios, Pasquale Pillitteri",
+  "sourceUrl": "https://epocanegocios.globo.com/inteligencia-artificial/noticia/2026/08/binance-lanca-plataforma-que-permite-a-agentes-de-ia-negociar-criptomoedas.ghtml",
+  "trending": "binance trading",
+  "contentHtml": "<p>El exchange de criptomonedas Binance anunció el lanzamiento de Agent OS, una plataforma creada para permitir que agentes de inteligencia artificial analicen mercados y ejecuten operaciones en nombre de los usuarios. La novedad generó gran interés al integrar herramientas y servicios existentes del exchange con soporte para el Model Context Protocol.</p>\n\n<h2>Qué es el Agent OS</h2>\n<p>Agent OS funciona como una capa de acceso estandarizada que conecta aplicaciones de inteligencia artificial a la infraestructura de negociación, datos de mercado, billetera y pagos del exchange. La infraestructura integra recursos como el Binance Wallet Agentic Hub, la API de verificación de transacciones y facilitación de pagos Binance x402, y el Binance Skill Hub.</p>\n\n<h2>Qué herramientas funcionan con la novedad</h2>\n<p>En el lanzamiento, la plataforma opera con herramientas como ChatGPT, Codex, Claude Code, Cursor, Claude y el editor VS Code. De este modo, los usuarios pueden autorizar a los agentes a acceder a datos de mercado, visualizar información de cuentas y ejecutar órdenes sin necesidad de códigos de integración personalizados.</p>\n\n<h2>Cómo funciona la seguridad y el control</h2>\n<p>Según los responsables del proyecto, el sistema fue construido para que el usuario mantenga el control granular por medio de subcuentas dedicadas. Los clientes pueden asignar agentes a estas subcuentas específicas para actividades como negociación al contado o de futuros, configurando permisos y revocando el acceso en cualquier momento.</p>\n\n<h2>Cuáles son los límites y restricciones</h2>\n<p>Para proteger los fondos, los retiros y envíos a direcciones externas están bloqueados por defecto en las subcuentas de los agentes. Además, existen límites financieros establecidos por la empresa, como el tope diario de 50.000 dólares para swaps convencionales en la Agentic Wallet y 100.000 dólares para operaciones de finanzas descentralizadas.</p>\n\n<h2>Riesgos y cuidados recomendados</h2>\n<p>Especialistas y avisos informativos destacan que la delegación de órdenes a robots exige cautela debido a la volatilidad de las criptomonedas y a posibles fallas en servidores de infraestructura joven. La recomendación es utilizar la herramienta solo en subcuentas con capital limitado, tratando la novedad como un experimento prudente.</p><p><em>Con información de Época Negócios, Pasquale Pillitteri.</em></p>",
+  "lang": "es"
+}
