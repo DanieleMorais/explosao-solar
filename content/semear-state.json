@@ -12,9 +12,6 @@
       "O impacto dos desníveis urbanos na mobilidade pedestre"
     ],
     "economia": [
-      "Como funciona o regime tributário do Simples Nacional",
-      "Benefícios e riscos de investir em ETFs",
-      "Como calcular o custo de oportunidade nas decisões",
       "O papel da taxa de câmbio no consumo doméstico",
       "Como funciona a previdência privada para autônomos",
       "Guia de planejamento financeiro para recém-casados",
@@ -88,8 +85,6 @@
       "Guia de exploração de museus virtuais interativos"
     ],
     "politica": [
-      "Efeito das emendas individuais no orçamento federal",
-      "Como a Defensoria Pública protege direitos fundamentais",
       "Impacto das políticas de cotas na representatividade política",
       "Como funciona o Conselho Nacional de Justiça",
       "Como a lei de improbidade protege o patrimônio público",
@@ -1405,7 +1400,10 @@
       "Guia prático para entender crédito consignado",
       "Como funciona a classificação de risco de crédito",
       "Impacto da inflação nos salários reais",
-      "Estratégias para reduzir gastos mensais"
+      "Estratégias para reduzir gastos mensais",
+      "Como funciona o regime tributário do Simples Nacional",
+      "Benefícios e riscos de investir em ETFs",
+      "Como calcular o custo de oportunidade nas decisões"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -3024,7 +3022,9 @@
       "Consequências da cassação de mandato para o eleitorado",
       "A importância da participação nas audiências públicas",
       "Como a reforma tributária altera a arrecadação federal",
-      "Guia prático da prestação de contas dos vereadores"
+      "Guia prático da prestação de contas dos vereadores",
+      "Efeito das emendas individuais no orçamento federal",
+      "Como a Defensoria Pública protege direitos fundamentais"
     ]
   }
 }
