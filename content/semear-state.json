@@ -8,8 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Entenda os limites do poder público",
-      "Guia para regularizar imóveis rurais",
       "Como funciona o sistema de cotas raciais",
       "Entenda seus direitos trabalhistas básicos",
       "Guia para solicitar a cédula de identidade",
@@ -25,19 +23,29 @@
       "Como funciona a proteção ambiental urbana"
     ],
     "economia": [
-      "Como funciona o mercado de leilões de imóveis e veículos",
-      "O impacto das tarifas de energia na produção industrial",
-      "Como estruturar um plano de negócios para captação de recursos",
-      "O papel das microfranquias na expansão do empreendedorismo",
-      "Como funcionam os fundos de índice negociados no exterior",
-      "O impacto das flutuações das commodities nas contas públicas"
+      "Estratégias de corte de gastos em tempos de crise",
+      "Taxa de câmbio flutuante: efeitos sobre exportações",
+      "Economia circular: modelo de negócio sustentável",
+      "Análise de demonstrações financeiras para pequenos empresários",
+      "Gestão de fluxo de caixa em empresas de comércio",
+      "Tributação sobre heranças: regras e planejamento",
+      "Custo de capital para startups: fontes de financiamento",
+      "Desenvolvimento de produtos digitais: modelo de receita",
+      "Finanças pessoais para casais: orçamento conjunto",
+      "Impacto das tarifas portuárias nas exportações brasileiras",
+      "Financiamento de infraestrutura pública: mecanismos e benefícios",
+      "Análise de risco de crédito para empréstimos empresariais",
+      "Planejamento tributário para microempreendedores individuais",
+      "Mercado de commodities: tendências e oportunidades de investimento",
+      "Estratégias de hedge contra variações cambiais",
+      "Economia de plataformas: modelo de negócios e regulamentação",
+      "Investimento em títulos públicos: segurança e rentabilidade",
+      "Gestão de riscos operacionais em empresas de comércio",
+      "Política fiscal: impacto nas desigualdades regionais",
+      "Economia de baixo carbono: oportunidades de investimento",
+      "Planejamento financeiro para aposentadoria de servidores públicos"
     ],
     "tecnologia": [
-      "Como funcionam os mecanismos de busca na web",
-      "A evolução das memórias RAM nos computadores",
-      "A física dos sensores táctil em smartphones",
-      "Como funcionam os gravadores de tela digitais",
-      "O impacto da luz azul nas telas modernas",
       "Como funcionam as redes de distribuição de conteúdo",
       "O papel dos roteadores na estabilidade residencial",
       "Como funcionam os discos rígidos de grande capacidade",
@@ -55,32 +63,33 @@
     ],
     "ciencia": [],
     "esportes": [
-      "Guia de reciclagem e sustentabilidade em eventos esportivos",
-      "Impacto da pandemia na estrutura de ligas amadoras brasileiras"
+      "Como funcionam as regras do rugby de 15",
+      "A psicologia por trás das cobranças de pênalti",
+      "Como a gestão esportiva transforma clubes em empresas",
+      "A evolução dos calçados de corrida de alta performance",
+      "Como funciona o sistema de rebaixamento no futebol",
+      "A ciência por trás da aerodinâmica na natação",
+      "Como o jejum intermitente afeta o desempenho físico",
+      "A história do boxe feminino e sua conquista olímpica",
+      "Como funcionam os campeonatos mundiais de ginástica rítmica",
+      "A influência da temperatura ambiente no rendimento esportivo",
+      "Como a análise de dados mudou o basquete atual",
+      "A importância da orelha de couve-flor no jiu-jitsu",
+      "Como funciona o sistema de pontos na fórmula 1",
+      "A evolução tática dos sistemas defensivos no futebol",
+      "Como o pilates fortalece o centro do corpo",
+      "A história do skate nos jogos olímpicos modernos",
+      "Como funcionam os torneios de tênis grand slam",
+      "A importância da respiração diafragmática para corredores",
+      "Como o marketing digital engaja torcedores nas redes",
+      "A biomecânica do arremesso de peso no atletismo",
+      "Como funcionam as regras do golfe profissional",
+      "A influência dos pais na formação de atletas",
+      "Como o aquecimento dinâmico evita lesões musculares",
+      "A história do surfe desde suas origens ancestrais"
     ],
-    "cultura": [
-      "O papel dos podcasts culturais na educação",
-      "A influência do samba no cinema brasileiro",
-      "Como a literatura indígena ganha espaço no mercado",
-      "O impacto da música gospel no cenário cultural",
-      "A história dos cafés literários em São Paulo",
-      "O futuro das galerias de arte digital no Brasil",
-      "A evolução da produção de trilhas sonoras brasileiras",
-      "Como a cultura de rua transforma bairros periféricos",
-      "O papel dos festivais de literatura no Brasil",
-      "A história da música popular brasileira nas rádios",
-      "O impacto da gastronomia regional na economia criativa",
-      "Como a literatura de terror brasileiro se destaca",
-      "O futuro dos museus interativos no Brasil",
-      "A influência da música sertaneja no cenário internacional",
-      "Como a cultura de festivais de teatro evolui no Brasil",
-      "O papel das bibliotecas públicas na cultura",
-      "A história da música instrumental brasileira",
-      "O impacto da literatura de auto‑ajuda no Brasil",
-      "Como a cultura de street art influencia marcas"
-    ],
+    "cultura": [],
     "politica": [
-      "O impacto das decisões do STF na vida financeira das famílias",
       "Como o cidadão comum pode propor projetos de lei",
       "O peso real das emendas parlamentares na sua cidade",
       "Como funcionam as regras de doação para campanhas políticas",
@@ -1135,7 +1144,9 @@
       "Como funciona a gratuidade do transporte",
       "Entenda o direito à moradia digna",
       "Guia para acessar microcrédito oficial",
-      "Como funciona o cadastro único federal"
+      "Como funciona o cadastro único federal",
+      "Entenda os limites do poder público",
+      "Guia para regularizar imóveis rurais"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1520,7 +1531,21 @@
       "Como funcionam os fundos de investimento em participações",
       "O impacto das leis trabalhistas na competitividade das empresas",
       "Como planejar a sucessão patrimonial em empresas familiares",
-      "O papel dos títulos verdes no financiamento sustentável corporativo"
+      "O papel dos títulos verdes no financiamento sustentável corporativo",
+      "Como funciona o mercado de leilões de imóveis e veículos",
+      "O impacto das tarifas de energia na produção industrial",
+      "Como estruturar um plano de negócios para captação de recursos",
+      "O papel das microfranquias na expansão do empreendedorismo",
+      "Como funcionam os fundos de índice negociados no exterior",
+      "O impacto das flutuações das commodities nas contas públicas",
+      "Renda mínima universal: impactos sociais e econômicos",
+      "Inflação crônica: causas e efeitos no poder de compra",
+      "Estratégias de diversificação de portfólio para iniciantes",
+      "Tributação sobre ganhos de capital: o que muda",
+      "Custo de oportunidade: decisão de investimento prática",
+      "Financiamento coletivo: modelos e riscos para empreendedores",
+      "Planejamento de aposentadoria para autônomos",
+      "Impacto do crédito imobiliário na economia doméstica"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1941,7 +1966,12 @@
       "O impacto térmico dos processadores nos notebooks",
       "A ciência por trás dos monitores de alta taxa",
       "Como operam os servidores de jogos online",
-      "O funcionamento técnico das redes privadas virtuais"
+      "O funcionamento técnico das redes privadas virtuais",
+      "Como funcionam os mecanismos de busca na web",
+      "A evolução das memórias RAM nos computadores",
+      "A física dos sensores táctil em smartphones",
+      "Como funcionam os gravadores de tela digitais",
+      "O impacto da luz azul nas telas modernas"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2397,7 +2427,15 @@
       "Guia de avaliação de risco de concussão em esportes de contato",
       "Como o treinamento em altitude artificial beneficia nadadores",
       "A importância da educação financeira para jovens atletas",
-      "Como funciona o sistema de pontuação no rugby sevens"
+      "Como funciona o sistema de pontuação no rugby sevens",
+      "Guia de reciclagem e sustentabilidade em eventos esportivos",
+      "Impacto da pandemia na estrutura de ligas amadoras brasileiras",
+      "Como a hidratação correta melhora o rendimento físico",
+      "A influência da torcida no desempenho de mandantes",
+      "Como funcionam os testes antidoping no esporte moderno",
+      "A biomecânica do salto em altura nas olimpíadas",
+      "Como o sono regula a recuperação de atletas",
+      "A importância da fisioterapia preventiva em jovens atletas"
     ],
     "cultura": [
       "O Impacto da Globalização na Música Brasileira",
@@ -2946,7 +2984,26 @@
       "A evolução da fotografia de rua no Brasil",
       "Como a literatura de ficção histórica encanta leitores",
       "O futuro dos festivais de música eletrônica no Brasil",
-      "A importância das feiras de artesanato nas comunidades"
+      "A importância das feiras de artesanato nas comunidades",
+      "O papel dos podcasts culturais na educação",
+      "A influência do samba no cinema brasileiro",
+      "Como a literatura indígena ganha espaço no mercado",
+      "O impacto da música gospel no cenário cultural",
+      "A história dos cafés literários em São Paulo",
+      "O futuro das galerias de arte digital no Brasil",
+      "A evolução da produção de trilhas sonoras brasileiras",
+      "Como a cultura de rua transforma bairros periféricos",
+      "O papel dos festivais de literatura no Brasil",
+      "A história da música popular brasileira nas rádios",
+      "O impacto da gastronomia regional na economia criativa",
+      "Como a literatura de terror brasileiro se destaca",
+      "O futuro dos museus interativos no Brasil",
+      "A influência da música sertaneja no cenário internacional",
+      "Como a cultura de festivais de teatro evolui no Brasil",
+      "O papel das bibliotecas públicas na cultura",
+      "A história da música instrumental brasileira",
+      "O impacto da literatura de auto‑ajuda no Brasil",
+      "Como a cultura de street art influencia marcas"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -3504,7 +3561,8 @@
       "O impacto das decisões monocráticas no sistema legal",
       "Como a estabilidade institucional atrai investimentos estrangeiros",
       "O papel do federalismo cooperativo na saúde pública",
-      "Como recuperar impostos pagos indevidamente por empresas brasileiras"
+      "Como recuperar impostos pagos indevidamente por empresas brasileiras",
+      "O impacto das decisões do STF na vida financeira das famílias"
     ]
   }
 }
