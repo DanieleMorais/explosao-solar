@@ -8,13 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Impacto da regularização fundiária nas áreas rurais",
-      "O papel dos bancos de alimentos nas comunidades",
-      "Como funciona o Programa Nacional de Acesso ao Ensino Médio",
-      "Benefícios da energia solar para residências brasileiras",
-      "O que é a Lei de Responsabilidade Fiscal e como afeta o cidadão",
-      "Como a mobilidade urbana influencia a qualidade de vida",
-      "Direitos do trabalhador informal no Brasil",
       "Como funciona a política de reserva de vagas para pessoas com deficiência",
       "Como a agroecologia pode melhorar a segurança alimentar",
       "O impacto das áreas de conservação na economia local",
@@ -58,10 +51,6 @@
       "O impacto das flutuações das commodities nas contas públicas"
     ],
     "tecnologia": [
-      "Como funcionam os tradutores de código de programação",
-      "O impacto do lixo eletrônico na reciclagem urbana",
-      "Como funcionam as redes privadas virtuais corporativas",
-      "O desafio energético dos grandes centros de dados",
       "Como funcionam os algoritmos de compressão de arquivos",
       "O funcionamento técnico dos leitores de e-book",
       "Como funcionam as câmeras de alta velocidade",
@@ -83,33 +72,11 @@
     ],
     "ciencia": [],
     "esportes": [
-      "Como os reflexos visuais determinam o sucesso no gol",
-      "A termorregulação humana durante provas de longa duração",
-      "Como o equilíbrio dinâmico sustenta manobras no skate",
-      "A influência da umidade do ar na hidratação corporal",
-      "Como a distribuição de peso afeta a corrida",
-      "A biomecânica do pedal eficiente no ciclismo urbano",
-      "Como a contração excêntrica protege os músculos de lesões",
-      "A importância da cadência correta na economia de energia",
-      "Como o sistema vestibular controla a orientação espacial",
-      "A física dos giros na ginástica artística de solo",
-      "Como a fáscia muscular armazena e libera energia",
-      "A influência do calçado na absorção de impacto",
-      "Como a oxigenação cerebral sustenta a tomada de decisão",
-      "A biomecânica do arranque no levantamento de peso",
-      "Como os receptores cutâneos melhoram a aderência táctil",
-      "A física dos ângulos de lançamento no atletismo",
       "Como a depleção de glicogênio altera a fadiga mental",
       "A mecânica do nado subaquático e sua eficiência",
       "Como a assimetria corporal impacta o gesto técnico"
     ],
     "cultura": [
-      "Como a literatura de viagem inspira descobertas culturais",
-      "Impacto dos festivais de cinema ao ar livre nas comunidades",
-      "Como a curadoria de playlists educa novos ouvintes",
-      "Guia de produção de podcasts sobre história cultural brasileira",
-      "Como a realidade virtual revitaliza sítios arqueológicos",
-      "O papel das feiras de livro na formação de leitores",
       "Como surgem as tendências de street art nas capitais",
       "Guia de técnicas de restauração de esculturas em madeira",
       "Como a música de protesto influencia políticas públicas",
@@ -118,7 +85,30 @@
       "Guia de visita a centros de memória afro‑brasileira"
     ],
     "politica": [
-      "Como funcionam os conselhos tutelares na política local"
+      "Como a sociedade civil participa das audiências públicas",
+      "O papel dos governadores na articulação política nacional",
+      "Como o Tribunal de Contas protege o erário público",
+      "A importância das emendas parlamentares nos municípios brasileiros",
+      "Como funcionam as consultas populares sobre leis municipais",
+      "O papel das ouvidorias na melhoria dos serviços públicos",
+      "Como o Ministério Público atua na defesa coletiva",
+      "A influência das redes sociais no debate político contemporâneo",
+      "Como se articulam os blocos partidários no Congresso",
+      "O impacto da polarização política nas decisões legislativas",
+      "Como funcionam os conselhos de políticas públicas locais",
+      "A relevância do controle social sobre os gastos públicos",
+      "Como os municípios dependem das transferências federais de recursos",
+      "O papel das procuradorias na defesa do Estado",
+      "Como a legislação protege o sigilo das fontes jornalísticas",
+      "A dinâmica das negociações entre o Executivo e o Legislativo",
+      "Como se estruturam os movimentos sociais na pressão política",
+      "O papel das fundações partidárias na formação política",
+      "Como a opinião pública molda as prioridades do Parlamento",
+      "A importância da responsabilidade fiscal na gestão municipal",
+      "Como os tribunais regionais garantem a segurança jurídica",
+      "O impacto das decisões monocráticas no sistema legal",
+      "Como a estabilidade institucional atrai investimentos estrangeiros",
+      "O papel do federalismo cooperativo na saúde pública"
     ]
   },
   "usadas": {
@@ -1107,7 +1097,14 @@
       "Por que o manejo de bacias hidrográficas previne enchentes",
       "Guia de como solicitar o auxílio emergencial por calamidade",
       "Como funciona o sistema de licenciamento ambiental simplificado",
-      "Guia de uso do Cartão Bolsa Família"
+      "Guia de uso do Cartão Bolsa Família",
+      "Impacto da regularização fundiária nas áreas rurais",
+      "O papel dos bancos de alimentos nas comunidades",
+      "Como funciona o Programa Nacional de Acesso ao Ensino Médio",
+      "Benefícios da energia solar para residências brasileiras",
+      "O que é a Lei de Responsabilidade Fiscal e como afeta o cidadão",
+      "Como a mobilidade urbana influencia a qualidade de vida",
+      "Direitos do trabalhador informal no Brasil"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1871,7 +1868,11 @@
       "Como funciona a recuperação de dados perdidos",
       "O papel dos satélites no GPS do celular",
       "Como funcionam os leitores de biometria digital",
-      "A ciência por trás das telas sensíveis ao toque"
+      "A ciência por trás das telas sensíveis ao toque",
+      "Como funcionam os tradutores de código de programação",
+      "O impacto do lixo eletrônico na reciclagem urbana",
+      "Como funcionam as redes privadas virtuais corporativas",
+      "O desafio energético dos grandes centros de dados"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2280,7 +2281,23 @@
       "Como o ritmo circadiano afeta a performance esportiva",
       "A física aplicada aos efeitos na bola de tênis",
       "Como a respiração diafragmática melhora a resistência física",
-      "A ciência da propriocepção na prevenção de entorses"
+      "A ciência da propriocepção na prevenção de entorses",
+      "Como os reflexos visuais determinam o sucesso no gol",
+      "A termorregulação humana durante provas de longa duração",
+      "Como o equilíbrio dinâmico sustenta manobras no skate",
+      "A influência da umidade do ar na hidratação corporal",
+      "Como a distribuição de peso afeta a corrida",
+      "A biomecânica do pedal eficiente no ciclismo urbano",
+      "Como a contração excêntrica protege os músculos de lesões",
+      "A importância da cadência correta na economia de energia",
+      "Como o sistema vestibular controla a orientação espacial",
+      "A física dos giros na ginástica artística de solo",
+      "Como a fáscia muscular armazena e libera energia",
+      "A influência do calçado na absorção de impacto",
+      "Como a oxigenação cerebral sustenta a tomada de decisão",
+      "A biomecânica do arranque no levantamento de peso",
+      "Como os receptores cutâneos melhoram a aderência táctil",
+      "A física dos ângulos de lançamento no atletismo"
     ],
     "cultura": [
       "O Impacto da Globalização na Música Brasileira",
@@ -2806,7 +2823,13 @@
       "O valor cultural dos mercados de artesanato populares",
       "Como a fotografia de rua documenta transformações sociais",
       "A importância dos arquivos sonoros para a memória coletiva",
-      "Estrutura de cooperativas de artesãos e seu impacto econômico"
+      "Estrutura de cooperativas de artesãos e seu impacto econômico",
+      "Como a literatura de viagem inspira descobertas culturais",
+      "Impacto dos festivais de cinema ao ar livre nas comunidades",
+      "Como a curadoria de playlists educa novos ouvintes",
+      "Guia de produção de podcasts sobre história cultural brasileira",
+      "Como a realidade virtual revitaliza sítios arqueológicos",
+      "O papel das feiras de livro na formação de leitores"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -3333,7 +3356,13 @@
       "Como funcionam as consultas públicas em agências reguladoras",
       "O papel dos tribunais de contas na gestão municipal",
       "Como a sociedade civil atua no controle orçamentário",
-      "O impacto político das concessões de serviços públicos"
+      "O impacto político das concessões de serviços públicos",
+      "Como funcionam os conselhos tutelares na política local",
+      "Como os decretos presidenciais afetam a vida cotidiana",
+      "O peso real das medidas provisórias na economia",
+      "Como o Supremo Tribunal Federal protege direitos fundamentais",
+      "A influência das bancadas temáticas na legislação nacional",
+      "O impacto das decisões judiciais nas políticas públicas"
     ]
   }
 }
