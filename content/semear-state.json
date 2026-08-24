@@ -12,9 +12,6 @@
       "O impacto dos desníveis urbanos na mobilidade pedestre"
     ],
     "economia": [
-      "Como funciona a classificação de risco de crédito",
-      "Impacto da inflação nos salários reais",
-      "Estratégias para reduzir gastos mensais",
       "Como funciona o regime tributário do Simples Nacional",
       "Benefícios e riscos de investir em ETFs",
       "Como calcular o custo de oportunidade nas decisões",
@@ -40,9 +37,6 @@
       "Como a inflação afeta contratos de aluguel residencial"
     ],
     "tecnologia": [
-      "Desafios éticos da IA em recrutamento",
-      "Como funciona a mineração de criptomoedas",
-      "Guia de backup de dados",
       "Como funciona a detecção de deepfakes",
       "Como funciona a autenticação de dois fatores",
       "O papel da IA na automação de processos",
@@ -62,7 +56,6 @@
     ],
     "ciencia": [],
     "esportes": [
-      "O papel dos lipídios na reserva energética de atletas de endurance",
       "Como a densidade óssea responde aos impactos repetitivos do solo",
       "O efeito da cafeína nos sistemas neuromusculares durante o esforço",
       "Como a propriocepção protege articulações contra entorses e torções",
@@ -95,8 +88,6 @@
       "Guia de exploração de museus virtuais interativos"
     ],
     "politica": [
-      "Como a reforma tributária altera a arrecadação federal",
-      "Guia prático da prestação de contas dos vereadores",
       "Efeito das emendas individuais no orçamento federal",
       "Como a Defensoria Pública protege direitos fundamentais",
       "Impacto das políticas de cotas na representatividade política",
@@ -1411,7 +1402,10 @@
       "Como funcionam os leilões de bens apreendidos e recuperação judicial",
       "O impacto econômico das políticas de incentivo à inovação industrial",
       "O que é taxa Selic e como afeta você",
-      "Guia prático para entender crédito consignado"
+      "Guia prático para entender crédito consignado",
+      "Como funciona a classificação de risco de crédito",
+      "Impacto da inflação nos salários reais",
+      "Estratégias para reduzir gastos mensais"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1754,7 +1748,10 @@
       "Cibersegurança em pequenas empresas",
       "Tokenização de dados sensíveis",
       "Uso de drones para monitoramento ambiental",
-      "Tecnologia de impressão 3D na construção"
+      "Tecnologia de impressão 3D na construção",
+      "Desafios éticos da IA em recrutamento",
+      "Como funciona a mineração de criptomoedas",
+      "Guia de backup de dados"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2133,7 +2130,8 @@
       "O impacto da privação crônica de sono na síntese proteica",
       "Como os reflexos visuais determinam o sucesso em esportes rápidos",
       "A mecânica respiratória ideal para otimizar o consumo de oxigênio",
-      "Como a periodização de treinos evita o estagnação de resultados"
+      "Como a periodização de treinos evita o estagnação de resultados",
+      "O papel dos lipídios na reserva energética de atletas de endurance"
     ],
     "cultura": [
       "O Impacto da Globalização na Música Brasileira",
@@ -3024,7 +3022,9 @@
       "Papel dos Tribunais de Contas na gestão pública",
       "Como funciona o processo de aprovação de leis estaduais",
       "Consequências da cassação de mandato para o eleitorado",
-      "A importância da participação nas audiências públicas"
+      "A importância da participação nas audiências públicas",
+      "Como a reforma tributária altera a arrecadação federal",
+      "Guia prático da prestação de contas dos vereadores"
     ]
   }
 }
