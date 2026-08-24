@@ -8,7 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Por que a requalificação de centros históricos atrai moradores",
       "O impacto dos desníveis urbanos na mobilidade pedestre"
     ],
     "economia": [
@@ -34,12 +33,6 @@
       "Como a inflação afeta contratos de aluguel residencial"
     ],
     "tecnologia": [
-      "Como funciona a detecção de deepfakes",
-      "Como funciona a autenticação de dois fatores",
-      "O papel da IA na automação de processos",
-      "Como funciona a computação sem servidor",
-      "O que são smart contracts",
-      "Como funciona o protocolo DNS",
       "Como funciona o protocolo HTTPS",
       "Como funciona a computação de borda",
       "O futuro do trabalho remoto",
@@ -85,7 +78,6 @@
       "Guia de exploração de museus virtuais interativos"
     ],
     "politica": [
-      "Impacto das políticas de cotas na representatividade política",
       "Como funciona o Conselho Nacional de Justiça",
       "Como a lei de improbidade protege o patrimônio público",
       "Guia da participação cidadã nas consultas populares online",
@@ -1061,7 +1053,8 @@
       "Como funcionam os postos de atendimento ao trabalhador",
       "Por que a preservação da fauna marinha é urgente",
       "O guia prático para identificar alimentos ultraprocessados",
-      "Como funciona o combate a incêndios florestais complexos"
+      "Como funciona o combate a incêndios florestais complexos",
+      "Por que a requalificação de centros históricos atrai moradores"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1749,7 +1742,13 @@
       "Tecnologia de impressão 3D na construção",
       "Desafios éticos da IA em recrutamento",
       "Como funciona a mineração de criptomoedas",
-      "Guia de backup de dados"
+      "Guia de backup de dados",
+      "Como funciona a detecção de deepfakes",
+      "Como funciona a autenticação de dois fatores",
+      "O papel da IA na automação de processos",
+      "Como funciona a computação sem servidor",
+      "O que são smart contracts",
+      "Como funciona o protocolo DNS"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -3024,7 +3023,8 @@
       "Como a reforma tributária altera a arrecadação federal",
       "Guia prático da prestação de contas dos vereadores",
       "Efeito das emendas individuais no orçamento federal",
-      "Como a Defensoria Pública protege direitos fundamentais"
+      "Como a Defensoria Pública protege direitos fundamentais",
+      "Impacto das políticas de cotas na representatividade política"
     ]
   }
 }
