@@ -8,10 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Como funciona a gratuidade do transporte",
-      "Entenda o direito à moradia digna",
-      "Guia para acessar microcrédito oficial",
-      "Como funciona o cadastro único federal",
       "Entenda os limites do poder público",
       "Guia para regularizar imóveis rurais",
       "Como funciona o sistema de cotas raciais",
@@ -29,8 +25,6 @@
       "Como funciona a proteção ambiental urbana"
     ],
     "economia": [
-      "Como planejar a sucessão patrimonial em empresas familiares",
-      "O papel dos títulos verdes no financiamento sustentável corporativo",
       "Como funciona o mercado de leilões de imóveis e veículos",
       "O impacto das tarifas de energia na produção industrial",
       "Como estruturar um plano de negócios para captação de recursos",
@@ -39,28 +33,32 @@
       "O impacto das flutuações das commodities nas contas públicas"
     ],
     "tecnologia": [
-      "O mecanismo técnico das portas usb modernas",
-      "Como funcionam os projetores de imagem digitais",
-      "A tecnologia dos microfones direcionais em smartphones",
-      "Como funcionam os chips de memória flash",
-      "O processo físico de gravação em mídias ópticas"
+      "Como funcionam os mecanismos de busca na web",
+      "A evolução das memórias RAM nos computadores",
+      "A física dos sensores táctil em smartphones",
+      "Como funcionam os gravadores de tela digitais",
+      "O impacto da luz azul nas telas modernas",
+      "Como funcionam as redes de distribuição de conteúdo",
+      "O papel dos roteadores na estabilidade residencial",
+      "Como funcionam os discos rígidos de grande capacidade",
+      "A tecnologia por trás das câmeras de segurança",
+      "Como operam os sistemas de pagamento por aproximação",
+      "A evolução dos padrões de conexão universal USB",
+      "Como funcionam as placas de captura de vídeo",
+      "O impacto da compressão de arquivos na internet",
+      "Como operam os sistemas de navegação por satélite",
+      "A engenharia dos microfones condensadores modernos",
+      "Como funcionam os estabilizadores de tensão elétrica",
+      "O papel dos chips gráficos na renderização visual",
+      "Como funcionam os leitores de código de barras",
+      "A tecnologia por trás das telas de cristal líquido"
     ],
     "ciencia": [],
     "esportes": [
-      "A relação entre saúde mental e aposentadoria de atletas",
-      "Como a tecnologia RFID melhora a segurança em estádios",
-      "Impacto das microdose de cafeína na performance de ciclistas",
-      "Guia de avaliação de risco de concussão em esportes de contato",
-      "Como o treinamento em altitude artificial beneficia nadadores",
-      "A importância da educação financeira para jovens atletas",
-      "Como funciona o sistema de pontuação no rugby sevens",
       "Guia de reciclagem e sustentabilidade em eventos esportivos",
       "Impacto da pandemia na estrutura de ligas amadoras brasileiras"
     ],
     "cultura": [
-      "Como a literatura de ficção histórica encanta leitores",
-      "O futuro dos festivais de música eletrônica no Brasil",
-      "A importância das feiras de artesanato nas comunidades",
       "O papel dos podcasts culturais na educação",
       "A influência do samba no cinema brasileiro",
       "Como a literatura indígena ganha espaço no mercado",
@@ -82,11 +80,35 @@
       "Como a cultura de street art influencia marcas"
     ],
     "politica": [
-      "A importância da responsabilidade fiscal na gestão municipal",
-      "Como os tribunais regionais garantem a segurança jurídica",
-      "O impacto das decisões monocráticas no sistema legal",
-      "Como a estabilidade institucional atrai investimentos estrangeiros",
-      "O papel do federalismo cooperativo na saúde pública"
+      "O impacto das decisões do STF na vida financeira das famílias",
+      "Como o cidadão comum pode propor projetos de lei",
+      "O peso real das emendas parlamentares na sua cidade",
+      "Como funcionam as regras de doação para campanhas políticas",
+      "Os limites legais para a propaganda política nas redes sociais",
+      "Como denunciar irregularidades em licitações públicas na sua região",
+      "O poder dos decretos executivos na alteração de leis federais",
+      "Como a estabilidade do servidor público afeta os serviços essenciais",
+      "Os direitos do eleitor no dia da votação oficial",
+      "Como funcionam os tribunais arbitrais na resolução de conflitos estatais",
+      "O papel das frentes parlamentares na aprovação de leis federais",
+      "Como cobrar melhores serviços públicos usando a Lei de Responsabilidade Fiscal",
+      "Os reflexos das decisões judiciais na economia dos estados",
+      "Como a política energética nacional afeta o bolso do consumidor",
+      "O alcance e os limites da imunidade dos prefeitos municipais",
+      "Como funciona a proteção jurídica aos defensores dos direitos humanos",
+      "O impacto das decisões sobre terras indígenas na economia regional",
+      "Como o planejamento urbano municipal é influenciado por disputas partidárias",
+      "Os mecanismos legais para barrar obras públicas superfaturadas",
+      "Como funcionam as negociações entre o Executivo e o Legislativo",
+      "O impacto das privatizações na qualidade dos serviços essenciais",
+      "Como a política externa brasileira afeta o comércio exterior local",
+      "Os critérios legais para a desapropriação de imóveis por utilidade pública",
+      "Como a legislação ambiental restringe o uso da propriedade privada",
+      "O papel dos tribunais de contas na fiscalização de prefeituras",
+      "Como funcionam os conselhos municipais de saúde na prática diária",
+      "Os direitos trabalhistas aplicados aos funcionários comissionados do governo",
+      "Como cobrar o cumprimento de promessas de campanha dos prefeitos",
+      "O impacto da carga tributária nos produtos essenciais de consumo"
     ]
   },
   "usadas": {
@@ -1109,7 +1131,11 @@
       "Guia para denunciar trabalho escravo",
       "Como funciona a portabilidade de planos de saúde",
       "Entenda os direitos do inquilino brasileiro",
-      "Guia para solicitar o salvo-conduto"
+      "Guia para solicitar o salvo-conduto",
+      "Como funciona a gratuidade do transporte",
+      "Entenda o direito à moradia digna",
+      "Guia para acessar microcrédito oficial",
+      "Como funciona o cadastro único federal"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1492,7 +1518,9 @@
       "Como funciona a renegociação de dívidas tributárias federais",
       "O papel do capital de risco no ecossistema de startups",
       "Como funcionam os fundos de investimento em participações",
-      "O impacto das leis trabalhistas na competitividade das empresas"
+      "O impacto das leis trabalhistas na competitividade das empresas",
+      "Como planejar a sucessão patrimonial em empresas familiares",
+      "O papel dos títulos verdes no financiamento sustentável corporativo"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1904,7 +1932,16 @@
       "O impacto da luz artificial na saúde ocular",
       "Como funcionam os amplificadores de sinal celular",
       "A engenharia dos teclados mecânicos para computadores",
-      "Como funcionam os sensores de imagem fotográfica"
+      "Como funcionam os sensores de imagem fotográfica",
+      "O mecanismo técnico das portas usb modernas",
+      "Como funcionam os projetores de imagem digitais",
+      "A tecnologia dos microfones direcionais em smartphones",
+      "Como funcionam os chips de memória flash",
+      "O processo físico de gravação em mídias ópticas",
+      "O impacto térmico dos processadores nos notebooks",
+      "A ciência por trás dos monitores de alta taxa",
+      "Como operam os servidores de jogos online",
+      "O funcionamento técnico das redes privadas virtuais"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2353,7 +2390,14 @@
       "Como a genética pode predizer talentos esportivos",
       "Impacto das políticas de inclusão de atletas transgêneros",
       "Como funciona o ranking mundial de tênis feminino",
-      "Guia de estratégias de marketing para clubes de futebol de base"
+      "Guia de estratégias de marketing para clubes de futebol de base",
+      "A relação entre saúde mental e aposentadoria de atletas",
+      "Como a tecnologia RFID melhora a segurança em estádios",
+      "Impacto das microdose de cafeína na performance de ciclistas",
+      "Guia de avaliação de risco de concussão em esportes de contato",
+      "Como o treinamento em altitude artificial beneficia nadadores",
+      "A importância da educação financeira para jovens atletas",
+      "Como funciona o sistema de pontuação no rugby sevens"
     ],
     "cultura": [
       "O Impacto da Globalização na Música Brasileira",
@@ -2899,7 +2943,10 @@
       "O papel dos museus de arte contemporânea na cidade",
       "A história dos teatros de rua no Rio de Janeiro",
       "O impacto dos festivais de cinema independente no Brasil",
-      "A evolução da fotografia de rua no Brasil"
+      "A evolução da fotografia de rua no Brasil",
+      "Como a literatura de ficção histórica encanta leitores",
+      "O futuro dos festivais de música eletrônica no Brasil",
+      "A importância das feiras de artesanato nas comunidades"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -3451,7 +3498,13 @@
       "A dinâmica das negociações entre o Executivo e o Legislativo",
       "Como se estruturam os movimentos sociais na pressão política",
       "O papel das fundações partidárias na formação política",
-      "Como a opinião pública molda as prioridades do Parlamento"
+      "Como a opinião pública molda as prioridades do Parlamento",
+      "A importância da responsabilidade fiscal na gestão municipal",
+      "Como os tribunais regionais garantem a segurança jurídica",
+      "O impacto das decisões monocráticas no sistema legal",
+      "Como a estabilidade institucional atrai investimentos estrangeiros",
+      "O papel do federalismo cooperativo na saúde pública",
+      "Como recuperar impostos pagos indevidamente por empresas brasileiras"
     ]
   }
 }
