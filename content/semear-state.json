@@ -8,12 +8,6 @@
       "Cooperação nuclear civil e prevenção da proliferação"
     ],
     "brasil": [
-      "Como funciona a política de cotas nas universidades federais",
-      "Guia de uso do aplicativo de transporte público nas capitais",
-      "Como funciona o Programa de Apoio à Agricultura Familiar",
-      "Guia de como denunciar violência doméstica online",
-      "Como funciona a política de mobilidade urbana sustentável",
-      "Por que a preservação dos manguezais protege cidades costeiras",
       "Guia para entender o Programa de Incentivo à Leitura nas escolas",
       "Como funciona a assistência jurídica gratuita no Brasil",
       "Por que o acesso à internet é essencial à cidadania",
@@ -30,27 +24,42 @@
       "Como funciona o sistema de licenciamento ambiental simplificado"
     ],
     "economia": [
-      "Guia para entender o índice de preços ao consumidor",
-      "Como funciona o financiamento de veículos usados",
-      "Estratégias para renegociar dívidas com bancos",
-      "Como funciona o mercado de opções para iniciantes",
-      "O que são debêntures e como investir nelas",
-      "Como funciona a logística de exportação para PMEs",
-      "Guia de planejamento de aposentadoria para trabalhadores informais",
-      "Como a inflação afeta contratos de aluguel residencial"
+      "O impacto da carga tributária nos produtos importados",
+      "Como planejar as finanças para a compra da casa própria",
+      "O papel dos bancos centrais no controle monetário global",
+      "Como funcionam os consórcios de bens móveis e imóveis",
+      "Estratégias para proteger o patrimônio contra desvalorizações cambiais",
+      "Como funciona o mercado de franchisings no setor de serviços",
+      "O impacto das novas tecnologias na produtividade industrial",
+      "O papel dos investimentos de impacto social na economia moderna",
+      "Como funciona a tributação sobre heranças e doações no Brasil",
+      "Estratégias de diversificação internacional para pequenos investidores",
+      "Como funcionam as cooperativas de crédito no sistema financeiro",
+      "O impacto do envelhecimento populacional nos sistemas de previdência",
+      "Como funciona o mercado de capitais para empresas de capital fechado",
+      "O papel das barreiras não tarifárias no comércio exterior",
+      "Como calcular a margem de contribuição em produtos digitais",
+      "O impacto da inflação de serviços no orçamento familiar",
+      "Como funciona a renegociação de dívidas tributárias federais",
+      "O papel do capital de risco no ecossistema de startups",
+      "Como funcionam os fundos de investimento em participações",
+      "O impacto das leis trabalhistas na competitividade das empresas",
+      "Como planejar a sucessão patrimonial em empresas familiares",
+      "O papel dos títulos verdes no financiamento sustentável corporativo",
+      "Como funciona o mercado de leilões de imóveis e veículos",
+      "O impacto das tarifas de energia na produção industrial",
+      "Como estruturar um plano de negócios para captação de recursos",
+      "O papel das microfranquias na expansão do empreendedorismo",
+      "Como funcionam os fundos de índice negociados no exterior",
+      "O impacto das flutuações das commodities nas contas públicas"
     ],
     "tecnologia": [
-      "Como funciona o algoritmo de recomendação em redes sociais",
-      "Privacidade nas redes sociais: configurações recomendadas",
-      "Como funciona a tecnologia de assinatura digital",
       "O que é criptografia de ponta a ponta",
       "Inteligência artificial na saúde: benefícios e desafios",
       "Como funciona a tecnologia de rastreamento RFID"
     ],
     "ciencia": [],
     "esportes": [
-      "A influência da temperatura ambiente no rendimento físico",
-      "Como o cérebro processa o tempo de reação",
       "A fisiologia do esforço máximo nos tiros curtos",
       "Como a biomecânica da natação reduz o arrasto",
       "A mecânica corporal ideal para o arremesso livre",
@@ -79,15 +88,48 @@
       "Como a assimetria corporal impacta o gesto técnico"
     ],
     "cultura": [
-      "Impacto das plataformas de crowdfunding na produção musical",
-      "Como surgem as coreografias de dança urbana",
-      "Guia de leitura de obras de autores trans no Brasil",
-      "Como funciona a certificação de origens de alimentos artesanais",
-      "A relevância dos clubes de leitura em comunidades rurais",
-      "Como a arte de stop‑motion renasce nas redes",
-      "Guia de exploração de museus virtuais interativos"
+      "Como a música eletrônica influencia a moda urbana",
+      "O impacto dos podcasts culturais na educação",
+      "A evolução da pintura mural nas periferias",
+      "Guia completo de instrumentos de percussão tradicionais",
+      "Como a literatura infantil brasileira inspira criatividade",
+      "O futuro da restauração digital de obras de arte",
+      "A importância dos festivais de música regional",
+      "Como a gastronomia de rua celebra diversidade cultural",
+      "O papel dos teatros de rua na inclusão social",
+      "A história da cerâmica artesanal no Brasil",
+      "Como a música gospel influencia o cenário gospel",
+      "O impacto da música folk no turismo cultural",
+      "A evolução do design gráfico brasileiro nas redes",
+      "Como a literatura de ficção histórica mantém relevância",
+      "O futuro da produção de documentários independentes",
+      "A influência dos festivais de jazz no país",
+      "Como a música de protesto ecoa nas gerações"
     ],
-    "politica": []
+    "politica": [
+      "A dinâmica do bicameralismo no processo legislativo brasileiro",
+      "Como as frentes parlamentares mudam a legislação",
+      "O impacto da opinião pública nas votações cruciais",
+      "Como funcionam os vetos presidenciais e sua derrubada",
+      "O poder de influência política dos grandes prefeitos",
+      "Como o Supremo Tribunal Federal molda políticas públicas",
+      "O papel político das decisões monocráticas na Justiça",
+      "Como os tribunais estaduais influenciam a política local",
+      "O impacto das consultas populares na legislação municipal",
+      "Como funcionam as comissões de ética nas casas legislativas",
+      "O papel dos movimentos sociais na criação de leis",
+      "Como a pressão digital altera o rumo legislativo",
+      "O impacto político das greves no serviço público",
+      "Como funcionam as negociações salariais do funcionalismo",
+      "O papel dos conselhos gestores de políticas públicas",
+      "Como a sociedade fiscaliza os gastos com propaganda oficial",
+      "O impacto político das privatizações na máquina estatal",
+      "Como funcionam as consultas públicas em agências reguladoras",
+      "O papel dos tribunais de contas na gestão municipal",
+      "Como a sociedade civil atua no controle orçamentário",
+      "O impacto político das concessões de serviços públicos",
+      "Como funcionam os conselhos tutelares na política local"
+    ]
   },
   "usadas": {
     "mundo": [
@@ -1054,7 +1096,13 @@
       "Como acessar o Cadastro Único do Governo",
       "O que o cidadão pode exigir do Ministério Público",
       "Guia prático para solicitar o Benefício de Prestação Continuada",
-      "Como funciona o Programa Nacional de Acesso ao Ensino Técnico"
+      "Como funciona o Programa Nacional de Acesso ao Ensino Técnico",
+      "Como funciona a política de cotas nas universidades federais",
+      "Guia de uso do aplicativo de transporte público nas capitais",
+      "Como funciona o Programa de Apoio à Agricultura Familiar",
+      "Guia de como denunciar violência doméstica online",
+      "Como funciona a política de mobilidade urbana sustentável",
+      "Por que a preservação dos manguezais protege cidades costeiras"
     ],
     "economia": [
       "Como funciona o mercado de ações brasileiro",
@@ -1408,7 +1456,16 @@
       "Guia de tributação de ganhos de capital em ações",
       "Como funciona o seguro de vida como proteção patrimonial",
       "Impacto da curva de Phillips na política monetária",
-      "Como analisar demonstrações financeiras de pequenas empresas"
+      "Como analisar demonstrações financeiras de pequenas empresas",
+      "Guia para entender o índice de preços ao consumidor",
+      "Como funciona o financiamento de veículos usados",
+      "Estratégias para renegociar dívidas com bancos",
+      "Como funciona o mercado de opções para iniciantes",
+      "O que são debêntures e como investir nelas",
+      "Como funciona a logística de exportação para PMEs",
+      "Guia de planejamento de aposentadoria para trabalhadores informais",
+      "Como a inflação afeta contratos de aluguel residencial",
+      "Como funciona o seguro desemprego no Brasil"
     ],
     "tecnologia": [
       "Como funciona o aprendizado de máquina e suas principais técnicas",
@@ -1790,7 +1847,10 @@
       "Como funciona a impressão 3D na construção civil",
       "Segurança digital para pequenas empresas: guia completo",
       "Como funciona a tecnologia de impressão 3D",
-      "O que é computação de borda e suas vantagens"
+      "O que é computação de borda e suas vantagens",
+      "Como funciona o algoritmo de recomendação em redes sociais",
+      "Privacidade nas redes sociais: configurações recomendadas",
+      "Como funciona a tecnologia de assinatura digital"
     ],
     "ciencia": [
       "Como funciona a formação de buracos negros no universo",
@@ -2190,7 +2250,9 @@
       "Como os hormônios anabólicos respondem ao descanso pós esforço máximo",
       "A influência do calçado adequado na distribuição de cargas plantares",
       "A biomecânica por trás do salto ornamental perfeito",
-      "Como a altitude altera a aerodinâmica da bola"
+      "Como a altitude altera a aerodinâmica da bola",
+      "A influência da temperatura ambiente no rendimento físico",
+      "Como o cérebro processa o tempo de reação"
     ],
     "cultura": [
       "O Impacto da Globalização na Música Brasileira",
@@ -2631,7 +2693,28 @@
       "A evolução dos festivais de literatura infantil",
       "Como a culinária de rua reforça identidade local",
       "Guia de técnicas básicas de restauração de móveis antigos",
-      "Como a música coral escolar contribui para inclusão social"
+      "Como a música coral escolar contribui para inclusão social",
+      "Impacto das plataformas de crowdfunding na produção musical",
+      "Como surgem as coreografias de dança urbana",
+      "Guia de leitura de obras de autores trans no Brasil",
+      "Como funciona a certificação de origens de alimentos artesanais",
+      "A relevância dos clubes de leitura em comunidades rurais",
+      "Como a arte de stop‑motion renasce nas redes",
+      "Guia de exploração de museus virtuais interativos",
+      "A influência das festas juninas na música popular",
+      "O papel das trilhas sonoras em filmes brasileiros",
+      "Como a literatura de cordel molda identidade regional",
+      "A evolução do samba no cenário internacional",
+      "Os segredos da produção de vinil no Brasil",
+      "O impacto das rádios comunitárias na cultura",
+      "Guia prático para curadoria de playlists digitais",
+      "O futuro da gastronomia molecular no país",
+      "Como a fotografia documental documenta desigualdades",
+      "A importância dos festivais de cinema de curta-metragem",
+      "O legado dos batuques na música afro-brasileira",
+      "Como a literatura de terror brasileiro cresce no mercado",
+      "O papel dos museus de arte contemporânea nas cidades",
+      "A história da capoeira como expressão artística"
     ],
     "politica": [
       "Como funciona o sistema de freios e contrapesos no governo brasileiro",
@@ -3130,7 +3213,14 @@
       "Efeitos da descentralização fiscal nos municípios pequenos",
       "Guia de direitos do eleitor que mora no exterior",
       "Impacto das políticas de financiamento de partidos na democracia",
-      "Como a lei de combate ao clientelismo fortalece a ética pública"
+      "Como a lei de combate ao clientelismo fortalece a ética pública",
+      "O impacto real do lobby legislativo no Congresso",
+      "Como a sociedade civil bloqueia projetos de lei",
+      "O peso político das bancadas temáticas no parlamento",
+      "A influência dos governadores na bancada federal",
+      "A dinâmica oculta das negociações entre Executivo e Legislativo",
+      "O papel político e social dos decretos legislativos",
+      "Como os prefeitos influenciam as bancadas federais"
     ]
   }
 }
