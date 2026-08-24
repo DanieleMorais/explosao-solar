@@ -1,25 +1,25 @@
 {
   "slug": "terremoto-magnitude-60-lospalos-timor-leste",
+  "title": "Terremoto de magnitud 6,0 sacude a Timor Oriental",
+  "seoTitle": "Terremoto de magnitud 6,0 sacude a Timor Oriental",
+  "subtitle": "El seísmo de 10 km de profundidad no registró sensaciónes",
   "category": "Ciência",
   "categorySlug": "ciencia",
+  "excerpt": "Un sismo de magnitud 6,0 ocurrió en Timor Oriental la mañana del 24 de agosto de 2026, con epicentro a 215 km al noreste de Lospalos y 10 km de profundidad.",
   "author": "Daniele Morais",
-  "publishedAt": "2026-08-24T14:29:10.779Z",
+  "publishedAt": "2026-08-24T19:11:37.304Z",
+  "updatedAt": "2026-08-24T19:11:37.304Z",
   "eventDate": "2026-08-24T14:10:17.299Z",
-  "sourceName": "USGS",
-  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn41",
-  "alerta": "terremoto",
-  "title": "Terremoto de magnitud 6,0 sacude la región de Lospalos (Timor Leste)",
-  "seoTitle": "Terremoto de magnitud 6,0 en Lospalos",
-  "subtitle": "El sismo se registró a 10 km de profundidad, según el servicio geológico estadounidense (USGS).",
-  "excerpt": "Un terremoto de magnitud 6,0 fue registrado cerca de Lospalos (Timor Leste), a 10 km de profundidad, según el USGS.",
-  "contentHtml": "<p>Un terremoto de magnitud 6,0 fue registrado el 24 de agosto de 2026 a las 11:10 (hora de Brasilia) cerca de Lospalos (Timor Leste), según el Servicio Geológico de los Estados Unidos (USGS). El sismo ocurrió a aproximadamente 10 km de profundidad.</p><h2>Qué significa esta magnitud</h2><p>Los terremotos entre magnitud 6 y 7 se consideran fuertes y suelen sentirse a cientos de kilómetros del epicentro.</p><h2>Qué esperar en los próximos días</h2><p>Tras un sismo principal, se esperan réplicas — temblores menores en la misma región — durante los días y semanas siguientes, con frecuencia decreciente, un patrón bien establecido por la sismología.</p><p><em>Con datos del USGS (Servicio Geológico de los Estados Unidos).</em></p>",
   "readingMinutes": 2,
   "tags": [
-    "terremoto",
     "sismo",
-    "Timor Leste",
+    "timor oriental",
+    "magnitud 6",
     "USGS",
-    "desastres naturales"
+    "geología"
   ],
+  "sourceName": "USGS (United States Geological Survey)",
+  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn41",
+  "contentHtml": "<p>Un terremoto de magnitud 6,0 fue registrado por el USGS la mañana del 24 de agosto de 2026, a las 11:10 (hora de Brasilia), con epicentro localizado a 215 km al nor-nordeste de Lospalos, Timor Oriental.</p><h2>Detalles técnicos del sismo</h2><p>El seísmo ocurrió a una profundidad de 10 km, según la ficha técnica del USGS. La magnitud de 6,0 indica un evento sísmico de fuerza moderada, capaz de producir daños localizados dependiendo de las condiciones estructurales de la región.</p><h2>Alerta de impacto</h2><p>El USGS asignó al sismo una alerta de impacto verde, señalando que el efecto esperado sobre la población y la infraestructura es leve. Esta clasificación refleja la combinación de la magnitud, la profundidad y la ubicación remota del epicentro.</p><h2>Possibilidad de tsunami</h2><p>La alerta de tsunami emitida por el USGS fue negativa, indicando que no hay riesgo de generación de olas oceánicas significativas a partir de este evento.</p><h2>Situación de los informes</h2><p>Hasta el momento, no se han registrado informes de personas que sintieron el terremoto. Las autoridades aún no han divulgado información adicional sobre posibles daños o respuestas de emergencia.</p><h2>Próximos pasos</h2><p>El USGS continuará monitoreando la región para detectar posibles réplicas o cambios en la actividad sísmica. Las agencias locales de Timor Oriental pueden actualizar a la población si surgen nuevos datos sobre impactos o medidas de seguridad.</p><p><em>Datos sísmicos: USGS. </em></p>",
   "lang": "es"
 }

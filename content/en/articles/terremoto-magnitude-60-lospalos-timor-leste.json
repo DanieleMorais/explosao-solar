@@ -1,24 +1,25 @@
 {
   "slug": "terremoto-magnitude-60-lospalos-timor-leste",
+  "title": "Magnitude 6.0 Earthquake Strikes Timor-Leste",
+  "seoTitle": "Magnitude 6.0 Earthquake Strikes Timor-Leste",
+  "subtitle": "Quake at a depth of 10 km was recorded with no reports of being felt",
   "category": "Ciência",
   "categorySlug": "ciencia",
+  "excerpt": "A magnitude 6.0 earthquake struck Timor-Leste on the morning of August 24, 2026, centered 215 km north-northeast of Lospalos at a depth of 10 km.",
   "author": "Daniele Morais",
-  "publishedAt": "2026-08-24T14:29:10.779Z",
+  "publishedAt": "2026-08-24T19:11:37.304Z",
+  "updatedAt": "2026-08-24T19:11:37.304Z",
   "eventDate": "2026-08-24T14:10:17.299Z",
-  "sourceName": "USGS",
-  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn41",
-  "alerta": "terremoto",
-  "title": "Magnitude 6.0 earthquake strikes near Lospalos (Timor Leste)",
-  "seoTitle": "Magnitude 6.0 earthquake near Lospalos",
-  "subtitle": "The quake was recorded at a depth of 10 km, according to the US Geological Survey (USGS).",
-  "excerpt": "A magnitude 6.0 earthquake was recorded near Lospalos (Timor Leste), at a depth of 10 km, according to the USGS.",
-  "contentHtml": "<p>A magnitude 6.0 earthquake was recorded on August 24, 2026 at 11:10 AM (Brasília time) near Lospalos (Timor Leste), according to the United States Geological Survey (USGS). The quake occurred at a depth of roughly 10 km.</p><h2>What this magnitude means</h2><p>Earthquakes between magnitude 6 and 7 are considered strong and are usually felt hundreds of kilometers from the epicenter.</p><h2>What to expect in the coming days</h2><p>After a main shock, aftershocks — smaller quakes in the same region — are expected over the following days and weeks, with frequency decreasing over time, a well-established pattern in seismology.</p><p><em>With data from the USGS (United States Geological Survey).</em></p>",
   "readingMinutes": 2,
   "tags": [
     "earthquake",
-    "Timor Leste",
+    "Timor-Leste",
+    "magnitude 6",
     "USGS",
-    "natural disasters"
+    "geology"
   ],
+  "sourceName": "USGS (United States Geological Survey)",
+  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn41",
+  "contentHtml": "<p>A magnitude 6.0 earthquake was recorded by the USGS on the morning of August 24, 2026, at 11:10 (Brasília time), with its epicenter located 215 km north-northeast of Lospalos, Timor-Leste.</p><h2>Technical details of the earthquake</h2><p>The quake occurred at a depth of 10 km, according to the USGS technical report. The magnitude of 6.0 indicates a seismic event of moderate strength, capable of producing localized damage depending on the structural conditions of the region.</p><h2>Impact alert</h2><p>The USGS assigned a green impact alert to the earthquake, signaling that the expected effect on the population and infrastructure is low. This rating reflects the combination of magnitude, depth, and the remote location of the epicenter.</p><h2>Tsunami possibility</h2><p>The tsunami alert issued by the USGS was negative, indicating that there is no risk of significant ocean wave generation from this event.</p><h2>Report status</h2><p>To date, no reports have been recorded from people who felt the tremor. Authorities have not yet released additional information regarding potential damage or emergency responses.</p><h2>Next steps</h2><p>The USGS will continue monitoring the region to detect any potential aftershocks or changes in seismic activity. Local agencies in Timor-Leste may update the public if new data emerges regarding impacts or safety measures.</p><p><em>Seismic data: USGS. </em></p>",
   "lang": "en"
 }
