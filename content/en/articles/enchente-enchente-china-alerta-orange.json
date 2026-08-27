@@ -3,15 +3,15 @@
   "category": "Mundo",
   "categorySlug": "mundo",
   "author": "Daniele Morais",
-  "publishedAt": "2026-08-11T08:11:09.737Z",
+  "publishedAt": "2026-08-27T16:30:07.658Z",
   "sourceName": "GDACS",
-  "sourceUrl": "https://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104081",
+  "sourceUrl": "https://www.gdacs.org/report.aspx?eventtype=FL&amp;eventid=1104123",
   "alerta": "fl",
   "title": "Flood: alerta orange for China",
   "seoTitle": "Flood in China: alert orange",
   "subtitle": "The global disaster alert system rates event \"Enchente\" at orange (moderate to high) level.",
   "excerpt": "Flood puts China under orange (moderate to high) alert in the international GDACS system.",
-  "contentHtml": "<p>GDACS, the global disaster alert and coordination system run by the UN and the European Commission, issued a orange (moderate to high) alert for event \"Enchente\" (flood) affecting China.</p><p>From the official bulletin: On 31/07/2026, a flood started in China, lasting until 07/08/2026 (last update). The flood caused 0 deaths and 21158 displaced .</p><h2>What the alert level means</h2><p>GDACS rates events green, orange or red based on estimated humanitarian impact — exposed population, regional vulnerability and local response capacity.</p><p><em>With data from GDACS (Global Disaster Alert and Coordination System).</em></p>",
+  "contentHtml": "<p>GDACS, the global disaster alert and coordination system run by the UN and the European Commission, issued a orange (moderate to high) alert for event \"Enchente\" (flood) affecting China.</p><p>From the official bulletin: On 23/08/2026, a flood started in China, lasting until 25/08/2026 (last update). The flood caused 0 deaths and 75259 displaced .</p><h2>What the alert level means</h2><p>GDACS rates events green, orange or red based on estimated humanitarian impact — exposed population, regional vulnerability and local response capacity.</p><p><em>With data from GDACS (Global Disaster Alert and Coordination System).</em></p>",
   "readingMinutes": 2,
   "tags": [
     "flood",
@@ -19,8 +19,5 @@
     "GDACS",
     "natural disasters"
   ],
-  "lang": "en",
-  "imagem": "https://live.staticflickr.com/3043/2861478881_dbc2288ece_b.jpg",
-  "imagemCredito": "\"world map 3D\" by kcp4911 is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
-  "imagemCreditoUrl": "https://www.flickr.com/photos/29712230@N08/2861478881"
+  "lang": "en"
 }
