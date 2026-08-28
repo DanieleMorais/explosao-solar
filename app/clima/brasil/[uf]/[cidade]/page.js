@@ -2,7 +2,7 @@ import CidadeClimaView from '@/components/views/CidadeClimaView'
 import { estado } from '@/lib/brasil'
 import { alternates } from '@/lib/seo'
 
-export const revalidate = 1800
+export const dynamic = 'force-dynamic' // clima em tempo real: busca a previsão a cada acesso
 
 function titulo(slug) {
   return String(slug).split('-').map((p) => (p.length <= 2 ? p : p.charAt(0).toUpperCase() + p.slice(1))).join(' ')

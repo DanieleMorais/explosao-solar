@@ -24,7 +24,7 @@ const TXT = {
     semDados: 'Não conseguimos carregar o clima desta cidade agora.',
     anualTitulo: (n) => `Como é o clima em ${n} ao longo do ano`,
     estacoes: ['Verão', 'Outono', 'Inverno', 'Primavera'],
-    atualizado: 'Previsão atualizada a cada 30 min · Médias históricas: Open-Meteo',
+    atualizado: 'Previsão em tempo real · Médias históricas: Open-Meteo',
   },
   en: {
     voltar: (n) => `← ${n}`,
@@ -33,7 +33,7 @@ const TXT = {
     semDados: "We couldn't load this city's weather right now.",
     anualTitulo: (n) => `What the weather is like in ${n} through the year`,
     estacoes: ['Summer', 'Autumn', 'Winter', 'Spring'],
-    atualizado: 'Forecast updated every 30 min · Historical averages: Open-Meteo',
+    atualizado: 'Real-time forecast · Historical averages: Open-Meteo',
   },
   es: {
     voltar: (n) => `← ${n}`,
@@ -42,7 +42,7 @@ const TXT = {
     semDados: 'No pudimos cargar el clima de esta ciudad ahora.',
     anualTitulo: (n) => `Cómo es el clima en ${n} a lo largo del año`,
     estacoes: ['Verano', 'Otoño', 'Invierno', 'Primavera'],
-    atualizado: 'Pronóstico actualizado cada 30 min · Promedios históricos: Open-Meteo',
+    atualizado: 'Pronóstico en tiempo real · Promedios históricos: Open-Meteo',
   },
 }
 

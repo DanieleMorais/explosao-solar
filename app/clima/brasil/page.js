@@ -1,7 +1,7 @@
 import BrasilClimaView from '@/components/views/BrasilClimaView'
 import { alternates } from '@/lib/seo'
 
-export const revalidate = 1800
+export const dynamic = 'force-dynamic' // clima em tempo real: busca a previsão a cada acesso
 
 export const metadata = {
   title: 'Clima nos estados do Brasil — previsão em tempo real',

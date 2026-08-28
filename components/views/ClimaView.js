@@ -20,7 +20,7 @@ const TXT = {
     espacialPico: 'Pico previsto para',
     indisponivel: 'Dados indisponíveis no momento.',
     dias: ['Hoje', 'Amanhã'],
-    atualizado: 'Atualizado a cada 30 minutos · Fontes: Open-Meteo e NOAA',
+    atualizado: 'Em tempo real · Fontes: Open-Meteo e NOAA',
   },
   en: {
     kicker: 'Live',
@@ -36,7 +36,7 @@ const TXT = {
     espacialPico: 'Peak expected',
     indisponivel: 'Data unavailable right now.',
     dias: ['Today', 'Tomorrow'],
-    atualizado: 'Updated every 30 minutes · Sources: Open-Meteo and NOAA',
+    atualizado: 'Real-time data · Sources: Open-Meteo and NOAA',
   },
   es: {
     kicker: 'En vivo',
@@ -52,7 +52,7 @@ const TXT = {
     espacialPico: 'Pico previsto para',
     indisponivel: 'Datos no disponibles en este momento.',
     dias: ['Hoy', 'Mañana'],
-    atualizado: 'Actualizado cada 30 minutos · Fuentes: Open-Meteo y NOAA',
+    atualizado: 'En tiempo real · Fuentes: Open-Meteo y NOAA',
   },
 }
 

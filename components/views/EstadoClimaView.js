@@ -13,9 +13,9 @@ import FaixaHoras from '@/components/clima/FaixaHoras'
 export const revalidate = 1800
 
 const TXT = {
-  pt: { voltar: '← Clima nos estados', capital: 'Capital', principais: 'Principais cidades de', busca: 'Buscar cidade ou bairro de', atualizado: 'Clima atualizado a cada 30 min · Fonte: Open-Meteo' },
-  en: { voltar: '← Weather by state', capital: 'Capital', principais: 'Main cities in', busca: 'Search a city or neighborhood in', atualizado: 'Weather updated every 30 min · Source: Open-Meteo' },
-  es: { voltar: '← Clima por estado', capital: 'Capital', principais: 'Principales ciudades de', busca: 'Buscar ciudad o barrio de', atualizado: 'Clima actualizado cada 30 min · Fuente: Open-Meteo' },
+  pt: { voltar: '← Clima nos estados', capital: 'Capital', principais: 'Principais cidades de', busca: 'Buscar cidade ou bairro de', atualizado: 'Clima em tempo real · Fonte: Open-Meteo' },
+  en: { voltar: '← Weather by state', capital: 'Capital', principais: 'Main cities in', busca: 'Search a city or neighborhood in', atualizado: 'Real-time weather · Source: Open-Meteo' },
+  es: { voltar: '← Clima por estado', capital: 'Capital', principais: 'Principales ciudades de', busca: 'Buscar ciudad o barrio de', atualizado: 'Clima en tiempo real · Fuente: Open-Meteo' },
 }
 
 export default async function EstadoClimaView({ lang = 'pt', uf }) {

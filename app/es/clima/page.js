@@ -1,7 +1,7 @@
 import ClimaView from '@/components/views/ClimaView'
 import { alternates } from '@/lib/seo'
 
-export const revalidate = 1800
+export const dynamic = 'force-dynamic' // clima em tempo real: busca a previsão a cada acesso
 
 export const metadata = {
   title: 'Clima en el mundo — pronóstico en tiempo real',

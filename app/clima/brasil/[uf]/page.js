@@ -2,7 +2,7 @@ import EstadoClimaView from '@/components/views/EstadoClimaView'
 import { ESTADOS, estado } from '@/lib/brasil'
 import { alternates } from '@/lib/seo'
 
-export const revalidate = 1800
+export const dynamic = 'force-dynamic' // clima em tempo real: busca a previsão a cada acesso
 
 export function generateStaticParams() {
   return ESTADOS.map((e) => ({ uf: e.uf.toLowerCase() }))
