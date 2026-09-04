@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getArticle, getRelated, articleLangs, formatDate, SITE } from '@/lib/content'
+import { getArticle, getRelated, getContexto, articleLangs, formatDate, SITE } from '@/lib/content'
 import { Card } from '@/components/ArticleCard'
 import ShareButtons from '@/components/ShareButtons'
 import OuvirMateria from '@/components/OuvirMateria'
@@ -10,6 +10,12 @@ import { ui, catLabel, LANGS } from '@/lib/i18n'
 
 const LOCALE = { pt: 'pt-BR', en: 'en-US', es: 'es-ES' }
 
+const CONTEXTO = {
+  pt: { titulo: 'Entenda o tema', intro: 'Reportagens de fundo do Explosão Solar que explicam o assunto desta notícia.' },
+  en: { titulo: 'Understand the topic', intro: 'In-depth reporting from Explosão Solar that explains the subject of this story.' },
+  es: { titulo: 'Entiende el tema', intro: 'Reportajes de fondo de Explosão Solar que explican el asunto de esta noticia.' },
+}
+
 export default function ArticleView({ lang = 'pt', slug }) {
   const article = getArticle(slug, lang)
   if (!article) notFound()
@@ -18,6 +24,10 @@ export default function ArticleView({ lang = 'pt', slug }) {
   const color = catColor(article.categorySlug)
   const url = `${SITE.url}${withLang(lang, `/noticia/${article.slug}`)}`
   const related = getRelated(article, 3, lang)
+  // Notícia é curta por princípio (nunca esticamos além da fonte) — o contexto vem
+  // linkando as matérias de fundo que o próprio site já publicou sobre o assunto.
+  const contexto = article.sourceUrl ? getContexto(article, 3, lang) : []
+  const ctxTxt = CONTEXTO[lang] || CONTEXTO.pt
   const langs = articleLangs(article.slug)
 
   const breadcrumbJsonLd = {
@@ -173,6 +183,43 @@ export default function ArticleView({ lang = 'pt', slug }) {
                 </Link>
               ))}
           </div>
+        )}
+
+        {contexto.length > 0 && (
+          <section
+            aria-label={ctxTxt.titulo}
+            style={{
+              background: t.card,
+              border: `1px solid ${t.line}`,
+              borderLeft: `4px solid ${color}`,
+              borderRadius: t.radiusSm,
+              padding: '22px 24px',
+              margin: '10px 0 34px',
+              boxShadow: t.shadow,
+            }}
+          >
+            <h2 style={{ fontSize: 17, fontWeight: 900, letterSpacing: -0.2, marginBottom: 6 }}>{ctxTxt.titulo}</h2>
+            <p style={{ fontSize: 13.5, color: t.muted, lineHeight: 1.6, marginBottom: 14 }}>{ctxTxt.intro}</p>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {contexto.map((a) => (
+                <li key={a.slug} style={{ display: 'flex', gap: 10, alignItems: 'baseline' }}>
+                  <span aria-hidden="true" style={{ color, fontWeight: 900 }}>
+                    →
+                  </span>
+                  <Link
+                    href={withLang(lang, `/noticia/${a.slug}`)}
+                    className="hoverlink"
+                    style={{ fontSize: 15, fontWeight: 700, lineHeight: 1.45, color: t.ink }}
+                  >
+                    {a.title}
+                    {a.readingMinutes ? (
+                      <span style={{ fontWeight: 600, color: t.muted }}> · {a.readingMinutes} min</span>
+                    ) : null}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         )}
 
         <div style={{ borderTop: `1px solid ${t.line}`, paddingTop: 18, marginBottom: 46 }}>

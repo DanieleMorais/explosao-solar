@@ -19,7 +19,13 @@
   "sourceName": "BBC News",
   "sourceUrl": "https://www.bbc.co.uk/news/articles/c4gv5gepxnyo?at_medium=RSS&at_campaign=rss",
   "contentHtml": "<p>Matt Lucas, Hugh Bonneville e outros atores manifestaram a necessidade de que o governo do Reino Unido crie uma lei que reconheça o direito de cada cidadão sobre sua própria voz.</p><p>Os artistas argumentam que a tecnologia de clonagem de voz baseada em inteligência artificial pode ser usada sem consentimento, comprometendo a identidade sonora das pessoas. Por isso, solicitam que a legislação assegure a propriedade legal da voz, permitindo que o indivíduo controle seu uso e reprodução.</p><p>O pedido visa estabelecer um marco jurídico que proteja a voz como atributo pessoal, impedindo que terceiros a utilizem de forma não autorizada em aplicativos, anúncios ou outras finalidades comerciais.</p><p><em>Com informações de BBC News.</em></p>",
+<<<<<<< HEAD
   "imagem": "https://live.staticflickr.com/65535/51917430076_f988efa3bd_b.jpg",
   "imagemCredito": "\"Artificial intelligence\" by Wendelin Jacober is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
   "imagemCreditoUrl": "https://www.flickr.com/photos/91619724@N04/51917430076"
+=======
+  "imagem": "https://live.staticflickr.com/5350/30495671441_8ffef49d47_b.jpg",
+  "imagemCredito": "\"Artificial Intelligence Talks - WTSA-16\" by ITU Pictures is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+  "imagemCreditoUrl": "https://www.flickr.com/photos/42121221@N07/30495671441"
+>>>>>>> 2afb087 (Imagem em 100% do acervo, busca no servidor e relacionadas por relevancia)
 }

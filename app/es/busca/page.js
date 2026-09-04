@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
-import { getAllArticles } from '@/lib/content'
 import SearchView from '@/components/views/SearchView'
+import { buscar } from '@/lib/busca'
 import { alternates } from '@/lib/seo'
 
 export const metadata = {
@@ -9,23 +9,12 @@ export const metadata = {
   alternates: alternates('es', '/busca'),
 }
 
-function slim(a) {
-  return {
-    slug: a.slug,
-    title: a.title,
-    excerpt: a.excerpt,
-    category: a.category,
-    categorySlug: a.categorySlug,
-    publishedAt: a.publishedAt,
-    readingMinutes: a.readingMinutes,
-    tags: a.tags,
-  }
-}
-
 export default function Page() {
+  // Só as recentes vão no HTML; o resto do acervo é consultado em /api/busca.
+  const { total, resultados } = buscar('', 'es', 24)
   return (
     <Suspense>
-      <SearchView articles={getAllArticles('es').map(slim)} lang="es" />
+      <SearchView iniciais={resultados} totalAcervo={total} lang="es" />
     </Suspense>
   )
 }
