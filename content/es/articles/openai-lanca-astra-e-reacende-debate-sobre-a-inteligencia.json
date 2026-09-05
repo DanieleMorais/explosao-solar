@@ -1,0 +1,25 @@
+{
+  "slug": "openai-lanca-astra-e-reacende-debate-sobre-a-inteligencia",
+  "title": "OpenAI lanza Astra y reaviva el debate sobre la inteligencia artificial general",
+  "seoTitle": "OpenAI lanza Astra y reaviva el debate sobre AGI",
+  "subtitle": "Nuevo modelo GPT‑6 ofrece rendimiento avanzado en benchmarks y promete ser más autónomo",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "OpenAI presentó el GPT‑6 Astra, modelo que alcanzó 99,9% en la prueba ARC‑AGI‑3 y reduce alucinaciones. Conoce las novedades, los riesgos de seguridad y más.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-05T22:35:23.781Z",
+  "readingMinutes": 2,
+  "tags": [
+    "OpenAI",
+    "IA",
+    "AGI",
+    "GPT‑6",
+    "ciberseguridad",
+    "benchmark"
+  ],
+  "sourceName": "InfoMoney, GZH, VEJA",
+  "sourceUrl": "https://www.infomoney.com.br/consumo/agi-inteligencia-artificial-geral/",
+  "trending": "astra",
+  "contentHtml": "<p>El pasado jueves OpenAI anunció el GPT-6 Astra, su modelo más avanzado hasta la fecha. La divulgación trajo cifras récord en pruebas de inteligencia artificial general (AGI) y despertó discusiones sobre la verdadera capacidad de la IA para actuar de forma autónoma.</p>\n<h2>Por qué el Astra está en auge ahora</h2>\n<p>El destaque surgió porque el Astra alcanzó 99,9% en el benchmark ARC-AGI-3, creado para medir la habilidad de un sistema de enfrentar problemas inéditos. Esta puntuación fue citada por el presidente de OpenAI, Greg Brockman, como un hito hacia la llamada era de la AGI.</p>\n<h2>Rendimiento en pruebas de inteligencia y matemáticas</h2>\n<p>Además del ARC-AGI-3, el modelo registró 98% en FrontierMath Tier 4 y 97,6% en el mismo benchmark, según la propia empresa. En evaluaciones más amplias, como el Intelligence Index de Artificial Analysis, el Astra obtuvo 61 puntos, prácticamente igual al GPT-5.6 Sol, lo que indica que el salto de rendimiento sigue concentrado en áreas específicas.</p>\n<h2>Reducción de alucinaciones y mayor precisión</h2>\n<p>En pruebas de Artificial Analysis, la tasa de alucinación – respuestas inventadas – cayó del 92% en el GPT-5.6 Sol al 51% en el Astra. El mismo análisis señaló una mejora de cuatro puntos en la métrica de precisión, aunque aún existe margen de error en situaciones extremas.</p>\n<h2>Capacidades de ejecución autónoma</h2>\n<p>El Astra puede operar computadoras y navegadores, crear documentos, hojas de cálculo, presentaciones y desarrollar sitios web, completando tareas hasta un 47% más rápido que el GPT-5.6 Sol en simulaciones de OSWorld 2.0. En el mismo benchmark, su desempeño subió al 72,6%, frente al 65,7% del predecesor, reduciendo el tiempo de ejecución de 75 a 40 minutos.</p>\n<h2>Riesgos de ciberseguridad y acceso restringido</h2>\n<p>Clasificado en el nivel “crítico” de capacidad de ciberseguridad, el Astra logró identificar dos vulnerabilidades zero‑day desconocidas en pruebas internas. Por este motivo, funciones sensibles tendrán acceso limitado, y el modelo se pondrá a disposición inicialmente solo para suscriptores Plus, Pro, Business, Enterprise y vía API en las plataformas Azure y AWS.</p>\n<h2>Lo que el lanzamiento indica para el mercado</h2>\n<p>Según análisis de mercado, OpenAI busca ser la plataforma principal de IA para usuarios, similar al concepto de “principalidad” en la banca, donde el cliente concentra sus interacciones en un único proveedor. El Astra, al combinar respuestas más precisas con la ejecución práctica de tareas, refuerza esta estrategia comercial.</p>\n<p><em>Con información de InfoMoney, GZH, VEJA.</em></p>",
+  "lang": "es"
+}
