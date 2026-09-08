@@ -4,7 +4,7 @@ import { alternates } from '@/lib/seo'
 export const dynamic = 'force-dynamic' // clima em tempo real: busca a previsão a cada acesso
 
 export const metadata = {
-  title: 'World weather — real-time forecast',
+  title: 'Weather tomorrow — forecast for today and the days ahead',
   description: 'Weather forecast for major world cities and space weather (solar storms), updated automatically on Explosão Solar.',
   alternates: alternates('en', '/clima'),
 }

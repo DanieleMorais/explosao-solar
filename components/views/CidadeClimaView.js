@@ -5,7 +5,7 @@ import { cidadeBR } from '@/lib/cidades-br'
 import { previsaoPonto, climaAnual, wmo } from '@/lib/clima'
 import { t } from '@/lib/tokens'
 import { withLang } from '@/lib/site'
-import { CardClima } from '@/components/clima/ClimaBits'
+import { CardClima, diaCurto } from '@/components/clima/ClimaBits'
 import BuscaClima from '@/components/clima/BuscaClima'
 import Cenario from '@/components/clima/Cenario'
 import FaixaHoras from '@/components/clima/FaixaHoras'
@@ -24,6 +24,11 @@ const TXT = {
     semDados: 'Não conseguimos carregar o clima desta cidade agora.',
     anualTitulo: (n) => `Como é o clima em ${n} ao longo do ano`,
     estacoes: ['Verão', 'Outono', 'Inverno', 'Primavera'],
+    quinzenaTitulo: (n) => `Previsão do tempo em ${n} para os próximos 14 dias`,
+    quinzenaIntro: (n) => `Máxima, mínima e chance de chuva dia a dia em ${n} — de hoje até duas semanas à frente.`,
+    hoje: 'Hoje',
+    amanha: 'Amanhã',
+    chuva: 'chuva',
     atualizado: 'Previsão em tempo real · Médias históricas: Open-Meteo',
   },
   en: {
@@ -33,6 +38,11 @@ const TXT = {
     semDados: "We couldn't load this city's weather right now.",
     anualTitulo: (n) => `What the weather is like in ${n} through the year`,
     estacoes: ['Summer', 'Autumn', 'Winter', 'Spring'],
+    quinzenaTitulo: (n) => `14-day weather forecast for ${n}`,
+    quinzenaIntro: (n) => `Highs, lows and rain chance day by day in ${n} — from today up to two weeks ahead.`,
+    hoje: 'Today',
+    amanha: 'Tomorrow',
+    chuva: 'rain',
     atualizado: 'Real-time forecast · Historical averages: Open-Meteo',
   },
   es: {
@@ -42,6 +52,11 @@ const TXT = {
     semDados: 'No pudimos cargar el clima de esta ciudad ahora.',
     anualTitulo: (n) => `Cómo es el clima en ${n} a lo largo del año`,
     estacoes: ['Verano', 'Otoño', 'Invierno', 'Primavera'],
+    quinzenaTitulo: (n) => `Pronóstico del tiempo en ${n} para los próximos 14 días`,
+    quinzenaIntro: (n) => `Máxima, mínima y probabilidad de lluvia día a día en ${n}, desde hoy hasta dos semanas.`,
+    hoje: 'Hoy',
+    amanha: 'Mañana',
+    chuva: 'lluvia',
     atualizado: 'Pronóstico en tiempo real · Promedios históricos: Open-Meteo',
   },
 }
@@ -109,6 +124,40 @@ export default async function CidadeClimaView({ lang = 'pt', uf, cidade }) {
           </>
         ) : (
           <p style={{ fontSize: 15, color: t.muted }}>{L.semDados}</p>
+        )}
+
+        {clima?.dias?.length > 5 && (
+          <div style={{ marginTop: 34 }}>
+            <h2 style={{ fontSize: 'clamp(19px,3vw,24px)', fontWeight: 900, letterSpacing: -0.3, marginBottom: 8 }}>{L.quinzenaTitulo(nomeCidade)}</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.7, color: t.inkSoft, marginBottom: 18 }}>{L.quinzenaIntro(nomeCidade)}</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(132px, 1fr))', gap: 10 }}>
+              {clima.dias.map((d, i) => {
+                return (
+                  <div
+                    key={d.data}
+                    style={{
+                      background: t.card,
+                      border: `1px solid ${t.line}`,
+                      borderRadius: t.radiusSm,
+                      padding: '12px 10px',
+                      textAlign: 'center',
+                      boxShadow: t.shadow,
+                    }}
+                  >
+                    <div style={{ fontSize: 12, fontWeight: 700, color: i < 2 ? t.sun : t.muted, textTransform: 'capitalize' }}>{diaCurto(d.data, i, lang)}</div>
+                    <div style={{ fontSize: 11, color: t.muted, marginBottom: 4 }}>{d.data.slice(8, 10)}/{d.data.slice(5, 7)}</div>
+                    <div style={{ fontSize: 24, lineHeight: 1.2 }}>{wmo(d.code, lang).emoji}</div>
+                    <div style={{ fontSize: 15, fontWeight: 800, color: t.ink, marginTop: 2 }}>
+                      {d.max}°<span style={{ fontSize: 13, color: t.muted, fontWeight: 400 }}> / {d.min}°</span>
+                    </div>
+                    <div style={{ fontSize: 11.5, color: d.chuva > 30 ? '#2563EB' : t.muted, marginTop: 3 }}>
+                      {d.chuva}% {L.chuva}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
         )}
 
         {anual && (
