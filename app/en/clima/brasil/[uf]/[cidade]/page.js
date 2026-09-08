@@ -1,5 +1,6 @@
 import CidadeClimaView from '@/components/views/CidadeClimaView'
 import { estado } from '@/lib/brasil'
+import { cidadeBR } from '@/lib/cidades-br'
 import { alternates } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic' // clima em tempo real: busca a previsão a cada acesso
@@ -12,7 +13,8 @@ export async function generateMetadata({ params }) {
   const { uf, cidade } = await params
   const e = estado(uf)
   if (!e) return {}
-  const nome = titulo(cidade)
+  // o slug perde acento (jaragua-do-sul): o nome real vem da base de cidades
+  const nome = cidadeBR(e.uf, cidade)?.nome || titulo(cidade)
   return {
     title: `Weather in ${nome} tomorrow and today — 14-day forecast`,
     description: `Weather forecast for ${nome}, Brazil today and for the coming days: temperature, rain, neighborhood weather and what the climate in ${nome} is like through the year. Updated in real time.`,
