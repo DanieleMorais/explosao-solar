@@ -1,0 +1,24 @@
+{
+  "slug": "phishing-evolui-com-ascii-smuggling-e-engana-filtros-de-e",
+  "title": "Phishing evoluciona con ASCII smuggling y engaña filtros",
+  "seoTitle": "Phishing evoluciona con ASCII smuggling y engaña filtros",
+  "subtitle": "Entienda la técnica que oculta mensajes maliciosos en caracteres invisibles",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "Microsoft registró un pico de millones de correos usando ASCII smuggling para evadir filtros. Conozca el método, su impacto en el phishing y cómo protegerse.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-08T07:40:21.627Z",
+  "readingMinutes": 2,
+  "tags": [
+    "phishing",
+    "seguridad digital",
+    "spam",
+    "ASCII smuggling",
+    "cibercrime"
+  ],
+  "sourceName": "Ars Technica, Deccan Herald",
+  "sourceUrl": "https://arstechnica.com/security/2026/09/once-popular-for-attacking-ai-ascii-smuggling-is-embraced-by-spammers/",
+  "trending": "what is phishing",
+  "contentHtml": "<p>En la primera quincena de febrero, Microsoft detectó un salto de 21 mil a más de 1,3 millones de suscripciones diarias de ASCII smuggling en mensajes de correo electrónico, llegando a 2,5 millones en cuatro días. El abrupto aumento de spam usando esta técnica elevó la búsqueda de información sobre phishing.</p>\n<h2>Qué es ASCII smuggling</h2>\n<p>ASCII smuggling consiste en insertar códigos Unicode del rango U+E0000 a U+E007F, que reproducen caracteres ASCII, pero no son renderizados por las fuentes comunes. El texto permanece legible para los softwares de procesamiento, pero invisible para el usuario.</p>\n<h2>Cómo la técnica elude los filtros de seguridad</h2>\n<p>Los filtros que buscan palabras clave como “crédito” o “funding” analizan el texto literal. Al colocar un carácter invisible en medio de la palabra, el filtro lee “fun” y “ding”, mientras el destinatario ve la palabra completa. Esta obstrucción también impide que los tokenizadores de modelos de lenguaje reconozcan el término entero.</p>\n<h2>Relación entre ASCII smuggling y phishing</h2>\n<p>Los criminales utilizan el método para enviar correos de phishing que pasan desapercibidos por los sistemas de detección basados en aprendizaje automático. Después de evadir el filtro, el mensaje contiene enlaces o códigos maliciosos que, al ser clicados, pueden robar datos personales y financieros.</p>\n<h2>Medidas de protección recomendadas</h2>\n<p>Para reducir el riesgo, mantenga actualizadas las contraseñas de sus cuentas bancarias, evite hacer clic en URLs o códigos QR enviados por mensajes inesperados y instale aplicaciones solo de tiendas oficiales. Actualizar el sistema operativo y usar antivirus reconocidos también ayuda a bloquear intentos de ataque.</p>\n<h2>Qué indican las investigaciones de seguridad</h2>\n<p>Los investigadores de Microsoft observaron que la misma propiedad que hace invisibles a los caracteres útiles para instrucciones a modelos de IA también sirve para ocultar palabras clave de los filtros. Alertan que, a medida que los filtros evolucionan, técnicas como ASCII smuggling pueden adaptarse a nuevos tipos de amenazas.</p><p><em>Con información de Ars Technica, Deccan Herald.</em></p>",
+  "lang": "es"
+}
