@@ -29,6 +29,18 @@ export default function HoroscopoPage() {
       </section>
 
       <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: 'clamp(20px, 3vw, 48px)' }}>
+        <Link
+          href="/horoscopo/combinacao"
+          className="card"
+          style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 14, background: 'linear-gradient(135deg, #2b1a5e 0%, #0C0E1A 100%)', color: '#fff', borderRadius: t.radius, boxShadow: t.shadow, padding: 'clamp(18px, 3vw, 26px)', marginBottom: 22, borderLeft: '4px solid #FFB300' }}
+        >
+          <div style={{ flex: '1 1 260px' }}>
+            <div style={{ fontSize: 12, letterSpacing: 2, color: '#FFB300', fontWeight: 800, textTransform: 'uppercase' }}>Ferramenta</div>
+            <div style={{ fontSize: 'clamp(19px, 2.6vw, 24px)', fontWeight: 900, letterSpacing: -0.4, marginTop: 6 }}>Combinação de signos</div>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.78)', marginTop: 6, lineHeight: 1.55 }}>Escolha o seu signo e o da outra pessoa e veja a compatibilidade de vocês no amor, na amizade, no trabalho e na intimidade.</p>
+          </div>
+          <span style={{ flex: '0 0 auto', background: t.sunGrad, color: '#131417', fontWeight: 800, fontSize: 14.5, padding: '11px 20px', borderRadius: 999, whiteSpace: 'nowrap' }}>Descobrir se combinam →</span>
+        </Link>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
           {SIGNOS.map((s) => (
             <Link

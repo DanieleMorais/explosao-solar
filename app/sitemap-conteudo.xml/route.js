@@ -1,5 +1,6 @@
 import { getAllArticles, CATEGORIES, SITE } from '@/lib/content'
 import { urlTrilingue, urlSimples, urlset, respostaXml, LANGS } from '@/lib/sitemap-xml'
+import { todosOsPares } from '@/lib/combinacoes'
 
 export const revalidate = 3600
 
@@ -38,6 +39,13 @@ export function GET() {
   itens.push(urlSimples(`${SITE.url}/horoscopo`, { lastModified: now, changeFrequency: 'daily', priority: 0.7 }))
   for (const s of ['aries', 'touro', 'gemeos', 'cancer', 'leao', 'virgem', 'libra', 'escorpiao', 'sagitario', 'capricornio', 'aquario', 'peixes']) {
     itens.push(urlSimples(`${SITE.url}/horoscopo/${s}`, { lastModified: now, changeFrequency: 'daily', priority: 0.6 }))
+  }
+
+  for (const lang of LANGS) {
+    itens.push(urlTrilingue('/horoscopo/combinacao', lang, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
+    for (const par of todosOsPares()) {
+      itens.push(urlTrilingue(`/horoscopo/combinacao/${par}`, lang, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
+    }
   }
 
   for (const p of ['/sobre', '/faq', '/contato', '/politica-de-privacidade', '/politica-de-cookies', '/termos-de-uso']) {

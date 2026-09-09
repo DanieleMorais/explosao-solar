@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { SIGNOS, signoDe, getHoroscopo, numeroSorte } from '@/lib/horoscopo'
+import { ORDEM, slugPar, pontuar, rotulo } from '@/lib/combinacoes'
 import { t } from '@/lib/tokens'
 import { SITE } from '@/lib/content'
 
@@ -110,6 +111,22 @@ export default async function SignoPage({ params }) {
               </Link>
             )
           })}
+        </div>
+
+        {/* Combinações (páginas de compatibilidade) */}
+        <h2 style={{ fontSize: 16, fontWeight: 800, color: t.ink, margin: '26px 0 10px' }}>Combinações de {s.nome}</h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          {ORDEM.map((slug) => {
+            const c = signoDe(slug)
+            return (
+              <Link key={slug} href={`/horoscopo/combinacao/${slugPar(s.slug, slug)}`} className="hoverlink" style={{ display: 'flex', alignItems: 'center', gap: 6, border: `1px solid ${t.line}`, borderRadius: 999, padding: '8px 16px', fontSize: 14, fontWeight: 700, color: t.inkSoft, textDecoration: 'none' }}>
+                <span style={{ color: c.cor, fontSize: 18 }}>{c.simbolo}</span> {rotulo(s.slug, slug)} <span style={{ color: t.sun }}>{pontuar(s.slug, slug).geral}%</span>
+              </Link>
+            )
+          })}
+          <Link href="/horoscopo/combinacao" className="btn" style={{ display: 'flex', alignItems: 'center', background: t.sunGrad, color: '#131417', borderRadius: 999, padding: '8px 16px', fontSize: 14, fontWeight: 800, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            Testar combinação →
+          </Link>
         </div>
 
         <h2 style={{ fontSize: 15, fontWeight: 800, color: t.ink, margin: '30px 0 12px' }}>Outros signos</h2>
