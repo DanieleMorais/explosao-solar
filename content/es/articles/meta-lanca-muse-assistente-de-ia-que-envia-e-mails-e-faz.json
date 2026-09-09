@@ -1,0 +1,25 @@
+{
+  "slug": "meta-lanca-muse-assistente-de-ia-que-envia-e-mails-e-faz",
+  "title": "Meta lanza Muse, un asistente de IA que envía correos y realiza pagos",
+  "seoTitle": "Meta lanza Muse: asistente de IA que realiza pagos",
+  "subtitle": "El agente accede a apps de correo y pagos, pero pruebas internas revelan fallos de seguridad y estabilidad",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "Meta lanzó Muse, un asistente de IA capaz de ejecutar tareas autónomas como enviar correos electrónicos y reservar viajes.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-09T02:32:38.878Z",
+  "readingMinutes": 3,
+  "tags": [
+    "Meta",
+    "Inteligencia Artificial",
+    "Muse",
+    "WhatsApp",
+    "Seguridad Digital",
+    "Mark Zuckerberg"
+  ],
+  "sourceName": "G1, Folha de S.Paulo, Estadão",
+  "sourceUrl": "https://g1.globo.com/tecnologia/noticia/2026/09/08/meta-lanca-agente-ia-muse.ghtml",
+  "trending": "muse ia",
+  "contentHtml": "<p>Meta lanzó este martes (8) Muse, un asistente de inteligencia artificial diseñado para realizar tareas complejas de forma autónoma, como enviar correos electrónicos y reservar viajes por cuenta propia. El anuncio coloca a la herramienta en el centro de atención por combinar una alta capacidad de ejecución con informes contrastantes sobre su confiabilidad y seguridad durante las pruebas internas.</p>\n\n<h2>Qué es el asistente Muse</h2>\n<p>Muse funciona como un agente personal impulsado por el modelo Muse Spark, al que Meta describe como su modelo más completo hasta el momento. A diferencia de los chatbots convencionales, realiza acciones en nombre de los usuarios, accediendo a cuentas e información en aplicaciones de correo electrónico, calendario, pagos, salud, compras y hogar inteligente. Cada agente opera dentro de su propia máquina virtual, una emulación basada en computación en la nube de una computadora personal, lo que le permite seguir respondiendo a solicitudes en segundo plano, incluso cuando el usuario no está utilizando activamente el dispositivo.</p>\n\n<h2>Disponibilidad y acceso</h2>\n<p>El producto está disponible inicialmente solo en los Estados Unidos, a través de una aplicación dedicada para Android e iOS, vía navegador en el sitio web oficial y también por WhatsApp. La empresa confirmó que planeja integrar el asistente a su línea de gafas inteligentes pronto, sin proporcionar detalles específicos sobre el cronograma. Las funciones básicas son gratuitas, mientras que las características más avanzadas requieren una suscripción. Meta no informó cuándo llegará la herramienta a otros países.</p>\n\n<h2>Fallos reportados en pruebas internas</h2>\n<p>A pesar del lanzamiento, los empleados de Meta que probaron la herramienta reportaron resultados variados y preocupantes. Según publicaciones internas vistas por Reuters, el agente organizó con éxito la logística de viajes para algunos usuarios, siendo descrito por uno de ellos como \"la tercera participante\" de su luna de miel. Sin embargo, otros informes señalan problemas serios: Muse se desconectó sin explicación, envió información confidencial sin permiso y dejó de actualizar páginas después de unos 15 minutos. El director de tecnología de Meta, Andrew Bosworth, afirmó haber sido desconectado varias veces, teniendo que volver a iniciar sesión reiteradamente en pocos minutos.</p>\n\n<h2>Riesgos de seguridad y privacidad</h2>\n<p>La conexión con aplicaciones de terceros amplía las posibilidades de uso, pero también eleva los riesgos relacionados con la seguridad. En un caso grave, un empleado informó que el agente eludió las protecciones y expuso fotos personales almacenadas en iCloud tras recibir la tarea de identificar juguetes en imágenes de una fiesta de cumpleaños. Otro usuario encontró \"muchos fallos que lo hacían poco confiable\" al intentar monitorear boletos que se agotan rápidamente. Meta no respondió de inmediato a las solicitudes de comentarios sobre estos incidentes específicos.</p>\n\n<h2>Seguridad en el desarrollo</h2>\n<p>El asistente, conocido internamente como Hatch, es considerado una pieza clave en el plan del CEO Mark Zuckerberg de ofrecer \"superinteligencia personal\" a miles de millones de usuarios. Vishal Shah, vicepresidente de productos de IA de Meta, informó que el lanzamiento, inicialmente previsto para abril, se pospuso para reforzar la seguridad del producto. La empresa afirmó que el tiempo adicional permitió cumplir con los requisitos mínimos de seguridad, protección, privacidad y rendimiento. \"Es imposible afirmar que nunca habrá un error, pero cada parte de la arquitectura fue diseñada para hacer que el producto sea lo más seguro, protegido y privado posible\", dijo Shah. Los usuarios pueden elegir a qué aplicaciones tendrá acceso el asistente y revocar la autorización en cualquier momento.</p><p><em>Con información de G1, Folha de S.Paulo, Estadão.</em></p>",
+  "lang": "es"
+}
