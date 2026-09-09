@@ -121,7 +121,7 @@ function validar(d, { fator = 1, lang = 'pt', a, b } = {}) {
     if (m) erros.push(`${motivo}: "${m[0]}"`)
   }
   const nMod = (todo.match(L.modalidade) || []).length
-  if (nMod > 4) erros.push(`modalidade (cardinal/fixo/mutável) citada ${nMod} vezes — máximo 2 frases no texto inteiro; explique uma vez e depois mostre em cenas`)
+  if (nMod > 6) erros.push(`modalidade (cardinal/fixo/mutável) citada ${nMod} vezes — no máximo 6 menções no texto inteiro; explique uma vez e depois mostre em cenas`)
   const sa = SIGNOS.find((x) => x.slug === a)
   const sb = SIGNOS.find((x) => x.slug === b)
   for (const reg of new Set([sa.regente, sb.regente])) {
@@ -142,6 +142,31 @@ function validar(d, { fator = 1, lang = 'pt', a, b } = {}) {
 }
 
 // Hífen não separável (U+2011) e espaço duro vindos do modelo quebram busca e renderização.
+// Correções determinísticas ANTES da validação — são os dois erros que o modelo insiste
+// em repetir mesmo com feedback: nome de signo em português dentro do EN/ES e
+// "Vênus em Touro" (posição de mapa) no lugar da regência.
+function corrigirAutomatico(d, lang, a, b) {
+  const escapar = (x) => x.replace(/[.*+?^$(){}|[]\]/g, "\function normalizar(v) {")
+  const semLetra = (x) => new RegExp('(?<![\\p{L}])' + escapar(x) + '(?![\\p{L}])', 'gu')
+  const trocas = []
+  if (lang !== 'pt') for (const s of SIGNOS) trocas.push([semLetra(s.nome), NOMES[lang][s.slug]])
+  const prep = { pt: 'em', en: 'in', es: 'en' }[lang]
+  const liga = { pt: 'regente de', en: 'ruler of', es: 'regente de' }[lang]
+  for (const slug of new Set([a, b])) {
+    const sig = SIGNOS.find((x) => x.slug === slug)
+    const reg = REGENTES[lang][sig.regente]
+    const nome = NOMES[lang][slug]
+    trocas.push([semLetra(reg + ' ' + prep + ' ' + nome), reg + ', ' + liga + ' ' + nome + ','])
+  }
+  const aplicar = (v) => {
+    if (typeof v === 'string') return trocas.reduce((t, [re, por]) => t.replace(re, por), v)
+    if (Array.isArray(v)) return v.map(aplicar)
+    if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, aplicar(x)]))
+    return v
+  }
+  return aplicar(d)
+}
+
 function normalizar(v) {
   if (typeof v === 'string') return v.replace(/[‐‑]/g, '-').replace(/ /g, ' ').trim()
   if (Array.isArray(v)) return v.map(normalizar)
@@ -274,7 +299,7 @@ async function pedirValidado(montarPrompt, ctx, tag) {
   let erros = []
   for (let tentativa = 1; tentativa <= 3; tentativa++) {
     const extra = erros.length ? `\n\nATENÇÃO — a tentativa anterior falhou por: ${erros.join('; ')}. Corrija isso.` : ''
-    const d = normalizar(await askJson(montarPrompt() + extra, { maxTokens: 3500, attempts: 3, onLog: (m) => log(`  [${tag}] ${m}`) }))
+    const d = corrigirAutomatico(normalizar(await askJson(montarPrompt() + extra, { maxTokens: 3500, attempts: 3, onLog: (m) => log(`  [${tag}] ${m}`) })), ctx.lang, ctx.a, ctx.b)
     erros = validar(d, ctx)
     if (!erros.length) return fixarTituloEFaq(d, ctx.lang, ctx.a, ctx.b)
     log(`  [${tag}] tentativa ${tentativa}/3 inválida: ${erros.join('; ')}`)
@@ -345,7 +370,7 @@ process.on('warning', (w) => {
   if (w.code !== 'MODULE_TYPELESS_PACKAGE_JSON') console.warn(w.stack || w.message)
 })
 
-module.exports = { validar, normalizar, aspecto }
+module.exports = { validar, normalizar, aspecto, corrigirAutomatico }
 
 if (require.main === module) {
   main().catch((e) => {
