@@ -8,6 +8,10 @@ function esc(s) {
 const LANGS = { pt: 'pt', en: 'en', es: 'es' }
 const CUTOFF_HOURS = 48
 
+// A janela de 48h é contada a partir de agora: sem isto o Next congela a rota no
+// build e o Google passa a receber um sitemap de notícias eternamente vazio.
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   const limit = Date.now() - CUTOFF_HOURS * 3600 * 1000
   const urls = []
