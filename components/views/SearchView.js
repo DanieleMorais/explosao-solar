@@ -38,6 +38,14 @@ const LABELS = {
   },
 }
 
+// Mesma normalização usada ao montar o índice (lib/busca.js), para "sao paulo"
+// encontrar "São Paulo".
+const normalizar = (s) =>
+  String(s || '')
+    .normalize('NFD')
+    .replace(new RegExp('[\u0300-\u036f]', 'g'), '')
+    .toLowerCase()
+
 export default function SearchView({ iniciais = [], totalAcervo = 0, lang = 'pt' }) {
   const searchParams = useSearchParams()
   const L = LABELS[lang] || LABELS.pt
@@ -46,10 +54,13 @@ export default function SearchView({ iniciais = [], totalAcervo = 0, lang = 'pt'
   const [total, setTotal] = useState(totalAcervo)
   const [carregando, setCarregando] = useState(false)
   const [erro, setErro] = useState(false)
-  const pedido = useRef(0)
+  const indice = useRef(null)
 
+  // O índice do acervo é baixado uma vez, na primeira busca, e fica em memória:
+  // o servidor da Cloudflare não lê os arquivos de conteúdo em tempo de execução,
+  // então a filtragem acontece aqui.
   useEffect(() => {
-    const termo = query.trim()
+    const termo = normalizar(query.trim())
     if (!termo) {
       setResultados(iniciais)
       setTotal(totalAcervo)
@@ -57,27 +68,47 @@ export default function SearchView({ iniciais = [], totalAcervo = 0, lang = 'pt'
       setErro(false)
       return
     }
+
+    let cancelado = false
     setCarregando(true)
     setErro(false)
-    const id = ++pedido.current
     const timer = setTimeout(async () => {
       try {
-        const r = await fetch(`/api/busca?q=${encodeURIComponent(termo)}&lang=${lang}`)
-        if (!r.ok) throw new Error('HTTP ' + r.status)
-        const d = await r.json()
-        if (id !== pedido.current) return // resposta de uma digitação antiga
-        setResultados(d.resultados)
-        setTotal(d.total)
+        if (!indice.current) {
+          const r = await fetch(`/busca-indice/${lang}`)
+          if (!r.ok) throw new Error('HTTP ' + r.status)
+          indice.current = await r.json()
+        }
+        if (cancelado) return
+        // [slug, título, excerpt, categoria, catSlug, data, minutos, imagem, textoDeBusca]
+        const achadas = indice.current.filter((a) => a[8].includes(termo) || normalizar(a[2]).includes(termo))
+        setResultados(
+          achadas.slice(0, 40).map((a) => ({
+            slug: a[0],
+            title: a[1],
+            excerpt: a[2],
+            category: a[3],
+            categorySlug: a[4],
+            publishedAt: a[5],
+            readingMinutes: a[6],
+            imagem: a[7],
+          }))
+        )
+        setTotal(achadas.length)
+        setErro(false)
       } catch {
-        if (id !== pedido.current) return
+        if (cancelado) return
         setErro(true)
         setResultados([])
         setTotal(0)
       } finally {
-        if (id === pedido.current) setCarregando(false)
+        if (!cancelado) setCarregando(false)
       }
-    }, 280)
-    return () => clearTimeout(timer)
+    }, 200)
+    return () => {
+      cancelado = true
+      clearTimeout(timer)
+    }
   }, [query, lang, iniciais, totalAcervo])
 
   const buscando = query.trim() !== ''

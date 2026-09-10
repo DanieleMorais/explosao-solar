@@ -8,9 +8,9 @@ function esc(s) {
 const LANGS = { pt: 'pt', en: 'en', es: 'es' }
 const CUTOFF_HOURS = 48
 
-// A janela de 48h é contada a partir de agora: sem isto o Next congela a rota no
-// build e o Google passa a receber um sitemap de notícias eternamente vazio.
-export const dynamic = 'force-dynamic'
+// O Worker nao le arquivos de conteudo em runtime (so o build le): por isso a rota
+// e regerada a cada build (a cada 20 min), e nao a cada requisicao.
+export const revalidate = 600
 
 export async function GET() {
   const limit = Date.now() - CUTOFF_HOURS * 3600 * 1000
