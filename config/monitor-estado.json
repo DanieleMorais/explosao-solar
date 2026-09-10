@@ -1,5 +1,5 @@
 {
-  "checadoEm": "2026-09-10T06:39:56.354Z",
+  "checadoEm": "2026-09-10T11:52:20.344Z",
   "total": 32,
   "comProblema": 7,
   "sites": [
@@ -10,8 +10,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 1915,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 1549,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "universidade-fada-madrinha",
@@ -22,8 +22,8 @@
         "site lento (11.6s para responder)"
       ],
       "notas": [],
-      "ms": 11615,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 11649,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "app-da-aluna",
@@ -32,8 +32,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 712,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 941,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "agencia-fada-madrinha",
@@ -42,8 +42,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 990,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 858,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "comunidade-fada-madrinha",
@@ -54,8 +54,8 @@
         "site fora do ar (HTTP 402)"
       ],
       "notas": [],
-      "ms": 211,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 263,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "dinheiro-no-dia-a-dia",
@@ -64,8 +64,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 294,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 474,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "o-mundo-da-ia",
@@ -74,8 +74,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 306,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 235,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "universo-animes",
@@ -84,8 +84,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 332,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 154,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "we-love-animes",
@@ -94,8 +94,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 326,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 104,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "pisco-cocina-y-bar",
@@ -104,8 +104,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 958,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 259,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "restaurante-ia",
@@ -114,8 +114,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 855,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 832,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "cristal-leads",
@@ -124,8 +124,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 1338,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 863,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "cristal-trends",
@@ -134,8 +134,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 1318,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 1118,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "cristal-hunter",
@@ -144,8 +144,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 800,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 757,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "arcane",
@@ -154,8 +154,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 172,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 104,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "arcane-api",
@@ -164,8 +164,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 859,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 413,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "imagia",
@@ -174,8 +174,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 942,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 699,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "i-love-music",
@@ -184,8 +184,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 793,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 727,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "encena",
@@ -194,8 +194,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 721,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 695,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "apice",
@@ -204,8 +204,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 520,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 717,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "visionscore-ai",
@@ -216,8 +216,8 @@
         "site inacessível (fetch failed)"
       ],
       "notas": [],
-      "ms": 20087,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 20104,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "fada-captura",
@@ -226,8 +226,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 1026,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 741,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "painel-seo",
@@ -236,8 +236,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 819,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 523,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "help-empresarial",
@@ -246,8 +246,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 141,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 99,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "fada-reputacao",
@@ -258,8 +258,8 @@
         "site fora do ar (HTTP 402)"
       ],
       "notas": [],
-      "ms": 150,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 612,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "isernhagen-sistemas",
@@ -268,8 +268,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 427,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 310,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "gazofilacio-ipb",
@@ -278,8 +278,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 78,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 82,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "login-tec",
@@ -288,8 +288,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 192,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 194,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "doce-acai",
@@ -298,8 +298,8 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ms": 111,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 83,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "fada-rotas-yeimi",
@@ -310,8 +310,8 @@
         "site fora do ar (HTTP 402)"
       ],
       "notas": [],
-      "ms": 182,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 194,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "to-com-fome-express",
@@ -322,8 +322,8 @@
         "site fora do ar (HTTP 402)"
       ],
       "notas": [],
-      "ms": 176,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 220,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     },
     {
       "id": "imagens-do-blog",
@@ -334,8 +334,8 @@
         "site fora do ar (HTTP 402)"
       ],
       "notas": [],
-      "ms": 81,
-      "checadoEm": "2026-09-10T06:39:56.354Z"
+      "ms": 265,
+      "checadoEm": "2026-09-10T11:52:20.344Z"
     }
   ],
   "robos": [
@@ -356,7 +356,7 @@
         "quando": "2026-09-10T00:44:20Z",
         "url": "https://github.com/DanieleMorais/dinheiro-no-dia-a-dia-auto/actions/runs/34422554197"
       },
-      "checadoEm": "2026-09-10T06:41:24.376Z"
+      "checadoEm": "2026-09-10T11:53:43.842Z"
     },
     {
       "id": "robo-do-o-mundo-da-ia",
@@ -366,16 +366,16 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ultimoArtigo": "2026-09-09T23:44:08.457-03:00",
+      "ultimoArtigo": "2026-09-10T05:33:50.933-03:00",
       "diasSemPublicar": 0,
-      "tituloUltimo": "A Era do Cinema Sintético: O Guia Definitivo de Vídeo por IA",
-      "totalArtigos": 1531,
+      "tituloUltimo": "Alibaba expande infraestrutura de nuvem com foco em IA no Brasil",
+      "totalArtigos": 1541,
       "ultimaExecucao": {
         "conclusao": "success",
         "quando": "2026-09-10T02:43:47Z",
         "url": "https://github.com/DanieleMorais/o-mundo-da-ia-auto/actions/runs/34430578278"
       },
-      "checadoEm": "2026-09-10T06:41:25.477Z"
+      "checadoEm": "2026-09-10T11:53:44.837Z"
     },
     {
       "id": "robo-do-universo-animes",
@@ -384,17 +384,19 @@
       "tipo": "robo",
       "status": "OK",
       "problemas": [],
-      "notas": [],
-      "ultimoArtigo": "2026-09-09T22:44:27.370-07:00",
+      "notas": [
+        "a última execução do robô terminou em \"cancelled\""
+      ],
+      "ultimoArtigo": "2026-09-10T00:14:13.837-07:00",
       "diasSemPublicar": 0,
-      "tituloUltimo": "Os personagens mais poderosos da história dos animes: Um ranking",
-      "totalArtigos": 1441,
+      "tituloUltimo": "Parede de Gelo: o retorno emocionante da 2ª temporada",
+      "totalArtigos": 1449,
       "ultimaExecucao": {
-        "conclusao": "success",
-        "quando": "2026-09-09T23:44:48Z",
-        "url": "https://github.com/DanieleMorais/o-universo-dos-animes-auto/actions/runs/34418266346"
+        "conclusao": "cancelled",
+        "quando": "2026-09-10T06:54:15Z",
+        "url": "https://github.com/DanieleMorais/o-universo-dos-animes-auto/actions/runs/34447338493"
       },
-      "checadoEm": "2026-09-10T06:41:26.531Z"
+      "checadoEm": "2026-09-10T11:53:45.842Z"
     },
     {
       "id": "robo-do-we-love-animes",
@@ -404,16 +406,16 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ultimoArtigo": "2026-09-09T23:24:56.681-07:00",
+      "ultimoArtigo": "2026-09-10T00:34:50.466-07:00",
       "diasSemPublicar": 0,
-      "tituloUltimo": "A Forgotten Shonen Jump Gem Returns for a Final Bow",
-      "totalArtigos": 1482,
+      "tituloUltimo": "Masters of Animation: The Top Anime Studios You Need to Know",
+      "totalArtigos": 1483,
       "ultimaExecucao": {
         "conclusao": "success",
         "quando": "2026-09-10T06:22:30Z",
         "url": "https://github.com/DanieleMorais/we-love-anime-auto/actions/runs/34444914645"
       },
-      "checadoEm": "2026-09-10T06:41:27.523Z"
+      "checadoEm": "2026-09-10T11:53:46.928Z"
     },
     {
       "id": "robo-do-explosao-solar",
@@ -423,16 +425,16 @@
       "status": "OK",
       "problemas": [],
       "notas": [],
-      "ultimoArtigo": "2026-09-10T06:22:35.494Z",
+      "ultimoArtigo": "2026-09-10T11:46:06.748Z",
       "diasSemPublicar": 0,
       "tituloUltimo": "",
-      "totalArtigos": 4678,
+      "totalArtigos": 4696,
       "ultimaExecucao": {
         "conclusao": "success",
         "quando": "2026-09-10T02:45:24Z",
         "url": "https://github.com/DanieleMorais/explosao-solar/actions/runs/34430682371"
       },
-      "checadoEm": "2026-09-10T06:41:29.234Z"
+      "checadoEm": "2026-09-10T11:53:48.831Z"
     }
   ],
   "robosComProblema": 0,
