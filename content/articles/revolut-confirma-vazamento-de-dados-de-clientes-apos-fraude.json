@@ -1,0 +1,23 @@
+{
+  "slug": "revolut-confirma-vazamento-de-dados-de-clientes-apos-fraude",
+  "title": "Revolut confirma vazamento de dados de clientes após fraude com e-mail.",
+  "seoTitle": "Revolut admite vazamento de dados por fraude com e‑mail.",
+  "subtitle": "Fintech britânica revela que terceiros não autorizados obtiveram informações sensíveis de usuários após receberem solicitações falsas",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "A Revolut confirmou que entregou dados pessoais a terceiros após receber pedidos fraudulentos de um endereço de e‑mail de órgão governamental, gerando vazamento de.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-15T08:20:13.618Z",
+  "readingMinutes": 2,
+  "tags": [
+    "revolut",
+    "vazamento de dados",
+    "cibersegurança",
+    "fraude digital",
+    "ransomware"
+  ],
+  "sourceName": "TechCrunch, NL Times, UA.NEWS",
+  "sourceUrl": "https://techcrunch.com/2026/09/12/revolut-confirms-customer-data-breach-through-fake-government-requests/",
+  "trending": "what is a data breach",
+  "contentHtml": "<p>Na última semana, a fintech Revolut informou que informações de clientes foram entregues a um terceiro não autorizado depois que um fraudador usou um endereço de e-mail de órgão governamental legítimo para solicitar dados. O caso ganhou destaque ao ser divulgado por veículos internacionais, que apontam que alguns dos documentos vazados já circulam na internet.</p>\n<h2>Como a fraude foi executada</h2>\n<p>Segundo comunicado da empresa, um invasor externo enviou solicitações de informações utilizando um domínio de e-mail pertencente a um órgão governamental reconhecido. A mensagem pedia dados de identidade e contato, além de documentos oficiais, e foi aceita como legítima pelos sistemas internos da Revolut.</p>\n<h2>Tipos de informações comprometidas</h2>\n<p>Os dados divulgados incluíram nome completo, data de nascimento, endereços residencial e eletrônico, telefones, cópias de passaportes e carteiras de identidade, selfies de verificação, além de extratos de conta, histórico de transações e, em alguns casos, informações de contas bancárias e transações em criptomoedas.</p>\n<h2>Reação da Revolut</h2>\n<p>A empresa afirmou que bloqueou imediatamente o endereço de e-mail utilizado, notificou a agência governamental envolvida, autoridades policiais e reguladores financeiros. Também entrou em contato direto com os clientes afetados para oferecer suporte, reforçando que os sistemas internos e os fundos dos usuários não foram comprometidos.</p>\n<h2>Publicação e chantagem dos criminosos</h2>\n<p>Grupos em aplicativos de mensagens divulgaram trechos de documentos supostamente obtidos, incluindo passaportes de cidadãos holandeses. Em paralelo, os criminosos exigiram um resgate de 10 000 bitcoins – mais de US$ 780 milhões – ameaçando divulgar mais informações caso a demanda não fosse atendida.</p>\n<h2>Impacto e lições para os usuários</h2>\n<p>Embora a Revolut não tenha revelado o número exato de vítimas, reconheceu que o incidente afetou um número limitado de clientes, entre eles usuários de alto patrimônio. O caso evidencia a vulnerabilidade de processos que confiam em e-mails de domínios oficiais sem verificação adicional e reforça a necessidade de medidas de autenticação mais robustas.</p>\n<h2>Próximos passos da fintech</h2>\n<p>Além de reforçar filtros de e-mail e procedimentos de validação, a Revolut informou que continuará colaborando com autoridades para investigar a origem da fraude e prevenir novos episódios. A empresa também destaca que está avançando com a obtenção de licenças bancárias em diversos países, mantendo o foco na segurança dos dados dos usuários.</p><p><em>Com informações de TechCrunch, NL Times, UA.NEWS.</em></p>"
+}
