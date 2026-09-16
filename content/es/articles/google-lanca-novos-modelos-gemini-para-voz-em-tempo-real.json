@@ -1,0 +1,25 @@
+{
+  "slug": "google-lanca-novos-modelos-gemini-para-voz-em-tempo-real",
+  "title": "Google lanza nuevos modelos Gemini para voz en tiempo real",
+  "seoTitle": "Google lanza Gemini 3.8 Live y 3.5 Transcribe",
+  "subtitle": "Nuevas versiones de IA de audio prometen conversaciones más inteligentes y multitarea",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "Google presentó los modelos Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking y Gemini 3.5 Transcribe, ampliando los recursos de voz‑first para desarrolladores.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-16T08:14:34.387Z",
+  "readingMinutes": 2,
+  "tags": [
+    "Google",
+    "Gemini",
+    "IA de voz",
+    "API",
+    "Workspace",
+    "transcripción"
+  ],
+  "sourceName": "blog.google, PYMNTS.com, 9to5Google",
+  "sourceUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/",
+  "trending": "google",
+  "contentHtml": "<p>El pasado martes, Google anunció la disponibilidad de tres nuevos modelos de inteligencia artificial de audio: Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking y Gemini 3.5 Transcribe. La novedad llegó después de que la empresa publicara en su blog que estos recursos ya están integrados en Gemini API, Google AI Studio y productos como Gmail, Docs y Keep.</p>\n<h2>Qué son los modelos Gemini 3.8 Live y Extended Thinking</h2>\n<p>Gemini 3.8 Live introduce una mejora de rendimiento en las capacidades de voz‑a‑voz, permitiendo que el agente de voz ejecute tareas mientras mantiene el flujo de la conversación. La variante Extended Thinking añade razonamiento de múltiples pasos, con “pensamiento configurable” que procesa solicitudes complejas en segundo plano y narra el progreso al usuario.</p>\n<h2>Aplicaciones prácticas para desarrolladores y empresas</h2>\n<p>Ambos modelos se ofrecen a través de Live API, con precios de US$0,005 por minuto de audio de entrada y US$0,018 por minuto de salida. Google indica que la solución puede escalarse mediante socios de integración como Agora, Fishjam, LiveKit, LangChain, Pipecat, Vercel y Vision Agents, que gestionan la infraestructura de streaming.</p>\n<h2>Gemini 3.5 Transcribe: transcripción precisa en más de 85 idiomas</h2>\n<p>El modelo Gemini 3.5 Transcribe, lanzado el mes anterior, se centra en la transcripción de audio con baja latencia. Alcaza una tasa de error de palabra (WER) del 4,0 % en streaming y del 2,6 % en modo no streaming, soportando más de 85 idiomas. Entre sus funcionalidades se incluyen marcas de tiempo estructuradas, etiquetado de hablantes y la posibilidad de transcribir archivos de hasta una hora.</p>\n<h2>Integración con productos de Google Workspace</h2>\n<p>Además de atender a desarrolladores externos, los nuevos modelos alimentan recursos de voz en las propias aplicaciones de Google. Gmail Live permite búsquedas conversacionales en correos, Docs Live ofrece generación y edición de textos mediante voz, y Keep Live transforma ideas habladas en listas y notas estructuradas.</p>\n<h2>Impacto para usuarios brasileños</h2>\n<p>Con la expansión de la capacidad de comprensión de audio en tiempo real, los usuarios de Brasil podrán interactuar con asistentes de voz más fluidos, incluso en portugués, aprovechando la cobertura de 97 idiomas soportados por Gemini 3.8 Live. La promesa de “hablar con IA de forma más intuitiva e inteligente” se refleja en la reducción de fricciones al realizar tareas como programar citas, buscar información o generar documentos sin necesidad de escribir.</p>\n<p><em>Con información de blog.google, PYMNTS.com, 9to5Google.</em></p>",
+  "lang": "es"
+}
