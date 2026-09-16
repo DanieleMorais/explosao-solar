@@ -1,66 +1,66 @@
 {
-  "data": "2026-09-15",
-  "dataFmt": "15 de setembro de 2026",
+  "data": "2026-09-16",
+  "dataFmt": "16 de setembro de 2026",
   "signos": {
     "aries": {
-      "geral": "Hoje a sua energia pulsa mais intensa, trazendo clareza para decisões que estavam embaçadas. Aproveite esse impulso para organizar pequenas pendências que podem aliviar a mente.",
-      "amor": "Um gesto simples, como um elogio sincero, pode reavivar a conexão com quem você ama. Se estiver solteiro, um sorriso inesperado pode abrir uma porta.",
-      "trabalho": "Projetos que exigem foco detalhista terão mais fluidez; delegue tarefas que não são prioritárias para evitar sobrecarga."
+      "geral": "Hoje a sua energia pulsa com uma vontade de iniciar algo novo, mas sem perder a paciência necessária para observar os detalhes. Um pequeno obstáculo pode surgir, sirva como lembrete para ajustar o ritmo ao invés de acelerar demais.",
+      "amor": "Se estiver em um relacionamento, um gesto simples de atenção pode reavivar a conexão; se estiver solteiro, uma conversa inesperada pode revelar um interesse genuíno.",
+      "trabalho": "Aproveite a clareza mental para organizar tarefas pendentes; evite prometer mais do que pode cumprir, focando em entregas concretas."
     },
     "touro": {
-      "geral": "A sensação de estabilidade se reforça, mas há um convite discreto para sair da zona de conforto e experimentar algo novo. Permita-se sentir o momento presente sem pressa.",
-      "amor": "Conversas honestas sobre expectativas vão fortalecer laços; quem está solteiro pode encontrar afinidade em um hobby compartilhado.",
-      "trabalho": "É um bom dia para revisar contratos ou acordos financeiros; atenção aos detalhes pode evitar surpresas nos próximos meses."
+      "geral": "A estabilidade que você costuma buscar aparece como um porto seguro, porém há espaço para pequenas mudanças que trazem conforto. Sinta-se livre para ajustar rotinas que já não servem mais.",
+      "amor": "Um toque de vulnerabilidade ao compartilhar seus sentimentos pode aprofundar a intimidade; para os solteiros, um convite para um evento cultural pode abrir novas possibilidades.",
+      "trabalho": "Sua persistência será reconhecida, mas atenção a detalhes financeiros: revise contratos ou despesas para evitar surpresas no fim do mês."
     },
     "gemeos": {
-      "geral": "Sua mente está em alta velocidade, conectando ideias que antes pareciam distantes. Use essa agilidade para avançar em projetos criativos, mas cuide de não se dispersar.",
-      "amor": "Um papo leve pode transformar uma amizade em algo mais; se houver tensão, a comunicação clara será o remédio.",
-      "trabalho": "Reuniões curtas e objetivas trarão resultados positivos; evite multitarefas excessivas para não comprometer a qualidade."
+      "geral": "Sua curiosidade está em alta e isso pode levá-lo a explorar temas fora da rotina. Equilibre o desejo de novidades com a necessidade de concluir o que já começou.",
+      "amor": "Conversas leves podem transformar-se em momentos de conexão profunda; escute mais do que fala para entender o que o outro realmente deseja.",
+      "trabalho": "Ideias criativas surgirão, mas é preciso filtrá‑las antes de apresentá‑las ao time. Priorize projetos que já têm apoio da liderança."
     },
     "cancer": {
-      "geral": "A sensibilidade está em alta, permitindo que você perceba nuances emocionais ao seu redor. Reserve um tempo para nutrir seu interior, seja com arte ou silêncio.",
-      "amor": "Um toque carinhoso ou uma palavra de apoio pode aprofundar a intimidade; quem busca amor deve mostrar vulnerabilidade sem medo.",
-      "trabalho": "Projetos que envolvem cuidado com pessoas ou clientes beneficiarão da sua empatia; delegar tarefas menos sensíveis pode equilibrar a carga."
+      "geral": "A sensibilidade está mais aguçada, permitindo que você perceba nuances nos ambientes ao seu redor. Use essa percepção para cuidar de si e dos que ama, sem se sobrecarregar.",
+      "amor": "Um gesto de carinho inesperado pode fortalecer laços; se estiver solteiro, confiar em sua intuição ao escolher um encontro pode evitar decepções.",
+      "trabalho": "Sua empatia será um diferencial nas negociações; porém, estabeleça limites claros para não absorver demais as demandas dos colegas."
     },
     "leao": {
-      "geral": "A autoconfiança brilha, mas o dia pede humildade ao ouvir críticas construtivas. Canalize esse brilho para inspirar colegas sem precisar estar no centro dos holofotes.",
-      "amor": "Surpreenda quem você ama com um gesto inesperado que mostre que você realmente presta atenção nos detalhes da relação.",
-      "trabalho": "Liderar com exemplo será mais eficaz que impor direções; oportunidades de reconhecimento surgem se você reconhecer o esforço da equipe."
+      "geral": "O brilho natural que você tem hoje pode atrair olhares, mas lembre-se de que o verdadeiro destaque vem da autenticidade, não da ostentação. Aproveite para inspirar quem está ao seu redor.",
+      "amor": "Um elogio sincero pode abrir portas para conversas mais íntimas; se já está comprometido, planeje um momento que celebre a parceria de forma simples.",
+      "trabalho": "Sua liderança será solicitada em um projeto coletivo; conduza com firmeza, mas escute as ideias da equipe para alcançar resultados mais ricos."
     },
     "virgem": {
-      "geral": "A praticidade está em alta, facilitando a organização de rotinas que estavam caóticas. Permita-se ser flexível ao lidar com imprevistos, evitando a autocrítica excessiva.",
-      "amor": "Pequenos atos de serviço podem falar mais que palavras; quem está solteiro pode encontrar afinidade em um ambiente de trabalho ou estudo.",
-      "trabalho": "Detalhes de relatórios ou planilhas pedem sua atenção; ao concluir, compartilhe os resultados para ganhar apoio e visibilidade."
+      "geral": "A atenção aos detalhes que você tem hoje pode transformar um processo caótico em algo organizado. Não se cobre demais por perfeição; pequenos ajustes já fazem diferença.",
+      "amor": "Um ato de serviço, como preparar algo especial, pode falar mais que palavras; para os solteiros, mostrar interesse genuíno nas rotinas do outro cria conexão.",
+      "trabalho": "Sua capacidade analítica será valiosa em revisões de relatórios; evite microgerenciar e delegue tarefas que não exigem seu olhar minucioso."
     },
     "libra": {
-      "geral": "O equilíbrio interno pede que você avalie prioridades com mais objetividade, sem se perder em indecisões. Uma pausa para respirar ajudará a clarear a visão.",
-      "amor": "Diálogo aberto sobre limites reforçará a confiança; se estiver solteiro, um encontro casual pode revelar compatibilidade inesperada.",
-      "trabalho": "Negociações ou parcerias demandam diplomacia; manter a postura neutra ajudará a fechar acordos benéficos para todos."
+      "geral": "O equilíbrio que você busca parece mais próximo, porém requer decisões que podem gerar desconforto inicial. Encare-as como oportunidades de crescimento pessoal.",
+      "amor": "Diálogo aberto sobre expectativas evitará mal‑entendidos; se estiver solteiro, um encontro que privilegie a troca de ideias pode ser mais gratificante que um romance rápido.",
+      "trabalho": "Parcerias profissionais demandam sua mediação; use sua diplomacia para alinhar metas divergentes e avançar com consenso."
     },
     "escorpiao": {
-      "geral": "Intensidade emocional surge, trazendo insights profundos sobre motivação pessoal. Canalize essa energia para transformar algo que estava estagnado.",
-      "amor": "Conversa franca sobre sentimentos antigos pode libertar ambos; quem busca amor deve mostrar autenticidade, sem jogos.",
-      "trabalho": "Investigações ou análises detalhadas são favorecidas; evite confrontos diretos, prefira influenciar por resultados concretos."
+      "geral": "Intensidade emocional marca o dia, trazendo clareza sobre o que realmente importa. Canalize essa energia para projetos que reflitam seus valores mais profundos.",
+      "amor": "A sinceridade ao expressar desejos pode criar um vínculo mais autêntico; para quem está solteiro, a honestidade sobre suas intenções atrairá quem compartilha da mesma visão.",
+      "trabalho": "Investigações ou pesquisas detalhadas renderão bons resultados; evite segredos excessivos que possam gerar desconfiança na equipe."
     },
     "sagitario": {
-      "geral": "A curiosidade está em alta, impulsionando a busca por novos aprendizados ou viagens curtas. Evite prometer mais do que pode cumprir; foque no que realmente traz crescimento.",
-      "amor": "Um convite para uma atividade ao ar livre pode criar memórias marcantes; solteiros podem encontrar afinidade em grupos de interesse comum.",
-      "trabalho": "Projetos que exigem visão de longo prazo ganham força; compartilhe ideias inovadoras, mas esteja pronto para ajustar detalhes práticos."
+      "geral": "A sede de aventura está presente, mas o universo pede que você direcione essa energia para metas concretas. Pequenos passos hoje podem abrir caminhos longínquos amanhã.",
+      "amor": "Compartilhar uma experiência nova com o parceiro fortalece o vínculo; se estiver solteiro, participar de um workshop ou viagem curta pode trazer encontros inesperados.",
+      "trabalho": "Seu entusiasmo contagia o ambiente, mas mantenha foco nos prazos; delegar tarefas rotineiras permitirá que você se dedique a estratégias de longo prazo."
     },
     "capricornio": {
-      "geral": "A disciplina natural se destaca, permitindo avançar em metas que exigem persistência. Permita-se um momento de lazer para recarregar a energia antes de seguir firme.",
-      "amor": "Mostre apoio prático ao parceiro, como ajudar em tarefas diárias; quem está solteiro pode atrair alguém que valoriza responsabilidade.",
-      "trabalho": "Planos financeiros ou estratégicos terão mais clareza; delegar pequenas tarefas liberará tempo para decisões de maior impacto."
+      "geral": "A disciplina que você cultiva será o alicerce para superar desafios inesperados. Permita-se reconhecer pequenos progressos, mesmo que ainda pareçam distantes da meta final.",
+      "amor": "Um gesto de reconhecimento ao parceiro pode renovar a cumplicidade; para os solteiros, mostrar ambição de forma humilde atrai quem valoriza determinação.",
+      "trabalho": "Projetos que exigem planejamento meticuloso se beneficiarão da sua visão estratégica; cuidado para não sobrecarregar-se – delegar será crucial para manter a saúde mental."
     },
     "aquario": {
-      "geral": "Sua visão inovadora está em alta, trazendo soluções originais para problemas antigos. Equilibre a criatividade com a necessidade de comunicação clara para evitar mal-entendidos.",
-      "amor": "Surpreenda com um gesto inesperado que reflita sua originalidade; solteiros podem encontrar alguém em ambientes culturais ou tecnológicos.",
-      "trabalho": "Colaborações em equipe renderão frutos se você ouvir diferentes perspectivas; projetos de tecnologia ou sustentabilidade têm boa aceitação."
+      "geral": "Sua originalidade brilha, trazendo soluções fora do convencional. Ainda assim, mantenha um pé no pragmático para que ideias inovadoras encontrem viabilidade prática.",
+      "amor": "Conversa franca sobre expectativas pode prevenir frustrações; se estiver solteiro, participar de grupos de interesse pode facilitar conexões autênticas.",
+      "trabalho": "Colaborações interdisciplinares serão férteis; compartilhe sua visão, mas esteja aberto a feedbacks que ajustem o plano ao contexto real."
     },
     "peixes": {
-      "geral": "A intuição está afiada, guiando decisões que parecem intuitivas. Reserve um tempo para meditar ou estar perto da água, reforçando esse senso interno.",
-      "amor": "Um ato de compaixão ou escuta atenta pode aprofundar a relação; quem busca amor deve confiar no feeling ao escolher encontros.",
-      "trabalho": "Trabalhos criativos ou que envolvem apoio emocional se beneficiam da sua sensibilidade; cuide para não absorver demais as emoções alheias."
+      "geral": "A intuição está em alta, guiando decisões que parecem intangíveis. Confie nos sinais internos, mas complemente-os com informações concretas para evitar ilusões.",
+      "amor": "Um ato de empatia, como ouvir sem julgar, pode aprofundar relações existentes; para os solteiros, seguir seu instinto ao escolher um encontro pode revelar verdadeiros alinhamentos.",
+      "trabalho": "Criatividade será seu diferencial em projetos que exigem inovação; organize seu tempo para transformar ideias em entregas tangíveis, evitando dispersão."
     }
   }
 }
