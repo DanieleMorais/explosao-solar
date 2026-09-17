@@ -1,7 +1,28 @@
 name: Deploy Cloudflare
+
+# O agendamento do GitHub não é confiável: os deploys de 17/09 saíram de 3 em 3 h,
+# não a cada 20 min. Agora o deploy sai QUANDO HÁ CONTEÚDO NOVO — quando um robô
+# termina de publicar (workflow_run) ou quando eu envio código (push). O relógio
+# continua só como rede de segurança.
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'config/monitor-estado.json' # vigia dos sites: não muda o que vai ao ar
+      - '**/*.md'
+  workflow_run:
+    workflows:
+      - 'Notícias do mundo'
+      - 'Horóscopo do dia'
+      - 'Tendências do Google'
+      - 'Terremotos (USGS)'
+      - 'Colômbia e América Latina'
+      - 'Semear evergreen'
+      - 'Aprofundar acervo'
+      - 'Alertas de desastres'
+    types: [completed]
   schedule:
-    - cron: '5,25,45 * * * *' # a cada 20 min, pega o conteúdo novo dos robôs
+    - cron: '15 */3 * * *' # rede de segurança
   workflow_dispatch:
 
 permissions:
@@ -9,18 +30,27 @@ permissions:
 
 concurrency:
   group: deploy-cloudflare
-  cancel-in-progress: true
+  cancel-in-progress: false # nunca cortar um deploy no meio; o próximo espera a vez
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Já publiquei esta versão?
+        id: ja
+        uses: actions/cache@v4
+        with:
+          path: .publicado
+          key: publicado-${{ github.sha }}
       - uses: actions/setup-node@v4
+        if: steps.ja.outputs.cache-hit != 'true'
         with:
           node-version: 22
       - run: npm ci
+        if: steps.ja.outputs.cache-hit != 'true'
       - name: Build + Deploy na Cloudflare
+        if: steps.ja.outputs.cache-hit != 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -29,3 +59,7 @@ jobs:
         run: |
           npx opennextjs-cloudflare build
           npx opennextjs-cloudflare deploy
+          mkdir -p .publicado && date -u +%FT%TZ > .publicado/quando.txt
+      - name: Nada novo desde o último deploy
+        if: steps.ja.outputs.cache-hit == 'true'
+        run: echo "O código já está no ar nesta versão ($GITHUB_SHA) — nada a fazer."
