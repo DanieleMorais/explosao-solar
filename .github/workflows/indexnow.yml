@@ -1,0 +1,36 @@
+name: IndexNow (Bing, Edge, Yandex)
+
+# O robô de notícias já avisa o que ele publica. Este aqui cobre o resto —
+# horóscopo, combinações, tendências, terremotos, Colômbia e aprofundamentos —
+# olhando o que entrou no repositório nas últimas horas.
+on:
+  schedule:
+    - cron: '25 */2 * * *'
+  workflow_dispatch:
+    inputs:
+      tudo:
+        description: 'Enviar o acervo inteiro (use só quando precisar)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 200 # precisa do histórico para saber o que mudou
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Avisar os buscadores
+        run: |
+          if [ "${{ inputs.tudo }}" = "true" ]; then
+            node scripts/indexnow.js --tudo
+          else
+            node scripts/indexnow.js --horas 3
+          fi
