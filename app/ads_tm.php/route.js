@@ -1,4 +1,5 @@
-// ads.txt: AdSense + lista do The Moneytizer puxada do servidor deles (lib/ads-txt.js).
+// /ads_tm.php — o endereço que o verificador do The Moneytizer compara com o /ads.txt
+// (método "automático" da FAQ deles). Precisa devolver exatamente o mesmo conteúdo.
 import { montarAdsTxt } from '@/lib/ads-txt'
 
 export const revalidate = 3600
