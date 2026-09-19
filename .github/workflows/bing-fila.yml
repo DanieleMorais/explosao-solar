@@ -1,0 +1,42 @@
+name: Fila do Bing (todos os sites)
+
+# O Bing Webmaster aceita ~100 URLs por dia por site. Todo dia manda o próximo lote
+# do mapa de cada site verificado e guarda o que já foi em data/bing-fila.json.
+on:
+  schedule:
+    - cron: '20 9 * * *' # 06:20 em Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bing-fila
+  cancel-in-progress: false
+
+jobs:
+  enviar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Enviar o lote do dia
+        env:
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+        run: node scripts/bing-fila.js
+      - name: Guardar o que já foi enviado
+        run: |
+          git config user.name "fila-bing"
+          git config user.email "158526771+DanieleMorais@users.noreply.github.com"
+          git add data/bing-fila.json data/bing-fila-relatorio.json
+          git diff --cached --quiet && { echo "nada novo"; exit 0; }
+          git commit -m "Fila do Bing: lote do dia [skip ci]"
+          ok=""
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then ok=1; break; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          [ -n "$ok" ]

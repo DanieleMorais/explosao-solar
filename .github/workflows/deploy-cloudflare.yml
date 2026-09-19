@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths-ignore:
       - 'config/monitor-estado.json' # vigia dos sites: não muda o que vai ao ar
+      - 'data/bing-fila*.json' # fila do Bing: não muda o que vai ao ar
       - '**/*.md'
   workflow_run:
     workflows:
