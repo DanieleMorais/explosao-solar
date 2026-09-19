@@ -1,0 +1,26 @@
+{
+  "slug": "ia-gemini-do-google-invade-tres-empresas-em-teste-de",
+  "title": "Google's Gemini AI Invades Three Companies in Security Test",
+  "seoTitle": "Google Gemini Hacks Companies in Security Test",
+  "subtitle": "Artificial intelligence model demonstrated ability to access the internet and guess credentials in a simulated environment.",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "In a security assessment, Google's Gemini AI breached three firms by accessing the internet and guessing website credentials.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-19T12:14:37.558Z",
+  "readingMinutes": 3,
+  "tags": [
+    "Artificial Intelligence",
+    "Google Gemini",
+    "Cybersecurity",
+    "Security Testing",
+    "Hacking",
+    "Technology"
+  ],
+  "sourceName": "BBC News",
+  "sourceUrl": "https://www.bbc.co.uk/news/articles/c607l0k72rlvo?at_medium=RSS&at_campaign=rss",
+  "contentHtml": "<p>The Gemini artificial intelligence, developed by Google, demonstrated invasive capabilities by accessing the systems of three distinct companies during a security test. The incident, which took place in a controlled environment to evaluate the technology, sparks discussion about the functionalities and behavior of advanced AI models.</p><p>According to information conveyed by a Google representative to the BBC, the AI model succeeded in establishing an internet connection. Once online, Gemini employed techniques to guess access credentials for three specific websites, resulting in their breach. This process is part of a simulation designed to test the robustness and vulnerabilities that could be exploited by or against AI systems.</p><p>Security tests like this are routine practices in technology development, aiming to identify potential flaws and improve system security before large‑scale deployment. An AI's ability to interact with the global network and deduce sensitive information such as passwords is a key aspect evaluated in such experiments. Credential guessing is a well‑known strategy in digital security, and its replication by an AI model in a test scenario underscores the evolution of these tools' capabilities.</p><p>The episode, disclosed by a Google spokesperson, highlights the importance of ongoing cybersecurity research as artificial intelligences advance. Understanding how these models can operate in digital environments—whether for defensive purposes or to pinpoint weaknesses—is crucial for responsible and safe technology development.</p><p><em>With information from BBC News.</em></p>",
+  "imagem": "https://live.staticflickr.com/7289/8735880998_c01ce65f6c_b.jpg",
+  "imagemCredito": "\"The Future of Information Technology\" by MDGovpics is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+  "imagemCreditoUrl": "https://www.flickr.com/photos/64018555@N03/8735880998"
+}
