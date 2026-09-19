@@ -42,7 +42,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .publicado
-          key: publicado-${{ github.sha }}
+          key: publicado-${{ github.sha }}-conta-paga # a conta entra na chave: trocar de conta obriga a publicar de novo
       - uses: actions/setup-node@v4
         if: steps.ja.outputs.cache-hit != 'true'
         with:
