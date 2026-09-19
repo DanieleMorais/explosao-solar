@@ -15,7 +15,29 @@ export default function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (!localStorage.getItem(KEY)) setVisible(true)
+    if (localStorage.getItem(KEY)) return
+    // Onde vale a GDPR (Europa), o CMP do Moneytizer já mostra o aviso dele: não
+    // empilhar dois banners. Sem resposta do CMP em 2,5 s, mostra o nosso (LGPD).
+    let decidido = false
+    const mostrar = () => {
+      if (!decidido) {
+        decidido = true
+        setVisible(true)
+      }
+    }
+    const espera = setTimeout(mostrar, 2500)
+    if (typeof window.__tcfapi === 'function') {
+      // addEventListener fica na fila do "stub" e só responde quando o CMP de verdade
+      // carregou e sabe se a GDPR vale para este visitante (um 'ping' cedo vem vazio).
+      window.__tcfapi('addEventListener', 2, (tcData, ok) => {
+        if (!ok || !tcData || decidido) return
+        clearTimeout(espera)
+        if (tcData.gdprApplies === true) decidido = true
+        else mostrar()
+        if (tcData.listenerId !== undefined) window.__tcfapi('removeEventListener', 2, () => {}, tcData.listenerId)
+      })
+    }
+    return () => clearTimeout(espera)
   }, [])
 
   function decide(value) {

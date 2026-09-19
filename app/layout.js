@@ -5,6 +5,7 @@ import CookieBanner from '@/components/CookieBanner'
 import Analytics from '@/components/Analytics'
 import LangSync from '@/components/LangSync'
 import { SITE } from '@/lib/content'
+import { CMP_INMOBI } from '@/lib/cmp-inmobi'
 import './globals.css'
 
 const archivo = Archivo({
@@ -97,6 +98,10 @@ const siteJsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${archivo.variable} ${serif.variable}`}>
+      <head>
+        {/* CMP antes de qualquer anúncio: as SSPs leem o consentimento TCF ao carregar. */}
+        <script dangerouslySetInnerHTML={{ __html: CMP_INMOBI }} />
+      </head>
       <body style={{ fontFamily: 'var(--font-archivo), sans-serif', display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
