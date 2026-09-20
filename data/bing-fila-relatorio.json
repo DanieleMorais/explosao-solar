@@ -1,5 +1,5 @@
 {
- "quando": "2026-09-19T19:31:43.280Z",
+ "quando": "2026-09-20T13:37:30.348Z",
  "sites": [
   {
    "site": "https://agenciafadamadrinha.com/",
@@ -45,8 +45,8 @@
   },
   {
    "site": "https://cantodomacuco.com.br/",
-   "enviadas": 0,
-   "faltam": 16,
+   "enviadas": 16,
+   "faltam": 0,
    "no_mapa": 114,
    "erro": null
   },
@@ -94,8 +94,8 @@
   },
   {
    "site": "https://cristalleads.com.br/",
-   "enviadas": 0,
-   "faltam": 29,
+   "enviadas": 29,
+   "faltam": 0,
    "no_mapa": 127,
    "erro": null
   },
@@ -115,29 +115,29 @@
   },
   {
    "site": "https://macucorestaurante.com.br/",
-   "enviadas": 0,
-   "faltam": 35,
+   "enviadas": 35,
+   "faltam": 0,
    "no_mapa": 133,
    "erro": null
   },
   {
    "site": "https://omundodaia.blogspot.com/",
-   "enviadas": 0,
-   "faltam": 1717,
-   "no_mapa": 1815,
+   "enviadas": 99,
+   "faltam": 1639,
+   "no_mapa": 1836,
    "erro": null
   },
   {
    "site": "https://ouniversoanimes.blogspot.com/",
-   "enviadas": 0,
-   "faltam": 1640,
-   "no_mapa": 1738,
+   "enviadas": 99,
+   "faltam": 1562,
+   "no_mapa": 1759,
    "erro": null
   },
   {
    "site": "https://piscococinaybar.com/",
-   "enviadas": 0,
-   "faltam": 366,
+   "enviadas": 99,
+   "faltam": 267,
    "no_mapa": 465,
    "erro": null
   },
@@ -157,16 +157,16 @@
   },
   {
    "site": "https://weloveanimes1.blogspot.com/",
-   "enviadas": 0,
-   "faltam": 1750,
-   "no_mapa": 1848,
+   "enviadas": 99,
+   "faltam": 1675,
+   "no_mapa": 1872,
    "erro": null
   },
   {
    "site": "https://www.dinheironodiaadia.com/",
-   "enviadas": 0,
-   "faltam": 252,
-   "no_mapa": 350,
+   "enviadas": 99,
+   "faltam": 154,
+   "no_mapa": 351,
    "erro": null
   }
  ]
