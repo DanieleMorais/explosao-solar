@@ -1,0 +1,25 @@
+{
+  "slug": "copilot-ganha-navegador-interno-e-abas-no-windows-e-mac",
+  "title": "Copilot gana navegador interno y pestañas en Windows y Mac",
+  "seoTitle": "Copilot con navegador interno y pestañas en Windows y Mac",
+  "subtitle": "Microsoft inicia el despliegue de navegación integrada en la aplicación Copilot, con soporte para pestañas y panel lateral",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "Microsoft amplía Copilot para incluir un navegador interno con pestañas, permitiendo abrir sitios al lado de la conversación.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-21T21:33:14.635Z",
+  "readingMinutes": 2,
+  "tags": [
+    "Microsoft",
+    "Copilot",
+    "Navegación",
+    "Windows 11",
+    "macOS",
+    "IA"
+  ],
+  "sourceName": "Windows Central, BetaNews",
+  "sourceUrl": "https://www.windowscentral.com/artificial-intelligence/microsoft-copilot/will-this-upcoming-update-make-copilot-your-preferred-browser-on-windows-11",
+  "trending": "copilot",
+  "contentHtml": "<p>Tras iniciar pruebas en marzo, Microsoft anunció que la aplicación Copilot para Windows y macOS recibirá un navegador interno con soporte para pestañas. El cambio llega en un momento en que la integración de IA en los flujos de trabajo cobra protagonismo, despertando el interés de usuarios corporativos e individuales.</p>\n<h2>Navegación dentro de Copilot</h2>\n<p>Cuando el usuario hace clic en un enlace dentro de Copilot, la página se abre en un panel al lado de la conversación, sin salir de la aplicación. La función permite alternar entre la conversación y el contenido web de forma fluida, similar al comportamiento observado en aplicaciones como Microsoft Teams.</p>\n<h2>Cómo funciona la navegación en pestañas</h2>\n<p>El panel lateral admite múltiples pestañas, cada una mostrando un sitio diferente. Los usuarios pueden redimensionar el panel, entrar en modo de pantalla completa o cerrar pestañas cuando ya no las necesiten. También es posible abrir el enlace en un navegador externo desde el menú de tres puntos o copiando la URL.</p>\n<h2>Disponibilidad y activación para empresas</h2>\n<p>La funcionalidad está disponible mediante opt‑in para administradores, que pueden habilitar la política \"BrowsingEnabled\" en dispositivos gestionados. El acceso general está programado para comenzar a finales de noviembre de 2026, ampliando la prueba inicial que ya está en producción.</p>\n<h2>Privacidad y almacenamiento de datos</h2>\n<p>El historial de navegación, las cookies y la información de autocompletado se almacenan localmente, siguiendo el mismo modelo de almacenamiento de Microsoft Edge. Los datos se encuentran en el directorio \"%localappdata%\\\\Microsoft\\\\Copilot\\\\User Data\" en el dispositivo del usuario.</p>\n<h2>Impacto en la rutina de uso</h2>\n<p>Con el navegador interno, los usuarios que ya utilizan Copilot pueden consultar información web sin alternar entre aplicaciones, potencialmente reduciendo el tiempo dedicado a tareas que combinan consulta y generación de contenido. La experiencia aún depende de la adopción de la función, ya que cambiar de hábito puede ser un desafío para quienes prefieren su navegador predeterminado.</p><p><em>Con información de Windows Central, BetaNews.</em></p>",
+  "lang": "es"
+}

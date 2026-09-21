@@ -1,0 +1,24 @@
+{
+  "slug": "copilot-ganha-navegador-interno-e-abas-no-windows-e-mac",
+  "title": "Copilot ganha navegador interno e abas no Windows e Mac",
+  "seoTitle": "Copilot incorpora navegador interno com abas em Windows e.",
+  "subtitle": "A Microsoft inicia o rollout de navegação embutida no aplicativo Copilot, com suporte a abas e painel lateral",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "A Microsoft está ampliando o Copilot para incluir um navegador interno com abas, permitindo abrir sites ao lado da conversa.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-21T21:33:14.635Z",
+  "readingMinutes": 2,
+  "tags": [
+    "Microsoft",
+    "Copilot",
+    "Navegação",
+    "Windows 11",
+    "macOS",
+    "IA"
+  ],
+  "sourceName": "Windows Central, BetaNews",
+  "sourceUrl": "https://www.windowscentral.com/artificial-intelligence/microsoft-copilot/will-this-upcoming-update-make-copilot-your-preferred-browser-on-windows-11",
+  "trending": "copilot",
+  "contentHtml": "<p>Após iniciar testes em março, a Microsoft anunciou que o aplicativo Copilot para Windows e macOS receberá um navegador interno com suporte a abas. A mudança chega em um momento em que a integração de IA nos fluxos de trabalho ganha destaque, despertando o interesse de usuários corporativos e individuais.</p>\n<h2>Navegação dentro do Copilot</h2>\n<p>Quando o usuário clica em um link dentro do Copilot, a página abre em um painel ao lado da conversa, sem sair do aplicativo. O recurso permite alternar entre a conversa e o conteúdo da web de forma fluida, semelhante ao comportamento observado em aplicativos como o Microsoft Teams.</p>\n<h2>Como funciona a navegação em abas</h2>\n<p>O painel lateral suporta múltiplas abas, cada uma exibindo um site diferente. Usuários podem redimensionar o painel, entrar em modo de tela cheia ou fechar abas quando não forem mais necessárias. Também é possível abrir o link em um navegador externo a partir do menu de três pontos ou copiando a URL.</p>\n<h2>Disponibilidade e ativação para empresas</h2>\n<p>A funcionalidade está disponível por meio de opt-in para administradores, que podem habilitar a política \"BrowsingEnabled\" em dispositivos gerenciados. O acesso geral está programado para começar em final de novembro de 2026, ampliando o teste inicial que já está em produção.</p>\n<h2>Privacidade e armazenamento de dados</h2>\n<p>O histórico de navegação, cookies e informações de preenchimento automático são armazenados localmente, seguindo o mesmo modelo de armazenamento do Microsoft Edge. Os dados ficam no diretório \"%localappdata%\\Microsoft\\Copilot\\User Data\" no dispositivo do usuário.</p>\n<h2>Impacto na rotina de uso</h2>\n<p>Com o navegador interno, usuários que já utilizam o Copilot podem consultar informações da web sem alternar entre aplicativos, potencialmente reduzindo o tempo gasto em tarefas que combinam consulta e geração de conteúdo. A experiência ainda depende da adoção do recurso, já que a mudança de hábito pode ser um desafio para quem prefere seu navegador padrão.</p><p><em>Com informações de Windows Central, BetaNews.</em></p>"
+}
