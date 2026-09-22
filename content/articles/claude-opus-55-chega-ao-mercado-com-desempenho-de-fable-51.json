@@ -1,0 +1,23 @@
+{
+  "slug": "claude-opus-55-chega-ao-mercado-com-desempenho-de-fable-51",
+  "title": "Claude opus 5.5 chega ao mercado com desempenho de fable 5.1 e preço menor",
+  "seoTitle": "Claude opus 5.5: desempenho de fable 5.1 por 40% menos",
+  "subtitle": "Anthropic lança o modelo mais rápido e barato da sua linha, disponível em nuvens públicas",
+  "category": "Tecnologia",
+  "categorySlug": "tecnologia",
+  "excerpt": "A Anthropic anunciou o Claude Opus 5.5, modelo que entrega performance equivalente ao Claude Fable 5.1 e custa 40% menos que o Opus 5, ampliando o acesso a IA.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-09-22T18:27:56.711Z",
+  "readingMinutes": 2,
+  "tags": [
+    "inteligência artificial",
+    "anthropic",
+    "claude opus 5.5",
+    "modelos de linguagem",
+    "tecnologia"
+  ],
+  "sourceName": "Valor Econômico, Estadão, Folha Vitória",
+  "sourceUrl": "https://valor.globo.com/empresas/noticia/2026/09/22/anthropic-estreia-claude-opus-55-com-salto-de-desempenho-e-preo-mais-baixo.ghtml",
+  "trending": "opus 5.5",
+  "contentHtml": "<p>A Anthropic divulgou nesta terça-feira (22) o Claude Opus 5.5, seu novo modelo de inteligência artificial que combina o desempenho do Claude Fable 5.1 com um custo significativamente menor, despertando grande interesse nas comunidades de desenvolvedores e empresas que buscam IA mais acessível.</p>\n<h2>Desempenho equiparável ao fable 5.1</h2>\n<p>Segundo a própria empresa, o Opus 5.5 oferece resultados equivalentes ao Claude Fable 5.1 na maioria das tarefas, superando inclusive o modelo anterior Opus 5 em testes internos de segurança e clareza textual. Em benchmarks como AutomationBench e Terminal-Bench-Science 0.1, o modelo ficou à frente dos seus predecessores, embora ainda perca para o GPT-6 Astra da OpenAI.</p>\n<h2>Redução de custos de 40 %</h2>\n<p>O Opus 5.5 custa US$ 4 por milhão de tokens de entrada e US$ 20 por milhão de tokens de saída, o que representa 20 % a menos que o Opus 5 e gera uma economia de 40 % para cargas de trabalho típicas. Essa diminuição de preço permite que assinantes utilizem o modelo sem precisar comprar créditos externos.</p>\n<h2>Velocidade e modo rápido</h2>\n<p>Disponível em todos os canais do Claude – Amazon Web Services, Google Cloud e Microsoft Azure – o modelo pode operar no “Fast mode”, que entrega atividades até 2,5 vezes mais rápido, embora a um custo maior. Essa flexibilidade atende tanto a projetos que priorizam rapidez quanto a aqueles que buscam a solução mais econômica.</p>\n<h2>Aplicações avançadas em programação</h2>\n<p>Para desenvolvedores, o Opus 5.5 destaca-se em tarefas longas e complexas, como migrações ou auditorias de código-fonte. Um caso citado pela Anthropic mostra a IA auditando e melhorando uma base de 200 mil linhas em menos de três horas, enquanto o Opus 5 levaria cerca de vinte horas e consumiria 2,5 vezes mais tokens.</p>\n<h2>Disponibilidade e limites ampliados</h2>\n<p>Nos planos Pro, Max e Team, a Anthropic aumentou o limite de uso para cinco horas e concedeu um reset de interações, permitindo que usuários guardem e utilizem seus limites quando necessário. O modelo também inclui marcas d’água invisíveis e opera apenas no modo de raciocínio adaptativo.</p><p><em>Com informações de Valor Econômico, Estadão, Folha Vitória.</em></p>"
+}
