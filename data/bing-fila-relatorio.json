@@ -1,5 +1,5 @@
 {
- "quando": "2026-09-24T14:16:14.323Z",
+ "quando": "2026-09-25T14:39:36.174Z",
  "sites": [
   {
    "site": "https://agenciafadamadrinha.com/",
@@ -123,15 +123,15 @@
   {
    "site": "https://omundodaia.blogspot.com/",
    "enviadas": 99,
-   "faltam": 1361,
-   "no_mapa": 1954,
+   "faltam": 1290,
+   "no_mapa": 1982,
    "erro": null
   },
   {
    "site": "https://ouniversoanimes.blogspot.com/",
    "enviadas": 99,
-   "faltam": 1283,
-   "no_mapa": 1876,
+   "faltam": 1207,
+   "no_mapa": 1899,
    "erro": null
   },
   {
@@ -158,15 +158,15 @@
   {
    "site": "https://weloveanimes1.blogspot.com/",
    "enviadas": 99,
-   "faltam": 1443,
-   "no_mapa": 2036,
+   "faltam": 1378,
+   "no_mapa": 2070,
    "erro": null
   },
   {
    "site": "https://www.dinheironodiaadia.com/",
-   "enviadas": 2,
+   "enviadas": 9,
    "faltam": 0,
-   "no_mapa": 363,
+   "no_mapa": 372,
    "erro": null
   }
  ]
