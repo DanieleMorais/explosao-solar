@@ -1,5 +1,5 @@
 {
- "quando": "2026-10-05T18:34:35.387Z",
+ "quando": "2026-10-06T16:01:34.369Z",
  "sites": [
   {
    "site": "https://agenciafadamadrinha.com/",
@@ -136,9 +136,9 @@
   },
   {
    "site": "https://piscococinaybar.com/",
-   "enviadas": 0,
+   "enviadas": 46,
    "faltam": 0,
-   "no_mapa": 465,
+   "no_mapa": 511,
    "erro": null
   },
   {
@@ -150,8 +150,8 @@
   },
   {
    "site": "https://visionscoreai.agenciafadamadrinha.com/",
-   "enviadas": 9,
-   "faltam": 3,
+   "enviadas": 3,
+   "faltam": 0,
    "no_mapa": 12,
    "erro": null
   },
