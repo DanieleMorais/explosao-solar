@@ -127,6 +127,18 @@ async function checar(site) {
     }
   }
 
+  // páginas que VENDEM (06/10/2026): a página pode estar no ar e o botão de pagar ter sumido (o Cristal ficou em
+  // "Coming soon" sem ninguém perceber). Cada uma diz o que tem que aparecer no HTML, ex.: o link de pagamento.
+  for (const v of site.vendas || []) {
+    await pausa(800)
+    const pv = await checarUrl(v.url, v.rotulo || 'página de venda')
+    problemas.push(...pv.problemas)
+    notas.push(...pv.notas)
+    if (pv.status && pv.status < 400 && !pv.html.includes(v.deveConter)) {
+      problemas.push(`${v.rotulo || 'página de venda'} SEM o botão de pagar (${v.url})`)
+    }
+  }
+
   // robots.txt — erro de servidor conta; 404 é só ausência e 429 é limite, não quebra
   try {
     await pausa(800)

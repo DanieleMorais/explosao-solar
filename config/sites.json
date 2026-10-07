@@ -53,7 +53,11 @@
   },
   {
     "nome": "Cristal Leads",
-    "url": "https://cristalleads.com.br"
+    "url": "https://cristalleads.com.br",
+    "vendas": [
+      { "url": "https://cristalleads.com.br/global", "deveConter": "buy.stripe.com", "rotulo": "venda em dólar (/global)" },
+      { "url": "https://cristalleads.com.br/en/global", "deveConter": "buy.stripe.com", "rotulo": "venda em dólar em inglês (/en/global)" }
+    ]
   },
   {
     "nome": "Cristal Trends",
