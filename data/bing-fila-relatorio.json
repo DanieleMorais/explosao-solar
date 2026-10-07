@@ -1,5 +1,5 @@
 {
- "quando": "2026-10-06T16:01:34.369Z",
+ "quando": "2026-10-07T16:38:09.955Z",
  "sites": [
   {
    "site": "https://agenciafadamadrinha.com/",
@@ -94,9 +94,9 @@
   },
   {
    "site": "https://cristalleads.com.br/",
-   "enviadas": 0,
+   "enviadas": 10,
    "faltam": 0,
-   "no_mapa": 208,
+   "no_mapa": 218,
    "erro": null
   },
   {
@@ -108,9 +108,9 @@
   },
   {
    "site": "https://isernhagensistemas.com.br/",
-   "enviadas": 0,
+   "enviadas": 32,
    "faltam": 0,
-   "no_mapa": 0,
+   "no_mapa": 32,
    "erro": null
   },
   {
@@ -136,9 +136,9 @@
   },
   {
    "site": "https://piscococinaybar.com/",
-   "enviadas": 46,
+   "enviadas": 1,
    "faltam": 0,
-   "no_mapa": 511,
+   "no_mapa": 512,
    "erro": null
   },
   {
@@ -150,7 +150,7 @@
   },
   {
    "site": "https://visionscoreai.agenciafadamadrinha.com/",
-   "enviadas": 3,
+   "enviadas": 0,
    "faltam": 0,
    "no_mapa": 12,
    "erro": null
