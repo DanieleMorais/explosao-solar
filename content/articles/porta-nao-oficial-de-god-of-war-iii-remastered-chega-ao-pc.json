@@ -1,0 +1,23 @@
+{
+  "slug": "porta-nao-oficial-de-god-of-war-iii-remastered-chega-ao-pc",
+  "title": "Porta não oficial de God of War III Remastered chega ao PC",
+  "seoTitle": "God of War III Remastered chega ao PC em versão não.",
+  "subtitle": "Modders disponibilizam código‑fonte e lançam porta com suporte a teclado, gamepads e alta taxa de quadros",
+  "category": "Mundo",
+  "categorySlug": "mundo",
+  "excerpt": "Um grupo de entusiastas lançou um porta não oficial de God of War III Remastered para PC, permitindo jogar o clássico com resolução 4K, suporte a controladores e.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-10-12T22:25:56.383Z",
+  "readingMinutes": 2,
+  "tags": [
+    "god of war 3",
+    "port pc",
+    "modding",
+    "jogos de ação",
+    "vulkan"
+  ],
+  "sourceName": "iXBT.games, Wccftech, DSOGaming",
+  "sourceUrl": "https://ixbt.games/en/news/2026/10/12/remaster-god-of-war-iii-perenesli-na-pk-poiavilsia-fanatskii-port.html",
+  "trending": "god of war 3 remastered pc",
+  "contentHtml": "<p>Com a chegada de God of War Laufey ao PlayStation 5, jogadores que aguardam o próximo título da série para PC não encontram previsão oficial. Enquanto isso, um grupo de desenvolvedores independentes disponibilizou um porta não oficial de God of War III Remastered, despertando grande interesse entre a comunidade.</p><h2>Como surgiu o porta não oficial</h2><p>O projeto foi iniciado por Felipe Prado, que utilizou o assistente de codificação Claude Opus 5.5 e baseou-se no trabalho de deadinside28, responsável por portar Bloodborne para Windows. O código-fonte, chamado “gow3_pc”, está hospedado no GitHub e requer os arquivos originais de God of War III Remastered (versão CUSA01623 com atualização 01.02).</p><h2>Recursos de desempenho e qualidade gráfica</h2><p>O porta traduz as bibliotecas do PS4 para Vulkan, permitindo que o executável original rode diretamente no processador x86-64 do PC. Entre as opções de resolução estão 480p, 720p, 1440p, 1800p e 4K, com suporte a 120 fps e 240 fps. Em testes com AMD Radeon RX 6700 XT, Ryzen 5 5600 e 32 GB de RAM, o jogo alcançou média de 144 fps em 1080p e 108 fps em 4K usando FSR 1.</p><h2>Funcionalidades de jogabilidade e cheats</h2><p>Além das opções de tela (janela, sem bordas, tela cheia) e VSync, o porta inclui um menu interno que permite ativar cheats como vida infinita, magia ilimitada, Rage of Sparta ilimitado e multiplicadores de orbes. Também há barra de vida dos inimigos, controle de taxa de quadros, fila de shaders e sobreposição de estatísticas em tempo real.</p><h2>Suporte a controles e teclado</h2><p>O lançador oferece suporte completo a teclado e mouse, com possibilidade de remapear todas as teclas. Controladores DualSense, Xbox e outros gamepads são reconhecidos imediatamente. O menu de configurações pode ser aberto com a tecla Insert ou com a combinação R3 + L2 nos controles.</p><h2>Estado atual e perspectivas</h2><p>O porta ainda está em fase alfa; embora seja possível jogar do início ao fim, bugs e glitches de textura podem aparecer em resoluções acima de 1080p. Futuras atualizações deverão corrigir esses problemas e melhorar ainda mais o desempenho. Enquanto a Sony não lança oficialmente seus títulos para PC, a comunidade continua a expandir o catálogo de jogos clássicos por meio de projetos semelhantes.<p><em>Com informações de iXBT.games, Wccftech, DSOGaming.</em></p>"
+}

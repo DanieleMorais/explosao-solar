@@ -1,0 +1,24 @@
+{
+  "slug": "porta-nao-oficial-de-god-of-war-iii-remastered-chega-ao-pc",
+  "title": "Port no oficial de God of War III Remastered llega al PC",
+  "seoTitle": "Port no oficial de God of War III Remastered para PC",
+  "subtitle": "Modders publican el código fuente y lanzan un port con soporte para teclado, gamepads y alta tasa de fotogramas",
+  "category": "Mundo",
+  "categorySlug": "mundo",
+  "excerpt": "Un grupo de entusiastas lanzó un port no oficial de God of War III Remastered para PC, permitiendo jugar el clásico en 4K, con controladores y alta tasa de fotogramas.",
+  "author": "Daniele Morais",
+  "publishedAt": "2026-10-12T22:25:56.383Z",
+  "readingMinutes": 2,
+  "tags": [
+    "god of war 3",
+    "port pc",
+    "modding",
+    "juegos de acción",
+    "vulkan"
+  ],
+  "sourceName": "iXBT.games, Wccftech, DSOGaming",
+  "sourceUrl": "https://ixbt.games/en/news/2026/10/12/remaster-god-of-war-iii-perenesli-na-pk-poiavilsia-fanatskii-port.html",
+  "trending": "god of war 3 remastered pc",
+  "contentHtml": "<p>Con la llegada de God of War Laufey al PlayStation 5, los jugadores que esperan el próximo título de la saga para PC no tienen una fecha oficial. Mientras tanto, un grupo de desarrolladores independientes ha puesto a disposición un port no oficial de God of War III Remastered, despertando gran interés en la comunidad.</p><h2>Cómo surgió el port no oficial</h2><p>El proyecto fue iniciado por Felipe Prado, quien utilizó el asistente de codificación Claude Opus 5.5 y se basó en el trabajo de deadinside28, responsable de portar Bloodborne a Windows. El código fuente, llamado “gow3_pc”, está alojado en GitHub y requiere los archivos originales de God of War III Remastered (versión CUSA01623 con actualización 01.02).</p><h2>Recursos de rendimiento y calidad gráfica</h2><p>El port traduce las bibliotecas del PS4 a Vulkan, permitiendo que el ejecutable original se ejecute directamente en el procesador x86‑64 del PC. Entre las opciones de resolución están 480p, 720p, 1440p, 1800p y 4K, con soporte para 120 fps y 240 fps. En pruebas con AMD Radeon RX 6700 XT, Ryzen 5 5600 y 32 GB de RAM, el juego alcanzó un promedio de 144 fps en 1080p y 108 fps en 4K usando FSR 1.</p><h2>Funcionalidades de jugabilidad y trucos</h2><p>Además de las opciones de pantalla (ventana, sin bordes, pantalla completa) y VSync, el port incluye un menú interno que permite activar trucos como vida infinita, magia ilimitada, Rage of Sparta ilimitado y multiplicadores de orbes. También hay barra de vida de los enemigos, control de la tasa de fotogramas, cola de shaders y superposición de estadísticas en tiempo real.</p><h2>Soporte para controles y teclado</h2><p>El lanzador ofrece soporte completo para teclado y ratón, con la posibilidad de reasignar todas las teclas. Los controladores DualSense, Xbox y otros gamepads son reconocidos de inmediato. El menú de configuración puede abrirse con la tecla Insert o con la combinación R3 + L2 en los mandos.</p><h2>Estado actual y perspectivas</h2><p>El port aún está en fase alfa; aunque es posible jugar de principio a fin, pueden aparecer bugs y fallos de textura en resoluciones superiores a 1080p. Futuras actualizaciones deberían corregir estos problemas y mejorar aún más el rendimiento. Mientras Sony no lanza oficialmente sus títulos para PC, la comunidad sigue ampliando el catálogo de juegos clásicos mediante proyectos similares.<p><em>Con información de iXBT.games, Wccftech, DSOGaming.</em></p>",
+  "lang": "es"
+}
