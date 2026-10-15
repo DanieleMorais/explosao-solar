@@ -120,6 +120,9 @@ export default function RootLayout({ children }) {
             crossOrigin="anonymous"
           />
         )}
+        {/* Adsterra, janela do canto (Social Bar, placement SocialBar_1 30571286, ativo). Decisão da Dani (15/10): banners +
+            janela do canto, sem o anúncio que abre outro site no clique. A Adsterra pede a tag logo antes de </body>. */}
+        <script async src="https://pl30671785.profitableratecpmnetwork.com/16/9f/a5/169fa54e49316c546e1d757c665a6f2f.js" />
       </body>
     </html>
   )
