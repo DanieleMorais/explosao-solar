@@ -3,9 +3,9 @@
 const fs = require('fs')
 const path = require('path')
 const { api } = require('./google')
+const { contaPalavras } = require('./regras-editoriais')
 
 const SITE = 'https://explosaosolar.com'
-const DIRS = { pt: 'articles', en: path.join('en', 'articles'), es: path.join('es', 'articles') }
 
 function urlsUltimas(n) {
   const base = path.join(__dirname, '..', 'content', 'articles')
@@ -14,15 +14,11 @@ function urlsUltimas(n) {
     .filter((f) => f.endsWith('.json'))
     .map((f) => { try { return JSON.parse(fs.readFileSync(path.join(base, f), 'utf8')) } catch { return null } })
     .filter((a) => a && a.slug)
+    // freio de 14/10/2026: EN/ES e matéria PT abaixo de 400 palavras ficam fora do índice (noindex)
+    .filter((a) => contaPalavras(a.contentHtml) >= 400)
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
     .slice(0, n)
-  const urls = []
-  for (const a of arts) {
-    urls.push(`${SITE}/noticia/${a.slug}`)
-    if (fs.existsSync(path.join(__dirname, '..', 'content', 'en', 'articles', a.slug + '.json'))) urls.push(`${SITE}/en/noticia/${a.slug}`)
-    if (fs.existsSync(path.join(__dirname, '..', 'content', 'es', 'articles', a.slug + '.json'))) urls.push(`${SITE}/es/noticia/${a.slug}`)
-  }
-  return urls
+  return arts.map((a) => `${SITE}/noticia/${a.slug}`)
 }
 
 async function main() {

@@ -1,7 +1,10 @@
+# Freio de 14/10/2026 (decisão da Dani, para o site voltar ao Google): no máximo 3 matérias
+# novas por dia somando todos os robôs, só em português, 600+ palavras com fato concreto.
+# A regra mora em scripts/freio.js.
 name: Colômbia e América Latina
+# Agendamento DESLIGADO no freio: metas batidas (colombia 50/50, terremoto 51/40) e o backfill
+# reescrevia notícia antiga de outro veículo. Fica só o botão manual, já sujeito ao freio.
 on:
-  schedule:
-    - cron: '0 */4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -50,7 +53,11 @@ jobs:
             git commit -m "Colômbia e América Latina: conteúdo automático [skip ci]"
             ok=""
             for i in 1 2 3 4 5; do
-              if git pull --rebase -q origin main && git push; then ok=1; break; fi
+              if git pull --rebase -q origin main; then
+                # freio: outro robô pode ter publicado ao mesmo tempo; passou do limite do dia, este lote não sobe
+                if ! node scripts/freio.js --conferir; then echo "Freio: limite de matérias do dia atingido, lote descartado"; ok=1; break; fi
+                if git push; then ok=1; break; fi
+              fi
               git rebase --abort 2>/dev/null || true
               sleep 10
             done

@@ -1,14 +1,17 @@
+# Freio de 14/10/2026 (decisão da Dani, para o site voltar ao Google): no máximo 3 matérias
+# novas por dia somando todos os robôs, só em português, 600+ palavras com fato concreto.
+# A regra mora em scripts/freio.js.
 name: Aprofundar acervo
 on:
   schedule:
-    - cron: '30 */2 * * *'
+    - cron: '30 15 * * *' # 12h30 em Brasília, uma vez por dia (era a cada 2 h)
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: robos
+  group: aprofundar # grupo próprio: no grupo robos os alertas de 15 em 15 min cancelavam a rodada na fila
   cancel-in-progress: false
 
 jobs:
@@ -38,7 +41,7 @@ jobs:
       - name: Rodar
         env:
           SKIP_DEPLOY: '1'
-        run: node scripts/enriquecer.js --piso 2000 --limite 5 --aplicar || true; node scripts/corrigir-forma.js --aplicar --limite 12 || true
+        run: node scripts/enriquecer.js --piso 2000 --limite 2 --aplicar || true; node scripts/corrigir-forma.js --aplicar --limite 12 || true
       - name: Publicar conteúdo
         run: |
           git config user.name "Explosao Solar Bot"

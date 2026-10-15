@@ -9,6 +9,7 @@ const path = require('path')
 const { askJson } = require('./ia-pool')
 const { adquirir } = require('./trava')
 const { REGRAS_DE_FATO, REGRAS_DE_FORMA, TAGS_PERMITIDAS, sanitize: san, contaPalavras: cw, cortar, validar } = require('./regras-editoriais')
+const freio = require('./freio')
 
 const ROOT = path.join(__dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
@@ -120,7 +121,7 @@ async function main() {
       fs.writeFileSync(path.join(PT_DIR, a.slug + '.json'), JSON.stringify(atualizado, null, 2))
       log(`aprofundada [${a.categorySlug}] ${a.slug}: ${w} → ${novo.palavras} palavras`)
 
-      for (const lang of Object.keys(LANGS)) {
+      for (const lang of freio.TRADUZIR ? Object.keys(LANGS) : []) {
         try {
           const dir = path.join(CONTENT, lang, 'articles')
           fs.mkdirSync(dir, { recursive: true })

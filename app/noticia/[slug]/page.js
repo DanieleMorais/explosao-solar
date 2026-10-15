@@ -1,6 +1,6 @@
 import ArticleView from '@/components/views/ArticleView'
-import { getAllArticles, getArticle } from '@/lib/content'
-import { alternates, OG_LOCALE } from '@/lib/seo'
+import { getAllArticles, getArticle, indexavel } from '@/lib/content'
+import { alternates, OG_LOCALE, ROBOTS_NOINDEX } from '@/lib/seo'
 
 export const dynamicParams = false
 
@@ -19,6 +19,7 @@ export async function generateMetadata({ params }) {
     authors: [{ name: a.author }],
     other: { news_keywords: (a.tags || []).join(', ') },
     alternates: alternates('pt', `/noticia/${a.slug}`),
+    ...(indexavel(a) ? {} : { robots: ROBOTS_NOINDEX }),
     openGraph: {
       type: 'article',
       locale: OG_LOCALE.pt,

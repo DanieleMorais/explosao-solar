@@ -1,29 +1,29 @@
-import { getAllArticles, CATEGORIES, SITE } from '@/lib/content'
-import { urlTrilingue, urlSimples, urlset, respostaXml, LANGS } from '@/lib/sitemap-xml'
+import { getAllArticles, CATEGORIES, SITE, indexavel } from '@/lib/content'
+import { urlSimples, urlset, respostaXml } from '@/lib/sitemap-xml'
 import { todosOsPares } from '@/lib/combinacoes'
 
 export const revalidate = 3600
 
-// Sitemap enxuto e de ALTA prioridade: home, editorias e matérias (3 idiomas) +
-// páginas institucionais. É o que a gente quer que o Google rastreie primeiro.
+// Sitemap enxuto e de ALTA prioridade: home, editorias e matérias + páginas institucionais.
+// Freio de 14/10/2026: só português e só matéria com 400+ palavras — EN/ES (tradução automática)
+// e matéria curta estão com noindex e não entram aqui.
 export function GET() {
   const now = new Date()
   const itens = []
 
-  for (const lang of LANGS) {
-    itens.push(urlTrilingue('', lang, { lastModified: now, changeFrequency: 'hourly', priority: 1 }))
-    for (const c of CATEGORIES) {
-      itens.push(urlTrilingue(`/${c.slug}`, lang, { lastModified: now, changeFrequency: 'daily', priority: 0.8 }))
-    }
-    for (const a of getAllArticles(lang)) {
-      itens.push(
-        urlTrilingue(`/noticia/${a.slug}`, lang, {
-          lastModified: new Date(a.updatedAt || a.publishedAt),
-          changeFrequency: 'daily',
-          priority: 0.9,
-        })
-      )
-    }
+  itens.push(urlSimples(SITE.url, { lastModified: now, changeFrequency: 'hourly', priority: 1 }))
+  for (const c of CATEGORIES) {
+    itens.push(urlSimples(`${SITE.url}/${c.slug}`, { lastModified: now, changeFrequency: 'daily', priority: 0.8 }))
+  }
+  for (const a of getAllArticles('pt')) {
+    if (!indexavel(a)) continue
+    itens.push(
+      urlSimples(`${SITE.url}/noticia/${a.slug}`, {
+        lastModified: new Date(a.updatedAt || a.publishedAt),
+        changeFrequency: 'daily',
+        priority: 0.9,
+      })
+    )
   }
 
   // utilidades (alto volume de busca)
@@ -41,17 +41,13 @@ export function GET() {
     itens.push(urlSimples(`${SITE.url}/horoscopo/${s}`, { lastModified: now, changeFrequency: 'daily', priority: 0.6 }))
   }
 
-  for (const lang of LANGS) {
-    itens.push(urlTrilingue('/horoscopo/combinacao', lang, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
-    for (const par of todosOsPares()) {
-      itens.push(urlTrilingue(`/horoscopo/combinacao/${par}`, lang, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
-    }
+  itens.push(urlSimples(`${SITE.url}/horoscopo/combinacao`, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
+  for (const par of todosOsPares()) {
+    itens.push(urlSimples(`${SITE.url}/horoscopo/combinacao/${par}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.6 }))
   }
 
   for (const p of ['/sobre', '/faq', '/contato', '/politica-de-privacidade', '/politica-de-cookies', '/termos-de-uso']) {
-    for (const prefixo of ['', '/en', '/es']) {
-      itens.push(urlSimples(`${SITE.url}${prefixo}${p}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
-    }
+    itens.push(urlSimples(`${SITE.url}${p}`, { lastModified: now, changeFrequency: 'monthly', priority: 0.5 }))
   }
 
   return respostaXml(urlset(itens))

@@ -11,6 +11,7 @@ const { askJson } = require('./ia-pool')
 const { adquirir } = require('./trava')
 const { extrair } = require('./extrator')
 const { REGRAS_DE_FORMA, TAGS_PERMITIDAS, sanitize, contaPalavras, cortar, slugify, validar } = require('./regras-editoriais')
+const freio = require('./freio')
 
 const ROOT = path.join(__dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
@@ -191,7 +192,7 @@ async function buscarPautas(cat, feedsCustom = null) {
 }
 
 async function escrever(item, fonte, catSlug, dataFato) {
-  const alvo = fonte.palavras > 700 ? '500 a 700' : fonte.palavras > 400 ? '350 a 500' : '250 a 380'
+  const alvo = '650 a 900' // freio de 14/10: só fonte farta (900+ palavras) chega aqui
   const prompt = `Você é repórter do portal brasileiro "Explosão Solar", editoria ${CATS[catSlug].nome}. Reescreva a reportagem abaixo com suas próprias palavras, em português brasileiro, com ${alvo} palavras.
 
 REGRA DE OURO: você só pode afirmar o que está no TEXTO DA FONTE abaixo. O que não está ali não existe. PROIBIDO, sem exceção:
@@ -236,6 +237,8 @@ ${fonte.texto}`
   for (const [re, motivo] of proibido) if (re.test(a.contentHtml)) throw new Error('filtro factual: ' + motivo)
   const erros = validar(a, { minPalavras: 220, maxTitulo: 76 })
   if (erros.length) throw new Error('reprovada: ' + erros.join('; '))
+  const recusa = freio.motivoRecusa(a.contentHtml)
+  if (recusa) throw new Error('freio: ' + recusa)
   return a
 }
 
@@ -321,6 +324,7 @@ async function main() {
     let feitasNaCat = 0
     for (const item of pautas) {
       if (feitasNaCat >= porCat || publicadas >= META) break
+      if (!dry && freio.vagasHoje() <= 0) { log(`freio: o dia já tem ${freio.publicadasHoje()} matéria(s) (limite ${freio.LIMITE_DIA}) — paro`); break }
       if (vistos.has(item.link)) continue
       vistos.add(item.link)
 
@@ -328,7 +332,7 @@ async function main() {
 
       let fonte
       try {
-        fonte = await extrair(real, { minPalavras: 200 })
+        fonte = await extrair(real, { minPalavras: 900 })
       } catch (e) {
         stats.semTexto++
         continue
@@ -368,7 +372,7 @@ async function main() {
 
         if (!dry) {
           fs.writeFileSync(path.join(PT_DIR, slug + '.json'), JSON.stringify(base, null, 2))
-          for (const lang of Object.keys(LANGS)) {
+          for (const lang of freio.TRADUZIR ? Object.keys(LANGS) : []) {
             try {
               const dir = path.join(CONTENT, lang, 'articles')
               fs.mkdirSync(dir, { recursive: true })

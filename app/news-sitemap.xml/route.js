@@ -1,11 +1,12 @@
-import { getAllArticles, SITE } from '@/lib/content'
+import { getAllArticles, SITE, indexavel } from '@/lib/content'
 import { withLang } from '@/lib/site'
 
 function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
 
-const LANGS = { pt: 'pt', en: 'en', es: 'es' }
+// Freio de 14/10/2026: só português e só matéria indexável (EN/ES e curtas estão com noindex).
+const LANGS = { pt: 'pt' }
 const CUTOFF_HOURS = 48
 
 // O Worker nao le arquivos de conteudo em runtime (so o build le): por isso a rota
@@ -19,6 +20,7 @@ export async function GET() {
   for (const lang of Object.keys(LANGS)) {
     for (const a of getAllArticles(lang)) {
       if (new Date(a.publishedAt).getTime() < limit) continue
+      if (!indexavel(a)) continue
       urls.push(`  <url>
     <loc>${SITE.url}${withLang(lang, `/noticia/${a.slug}`)}</loc>
     <news:news>

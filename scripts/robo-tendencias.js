@@ -11,6 +11,7 @@ const { askJson } = require('./ia-pool')
 const { adquirir } = require('./trava')
 const { extrair } = require('./extrator')
 const { REGRAS_DE_FORMA, TAGS_PERMITIDAS, sanitize, contaPalavras, cortar, slugify } = require('./regras-editoriais')
+const freio = require('./freio')
 
 const ROOT = path.join(__dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
@@ -85,7 +86,7 @@ async function escrever(assunto, fontes, catSlug) {
     .join('\n\n')
     .slice(0, 14000)
 
-  const prompt = `Você é repórter do portal brasileiro "Explosão Solar", editoria ${CAT_NOMES[catSlug]}. O assunto "${assunto}" está entre os mais buscados no Google agora. Escreva uma matéria em português brasileiro explicando o que está acontecendo, com 350 a 600 palavras.
+  const prompt = `Você é repórter do portal brasileiro "Explosão Solar", editoria ${CAT_NOMES[catSlug]}. O assunto "${assunto}" está entre os mais buscados no Google agora. Escreva uma matéria em português brasileiro explicando o que está acontecendo, com 650 a 900 palavras, cruzando as fontes: nomes, números, datas e locais que elas trazem.
 
 REGRA DE OURO: você só pode afirmar o que está no MATERIAL DAS FONTES abaixo. O que não está ali não existe. PROIBIDO, sem exceção:
 (a) perfil, biografia, ficha técnica, ano de fundação, ideologia ou classificação de pessoa, partido, empresa ou instituição que não esteja nas fontes;
@@ -123,7 +124,8 @@ ${material}`
     [/buscad[oa]s? no google|tend[êe]ncia de busca/i, 'meta-referência ao Google'],
   ]
   for (const [re, motivo] of proibido) if (re.test(a.contentHtml)) throw new Error('filtro factual: ' + motivo)
-  if (contaPalavras(a.contentHtml) < 260) throw new Error(`curta demais (${contaPalavras(a.contentHtml)} palavras)`)
+  const recusa = freio.motivoRecusa(a.contentHtml)
+  if (recusa) throw new Error('freio: ' + recusa)
   if (!/^\s*<p[\s>]/i.test(a.contentHtml)) throw new Error('não abre com lide')
   return a
 }
@@ -156,7 +158,12 @@ async function main() {
 
   const args = process.argv.slice(2)
   const arg = (n, d) => (args.includes(n) ? args[args.indexOf(n) + 1] : d)
-  const MAX = parseInt(arg('--max', '6'), 10)
+  const vagas = freio.vagasHoje()
+  const MAX = Math.min(parseInt(arg('--max', '1'), 10), vagas)
+  if (MAX <= 0) {
+    log(`freio: o dia já tem ${freio.publicadasHoje()} matéria(s) (limite ${freio.LIMITE_DIA}) — nada a fazer`)
+    return
+  }
   const regioes = arg('--regioes', 'BR,US').split(',').map((s) => s.trim()).filter(Boolean)
   const dry = args.includes('--dry')
 
@@ -182,6 +189,7 @@ async function main() {
 
   for (const item of assuntos) {
     if (publicadas >= MAX) break
+    if (stats.reprovadas >= 4) { log('freio: 4 matérias reprovadas nesta rodada — paro para não queimar a cota de IA'); break }
     vistos.add(item.assunto.toLowerCase())
 
     // baixa o texto real de até 3 notícias que o Trends aponta
@@ -193,9 +201,11 @@ async function main() {
         fontes.push({ ...n, texto: f.texto, url: f.url })
       } catch {}
     }
-    if (fontes.length < 1) {
+    // freio: 2+ fontes e material farto, senão 600 palavras viram enchimento
+    const materialPalavras = fontes.reduce((s, f) => s + f.texto.split(/\s+/).filter(Boolean).length, 0)
+    if (fontes.length < 2 || materialPalavras < 1000) {
       stats.semTexto++
-      log(`sem texto extraível: "${item.assunto}"`)
+      log(`material insuficiente: "${item.assunto}" (${fontes.length} fonte(s), ${materialPalavras} palavras)`)
       continue
     }
 
@@ -226,7 +236,7 @@ async function main() {
 
       if (!dry) {
         fs.writeFileSync(path.join(PT_DIR, slug + '.json'), JSON.stringify(base, null, 2))
-        for (const lang of Object.keys(LANGS)) {
+        for (const lang of freio.TRADUZIR ? Object.keys(LANGS) : []) {
           try {
             const dir = path.join(CONTENT, lang, 'articles')
             fs.mkdirSync(dir, { recursive: true })

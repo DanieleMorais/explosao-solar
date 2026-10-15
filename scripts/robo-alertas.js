@@ -47,13 +47,24 @@ function lugarUsgs(place) {
 
 const paraNotificar = []
 
+// Freio de 14/10/2026: o alerta por modelo pronto é curto e se repete de um evento para o outro,
+// o padrão que tirou o portal do Google. Ele não vira mais matéria (nem em EN/ES); o aviso no
+// celular e por e-mail continua e leva à página ao vivo do tema. Matéria de terremoto com
+// fontes de imprensa é do robo-terremotos.js.
+const VIRA_MATERIA = false
+const SITE_URL = 'https://explosaosolar.com'
+const paginaAoVivo = (base, lang) =>
+  base.alerta === 'terremoto' ? `${SITE_URL}/terremotos` : `${SITE_URL}${lang === 'pt' ? '' : '/' + lang}/clima`
+
 function salvar(base, tr, grave = false) {
+  const url = (lang) => (VIRA_MATERIA ? `${SITE_URL}${lang === 'pt' ? '' : '/' + lang}/noticia/${base.slug}` : paginaAoVivo(base, lang))
   paraNotificar.push({
     grave,
-    pt: { title: tr.pt.title, body: tr.pt.excerpt, url: 'https://explosaosolar.com/noticia/' + base.slug, tag: base.slug },
-    en: { title: tr.en.title, body: tr.en.excerpt, url: 'https://explosaosolar.com/en/noticia/' + base.slug, tag: base.slug },
-    es: { title: tr.es.title, body: tr.es.excerpt, url: 'https://explosaosolar.com/es/noticia/' + base.slug, tag: base.slug },
+    pt: { title: tr.pt.title, body: tr.pt.excerpt, url: url('pt'), tag: base.slug },
+    en: { title: tr.en.title, body: tr.en.excerpt, url: url('en'), tag: base.slug },
+    es: { title: tr.es.title, body: tr.es.excerpt, url: url('es'), tag: base.slug },
   })
+  if (!VIRA_MATERIA) return
   const dirs = { pt: path.join(CONTENT, 'articles'), en: path.join(CONTENT, 'en', 'articles'), es: path.join(CONTENT, 'es', 'articles') }
   for (const lang of ['pt', 'en', 'es']) {
     fs.mkdirSync(dirs[lang], { recursive: true })
@@ -371,9 +382,9 @@ async function main() {
       try { await enviarAlertaEmail(p, log) } catch (e) { log('alerta-email falhou: ' + e.message) }
     }
   }
-  log(`fim: ${total} alerta(s) publicado(s)${dry ? ' [DRY]' : ''}`)
+  log(`fim: ${total} alerta(s) ${VIRA_MATERIA ? 'publicado(s)' : 'avisado(s) (sem matéria no site: freio)'}${dry ? ' [DRY]' : ''}`)
 
-  if (total > 0 && !dry) {
+  if (total > 0 && !dry && VIRA_MATERIA) {
     const stamp = path.join(CONTENT, '.ultimo-deploy')
     const ultimo = fs.existsSync(stamp) ? Number(fs.readFileSync(stamp, 'utf8')) : 0
     try {

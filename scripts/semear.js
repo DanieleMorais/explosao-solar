@@ -8,6 +8,7 @@ const fs = require('fs')
 const path = require('path')
 const { askJson } = require('./ia-pool')
 const { adquirir } = require('./trava')
+const freio = require('./freio')
 
 const ROOT = path.join(__dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
@@ -111,6 +112,8 @@ Responda APENAS com JSON válido, sem texto antes ou depois:
   a.contentHtml = sanitize(a.contentHtml)
   const erros = validar(a, { minPalavras: 1700, maxTitulo: 78 })
   if (erros.length) throw new Error('reprovada: ' + erros.join('; '))
+  const recusa = freio.motivoRecusa(a.contentHtml)
+  if (recusa) throw new Error('freio: ' + recusa)
   return { ...a, palavras: contaPalavras(a.contentHtml) }
 }
 
@@ -145,7 +148,7 @@ async function main() {
   const META = parseInt(arg('--meta', '100'), 10)
   const LOTE = parseInt(arg('--lote', '40'), 10)
   const soCat = arg('--cat', null)
-  const semTraducao = args.includes('--sem-traducao')
+  const semTraducao = args.includes('--sem-traducao') || !freio.TRADUZIR
 
   const state = loadState()
   const counts = countByCategory()
@@ -155,6 +158,7 @@ async function main() {
   let feitas = 0
 
   while (feitas < LOTE) {
+    if (freio.vagasHoje() <= 0) { log(`freio: o dia já tem ${freio.publicadasHoje()} matéria(s) (limite ${freio.LIMITE_DIA}) — paro`); break }
     const pendentes = cats.filter((c) => counts[c] < META).sort((a, b) => counts[a] - counts[b])
     if (!pendentes.length) { log('meta atingida em todas as editorias'); break }
     const cat = pendentes[0]

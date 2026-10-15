@@ -12,6 +12,7 @@ const { askJson } = require('./ia-pool')
 const { adquirir } = require('./trava')
 const { extrair } = require('./extrator')
 const { REGRAS_DE_FORMA, TAGS_PERMITIDAS, sanitize, contaPalavras, cortar, slugify } = require('./regras-editoriais')
+const freio = require('./freio')
 
 const ROOT = path.join(__dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
@@ -149,7 +150,7 @@ async function escrever(d, fontes) {
 - Alerta de tsunami: ${d.tsunami ? 'SIM' : 'não'}
 - Relatos de pessoas que sentiram o tremor: ${d.felt}`
 
-  const prompt = `Você é repórter de ciência do portal brasileiro "Explosão Solar", editoria Ciência. Escreva uma matéria factual em português brasileiro sobre um terremoto, com 320 a 520 palavras.
+  const prompt = `Você é repórter de ciência do portal brasileiro "Explosão Solar", editoria Ciência. Escreva uma matéria factual em português brasileiro sobre um terremoto, com 650 a 900 palavras.
 
 REGRA DE OURO: você só pode afirmar o que está nos DADOS DO USGS e no MATERIAL DAS FONTES abaixo. O que não está ali não existe. PROIBIDO, sem exceção:
 (a) número de mortos, feridos, desaparecidos ou desabrigados que NÃO esteja nas fontes;
@@ -159,7 +160,7 @@ REGRA DE OURO: você só pode afirmar o que está nos DADOS DO USGS e no MATERIA
 (e) causa científica específica (nome de falha, placa) que não esteja nas fontes.
 Se as fontes divergirem nos números, use o mais recente e cite que o balanço é parcial. Se faltar informação, escreva menos — nunca preencha com suposição.
 
-Abra o primeiro parágrafo com o fato principal: magnitude, local e quando. Use os dados do USGS para a ficha técnica do abalo (magnitude, profundidade, epicentro) e as fontes de imprensa para consequências (vítimas, danos, resgate, resposta oficial). Se não houver fontes de imprensa, escreva uma matéria mais curta apenas com os dados sísmicos do USGS, deixando claro que os efeitos ainda estão sendo apurados.
+Abra o primeiro parágrafo com o fato principal: magnitude, local e quando. Use os dados do USGS para a ficha técnica do abalo (magnitude, profundidade, epicentro) e as fontes de imprensa para consequências (vítimas, danos, resgate, resposta oficial). Se as fontes não derem para 650 palavras, escreva menos — nunca encha com contexto genérico.
 ${REGRAS_DE_FORMA}
 
 Responda APENAS com JSON válido:
@@ -184,7 +185,8 @@ ${material || '(sem fontes de imprensa disponíveis — use apenas os dados do U
     [/buscad[oa]s? no google/i, 'meta-referência ao Google'],
   ]
   for (const [re, motivo] of proibido) if (re.test(a.contentHtml)) throw new Error('filtro factual: ' + motivo)
-  if (contaPalavras(a.contentHtml) < 190) throw new Error(`curta demais (${contaPalavras(a.contentHtml)}p)`)
+  const recusa = freio.motivoRecusa(a.contentHtml)
+  if (recusa) throw new Error('freio: ' + recusa)
   if (!/^\s*<p[\s>]/i.test(a.contentHtml)) throw new Error('não abre com lide')
   return a
 }
@@ -212,7 +214,8 @@ async function main() {
   carregarEnv()
   if (!adquirir('terremotos', log)) return
   const args = process.argv.slice(2)
-  const MAX = parseInt(args.includes('--max') ? args[args.indexOf('--max') + 1] : '3', 10)
+  const MAX = Math.min(parseInt(args.includes('--max') ? args[args.indexOf('--max') + 1] : '1', 10), freio.vagasHoje())
+  if (MAX <= 0) { log(`freio: o dia já tem ${freio.publicadasHoje()} matéria(s) (limite ${freio.LIMITE_DIA}) — nada a fazer`); return }
   const dry = args.includes('--dry')
 
   let feats = []
@@ -242,6 +245,13 @@ async function main() {
     try {
       const fontes = await noticiasReais(d.chave)
       log(`[M${d.mag} ${d.chave}] ${fontes.length} fontes de imprensa`)
+      // freio: sem imprensa farta não há 600 palavras de fato — só a ficha do USGS seria enchimento
+      const materialPalavras = fontes.reduce((s, f) => s + String(f.texto || '').split(/\s+/).filter(Boolean).length, 0)
+      if (materialPalavras < 800) {
+        vistos.delete(q.id) // a imprensa cobre em horas: tenta de novo na próxima rodada (sem gastar IA)
+        log(`freio: material insuficiente (${fontes.length} fonte(s), ${materialPalavras} palavras) — sem matéria por enquanto`)
+        continue
+      }
       const a = await escrever(d, fontes)
 
       // se o abalo já tem matéria (stub do robô de alertas), enriquece o mesmo slug
@@ -271,7 +281,7 @@ async function main() {
 
       if (!dry) {
         fs.writeFileSync(path.join(PT_DIR, slug + '.json'), JSON.stringify(base, null, 2))
-        for (const lang of Object.keys(LANGS)) {
+        for (const lang of freio.TRADUZIR ? Object.keys(LANGS) : []) {
           try {
             const dir = path.join(CONTENT, lang, 'articles'); fs.mkdirSync(dir, { recursive: true })
             fs.writeFileSync(path.join(dir, slug + '.json'), JSON.stringify(await traduzir(base, lang), null, 2))

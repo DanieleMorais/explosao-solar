@@ -11,6 +11,8 @@ const { execSync } = require('child_process')
 const { askIA, askJson } = require('./ia-pool')
 const { REGRAS_DE_FORMA, TAGS_PERMITIDAS, sanitize: sanitizeHtml, contaPalavras, cortar, slugify: slugCurto } = require('./regras-editoriais')
 const { adquirir } = require('./trava')
+const { extrair } = require('./extrator')
+const freio = require('./freio')
 
 const ROOT = path.join(__dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
@@ -163,21 +165,24 @@ const ATTRIBUTION = {
 }
 
 async function writeArticle(item, catSlug) {
+  // freio: só o texto integral e farto da fonte sustenta 600+ palavras sem enchimento
+  const fonte = await extrair(item.link, { minPalavras: 700 })
   const ptPrompt = `Você é repórter sênior do portal de notícias brasileiro "Explosão Solar". Com base nesta notícia real publicada por ${item.source}:
 
 TÍTULO: ${item.title}
-RESUMO: ${item.desc}
+TEXTO INTEGRAL DA FONTE:
+${fonte.texto}
 
-Escreva uma matéria jornalística ORIGINAL em português brasileiro (300 a 600 palavras) sobre esse fato, com suas próprias palavras.
+Escreva uma matéria jornalística ORIGINAL em português brasileiro (650 a 900 palavras) sobre esse fato, com suas próprias palavras, trazendo os nomes, números, datas e locais que a fonte informa.
 
-REGRA DE OURO: você só pode afirmar o que está literalmente em TÍTULO e RESUMO acima. O que não está ali não existe. PROIBIDO, sem exceção:
+REGRA DE OURO: você só pode afirmar o que está no TÍTULO e no TEXTO INTEGRAL DA FONTE acima. O que não está ali não existe. PROIBIDO, sem exceção:
 (a) seção ou parágrafo de perfil, biografia, histórico ou ficha técnica — "Quem é X", "Fundado em...", "O partido/empresa/entidade é...";
 (b) classificar ideologia, espectro político, porte, origem, ano de fundação ou posição de qualquer pessoa, partido, empresa ou instituição;
 (c) repercussão inventada: "nas redes sociais", "analistas apontam", "observadores avaliam", "especialistas divergem", "a notícia gerou reações";
 (d) ineditismo ou superlativo: "pela primeira vez", "nunca antes", "o maior";
-(e) data, hora, dia da semana ou cidade que não esteja no resumo;
+(e) data, hora, dia da semana ou cidade que não esteja na fonte;
 (f) declarações entre aspas.
-Quando faltar informação, escreva contexto GERAL e permanente do tema (como funciona uma convenção partidária, o que é o calendário eleitoral) — nunca preencha o vazio com fato novo. Se o resumo só der para 3 parágrafos, entregue 3 parágrafos: matéria curta e correta vale mais que longa e inventada. A contagem de palavras NUNCA justifica acrescentar fato.
+Se a fonte não der para 650 palavras, escreva menos: matéria curta e correta vale mais que longa e inventada. A contagem de palavras NUNCA justifica acrescentar fato nem parágrafo de contexto genérico.
 
 Responda APENAS com JSON válido neste formato:
 {"title":"título forte em PT-BR, máx 80 chars","seoTitle":"versão curta do título, máx 58 chars","subtitle":"uma frase que expande o título","excerpt":"resumo de até 165 chars","tags":["4 a 6 tags em pt"],"contentHtml":"corpo em HTML usando apenas <p> <h2> <ul> <li> <strong> <em>"}`
@@ -193,6 +198,8 @@ Responda APENAS com JSON válido neste formato:
   for (const [re, motivo] of proibido) {
     if (re.test(pt.contentHtml)) throw new Error('reprovada pelo filtro factual: ' + motivo)
   }
+  const recusa = freio.motivoRecusa(pt.contentHtml)
+  if (recusa) throw new Error('freio: ' + recusa)
 
   const slugBase = slugCurto(pt.title)
   let slug = slugBase
@@ -213,12 +220,12 @@ Responda APENAS com JSON válido neste formato:
     readingMinutes: Math.max(3, Math.round(stripHtml(pt.contentHtml).split(/\s+/).length / 200)),
     tags: (pt.tags || []).slice(0, 6),
     sourceName: item.source,
-    sourceUrl: item.link,
+    sourceUrl: fonte.url || item.link,
     contentHtml: sanitize(pt.contentHtml) + ATTRIBUTION.pt(item.source),
   }
   fs.writeFileSync(path.join(CONTENT, 'articles', slug + '.json'), JSON.stringify(base, null, 2))
 
-  for (const lang of ['en', 'es']) {
+  for (const lang of freio.TRADUZIR ? ['en', 'es'] : []) {
     const langName = lang === 'en' ? 'inglês' : 'espanhol'
     try {
       const trPrompt = `Traduza esta matéria jornalística do português para ${langName}, com fluência de publicação nativa. Preserve as tags HTML. Responda APENAS com JSON válido:
@@ -284,19 +291,21 @@ async function main() {
   const ramping = Object.values(counts).some((c) => c < TARGET_PER_CAT)
   const dailyCap = ramping ? RAMP_DAILY : CRUISE_DAILY
   const usedToday = state.days[today()] || 0
-  const budget = Math.min(maxArg, dailyCap - usedToday)
+  const budget = Math.min(maxArg, dailyCap - usedToday, freio.vagasHoje())
 
-  log(`início: max=${maxArg} cap-diário=${dailyCap} usado-hoje=${usedToday} orçamento=${budget} contagem=${JSON.stringify(counts)}`)
+  log(`início: max=${maxArg} cap-diário=${dailyCap} usado-hoje=${usedToday} freio=${freio.publicadasHoje()}/${freio.LIMITE_DIA} no site hoje orçamento=${budget} contagem=${JSON.stringify(counts)}`)
   if (budget <= 0) {
     log('cota diária atingida, nada a fazer')
     return
   }
+  let falhas = 0
 
   const catOrder = Object.keys(FEEDS).sort((a, b) => counts[a] - counts[b])
   const published = []
 
   for (const cat of [...catOrder, ...catOrder]) {
     if (published.length >= budget) break
+    if (falhas >= 6) { log('freio: 6 tentativas sem matéria aprovada — paro para não queimar a cota de IA'); break }
     const feeds = FEEDS[cat]
     let items = []
     for (const f of feeds) {
@@ -312,6 +321,7 @@ async function main() {
       counts[cat]++
       log(`publicado [${cat}] ${slug} (fonte: ${fresh.source})`)
     } catch (e) {
+      falhas++
       log(`falha ao gerar [${cat}] "${fresh.title.slice(0, 60)}": ${e.message}`)
     }
   }

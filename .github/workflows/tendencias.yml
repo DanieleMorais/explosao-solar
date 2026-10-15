@@ -1,14 +1,17 @@
+# Freio de 14/10/2026 (decisão da Dani, para o site voltar ao Google): no máximo 3 matérias
+# novas por dia somando todos os robôs, só em português, 600+ palavras com fato concreto.
+# A regra mora em scripts/freio.js.
 name: Tendências do Google
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 13,20 * * *' # 10h e 17h em Brasília (era a cada 3 h, 6 matérias por rodada)
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: robos
+  group: tendencias # grupo próprio: no grupo robos os alertas de 15 em 15 min cancelavam a rodada na fila
   cancel-in-progress: false
 
 jobs:
@@ -38,7 +41,7 @@ jobs:
       - name: Rodar
         env:
           SKIP_DEPLOY: '1'
-        run: node scripts/robo-tendencias.js --max 6 || true
+        run: node scripts/robo-tendencias.js --max 1 || true
       - name: Publicar conteúdo
         run: |
           git config user.name "Explosao Solar Bot"
@@ -48,7 +51,11 @@ jobs:
             git commit -m "Tendências do Google: conteúdo automático [skip ci]"
             ok=""
             for i in 1 2 3 4 5; do
-              if git pull --rebase -q origin main && git push; then ok=1; break; fi
+              if git pull --rebase -q origin main; then
+                # freio: outro robô pode ter publicado ao mesmo tempo; passou do limite do dia, este lote não sobe
+                if ! node scripts/freio.js --conferir; then echo "Freio: limite de matérias do dia atingido, lote descartado"; ok=1; break; fi
+                if git push; then ok=1; break; fi
+              fi
               git rebase --abort 2>/dev/null || true
               sleep 10
             done
