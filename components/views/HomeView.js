@@ -3,6 +3,7 @@ import { getAllArticles, getByCategory, CATEGORIES, SITE, SITE_DESCRIPTIONS, SIT
 import { HeroCard, Card } from '@/components/ArticleCard'
 import NewsletterBox from '@/components/NewsletterBox'
 import AlertasPush from '@/components/AlertasPush'
+import BannerAdsterra from '@/components/BannerAdsterra'
 import { cotacoes, formatarBRL } from '@/lib/cotacoes'
 import { t, catColor } from '@/lib/tokens'
 import { withLang } from '@/lib/site'
@@ -93,6 +94,7 @@ export default async function HomeView({ lang = 'pt' }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 2.3fr) minmax(0, 1fr)', gap: 34 }} className="grid-1-mobile">
           {/* COLUNA PRINCIPAL */}
           <main>
+            <BannerAdsterra formato="faixa" lang={lang} />
             {CATEGORIES.map((c) => {
               const arts = getByCategory(c.slug, lang)
               if (!arts.length) return null

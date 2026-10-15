@@ -4,6 +4,7 @@ import { getArticle, getRelated, getContexto, articleLangs, formatDate, SITE } f
 import { Card } from '@/components/ArticleCard'
 import ShareButtons from '@/components/ShareButtons'
 import OuvirMateria from '@/components/OuvirMateria'
+import BannerAdsterra from '@/components/BannerAdsterra'
 import { t, catColor } from '@/lib/tokens'
 import { withLang } from '@/lib/site'
 import { ui, catLabel, LANGS } from '@/lib/i18n'
@@ -134,7 +135,11 @@ export default function ArticleView({ lang = 'pt', slug }) {
           </figure>
         )}
 
+        <BannerAdsterra formato="faixa" lang={lang} />
+
         <div className="prose" style={{ fontFamily: 'var(--font-serif), Georgia, serif' }} dangerouslySetInnerHTML={{ __html: article.contentHtml }} />
+
+        <BannerAdsterra formato="quadrado" lang={lang} />
 
         {article.sourceUrl && (
           <p style={{ fontSize: 13, color: t.muted, marginTop: 26, paddingTop: 14, borderTop: `1px solid ${t.line}` }}>

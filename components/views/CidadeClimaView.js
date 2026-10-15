@@ -9,6 +9,7 @@ import { CardClima, diaCurto } from '@/components/clima/ClimaBits'
 import BuscaClima from '@/components/clima/BuscaClima'
 import Cenario from '@/components/clima/Cenario'
 import FaixaHoras from '@/components/clima/FaixaHoras'
+import BannerAdsterra from '@/components/BannerAdsterra'
 
 export const revalidate = 1800
 
@@ -125,6 +126,8 @@ export default async function CidadeClimaView({ lang = 'pt', uf, cidade }) {
         ) : (
           <p style={{ fontSize: 15, color: t.muted }}>{L.semDados}</p>
         )}
+
+        <BannerAdsterra formato="faixa" lang={lang} />
 
         {clima?.dias?.length > 5 && (
           <div style={{ marginTop: 34 }}>
