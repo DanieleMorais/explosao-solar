@@ -65,5 +65,5 @@ jobs:
             done
             [ -n "$ok" ]
           fi
-      - name: Avisar o Google (Indexing API)
-        run: node scripts/indexar-google.js 8 || true
+      # 15/10/2026 (decisão da Dani): o aviso pela Indexing API foi desligado. O Google só permite essa
+      # porta para vaga de emprego e transmissão ao vivo; as matérias chegam pelo sitemap, que já está limpo.
