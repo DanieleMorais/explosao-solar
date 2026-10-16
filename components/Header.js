@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import SunLogo from './SunLogo'
@@ -15,12 +15,32 @@ export default function Header() {
   const lang = langFromPath(pathname)
   const txt = ui(lang)
   const [today, setToday] = useState('')
+  const faixa = useRef(null)
 
   useEffect(() => {
+    // no celular a data longa não cabe ao lado dos idiomas: versão curta sem o ano
+    const curta = window.matchMedia('(max-width: 480px)').matches
     setToday(
-      new Date().toLocaleDateString(LOCALE[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+      new Date().toLocaleDateString(LOCALE[lang], curta ? { weekday: 'short', day: 'numeric', month: 'long' } : { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
     )
   }, [lang])
+
+  // menu que desliza: esmaece só o lado em que ainda há botões, e a editoria aberta vem para o meio da faixa
+  useEffect(() => {
+    const el = faixa.current
+    if (!el) return
+    const bordas = () => {
+      const rola = el.scrollWidth > el.clientWidth + 1
+      el.style.setProperty('--fade-esq', rola && el.scrollLeft > 2 ? '40px' : '0px')
+      el.style.setProperty('--fade-dir', rola && el.scrollLeft + el.clientWidth < el.scrollWidth - 2 ? '40px' : '0px')
+    }
+    const ativo = el.querySelector(`a[href="${pathname}"]`)
+    if (ativo && el.scrollWidth > el.clientWidth) el.scrollTo({ left: Math.max(0, ativo.offsetLeft - (el.clientWidth - ativo.offsetWidth) / 2), behavior: 'instant' })
+    bordas()
+    el.addEventListener('scroll', bordas, { passive: true })
+    window.addEventListener('resize', bordas)
+    return () => { el.removeEventListener('scroll', bordas); window.removeEventListener('resize', bordas) }
+  }, [pathname])
 
   function swapLang(target) {
     const rest = lang === 'pt' ? pathname : pathname.replace(/^\/(en|es)/, '') || '/'
@@ -43,7 +63,7 @@ export default function Header() {
             color: 'rgba(255,255,255,0.55)',
           }}
         >
-          <span style={{ textTransform: 'capitalize' }} suppressHydrationWarning>
+          <span style={{ textTransform: 'capitalize', minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} suppressHydrationWarning>
             {today || ' '}
           </span>
           <span style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -125,7 +145,8 @@ export default function Header() {
 
       <nav aria-label={txt.editorials} style={{ borderTop: `1px solid ${t.darkLine}` }}>
         <div
-          className="noscrollbar"
+          ref={faixa}
+          className="noscrollbar menu-faixa"
           style={{ maxWidth: t.maxW, margin: '0 auto', padding: '10px clamp(20px, 3vw, 56px)', display: 'flex', gap: 8, overflowX: 'auto' }}
         >
           {CATEGORIES.map((c) => {

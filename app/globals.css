@@ -150,6 +150,17 @@ svg {
   }
 
   .grid-1-mobile {
-    grid-template-columns: 1fr !important;
+    /* minmax(0, 1fr): com 1fr puro um título ou imagem larga empurrava a coluna além da tela */
+    grid-template-columns: minmax(0, 1fr) !important;
   }
+
+}
+
+/* Menu de editorias: desliza para o lado quando não cabe. Em vez de cortar um botão no meio, a borda esmaece só do
+   lado em que ainda há botões (o Header.js liga --fade-esq / --fade-dir conforme a posição da faixa). */
+.menu-faixa {
+  --fade-esq: 0px;
+  --fade-dir: 0px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--fade-esq), #000 calc(100% - var(--fade-dir)), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--fade-esq), #000 calc(100% - var(--fade-dir)), transparent 100%);
 }

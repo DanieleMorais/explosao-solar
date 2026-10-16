@@ -154,7 +154,8 @@ export default function AlertasPush() {
               fontSize: 14,
               padding: '12px 22px',
               borderRadius: 999,
-              whiteSpace: 'nowrap',
+              maxWidth: '100%',
+              textAlign: 'center',
               opacity: estado === 'ativando' ? 0.7 : 1,
             }}
           >
