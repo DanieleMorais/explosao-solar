@@ -18,7 +18,7 @@ def certo(c, m):
     else: falha += 1
 
 
-ITENS_CAIXA = "document.querySelectorAll('#menu-caixa a').length"
+ITENS_CAIXA = "document.querySelectorAll('#menu-caixa .menu-item').length"
 with sync_playwright() as p:
     nav = p.chromium.launch(channel="msedge", headless=True)
     for nome, larg, alt, celular in [("360", 360, 760, True), ("390", 390, 844, True), ("768", 768, 1024, True), ("1024", 1024, 768, False), ("1440", 1440, 900, False)]:
@@ -30,7 +30,7 @@ with sync_playwright() as p:
             pg.goto(BASE + caminho, wait_until="domcontentloaded", timeout=90000)
             pg.wait_for_timeout(2500)
             faixa_visivel = pg.evaluate("getComputedStyle(document.querySelector('.menu-faixa')).visibility === 'visible'")
-            botao = pg.locator(".menu-botao button")
+            botao = pg.locator(".menu-botao")
             botao_visivel = botao.is_visible()
             total = pg.evaluate("document.querySelectorAll('.menu-faixa a').length")
             cabe = pg.evaluate("(() => { const f = document.querySelector('.menu-faixa'), n = document.querySelector('.menu-nav'); return f.scrollWidth <= n.clientWidth + 1 })()")
@@ -41,7 +41,7 @@ with sync_playwright() as p:
                 botao.click()
                 pg.wait_for_timeout(400)
                 n = pg.evaluate(ITENS_CAIXA)
-                inteiros = pg.evaluate("[...document.querySelectorAll('#menu-caixa a')].every(a => { const r = a.getBoundingClientRect(); return r.left >= 0 && r.right <= innerWidth && a.scrollWidth <= a.clientWidth + 1 })")
+                inteiros = pg.evaluate("[...document.querySelectorAll('#menu-caixa .menu-item')].every(a => { const r = a.getBoundingClientRect(); return r.left >= 0 && r.right <= innerWidth && a.scrollWidth <= a.clientWidth + 1 })")
                 certo(n == total and inteiros and botao.get_attribute("aria-expanded") == "true", f"[{nome}] {caminho}: clicou, a caixa abriu com as {n} editorias inteiras na tela")
                 if caminho == "/":
                     pg.screenshot(path=os.path.join(SAIDA, f"aberta-{nome}.png"), clip={"x": 0, "y": 0, "width": larg, "height": min(alt, 520)})
@@ -49,16 +49,16 @@ with sync_playwright() as p:
                 pg.wait_for_timeout(300)
                 certo(pg.evaluate(ITENS_CAIXA) == 0, f"[{nome}] {caminho}: Esc fecha")
                 botao.click(); pg.wait_for_timeout(300)
-                pg.locator("header span[suppresshydrationwarning], header > div span").first.click(); pg.wait_for_timeout(300)  # a data do topo: fora do menu e não é link
-                certo(pg.evaluate(ITENS_CAIXA) == 0, f"[{nome}] {caminho}: clicar fora fecha")
+                pg.mouse.click(larg // 2, alt - 60); pg.wait_for_timeout(400)  # na página, abaixo do cabeçalho: cai no fundo escurecido e não abre matéria
+                certo(pg.evaluate(ITENS_CAIXA) == 0 and pg.url.rstrip("/") == (BASE + caminho).rstrip("/"), f"[{nome}] {caminho}: tocar na página fecha o painel e não abre matéria nenhuma")
                 if caminho == "/":
                     botao.click(); pg.wait_for_timeout(300)
-                    alvo = pg.locator("#menu-caixa a").nth(2)
+                    alvo = pg.locator("#menu-caixa .menu-item").nth(2)
                     destino = alvo.get_attribute("href")
                     alvo.click()
                     pg.wait_for_url(BASE + destino, timeout=60000)
                     pg.wait_for_timeout(1500)
-                    certo(pg.evaluate(ITENS_CAIXA) == 0 and pg.locator(".menu-botao span").first.inner_text().strip() != "", f"[{nome}]: escolher uma editoria leva para {destino}, fecha a caixa e mostra o nome dela ao lado do botão")
+                    certo(pg.evaluate(ITENS_CAIXA) == 0 and pg.evaluate("!!document.querySelector('.menu-faixa a[aria-current=page]')"), f"[{nome}]: escolher uma editoria leva para {destino}, fecha a caixa e a editoria escolhida fica marcada")
             sobra = pg.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
             certo(sobra <= 0, f"[{nome}] {caminho}: sem rolagem lateral ({sobra})")
         if celular and larg < 900:

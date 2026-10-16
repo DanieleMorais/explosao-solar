@@ -176,8 +176,57 @@ svg {
   pointer-events: none;
 }
 
-.menu-nav[data-caixa='1'] .menu-botao {
+.menu-nav[data-caixa='1'] {
+  border-top: none !important;
+}
+
+/* o botão do menu fica no alto, ao lado da busca; o Header.js liga quando as editorias não cabem numa linha */
+header:has(.menu-nav[data-caixa='1']) .menu-botao {
   display: flex;
+}
+
+.menu-caixa {
+  animation: menu-desce 0.18s ease-out;
+}
+
+/* data, idioma e busca dentro do painel só fazem falta no celular (no computador já estão no topo) */
+@media (min-width: 901px) {
+  .painel-topo {
+    display: none;
+  }
+}
+
+.menu-fundo {
+  animation: menu-fundo 0.18s ease-out;
+}
+
+.menu-item {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(255, 179, 0, 0.35) !important;
+}
+
+@keyframes menu-desce {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes menu-fundo {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-caixa,
+  .menu-fundo {
+    animation: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -196,6 +245,58 @@ svg {
 
   .menu-botao {
     display: flex;
+  }
+
+  .menu-nav {
+    border-top: none !important;
+  }
+
+  /* Topo do celular: uma barra só — menu à esquerda, logo no centro, busca à direita. Data e idiomas vão para o
+     painel do menu; a frase embaixo da logo sai (quebrava em duas linhas). */
+  .topo-barra,
+  .topo-frase {
+    display: none !important;
+  }
+
+  .topo-linha {
+    display: grid !important;
+    grid-template-columns: 42px 1fr 42px;
+    gap: 8px !important;
+    padding: 10px 16px !important;
+  }
+
+  .topo-direita {
+    display: contents !important;
+  }
+
+  .topo-linha .menu-botao {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .topo-logo {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    gap: 9px !important;
+  }
+
+  .topo-logo svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .topo-nome {
+    /* cabe numa linha até em 320 px de largura */
+    font-size: clamp(16px, 5.2vw, 21px) !important;
+    white-space: nowrap;
+  }
+
+  .topo-busca {
+    grid-column: 3;
+    grid-row: 1;
+    width: 42px;
+    padding: 0 !important;
   }
 
   /* Anúncio da Adsterra (Social Bar): no celular ele nascia colado no topo, por cima da logo e do menu.
