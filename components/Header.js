@@ -15,7 +15,6 @@ export default function Header() {
   const lang = langFromPath(pathname)
   const txt = ui(lang)
   const [today, setToday] = useState('')
-  const faixa = useRef(null)
 
   useEffect(() => {
     // no celular a data longa não cabe ao lado dos idiomas: versão curta sem o ano
@@ -25,27 +24,50 @@ export default function Header() {
     )
   }, [lang])
 
-  // menu que desliza: esmaece só o lado em que ainda há botões, e a editoria aberta vem para o meio da faixa
+  // Menu de editorias: no computador, faixa numa linha só. Quando os botões não cabem (celular, tablet, janela
+  // estreita), vira um botão "Editorias" que abre uma caixa com todos, só quando a pessoa clica.
+  const nav = useRef(null)
+  const faixa = useRef(null)
+  const [caixa, setCaixa] = useState(false)
+  const [aberto, setAberto] = useState(false)
+
   useEffect(() => {
-    const el = faixa.current
-    if (!el) return
-    const bordas = () => {
-      const rola = el.scrollWidth > el.clientWidth + 1
-      el.style.setProperty('--fade-esq', rola && el.scrollLeft > 2 ? '40px' : '0px')
-      el.style.setProperty('--fade-dir', rola && el.scrollLeft + el.clientWidth < el.scrollWidth - 2 ? '40px' : '0px')
-    }
-    const ativo = el.querySelector(`a[href="${pathname}"]`)
-    if (ativo && el.scrollWidth > el.clientWidth) el.scrollTo({ left: Math.max(0, ativo.offsetLeft - (el.clientWidth - ativo.offsetWidth) / 2), behavior: 'instant' })
-    bordas()
-    el.addEventListener('scroll', bordas, { passive: true })
-    window.addEventListener('resize', bordas)
-    return () => { el.removeEventListener('scroll', bordas); window.removeEventListener('resize', bordas) }
-  }, [pathname])
+    const medir = () => { if (nav.current && faixa.current) setCaixa(faixa.current.scrollWidth > nav.current.clientWidth + 1) }
+    medir()
+    const ro = new ResizeObserver(medir)
+    if (nav.current) ro.observe(nav.current)
+    return () => ro.disconnect()
+  }, [lang])
+
+  useEffect(() => { setAberto(false) }, [pathname])
+
+  useEffect(() => {
+    if (!aberto) return
+    const fora = (e) => { if (nav.current && !nav.current.contains(e.target)) setAberto(false) }
+    const tecla = (e) => { if (e.key === 'Escape') setAberto(false) }
+    document.addEventListener('pointerdown', fora)
+    document.addEventListener('keydown', tecla)
+    return () => { document.removeEventListener('pointerdown', fora); document.removeEventListener('keydown', tecla) }
+  }, [aberto])
 
   function swapLang(target) {
     const rest = lang === 'pt' ? pathname : pathname.replace(/^\/(en|es)/, '') || '/'
     return withLang(target, rest === '/' ? '' : rest) || '/'
   }
+
+  const itens = [
+    ...CATEGORIES.map((c) => ({ href: withLang(lang, `/${c.slug}`), label: catLabel(lang, c.slug) })),
+    { href: withLang(lang, '/clima'), label: { pt: 'Clima', en: 'Weather', es: 'Clima' }[lang] || 'Clima', ponto: '#22C55E' },
+    ...(lang === 'pt'
+      ? [
+          { href: '/terremotos', label: 'Terremotos', ponto: '#DC2626' },
+          { href: '/cotacoes', label: '💵 Cotações' },
+          { href: '/loterias', label: '🍀 Loterias' },
+          { href: '/horoscopo', label: '🔮 Horóscopo', prefixo: true },
+        ]
+      : []),
+  ]
+  const ehAtivo = (it) => (it.prefixo ? pathname.startsWith(it.href) : pathname === it.href)
 
   return (
     <header style={{ background: t.dark, color: '#fff', position: 'sticky', top: 0, zIndex: 50, boxShadow: '0 2px 20px rgba(0,0,0,0.35)' }}>
@@ -143,171 +165,75 @@ export default function Header() {
         </Link>
       </div>
 
-      <nav aria-label={txt.editorials} style={{ borderTop: `1px solid ${t.darkLine}` }}>
+      <nav ref={nav} aria-label={txt.editorials} className="menu-nav" data-caixa={caixa ? '1' : undefined} style={{ borderTop: `1px solid ${t.darkLine}`, position: 'relative' }}>
         <div
           ref={faixa}
           className="noscrollbar menu-faixa"
           style={{ maxWidth: t.maxW, margin: '0 auto', padding: '10px clamp(20px, 3vw, 56px)', display: 'flex', gap: 8, overflowX: 'auto' }}
         >
-          {CATEGORIES.map((c) => {
-            const href = withLang(lang, `/${c.slug}`)
-            const active = pathname === href
-            return (
-              <Link
-                key={c.slug}
-                href={href}
-                className="chipnav"
-                style={{
-                  padding: '7px 15px',
-                  borderRadius: 999,
-                  fontSize: 13.5,
-                  fontWeight: 700,
-                  whiteSpace: 'nowrap',
-                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
-                  background: active ? t.sunGrad : 'transparent',
-                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
-                }}
-              >
-                {catLabel(lang, c.slug)}
-              </Link>
-            )
-          })}
-          {(() => {
-            const href = withLang(lang, '/clima')
-            const active = pathname === href
-            const label = { pt: 'Clima', en: 'Weather', es: 'Clima' }[lang] || 'Clima'
-            return (
-              <Link
-                key="clima"
-                href={href}
-                className="chipnav"
-                style={{
-                  padding: '7px 15px',
-                  borderRadius: 999,
-                  fontSize: 13.5,
-                  fontWeight: 700,
-                  whiteSpace: 'nowrap',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
-                  background: active ? t.sunGrad : 'transparent',
-                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
-                }}
-              >
-                <span style={{ width: 7, height: 7, borderRadius: 999, background: '#22C55E', display: 'inline-block' }} />
-                {label}
-              </Link>
-            )
-          })()}
-          {lang === 'pt' && (() => {
-            const href = '/terremotos'
-            const active = pathname === href
-            return (
-              <Link
-                key="terremotos"
-                href={href}
-                className="chipnav"
-                style={{
-                  padding: '7px 15px',
-                  borderRadius: 999,
-                  fontSize: 13.5,
-                  fontWeight: 700,
-                  whiteSpace: 'nowrap',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
-                  background: active ? t.sunGrad : 'transparent',
-                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
-                }}
-              >
-                <span style={{ width: 7, height: 7, borderRadius: 999, background: '#DC2626', display: 'inline-block' }} />
-                Terremotos
-              </Link>
-            )
-          })()}
-          {lang === 'pt' && (() => {
-            const href = '/cotacoes'
-            const active = pathname === href
-            const label = 'Cotações'
-            return (
-              <Link
-                key="cotacoes"
-                href={href}
-                className="chipnav"
-                style={{
-                  padding: '7px 15px',
-                  borderRadius: 999,
-                  fontSize: 13.5,
-                  fontWeight: 700,
-                  whiteSpace: 'nowrap',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
-                  background: active ? t.sunGrad : 'transparent',
-                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
-                }}
-              >
-                💵 {label}
-              </Link>
-            )
-          })()}
-          {lang === 'pt' && (() => {
-            const href = '/loterias'
-            const active = pathname === href
-            return (
-              <Link
-                key="loterias"
-                href={href}
-                className="chipnav"
-                style={{
-                  padding: '7px 15px',
-                  borderRadius: 999,
-                  fontSize: 13.5,
-                  fontWeight: 700,
-                  whiteSpace: 'nowrap',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
-                  background: active ? t.sunGrad : 'transparent',
-                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
-                }}
-              >
-                🍀 Loterias
-              </Link>
-            )
-          })()}
-          {lang === 'pt' && (() => {
-            const href = '/horoscopo'
-            const active = pathname.startsWith('/horoscopo')
-            return (
-              <Link
-                key="horoscopo"
-                href={href}
-                className="chipnav"
-                style={{
-                  padding: '7px 15px',
-                  borderRadius: 999,
-                  fontSize: 13.5,
-                  fontWeight: 700,
-                  whiteSpace: 'nowrap',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
-                  background: active ? t.sunGrad : 'transparent',
-                  color: active ? '#131417' : 'rgba(255,255,255,0.78)',
-                }}
-              >
-                🔮 Horóscopo
-              </Link>
-            )
-          })()}
+          {itens.map((it) => <Chip key={it.href} it={it} ativo={ehAtivo(it)} />)}
         </div>
+
+        <div className="menu-botao" style={{ maxWidth: t.maxW, margin: '0 auto', padding: '9px clamp(20px, 3vw, 56px)', alignItems: 'center', gap: 10 }}>
+          <button
+            type="button"
+            onClick={() => setAberto((v) => !v)}
+            aria-expanded={aberto}
+            aria-controls="menu-caixa"
+            className="chipnav"
+            style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '8px 16px', borderRadius: 999, fontSize: 14, fontWeight: 800, color: '#fff', background: aberto ? 'rgba(255,255,255,0.12)' : 'transparent', border: '1px solid rgba(255,255,255,0.28)', cursor: 'pointer', fontFamily: 'inherit' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+              {aberto ? <><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></> : <><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></>}
+            </svg>
+            {{ pt: 'Editorias', en: 'Sections', es: 'Secciones' }[lang] || 'Editorias'}
+          </button>
+          {itens.find(ehAtivo) && (
+            <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0 }}>
+              {itens.find(ehAtivo).label}
+            </span>
+          )}
+        </div>
+
+        {aberto && (
+          <div
+            id="menu-caixa"
+            className="menu-caixa"
+            style={{ position: 'absolute', left: 0, right: 0, top: '100%', background: t.dark, borderTop: `1px solid ${t.darkLine}`, boxShadow: '0 18px 40px rgba(0,0,0,0.45)', zIndex: 60 }}
+          >
+            <div style={{ maxWidth: t.maxW, margin: '0 auto', padding: '14px clamp(20px, 3vw, 56px) 18px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 8 }}>
+              {itens.map((it) => <Chip key={it.href} it={it} ativo={ehAtivo(it)} cheio />)}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
+  )
+}
+
+function Chip({ it, ativo, cheio }) {
+  return (
+    <Link
+      href={it.href}
+      className="chipnav"
+      aria-current={ativo ? 'page' : undefined}
+      style={{
+        padding: cheio ? '10px 14px' : '7px 15px',
+        borderRadius: 999,
+        fontSize: 13.5,
+        fontWeight: 700,
+        whiteSpace: 'nowrap',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: cheio ? 'center' : undefined,
+        gap: 6,
+        border: ativo ? '1px solid transparent' : '1px solid rgba(255,255,255,0.18)',
+        background: ativo ? t.sunGrad : 'transparent',
+        color: ativo ? '#131417' : 'rgba(255,255,255,0.78)',
+      }}
+    >
+      {it.ponto && <span style={{ width: 7, height: 7, borderRadius: 999, background: it.ponto, display: 'inline-block' }} />}
+      {it.label}
+    </Link>
   )
 }
