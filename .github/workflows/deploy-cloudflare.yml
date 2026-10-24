@@ -57,8 +57,10 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           NEXT_PUBLIC_GA_ID: G-RK56TFGW01 # id de medição é público (vai no HTML)
           NEXT_PUBLIC_ADSENSE_CLIENT: ca-pub-1623504542591354 # id de publisher é público (vai no HTML e no ads.txt)
+        # 21/10/2026: o OpenNext passou a recusar o Next 15 (2 anos de suporte desde 21/10/2024) e o site ficou 3 dias sem
+        # publicar. A Dani autorizou a opção em 23/10 como ponte; sai quando o site subir para o Next 16 (commit próprio).
         run: |
-          npx opennextjs-cloudflare build
+          npx opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion
           npx opennextjs-cloudflare deploy
           mkdir -p .publicado && date -u +%FT%TZ > .publicado/quando.txt
       - name: Nada novo desde o último deploy
