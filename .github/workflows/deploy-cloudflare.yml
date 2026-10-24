@@ -59,6 +59,8 @@ jobs:
           NEXT_PUBLIC_ADSENSE_CLIENT: ca-pub-1623504542591354 # id de publisher é público (vai no HTML e no ads.txt)
         run: |
           npx opennextjs-cloudflare build
+          # matéria com slug em russo/chinês/japonês/coreano/árabe dava 404: ver o comentário no script (para o deploy se falhar)
+          node scripts/opennext-slug-unicode.mjs
           npx opennextjs-cloudflare deploy
           mkdir -p .publicado && date -u +%FT%TZ > .publicado/quando.txt
       - name: Nada novo desde o último deploy
