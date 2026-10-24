@@ -6,12 +6,21 @@ import { usePathname } from 'next/navigation'
 import { t } from '@/lib/tokens'
 import { langFromPath, withLang } from '@/lib/site'
 import { ui } from '@/lib/i18n'
+import { idiomaDaRota, rotaInstitucional } from '@/lib/idiomas'
+import { casca } from '@/lib/blogCasca'
 
 const KEY = 'es-consent'
 
 export default function CookieBanner() {
-  const lang = langFromPath(usePathname())
-  const txt = ui(lang)
+  const pathname = usePathname()
+  const lang = langFromPath(pathname)
+  // nos 9 idiomas novos o aviso sai no idioma (lib/blogCasca.js) e a política é a da versão em inglês
+  const idioma = idiomaDaRota(pathname)
+  const c = casca(idioma)
+  const txt = c
+    ? { cookieTitle: c.cookieTitulo, cookieText: c.cookieTexto, cookiePolicy: c.cookiePolitica, cookieAccept: c.cookieAceitar, cookieEssential: c.cookieEssenciais }
+    : ui(lang)
+  const politica = c ? rotaInstitucional(idioma, '/politica-de-cookies') : withLang(lang, '/politica-de-cookies')
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -51,7 +60,10 @@ export default function CookieBanner() {
   return (
     <div
       role="dialog"
-      aria-label="Aviso de cookies"
+      className="es-aviso-cookie"
+      aria-label={c ? c.cookieAria : lang === 'en' ? 'Cookie notice' : 'Aviso de cookies'}
+      lang={c ? idioma : undefined}
+      dir={idioma === 'ar' ? 'rtl' : undefined}
       style={{
         position: 'fixed',
         bottom: 16,
@@ -70,10 +82,10 @@ export default function CookieBanner() {
     >
       <p style={{ fontSize: 14, lineHeight: 1.6, marginBottom: 14 }}>
         <strong style={{ color: '#FFB300' }}>{txt.cookieTitle}</strong> {txt.cookieText}{' '}
-        <Link href={withLang(lang, '/politica-de-cookies')} style={{ color: '#FFB300', textDecoration: 'underline' }}>
+        <Link href={politica} style={{ color: '#FFB300', textDecoration: 'underline' }}>
           {txt.cookiePolicy}
         </Link>
-        .
+        {c ? c.cookieFim : '.'}
       </p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
         <button

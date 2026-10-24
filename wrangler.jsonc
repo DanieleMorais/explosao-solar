@@ -1,7 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "explosao-solar",
-  "main": ".open-next/worker.js",
+  // Embrulho do worker do OpenNext (16/10/2026, blog em 12 idiomas): troca o <html lang> nas rotas /en, /es, /fr...
+  // e atende GET /api/admin/artigos. Ele importa .open-next/worker.js, que o opennextjs-cloudflare build gera.
+  "main": "worker-lang.js",
   "compatibility_date": "2025-03-25",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {

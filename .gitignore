@@ -18,3 +18,6 @@ scripts/whatsapp/.wa-auth/
 scripts/*.run.log
 scripts/shot*.js
 scripts/*.log
+# blog em 12 idiomas: trinco e temporários do scripts/blog-idiomas.mjs (o _retirados.json e o _publicacoes.json VÃO no commit)
+content/i18n/_trinco.json
+content/i18n/**/*.tmp

@@ -53,6 +53,40 @@ function artigosRecentes(mudados) {
   return urls
 }
 
+// Blog em 12 idiomas (16/10/2026): tradução PUBLICADA que mudou na janela (content/i18n/<idioma>/<slugPt>.json) avisa a
+// URL dela (slug no idioma, percent-encoded), a lista do idioma e a matéria PT (que ganhou hreflang). Rascunho não avisa.
+const IDIOMAS_I18N = ['en', 'es', 'fr', 'de', 'it', 'nl', 'ru', 'zh', 'ja', 'ko', 'ar']
+// matéria PT retirada (content/i18n/_retirados.json) ou apagada: as traduções dela estão fora do ar, nada a avisar
+function slugsRetirados() {
+  try {
+    return new Set((JSON.parse(fs.readFileSync(path.join(RAIZ, 'content', 'i18n', '_retirados.json'), 'utf8')).retirados || []).map((r) => r.slug))
+  } catch {
+    return new Set()
+  }
+}
+function traducoesRecentes(mudados) {
+  const urls = []
+  const retirados = slugsRetirados()
+  for (const lang of IDIOMAS_I18N) {
+    const dir = path.join(RAIZ, 'content', 'i18n', lang)
+    if (!fs.existsSync(dir)) continue
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.json')) continue
+      if (!tem('--tudo') && !(mudados && mudados.has(`content/i18n/${lang}/${f}`))) continue
+      let doc
+      try {
+        doc = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+      } catch {
+        continue
+      }
+      if (doc.status !== 'publicado' || !doc.slugIdioma) continue
+      if (retirados.has(doc.slug) || !fs.existsSync(path.join(RAIZ, 'content', 'articles', f))) continue
+      urls.push(`${BASE}/${lang}/noticia/${encodeURI(doc.slugIdioma)}`, `${BASE}/${lang}/noticia`, `${BASE}/noticia/${f.replace('.json', '')}`)
+    }
+  }
+  return urls
+}
+
 function paginasFixas() {
   const urls = []
   for (const p of ['', '/en', '/es']) {
@@ -111,7 +145,7 @@ async function main() {
     console.log('IndexNow: sem histórico do git para saber o que mudou — nada enviado (rode com --tudo se for de propósito).')
     return
   }
-  const urls = [...new Set([...artigosRecentes(mudados), ...paginasDeDados(mudados), ...(tem('--tudo') ? paginasFixas() : [])])]
+  const urls = [...new Set([...artigosRecentes(mudados), ...traducoesRecentes(mudados), ...paginasDeDados(mudados), ...(tem('--tudo') ? paginasFixas() : [])])]
   if (!urls.length) {
     console.log(`IndexNow: nada mudou nas últimas ${horas}h.`)
     return

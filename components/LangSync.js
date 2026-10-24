@@ -2,14 +2,17 @@
 
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { langFromPath } from '@/lib/site'
+import { idiomaDaRota, HREFLANG } from '@/lib/idiomas'
 
-const HTML_LANG = { pt: 'pt-BR', en: 'en', es: 'es' }
-
+// O HTML já sai com o <html lang> (e o dir do árabe) certo pelo worker-lang.js; aqui é só para a navegação dentro do
+// site (troca de página sem recarregar), nos 12 idiomas.
 export default function LangSync() {
   const pathname = usePathname()
   useEffect(() => {
-    document.documentElement.lang = HTML_LANG[langFromPath(pathname)]
+    const idioma = idiomaDaRota(pathname)
+    document.documentElement.lang = HREFLANG[idioma]
+    if (idioma === 'ar') document.documentElement.dir = 'rtl'
+    else document.documentElement.removeAttribute('dir')
   }, [pathname])
   return null
 }

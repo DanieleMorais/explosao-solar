@@ -4,18 +4,23 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import SunLogo from './SunLogo'
+import CabecalhoIdioma from './CabecalhoIdioma'
 import { t } from '@/lib/tokens'
 import { CATEGORIES, langFromPath, withLang } from '@/lib/site'
 import { catColor } from '@/lib/tokens'
 import { ui, catLabel, LANGS } from '@/lib/i18n'
+import { idiomaDaRota, ehIdiomaNovo } from '@/lib/idiomas'
 
 const LOCALE = { pt: 'pt-BR', en: 'en-US', es: 'es-ES' }
 
 export default function Header() {
   const pathname = usePathname()
   const lang = langFromPath(pathname)
+  // fr, de, it, nl, ru, zh, ja, ko, ar (blog em 12 idiomas): o langFromPath só conhece pt/en/es
+  const idioma = idiomaDaRota(pathname)
   const txt = ui(lang)
   const [today, setToday] = useState('')
+  const [versoes, setVersoes] = useState(null)
 
   useEffect(() => {
     // no celular a data longa não cabe ao lado dos idiomas: versão curta sem o ano
@@ -25,6 +30,18 @@ export default function Header() {
     )
   }, [lang])
 
+  // Blog em 12 idiomas: a página publica em #es-versoes o endereço DELA em cada idioma (o slug muda de idioma para
+  // idioma). Guardado junto com a rota que o publicou: na troca de página, o mapa da anterior nunca vale para a nova.
+  // Sem o mapa, os botões trocam só o prefixo, como sempre.
+  useEffect(() => {
+    let mapa = null
+    try {
+      mapa = JSON.parse(document.getElementById('es-versoes')?.textContent || 'null')
+    } catch {}
+    setVersoes({ rota: pathname, mapa })
+  }, [pathname])
+  const mapaVersoes = versoes?.rota === pathname ? versoes.mapa : null
+
   // Menu de editorias: no computador, faixa numa linha só. Quando os botões não cabem (celular, tablet, janela
   // estreita), vira um botão "Editorias" que abre uma caixa com todos, só quando a pessoa clica.
   const topo = useRef(null)
@@ -33,13 +50,14 @@ export default function Header() {
   const [caixa, setCaixa] = useState(false)
   const [aberto, setAberto] = useState(false)
 
+  // idioma nas dependências: voltando de /fr/... para o português o lang continua 'pt', mas o menu acabou de aparecer
   useEffect(() => {
     const medir = () => { if (nav.current && faixa.current) setCaixa(faixa.current.scrollWidth > nav.current.clientWidth + 1) }
     medir()
     const ro = new ResizeObserver(medir)
     if (nav.current) ro.observe(nav.current)
     return () => ro.disconnect()
-  }, [lang])
+  }, [lang, idioma])
 
   useEffect(() => { setAberto(false) }, [pathname])
 
@@ -52,7 +70,12 @@ export default function Header() {
     return () => { document.removeEventListener('pointerdown', fora); document.removeEventListener('keydown', tecla) }
   }, [aberto])
 
+  // nos 9 idiomas novos, cabeçalho próprio, todo no idioma (o resto do site não existe neles). Depois de TODOS os hooks:
+  // navegando de /fr/... para /noticia/... o Header continua montado e a ordem dos hooks não pode mudar.
+  if (ehIdiomaNovo(idioma)) return <CabecalhoIdioma idioma={idioma} pathname={pathname} versoes={mapaVersoes} />
+
   function swapLang(target) {
+    if (mapaVersoes?.[target]) return mapaVersoes[target]
     const rest = lang === 'pt' ? pathname : pathname.replace(/^\/(en|es)/, '') || '/'
     return withLang(target, rest === '/' ? '' : rest) || '/'
   }

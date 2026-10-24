@@ -6,7 +6,11 @@ import { useEffect, useState } from 'react'
 // anúncio que abre outro site no clique. Cada banner roda num iframe isolado (srcDoc): o atOptions da Adsterra é global, então
 // dois banners na mesma página se atropelariam; o sandbox (sem allow-top-navigation) não deixa o anúncio sequestrar a aba.
 const CHAVES = { '728x90': 'e953417ae1849a55ad059f676c0b9bc2', '320x50': 'be9ce9de790aa8d4d5a2789b463d5a7c', '300x250': '582926a9e2eb0d0e47be231bc0d8a92b' }
-const ROTULO = { pt: 'Publicidade', en: 'Advertisement', es: 'Publicidad' }
+const ROTULO = {
+  pt: 'Publicidade', en: 'Advertisement', es: 'Publicidad',
+  // blog em 12 idiomas (16/10): a matéria traduzida não pode ter nada em português
+  fr: 'Publicité', de: 'Anzeige', it: 'Pubblicità', nl: 'Advertentie', ru: 'Реклама', zh: '广告', ja: '広告', ko: '광고', ar: 'إعلان',
+}
 
 // formato "faixa": 728x90 no computador, 320x50 no celular (a largura só é conhecida no navegador). "quadrado": 300x250.
 export default function BannerAdsterra({ formato = 'faixa', lang = 'pt' }) {

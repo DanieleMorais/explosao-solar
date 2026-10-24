@@ -2,11 +2,19 @@ import { ImageResponse } from 'next/og'
 import { getArticle } from '@/lib/content'
 import { catColor } from '@/lib/tokens'
 import { catLabel } from '@/lib/i18n'
+import { resolverRota } from '@/lib/traducoes'
 
 export const ogSize = { width: 1200, height: 630 }
 
+// en/es: a tradução do blog em 12 idiomas (slug no idioma) vem antes da antiga com o mesmo endereço
+function materia(slug, lang) {
+  const r = lang === 'pt' ? null : resolverRota(lang, slug)
+  if (r?.tipo === 'traducao') return { title: r.doc.titulo, categorySlug: r.doc.categoria }
+  return getArticle(slug, lang)
+}
+
 export async function renderArticleOg(slug, lang) {
-  const article = getArticle(slug, lang)
+  const article = materia(slug, lang)
   if (!article) return new Response('Not found', { status: 404 })
 
   const color = catColor(article.categorySlug)

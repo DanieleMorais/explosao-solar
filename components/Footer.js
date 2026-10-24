@@ -3,13 +3,21 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import SunLogo from './SunLogo'
+import RodapeIdioma from './RodapeIdioma'
 import { t } from '@/lib/tokens'
 import { CATEGORIES, SITE, SITE_DESCRIPTIONS, INSTITUTIONAL_LINKS, langFromPath, withLang } from '@/lib/site'
 import { ui, catLabel } from '@/lib/i18n'
+import { idiomaDaRota, ehIdiomaNovo } from '@/lib/idiomas'
 
 export default function Footer() {
-  const lang = langFromPath(usePathname())
+  const pathname = usePathname()
+  const lang = langFromPath(pathname)
   const txt = ui(lang)
+  // fr, de, it, nl, ru, zh, ja, ko, ar: rodapé próprio, todo no idioma
+  const idioma = idiomaDaRota(pathname)
+  if (ehIdiomaNovo(idioma)) return <RodapeIdioma idioma={idioma} />
+  // matérias do blog em inglês/espanhol: sem emoji (regra das páginas traduzidas); o resto do site fica como estava
+  const feitoPor = /^\/(en|es)\/noticia(\/|$)/.test(pathname) ? txt.madeBy.replace(/\s*\p{Extended_Pictographic}️?/gu, '') : txt.madeBy
 
   return (
     <footer style={{ background: t.dark, color: 'rgba(255,255,255,0.72)', marginTop: 56 }}>
@@ -93,7 +101,7 @@ export default function Footer() {
             color: 'rgba(255,255,255,0.45)',
           }}
         >
-          <span>© 2026 Explosão Solar · {txt.rights} · {txt.madeBy}</span>
+          <span>© 2026 Explosão Solar · {txt.rights} · {feitoPor}</span>
           <span>explosaosolar.com</span>
         </div>
       </div>

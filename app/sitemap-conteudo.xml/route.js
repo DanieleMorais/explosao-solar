@@ -1,6 +1,7 @@
 import { getAllArticles, CATEGORIES, SITE, indexavel } from '@/lib/content'
 import { urlSimples, urlset, respostaXml } from '@/lib/sitemap-xml'
 import { todosOsPares } from '@/lib/combinacoes'
+import { entradasSitemap } from '@/lib/traducoes'
 
 export const revalidate = 3600
 
@@ -24,6 +25,13 @@ export function GET() {
         priority: 0.9,
       })
     )
+  }
+
+  // Blog em 12 idiomas (16/10/2026): a lista /<idioma>/noticia de cada idioma que já tem matéria publicada e cada
+  // tradução publicada, com o slug no idioma percent-encoded. Rascunho nunca entra. As traduções antigas de /en e /es
+  // (slug PT) seguem fora: noindex desde o freio de 14/10.
+  for (const e of entradasSitemap()) {
+    itens.push(urlSimples(`${SITE.url}${e.caminho}`, { lastModified: new Date(e.quando || now), changeFrequency: 'weekly', priority: 0.7 }))
   }
 
   // utilidades (alto volume de busca)

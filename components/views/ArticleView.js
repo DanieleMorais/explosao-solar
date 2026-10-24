@@ -8,6 +8,11 @@ import BannerAdsterra from '@/components/BannerAdsterra'
 import { t, catColor } from '@/lib/tokens'
 import { withLang } from '@/lib/site'
 import { ui, catLabel, LANGS } from '@/lib/i18n'
+import { versoesPublicadas } from '@/lib/traducoes'
+import { caminhoArtigo } from '@/lib/blogSlug'
+import { NOME_IDIOMA, HREFLANG } from '@/lib/idiomas'
+// o componente já tem um objeto local chamado jsonLd (NewsArticle): o import precisa de outro nome
+import { jsonLd as jsonLdSeguro } from '@/lib/blogDic'
 
 const LOCALE = { pt: 'pt-BR', en: 'en-US', es: 'es-ES' }
 
@@ -30,6 +35,12 @@ export default function ArticleView({ lang = 'pt', slug }) {
   const contexto = article.sourceUrl ? getContexto(article, 3, lang) : []
   const ctxTxt = CONTEXTO[lang] || CONTEXTO.pt
   const langs = articleLangs(article.slug)
+  // Blog em 12 idiomas: com tradução nova publicada, o "Também em" e os botões de idioma do cabeçalho (#es-versoes) levam
+  // às versões novas (slug no idioma); sem ela, tudo como antes.
+  const novas = lang === 'pt' ? versoesPublicadas(article.slug) : {}
+  const mapaNovas = Object.keys(novas).length
+    ? { pt: caminhoArtigo('pt', article.slug), ...Object.fromEntries(Object.entries(novas).map(([i, s]) => [i, caminhoArtigo(i, s)])) }
+    : null
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -69,6 +80,7 @@ export default function ArticleView({ lang = 'pt', slug }) {
     <article style={{ paddingTop: 34 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {mapaNovas && <script type="application/json" id="es-versoes" dangerouslySetInnerHTML={{ __html: jsonLdSeguro(mapaNovas) }} />}
 
       <div style={{ maxWidth: 820, margin: '0 auto', padding: '0 20px' }}>
         <nav aria-label="breadcrumb" style={{ fontSize: 13, color: t.muted, marginBottom: 18, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -169,7 +181,27 @@ export default function ArticleView({ lang = 'pt', slug }) {
           ))}
         </div>
 
-        {langs.length > 1 && (
+        {mapaNovas && (
+          <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', marginBottom: 26, fontSize: 13 }}>
+            <span style={{ color: t.muted, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', fontSize: 12 }}>Também em</span>
+            {Object.entries(mapaNovas)
+              .filter(([i]) => i !== 'pt')
+              .map(([i, href]) => (
+                <Link
+                  key={i}
+                  href={href}
+                  hrefLang={HREFLANG[i]}
+                  lang={HREFLANG[i]}
+                  className="hoverlink"
+                  style={{ border: `1px solid ${t.line}`, borderRadius: 999, padding: '5px 14px', fontWeight: 700, color: t.inkSoft }}
+                >
+                  {NOME_IDIOMA[i]}
+                </Link>
+              ))}
+          </div>
+        )}
+
+        {!mapaNovas && langs.length > 1 && (
           <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', marginBottom: 26, fontSize: 13 }}>
             <span style={{ color: t.muted, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', fontSize: 12 }}>
               {lang === 'en' ? 'Also in' : lang === 'es' ? 'También en' : 'Também em'}
