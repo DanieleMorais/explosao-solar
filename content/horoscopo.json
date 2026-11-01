@@ -1,66 +1,66 @@
 {
-  "data": "2026-10-31",
-  "dataFmt": "31 de outubro de 2026",
+  "data": "2026-11-01",
+  "dataFmt": "1 de novembro de 2026",
   "signos": {
     "aries": {
-      "geral": "Hoje a curiosidade pulsa forte, impulsionando você a buscar novas perspectivas. Aproveite a energia para experimentar algo fora da rotina, mas mantenha os pés no chão.",
-      "amor": "Um gesto simples pode abrir espaço para uma conversa mais profunda com quem você ama.",
-      "trabalho": "Surpresas inesperadas podem surgir; encare-as como oportunidades de mostrar sua criatividade."
+      "geral": "A energia do dia traz um impulso inesperado de curiosidade, como se algo novo estivesse chamando sua atenção. Aproveite para experimentar uma atividade diferente, mesmo que pareça fora da rotina.",
+      "amor": "Um gesto simples pode abrir espaço para diálogos mais profundos com quem você ama.",
+      "trabalho": "Surpreenda-se ao encontrar uma solução criativa para um desafio que parecia travado; compartilhe a ideia com a equipe."
     },
     "touro": {
-      "geral": "A estabilidade que você costuma buscar ganha um toque de leveza, permitindo que pequenas mudanças tragam conforto. Confie no seu instinto ao lidar com questões práticas.",
-      "amor": "Um momento de vulnerabilidade pode fortalecer laços; não hesite em compartilhar seus sentimentos.",
-      "trabalho": "Investimentos ou decisões financeiras exigem atenção aos detalhes – revise tudo antes de fechar qualquer acordo."
+      "geral": "Hoje o clima favorece a estabilidade interior, permitindo que você se sinta mais centrado diante das demandas externas. É um bom momento para organizar o que está ao seu redor.",
+      "amor": "Um toque de vulnerabilidade pode fortalecer a conexão com seu parceiro; não tenha medo de expressar o que sente.",
+      "trabalho": "A disciplina que você costuma aplicar renderá frutos financeiros; revise seus gastos e planeje um pequeno investimento."
     },
     "gemeos": {
-      "geral": "A mente está em alta velocidade, conectando ideias que antes pareciam distantes. Canalize essa agilidade para organizar prioridades ao invés de se dispersar.",
-      "amor": "Conversas honestas podem esclarecer dúvidas que pairam no ar; a transparência será recompensada.",
-      "trabalho": "Projetos que exigem comunicação clara avançam bem; evite multitarefas que possam gerar ruídos."
+      "geral": "Sua mente está em alta velocidade, captando detalhes que normalmente escapam. Use essa agudeza para esclarecer dúvidas que estavam pendentes.",
+      "amor": "Conversas leves podem revelar desejos ocultos; escute com atenção e responda de forma autêntica.",
+      "trabalho": "A comunicação será sua aliada; apresente suas ideias em reuniões e perceba como elas ganham apoio."
     },
     "cancer": {
-      "geral": "Um clima de introspecção favorece o autocuidado; reserve um tempo para recarregar as energias emocionais. A sensibilidade está em alta, então confie na sua intuição.",
-      "amor": "Um abraço sincero ou uma palavra de apoio pode transformar o dia de quem está perto de você.",
-      "trabalho": "Questões familiares podem aparecer no ambiente profissional; trate-as com empatia e estabeleça limites saudáveis."
+      "geral": "Um sentimento de aconchego envolve seu dia, convidando-o a cuidar de si mesmo como faria com um ente querido. Reserve um tempo para recarregar as energias.",
+      "amor": "Um momento de intimidade pode surgir ao compartilhar uma lembrança significativa; isso reforça o vínculo afetivo.",
+      "trabalho": "Sua intuição apontará para oportunidades que beneficiam a equipe; confie nos pressentimentos ao tomar decisões."
     },
     "leao": {
-      "geral": "A autoconfiança brilha, mas é preciso equilibrar o brilho próprio com a atenção ao coletivo. Use sua energia para inspirar, não para sobrepor.",
-      "amor": "Um elogio genuíno pode reacender a chama; mostre admiração sem esperar nada em troca.",
-      "trabalho": "Liderar um pequeno grupo ou projeto traz reconhecimento; delegue tarefas para evitar sobrecarga."
+      "geral": "A luz que você irradia hoje atrai olhares e admiração, mas também requer equilíbrio para não sobrecarregar os outros. Seja generoso com seu brilho, mas mantenha a humildade.",
+      "amor": "Um elogio sincero pode reacender a paixão; use palavras que valorizem o que o outro faz de melhor.",
+      "trabalho": "Projetos que exigem liderança encontrarão terreno fértil; delegue tarefas de forma clara para evitar sobrecarga."
     },
     "virgem": {
-      "geral": "Detalhes que antes passavam despercebidos agora se destacam, oferecendo clareza. Organize seu espaço físico e mental para aproveitar essa fase de ordem.",
-      "amor": "Pequenos gestos de atenção mostram que você se importa; a consistência vale mais que grandes declarações.",
-      "trabalho": "Planos bem estruturados dão frutos; revise contratos ou propostas antes de assinar."
+      "geral": "Detalhes minuciosos ganharão destaque, permitindo que você faça ajustes precisos que melhorarão sua rotina. Não subestime o poder dos pequenos aprimoramentos.",
+      "amor": "Um ato de serviço, como preparar a refeição favorita do parceiro, fala mais que mil palavras.",
+      "trabalho": "A organização de documentos ou planilhas trará reconhecimento; aproveite para propor um sistema mais eficiente."
     },
     "libra": {
-      "geral": "O equilíbrio entre dar e receber será tema central; busque harmonia nas relações e nas decisões. Evite se perder em indecisões, confie no seu senso de justiça.",
-      "amor": "Um diálogo aberto sobre expectativas pode evitar mal-entendidos; escute tanto quanto fala.",
-      "trabalho": "Parcerias profissionais se mostram vantajosas; negociações exigem diplomacia, mas também firmeza."
+      "geral": "O equilíbrio entre o que você deseja e o que é necessário será o tema central; busque harmonia nas escolhas que fizer. Pequenos acordos podem gerar grandes benefícios.",
+      "amor": "Um momento de diálogo aberto pode resolver uma tensão latente; escute sem interromper e ofereça compreensão.",
+      "trabalho": "Parcerias profissionais florescerão se você mantiver a postura diplomática; negociações terão resultado positivo."
     },
     "escorpiao": {
-      "geral": "Intensidade emocional surge, convidando a mergulhar em questões não resolvidas. Transformação está ao alcance, basta permitir que o velho se vá.",
-      "amor": "A honestidade crua pode ser dolorosa, mas liberta; compartilhe o que realmente sente.",
-      "trabalho": "Investigações ou pesquisas aprofundadas são favorecidas; confie no seu instinto para detectar oportunidades ocultas."
+      "geral": "Intensidade emocional surge, pedindo que você mergulhe nas profundezas de seus sentimentos sem medo. Transformações internas podem acontecer de forma sutil, mas poderosa.",
+      "amor": "A honestidade brutal, porém carinhosa, pode libertar um relacionamento de mágoas antigas; confie no processo de renovação.",
+      "trabalho": "Investigações ou pesquisas detalhadas trarão insights valiosos; siga a pista que parecer mais obscura."
     },
     "sagitario": {
-      "geral": "O desejo de expansão bate à porta, trazendo vontade de aprender algo novo. Planeje viagens curtas ou cursos que alimentem sua curiosidade sem sobrecarregar.",
-      "amor": "Um sorriso espontâneo pode abrir caminhos para novas conexões; mantenha a mente aberta a diferentes possibilidades.",
-      "trabalho": "Projetos que envolvem ensino ou compartilhamento de conhecimento avançam bem; compartilhe suas ideias com entusiasmo."
+      "geral": "A sede de aventura se manifesta em pensamentos sobre novos horizontes, mesmo que sejam apenas ideias. Permita-se sonhar, mas mantenha os pés no chão para planejar passos concretos.",
+      "amor": "Um convite para uma atividade ao ar livre pode reacender a cumplicidade; compartilhem risos e descobertas.",
+      "trabalho": "Projetos que envolvem aprendizado ou viagens curtas terão boa receptividade; mostre disposição para expandir seus conhecimentos."
     },
     "capricornio": {
-      "geral": "A disciplina habitual recebe um toque de flexibilidade, permitindo que você ajuste metas sem perder foco. Reconheça seu progresso, por menor que pareça.",
-      "amor": "Compromissos firmes ganham reforço; demonstrações de apoio mútuo fortalecem a relação.",
-      "trabalho": "Metas de longo prazo exigem revisão; ajuste prazos realistas e celebre pequenas vitórias."
+      "geral": "A disciplina natural do dia se reforça, trazendo foco para metas de longo prazo. Pequenos avanços hoje compõem grandes conquistas amanhã.",
+      "amor": "Demonstrar apoio prático ao parceiro, como ajudar em tarefas cotidianas, reforça a confiança mútua.",
+      "trabalho": "Um relatório bem estruturado será notado pela liderança; aproveite para propor metas ambiciosas, mas realistas."
     },
     "aquario": {
-      "geral": "Inovações surgem de conversas aparentemente casuais; mantenha a mente aberta para ideias fora do padrão. Seu papel como agente de mudança se destaca.",
-      "amor": "A amizade pode evoluir para algo mais; deixe que a conexão se desenvolva naturalmente, sem pressões.",
-      "trabalho": "Ambientes colaborativos trazem resultados inesperados; participe de grupos de brainstorming e ofereça sua visão única."
+      "geral": "A originalidade está em alta, inspirando soluções fora do convencional. Compartilhe suas ideias inovadoras, mesmo que pareçam ousadas.",
+      "amor": "Um gesto inesperado, como uma mensagem criativa, pode surpreender e encantar quem você ama.",
+      "trabalho": "Colaborações interdepartamentais abrirão portas; esteja aberto a aprender com perspectivas diferentes da sua."
     },
     "peixes": {
-      "geral": "A sensibilidade está em alta, facilitando a empatia com quem está ao seu redor. Use essa energia para criar um refúgio de paz interior.",
-      "amor": "Um ato de carinho silencioso fala mais que mil palavras; demonstre afeto com gestos simples.",
-      "trabalho": "Projetos criativos florescem; confie na sua intuição ao escolher caminhos artísticos ou de serviço social."
+      "geral": "A sensibilidade está afinada, permitindo que você perceba nuances emocionais ao seu redor. Use essa empatia para criar ambientes mais acolhedores.",
+      "amor": "Um momento de vulnerabilidade compartilhada pode aprofundar a intimidade; permita-se ser ouvido e ouvir com o coração aberto.",
+      "trabalho": "Projetos criativos ou artísticos ganharão destaque; confie na sua intuição ao escolher caminhos profissionais."
     }
   }
 }
