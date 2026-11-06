@@ -199,6 +199,20 @@ async function ultimaExecucao(repo, workflow) {
   } catch { return null }
 }
 
+// O GitHub desliga o agendamento de um repositório sem commit há 60 dias ("disabled_inactivity"): o robô some sem
+// falhar nenhuma execução. Repo público: leitura sem token. Se o GitHub limitar, devolve null e NÃO vira alarme.
+async function estadoDoWorkflow(repo, workflow) {
+  try {
+    const r = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/${workflow}`, {
+      headers: { 'User-Agent': 'FadaMonitor/1.0', Accept: 'application/vnd.github+json' },
+      signal: AbortSignal.timeout(20000),
+    })
+    if (!r.ok) return null
+    const j = await r.json()
+    return j.state || null
+  } catch { return null }
+}
+
 async function checarRobos() {
   const out = []
   for (const robo of ROBOS) {
@@ -219,6 +233,13 @@ async function checarRobos() {
       }
     }
 
+    const estadoWorkflow = await estadoDoWorkflow(robo.repo, robo.workflow)
+    if (estadoWorkflow && estadoWorkflow !== 'active') {
+      problemas.push(estadoWorkflow === 'disabled_inactivity'
+        ? `o GitHub DESLIGOU o agendamento deste robô por 60 dias sem commit no repositório (religar em Actions > ${robo.workflow} > Enable workflow)`
+        : `o agendamento deste robô está desligado no GitHub (estado "${estadoWorkflow}")`)
+    }
+
     const exec = await ultimaExecucao(robo.repo, robo.workflow)
     if (exec && exec.conclusao && exec.conclusao !== 'success') {
       // a última execução falhar não quer dizer que parou — mas é o aviso antes do prejuízo
@@ -231,7 +252,7 @@ async function checarRobos() {
       id: idDe(robo.nome), nome: robo.nome, url: robo.blog, tipo: 'robo', status, problemas, notas,
       ultimoArtigo: ultimo?.data || null, diasSemPublicar: dias, tituloUltimo: ultimo?.titulo || '',
       totalArtigos: ultimo?.total ?? null,
-      ultimaExecucao: exec || null, checadoEm: new Date().toISOString(),
+      ultimaExecucao: exec || null, estadoWorkflow: estadoWorkflow || null, checadoEm: new Date().toISOString(),
     })
     await pausa(600)
   }
