@@ -55,8 +55,16 @@
     "nome": "Cristal Leads",
     "url": "https://cristalleads.com.br",
     "vendas": [
-      { "url": "https://cristalleads.com.br/global", "deveConter": "buy.stripe.com", "rotulo": "venda em dólar (/global)" },
-      { "url": "https://cristalleads.com.br/en/global", "deveConter": "buy.stripe.com", "rotulo": "venda em dólar em inglês (/en/global)" }
+      {
+        "url": "https://cristalleads.com.br/global",
+        "deveConter": "buy.stripe.com",
+        "rotulo": "venda em dólar (/global)"
+      },
+      {
+        "url": "https://cristalleads.com.br/en/global",
+        "deveConter": "buy.stripe.com",
+        "rotulo": "venda em dólar em inglês (/en/global)"
+      }
     ]
   },
   {
@@ -139,5 +147,24 @@
   {
     "nome": "Imagens do blog",
     "url": "https://img.dinheironodiaadia.com"
+  },
+  {
+    "nome": "GESTÃO PRO X (site de venda)",
+    "url": "https://gestaoprox.com",
+    "vendas": [
+      {
+        "url": "https://gestaoprox.com",
+        "deveConter": "wa.me",
+        "rotulo": "botão de WhatsApp"
+      }
+    ]
+  },
+  {
+    "nome": "GESTÃO PRO X (painel do restaurante)",
+    "url": "https://app.gestaoprox.com/signin"
+  },
+  {
+    "nome": "GESTÃO PRO X (painel admin)",
+    "url": "https://admin.gestaoprox.com/signin"
   }
 ]
