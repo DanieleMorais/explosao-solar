@@ -1,5 +1,5 @@
 {
- "quando": "2026-11-09T19:54:46.380Z",
+ "quando": "2026-11-10T17:08:34.382Z",
  "sites": [
   {
    "site": "https://agenciafadamadrinha.com/",
@@ -10,9 +10,9 @@
   },
   {
    "site": "https://agentebusiness.com/",
-   "enviadas": 0,
+   "enviadas": 2,
    "faltam": 0,
-   "no_mapa": 246,
+   "no_mapa": 248,
    "erro": null
   },
   {
@@ -94,9 +94,9 @@
   },
   {
    "site": "https://cristalleads.com.br/",
-   "enviadas": 33,
+   "enviadas": 36,
    "faltam": 0,
-   "no_mapa": 714,
+   "no_mapa": 750,
    "erro": null
   },
   {
@@ -136,9 +136,9 @@
   },
   {
    "site": "https://piscococinaybar.com/",
-   "enviadas": 23,
+   "enviadas": 33,
    "faltam": 0,
-   "no_mapa": 815,
+   "no_mapa": 848,
    "erro": null
   },
   {
@@ -166,7 +166,7 @@
    "site": "https://www.dinheironodiaadia.com/",
    "enviadas": 15,
    "faltam": 0,
-   "no_mapa": 492,
+   "no_mapa": 507,
    "erro": null
   }
  ]
