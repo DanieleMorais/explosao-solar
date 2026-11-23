@@ -1,66 +1,66 @@
 {
-  "data": "2026-11-22",
-  "dataFmt": "22 de novembro de 2026",
+  "data": "2026-11-23",
+  "dataFmt": "23 de novembro de 2026",
   "signos": {
     "aries": {
-      "geral": "A energia da manhã traz um impulso inesperado de curiosidade, como se um detalhe antes invisível de repente fizesse sentido. À tarde, a sensação de urgência se suaviza, permitindo que você escolha onde focar seu entusiasmo.",
-      "amor": "Um comentário sincero pode abrir portas que antes pareciam trancadas; não tenha medo de mostrar vulnerabilidade. Se estiver solteiro, um encontro inesperado pode surgir de um hobby compartilhado.",
-      "trabalho": "Hoje, pequenas revisões em projetos antigos revelam oportunidades de otimização que podem economizar tempo e recursos. Evite assumir novas responsabilidades antes de concluir as pendentes."
+      "geral": "Hoje a Lua em Touro traz uma sensação de estabilidade que contrasta com a sua natureza impetuosa. Aproveite para respirar fundo e observar o que realmente merece sua energia.",
+      "amor": "Um gesto simples pode reavivar a conexão com quem você ama; não subestime o poder de um olhar atento.",
+      "trabalho": "Sua iniciativa será notada, mas canalize-a em projetos de médio prazo para evitar desgaste precoce."
     },
     "touro": {
-      "geral": "A estabilidade que você costuma buscar se manifesta em um ritmo mais lento, convidando à apreciação dos detalhes ao seu redor. Um aroma familiar ou uma música antiga pode trazer conforto inesperado.",
-      "amor": "Conexões antigas podem ressurgir; um antigo parceiro pode aparecer para conversar, trazendo clareza sem pressões. Se estiver em relacionamento, um gesto simples de carinho reforça a confiança.",
-      "trabalho": "Sua persistência será reconhecida quando você concluir aquela tarefa que parecia interminável. Aproveite para organizar seu espaço de trabalho; um ambiente limpo reflete clareza mental."
+      "geral": "A energia da manhã favorece a introspecção, enquanto o fim do dia pede ação cuidadosa. Equilibre o desejo de conforto com a necessidade de movimento.",
+      "amor": "Conversas sinceras sobre limites podem transformar uma tensão em intimidade mais profunda.",
+      "trabalho": "Uma oportunidade financeira surge, mas exige que você reveja detalhes contratuais; nada de decisões precipitadas."
     },
     "gemeos": {
-      "geral": "Sua mente está em alta velocidade, conectando ideias que normalmente permaneceriam isoladas. Contudo, a tarde pede pausa para evitar sobrecarga de informações.",
-      "amor": "Conversas leves podem revelar sentimentos ocultos; escutar com atenção pode mudar a direção de um romance. Se estiver solteiro, um papo casual pode se transformar em algo mais profundo.",
-      "trabalho": "Projetos colaborativos ganham impulso; ofereça seu ponto de vista, mas deixe espaço para as contribuições dos colegas. Cuidado com multitarefas excessivas que podem comprometer a qualidade."
+      "geral": "Mercúrio em conjunção com Vênus estimula a criatividade, mas também pode gerar dispersão. Foque no que realmente lhe traz prazer.",
+      "amor": "Um encontro inesperado pode despertar curiosidade; permita-se explorar sem pressa para descobrir o que realmente sente.",
+      "trabalho": "Sua versatilidade será recompensada em tarefas que exigem comunicação rápida; evite multitarefas excessivas que drenam energia."
     },
     "cancer": {
-      "geral": "Um sentimento de nostalgia se destaca, lembrando-lhe de quem você era e quem deseja ser. A energia do dia favorece o autocuidado e a reconexão com suas raízes.",
-      "amor": "Um gesto de cuidado, como preparar a refeição favorita do parceiro, fortalece laços sem precisar de grandes declarações. Se estiver solteiro, um encontro caseiro pode revelar afinidades inesperadas.",
-      "trabalho": "Sua intuição aponta para detalhes que outros podem ignorar; confie nesse instinto ao revisar documentos ou planilhas. Reserve um momento para organizar suas finanças pessoais, isso trará tranquilidade."
+      "geral": "A influência de Saturno convida à disciplina emocional; é um bom dia para organizar sentimentos que estavam à deriva. Permita-se sentir sem julgamento.",
+      "amor": "Um momento de vulnerabilidade pode abrir portas para um diálogo mais honesto com seu parceiro ou alguém especial.",
+      "trabalho": "Projetos que exigem paciência avançam lentamente, mas de forma segura; confie no ritmo natural do processo."
     },
     "leao": {
-      "geral": "A luz interior brilha mais forte hoje, atraindo olhares e oportunidades. Contudo, a tarde pede moderação para que o entusiasmo não se torne imposição.",
-      "amor": "Um elogio sincero pode reacender a chama, mas lembre-se de equilibrar com interesse genuíno nas necessidades do outro. Se estiver solteiro, um convite para um evento social pode ser a porta de entrada para algo especial.",
-      "trabalho": "Sua criatividade está em alta; proponha uma ideia inovadora, mas esteja aberto a ajustes. Evite assumir todos os créditos; reconhecer a equipe fortalece relações profissionais."
+      "geral": "O Sol brilha forte, trazendo confiança, mas a energia de Marte pede cautela ao agir impulsivamente. Use seu brilho para inspirar, não para dominar.",
+      "amor": "Um elogio sincero pode reacender a chama; seja generoso, mas atento ao que o outro realmente precisa ouvir.",
+      "trabalho": "Liderar uma reunião será proveitoso, contanto que escute as ideias alheias antes de impor sua visão."
     },
     "virgem": {
-      "geral": "A atenção aos detalhes se transforma em clareza, permitindo que você organize áreas que antes pareciam caóticas. A energia do dia favorece a prática de rotinas saudáveis.",
-      "amor": "Pequenos atos de serviço, como lembrar de um compromisso importante, falam mais que palavras. Se estiver solteiro, um encontro em um ambiente tranquilo pode revelar afinidades de valores.",
-      "trabalho": "Planilhas e listas ganham vida; finalize aquele relatório que estava pendente. Cuidado para não se prender ao perfeccionismo a ponto de atrasar entregas; aceite que o suficiente pode ser suficiente."
+      "geral": "Vênus em Peixes suaviza sua crítica interna, permitindo que você veja beleza nas imperfeições. Aproveite para relaxar a mente analítica.",
+      "amor": "Um gesto de carinho inesperado pode surpreender seu parceiro; pequenos detalhes contam mais que grandes declarações.",
+      "trabalho": "Detalhes de um relatório pedem revisão minuciosa; seu olhar atento evitará erros que poderiam custar caro."
     },
     "libra": {
-      "geral": "O equilíbrio entre o que você deseja e o que o mundo oferece se torna mais perceptível, facilitando decisões que antes pareciam indecisas. A tarde traz um clima de harmonia nos relacionamentos ao seu redor.",
-      "amor": "Um diálogo aberto sobre expectativas pode aliviar tensões e criar um novo ponto de partida. Se estiver solteiro, um encontro em um local artístico pode despertar conversas profundas.",
-      "trabalho": "Parcerias profissionais florescem; procure alinhar metas comuns antes de iniciar novos projetos. Evite postergar decisões financeiras; um pequeno ajuste agora pode evitar surpresas no futuro."
+      "geral": "A energia equilibrada de Júpiter favorece decisões justas, mas a pressão social pode gerar dúvidas. Confie no seu senso de justiça interno.",
+      "amor": "Um convite para um evento social pode abrir espaço para novas conexões românticas; mantenha a mente aberta.",
+      "trabalho": "Parcerias profissionais florescem quando você compartilha responsabilidades de forma equitativa; evite assumir tudo sozinho."
     },
     "escorpiao": {
-      "geral": "Intensidade emocional marca a manhã, convidando a mergulhar nas próprias motivações. À medida que o dia avança, surge a oportunidade de transformar essa energia em ação concreta.",
-      "amor": "Confrontar um sentimento não dito pode libertar ambos os parceiros; a honestidade traz alívio mais do que o silêncio. Se estiver solteiro, um olhar persistente pode indicar interesse genuíno, basta responder com autenticidade.",
-      "trabalho": "Sua capacidade de investigação destaca-se; aproveite para analisar dados que outros consideram rotineiros. Cuidado com a tendência de assumir tudo sozinho; delegar pode acelerar resultados."
+      "geral": "Plutão intensifica sua intuição, revelando camadas ocultas de situações cotidianas. Confie nos pressentimentos, mas verifique os fatos.",
+      "amor": "Um segredo revelado pode trazer alívio ou tensão; escolha a transparência com sensibilidade para preservar o vínculo.",
+      "trabalho": "Investimentos de longo prazo podem mostrar sinais de retorno; analise riscos com cuidado antes de avançar."
     },
     "sagitario": {
-      "geral": "O desejo de expansão se manifesta em ideias de viagem ou aprendizado; porém, o dia pede que você ancore esses sonhos em passos práticos. A energia da tarde favorece a conexão com grupos que compartilham valores semelhantes.",
-      "amor": "Um convite para uma aventura conjunta pode revitalizar a relação; compartilhem uma experiência nova para reforçar laços. Se estiver solteiro, uma conversa sobre projetos futuros pode despertar interesse romântico.",
-      "trabalho": "Projetos que envolvem pesquisa ou planejamento estratégico se beneficiam da sua visão ampla. Evite prometer prazos impossíveis; seja realista ao comunicar entregas."
+      "geral": "Júpiter em trígono com Mercúrio estimula o aprendizado, porém a ansiedade pode acelerar demais o ritmo. Dê espaço ao processo de descoberta.",
+      "amor": "Uma conversa franca sobre expectativas pode alinhar caminhos com quem você ama; honestidade será a ponte.",
+      "trabalho": "Projetos de expansão ganham força, mas exigem planejamento detalhado; delegar tarefas será essencial para não se sobrecarregar."
     },
     "capricornio": {
-      "geral": "A disciplina natural encontra um ritmo mais suave, permitindo que você reflita sobre metas de longo prazo sem pressa. A tarde traz clareza sobre quais compromissos ainda valem a pena.",
-      "amor": "Um gesto de apoio prático, como ajudar em uma tarefa doméstica, demonstra amor de forma concreta. Se estiver solteiro, uma conversa sobre ambições pode revelar compatibilidade de valores.",
-      "trabalho": "Sua capacidade de organização brilha ao estruturar um plano de ação para um projeto futuro. Cuidado para não sobrecarregar-se; delegar pequenas tarefas alivia a carga e melhora a eficiência."
+      "geral": "Saturno reforça sua disciplina, mas a energia lunar sugere momentos de pausa para recarregar. Equilibre metas ambiciosas com autocuidado.",
+      "amor": "Um gesto de apoio mútuo pode fortalecer a parceria; mostre que está presente nos pequenos momentos do dia a dia.",
+      "trabalho": "Um reconhecimento no trabalho pode surgir, porém requer que você compartilhe crédito com a equipe; a colaboração será valorizada."
     },
     "aquario": {
-      "geral": "Ideias inovadoras surgem como faíscas; compartilhe-as com quem confia para ganhar perspectiva. A tarde pede um momento de introspecção para filtrar o que realmente ressoa com seu propósito.",
-      "amor": "Um debate intelectual pode criar conexão profunda; valorize a troca de ideias tanto quanto o carinho. Se estiver solteiro, um grupo de discussão pode ser o cenário onde surge um interesse romântico.",
-      "trabalho": "Projetos que demandam pensamento fora da caixa se beneficiam da sua abordagem única. Evite se isolar demais; envolver colegas pode transformar uma boa ideia em um plano executável."
+      "geral": "Urano impulsiona ideias inovadoras, porém pode gerar sensação de desconexão. Encontre maneiras de traduzir sua visão em ações práticas.",
+      "amor": "Um encontro inesperado pode despertar curiosidade intelectual; explore sem pressa para entender o que realmente sente.",
+      "trabalho": "Inovações propostas serão bem recebidas se acompanhadas de um plano claro; evite saltos sem fundamentos."
     },
     "peixes": {
-      "geral": "A sensibilidade está em alta, permitindo que você perceba sutilezas emocionais ao seu redor. Use essa percepção para criar um ambiente mais acolhedor, mas estabeleça limites para não se sobrecarregar.",
-      "amor": "Um toque carinhoso ou uma mensagem inesperada pode tocar profundamente o coração do parceiro. Se estiver solteiro, um encontro em um espaço artístico pode despertar sentimentos de conexão genuína.",
-      "trabalho": "Sua intuição orienta decisões criativas; confie nos pressentimentos ao escolher entre duas abordagens. Organize seu espaço de trabalho para minimizar distrações e manter o fluxo criativo."
+      "geral": "Neptuno em conjunção com a Lua amplifica sua sensibilidade; use essa energia para criar, mas mantenha os pés no chão para não se perder em devaneios.",
+      "amor": "Um momento de intimidade profunda pode surgir ao compartilhar sonhos; a vulnerabilidade será recompensada com conexão genuína.",
+      "trabalho": "Sua criatividade será um diferencial em projetos artísticos ou de marketing; estabeleça prazos realistas para transformar ideias em resultados."
     }
   }
 }
