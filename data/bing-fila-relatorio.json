@@ -1,5 +1,5 @@
 {
- "quando": "2026-11-23T21:32:19.918Z",
+ "quando": "2026-11-24T20:14:06.016Z",
  "sites": [
   {
    "site": "https://agenciafadamadrinha.com/",
@@ -94,7 +94,7 @@
   },
   {
    "site": "https://cristalleads.com.br/",
-   "enviadas": 11,
+   "enviadas": 0,
    "faltam": 0,
    "no_mapa": 962,
    "erro": null
@@ -164,9 +164,9 @@
   },
   {
    "site": "https://www.dinheironodiaadia.com/",
-   "enviadas": 15,
+   "enviadas": 14,
    "faltam": 0,
-   "no_mapa": 702,
+   "no_mapa": 716,
    "erro": null
   }
  ]
