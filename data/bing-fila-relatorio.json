@@ -1,5 +1,5 @@
 {
- "quando": "2026-11-25T19:25:51.092Z",
+ "quando": "2026-11-26T19:08:23.144Z",
  "sites": [
   {
    "site": "https://agenciafadamadrinha.com/",
@@ -136,9 +136,9 @@
   },
   {
    "site": "https://piscococinaybar.com/",
-   "enviadas": 22,
+   "enviadas": 0,
    "faltam": 0,
-   "no_mapa": 937,
+   "no_mapa": 465,
    "erro": null
   },
   {
@@ -166,7 +166,7 @@
    "site": "https://www.dinheironodiaadia.com/",
    "enviadas": 15,
    "faltam": 0,
-   "no_mapa": 731,
+   "no_mapa": 746,
    "erro": null
   }
  ]
